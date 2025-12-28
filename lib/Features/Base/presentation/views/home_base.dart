@@ -16,7 +16,7 @@ class HomeBase extends StatefulWidget {
 
 class _HomeBaseState extends State<HomeBase> {
   int pageIndex = 0;
-  final pages = const [HomeView(), AnalysisView(), ProfileView()];
+  late final pages = const [HomeView(), AnalysisView(), ProfileView()];
   @override
   Widget build(BuildContext context) {
     return Container(

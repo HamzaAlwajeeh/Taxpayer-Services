@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marchant_app/Features/Auth/presentation/views/widgets/create_store_view_body.dart';
-import 'package:marchant_app/core/widgets/background.dart';
+import 'package:marchant_app/core/widgets/gradient_background.dart';
 
 class CreateStoreView extends StatelessWidget {
   const CreateStoreView({super.key});

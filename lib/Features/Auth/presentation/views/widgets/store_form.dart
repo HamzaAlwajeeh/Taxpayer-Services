@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:marchant_app/Features/Base/presentation/views/home_base.dart';
+import 'package:marchant_app/Features/Auth/presentation/views/login_view.dart';
 import 'package:marchant_app/core/utils/app_colors.dart';
 import 'package:marchant_app/core/widgets/custom_button.dart';
 import 'package:marchant_app/core/widgets/custom_text_form_feild.dart';
@@ -77,7 +77,7 @@ class _StoreFormState extends State<StoreForm> {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
       autovalidateMode = AutovalidateMode.disabled;
-      context.go(HomeBase.routeName);
+      context.go(LoginView.routeName);
     } else {
       setState(() {
         autovalidateMode = AutovalidateMode.always;
