@@ -3,15 +3,22 @@ import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:marchant_app/core/helper/take_photo.dart';
+import 'package:get/get.dart';
+import 'package:marchant_app/Features/Auth/presentation/controllers/upload_image_controller.dart';
 import 'package:marchant_app/core/utils/app_colors.dart';
 import 'package:marchant_app/core/utils/app_images.dart';
 import 'package:marchant_app/core/utils/app_text_style.dart';
 
 class UploadImage extends StatefulWidget {
-  const UploadImage({super.key, required this.title, required this.subTitle});
+  const UploadImage({
+    super.key,
+    required this.title,
+    required this.subTitle,
+    required this.isStoreImage,
+  });
   final String title;
   final String subTitle;
+  final bool isStoreImage;
   @override
   State<UploadImage> createState() => _UploadImageState();
 }
@@ -19,7 +26,7 @@ class UploadImage extends StatefulWidget {
 class _UploadImageState extends State<UploadImage>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  File? imagePath;
+
   @override
   void initState() {
     super.initState();
@@ -35,45 +42,77 @@ class _UploadImageState extends State<UploadImage>
     super.dispose();
   }
 
-  void _selectImage() async {
-    File? image = await takePhoto();
-    if (image != null) {
-      setState(() {
-        imagePath = image;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    return DottedBorder(
-      animation: _controller,
-      options: RoundedRectDottedBorderOptions(
-        color: AppColors.textPrimaryColor,
-        strokeWidth: 2,
-        dashPattern: [6, 6],
-        radius: Radius.circular(12),
-      ),
-      child:
-          imagePath != null
-              ? OpenImage(imagePath: imagePath!)
-              : SelectImage(
-                title: widget.title,
-                subTitle: widget.subTitle,
-                onImageSelected: _selectImage,
-              ),
+    return GetBuilder<UploadImageController>(
+      init: UploadImageController(),
+      builder: (controller) {
+        final image =
+            widget.isStoreImage
+                ? controller.storeImagePath
+                : controller.imagePath;
+        return DottedBorder(
+          animation: _controller,
+          options: RoundedRectDottedBorderOptions(
+            color: AppColors.textPrimaryColor,
+            strokeWidth: 2,
+            dashPattern: [6, 6],
+            radius: Radius.circular(12),
+          ),
+          child:
+              image != null
+                  ? OpenImage(
+                    imagePath: image,
+                    onRemove: () {
+                      controller.removeImage(isStoreImage: widget.isStoreImage);
+                    },
+                  )
+                  : SelectImage(
+                    title: widget.title,
+                    subTitle: widget.subTitle,
+                    onImageSelected: () {
+                      controller.showImageSourceDialog(
+                        context,
+                        isStoreImage: widget.isStoreImage,
+                      );
+                    },
+                  ),
+        );
+      },
     );
   }
 }
 
 class OpenImage extends StatelessWidget {
-  const OpenImage({super.key, required this.imagePath});
+  const OpenImage({super.key, required this.imagePath, required this.onRemove});
   final File imagePath;
+  final VoidCallback onRemove;
+
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(12),
-      child: Image.file(imagePath, width: double.infinity),
+    return Stack(
+      alignment: AlignmentDirectional.topEnd,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(12),
+          child: Image.file(imagePath, width: double.infinity),
+        ),
+        Positioned(
+          top: 10,
+          right: 10,
+          child: GestureDetector(
+            onTap: onRemove,
+            child: Container(
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: AppColors.red.withOpacity(0.2),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.delete, color: AppColors.red, size: 20),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

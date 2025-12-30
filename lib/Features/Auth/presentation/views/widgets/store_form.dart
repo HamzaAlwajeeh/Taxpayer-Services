@@ -40,53 +40,59 @@ class _StoreFormState extends State<StoreForm> {
               Form(
                 key: formKey,
                 autovalidateMode: autovalidateMode,
-                child: Expanded(
-                  child: Column(
-                    children: [
-                      CustomTextFormFeild(
-                        controller: storeNameController,
-                        hintText: 'اسم المتجر',
-                        keyboardType: TextInputType.text,
-                        suffixIcon: Icon(
-                          Icons.store,
-                          color: AppColors.textPrimaryColor,
-                          size: 26,
-                        ),
+                child: Column(
+                  children: [
+                    CustomTextFormFeild(
+                      controller: storeNameController,
+                      hintText: 'اسم المتجر',
+                      keyboardType: TextInputType.text,
+                      suffixIcon: Icon(
+                        Icons.store,
+                        color: AppColors.textPrimaryColor,
+                        size: 26,
                       ),
-                      const SizedBox(height: 16),
-                      CustomTextFormFeild(
-                        controller: storeDiscyptionController,
-                        hintText: 'وصف المتجر',
-                        keyboardType: TextInputType.text,
-                        suffixIcon: Icon(
-                          Icons.description,
-                          color: AppColors.textPrimaryColor,
-                          size: 26,
-                        ),
+                    ),
+                    const SizedBox(height: 16),
+                    CustomTextFormFeild(
+                      controller: storeDiscyptionController,
+                      hintText: 'وصف المتجر',
+                      keyboardType: TextInputType.text,
+                      suffixIcon: Icon(
+                        Icons.description,
+                        color: AppColors.textPrimaryColor,
+                        size: 26,
                       ),
-                      const SizedBox(height: 17),
-                      CustomTextFormFeild(
-                        controller: storeLocationController,
-                        hintText: 'موقع المتجر',
-                        keyboardType: TextInputType.text,
-                        suffixIcon: Icon(
-                          Icons.location_on,
-                          color: AppColors.textPrimaryColor,
-                          size: 26,
-                        ),
+                    ),
+                    const SizedBox(height: 17),
+                    CustomTextFormFeild(
+                      controller: storeLocationController,
+                      hintText: 'موقع المتجر',
+                      keyboardType: TextInputType.text,
+                      suffixIcon: Icon(
+                        Icons.location_on,
+                        color: AppColors.textPrimaryColor,
+                        size: 26,
                       ),
-                      const SizedBox(height: 17),
-                      UploadImage(
+                    ),
+                    const SizedBox(height: 17),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 2),
+                      child: UploadImage(
                         title: 'صورة ملكية المتجر أو عقد إيجار',
                         subTitle: 'JPEG,JPG,PNG',
+                        isStoreImage: false,
                       ),
-                      const SizedBox(height: 17),
-                      UploadImage(
+                    ),
+                    const SizedBox(height: 17),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 2),
+                      child: UploadImage(
                         title: 'صورة للمتجر',
                         subTitle: 'JPEG,JPG,PNG',
+                        isStoreImage: true,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],
