@@ -51,32 +51,65 @@ class _UploadImageState extends State<UploadImage>
             widget.isStoreImage
                 ? controller.storeImagePath
                 : controller.imagePath;
-        return DottedBorder(
-          animation: _controller,
-          options: RoundedRectDottedBorderOptions(
-            color: AppColors.textPrimaryColor,
-            strokeWidth: 2,
-            dashPattern: [6, 6],
-            radius: Radius.circular(12),
-          ),
-          child:
-              image != null
-                  ? OpenImage(
-                    imagePath: image,
-                    onRemove: () {
-                      controller.removeImage(isStoreImage: widget.isStoreImage);
-                    },
-                  )
-                  : SelectImage(
-                    title: widget.title,
-                    subTitle: widget.subTitle,
-                    onImageSelected: () {
-                      controller.showImageSourceDialog(
-                        context,
-                        isStoreImage: widget.isStoreImage,
-                      );
-                    },
+        return FormField<File?>(
+          validator: (value) {
+            if (image == null) {
+              return 'يجب إضافة صورة ';
+            }
+            return null;
+          },
+          builder: (formState) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                DottedBorder(
+                  animation: _controller,
+                  options: RoundedRectDottedBorderOptions(
+                    color: AppColors.textPrimaryColor,
+                    strokeWidth: 2,
+                    dashPattern: [6, 6],
+                    radius: Radius.circular(12),
                   ),
+                  child:
+                      image != null
+                          ? OpenImage(
+                            imagePath: image,
+                            onRemove: () {
+                              controller.removeImage(
+                                isStoreImage: widget.isStoreImage,
+                              );
+                              formState.didChange(null);
+                            },
+                          )
+                          : SelectImage(
+                            title: widget.title,
+                            subTitle: widget.subTitle,
+                            onImageSelected: () {
+                              controller.showImageSourceDialog(
+                                context,
+                                isStoreImage: widget.isStoreImage,
+                              );
+                              // Note: Validation update happens when controller rebuilds,
+                              // but we might need to trigger didChange after image is selected.
+                              // Since this is inside GetBuilder, it rebuilds on update().
+                              // But FormField state needs to be updated.
+                              // Actually, if we use image from controller in validator logic, it should work on Validate call.
+                            },
+                          ),
+                ),
+                if (formState.hasError)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8, right: 12),
+                    child: Text(
+                      formState.errorText!,
+                      style: TextStyles.semiBold14.copyWith(
+                        color: AppColors.red.withOpacity(0.8),
+                      ),
+                    ),
+                  ),
+              ],
+            );
+          },
         );
       },
     );
