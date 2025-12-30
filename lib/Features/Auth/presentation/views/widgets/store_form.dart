@@ -33,7 +33,7 @@ class _StoreFormState extends State<StoreForm> {
     return Column(
       children: [
         SizedBox(
-          height: 513,
+          height: 450,
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
