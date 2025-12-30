@@ -80,6 +80,7 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
       },
       obscureText: widget.isPassword == true ? !isVisible : false,
       style: TextStyles.bold16.copyWith(color: AppColors.textPrimaryColor),
+      textInputAction: TextInputAction.next,
       keyboardType: widget.keyboardType,
       decoration: InputDecoration(
         prefixIcon: widget.prefixIcon,

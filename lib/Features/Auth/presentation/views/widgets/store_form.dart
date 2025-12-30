@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:marchant_app/Features/Auth/presentation/views/login_view.dart';
+import 'package:marchant_app/Features/Auth/presentation/views/widgets/upload_image.dart';
 import 'package:marchant_app/core/utils/app_colors.dart';
 import 'package:marchant_app/core/widgets/custom_button.dart';
 import 'package:marchant_app/core/widgets/custom_text_form_feild.dart';
@@ -29,47 +30,71 @@ class _StoreFormState extends State<StoreForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: formKey,
-      autovalidateMode: autovalidateMode,
-      child: Column(
-        children: [
-          CustomTextFormFeild(
-            controller: storeNameController,
-            hintText: 'اسم المتجر',
-            keyboardType: TextInputType.text,
-            suffixIcon: Icon(
-              Icons.store,
-              color: AppColors.textPrimaryColor,
-              size: 26,
-            ),
+    return Column(
+      children: [
+        SizedBox(
+          height: 513,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              Form(
+                key: formKey,
+                autovalidateMode: autovalidateMode,
+                child: Expanded(
+                  child: Column(
+                    children: [
+                      CustomTextFormFeild(
+                        controller: storeNameController,
+                        hintText: 'اسم المتجر',
+                        keyboardType: TextInputType.text,
+                        suffixIcon: Icon(
+                          Icons.store,
+                          color: AppColors.textPrimaryColor,
+                          size: 26,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      CustomTextFormFeild(
+                        controller: storeDiscyptionController,
+                        hintText: 'وصف المتجر',
+                        keyboardType: TextInputType.text,
+                        suffixIcon: Icon(
+                          Icons.description,
+                          color: AppColors.textPrimaryColor,
+                          size: 26,
+                        ),
+                      ),
+                      const SizedBox(height: 17),
+                      CustomTextFormFeild(
+                        controller: storeLocationController,
+                        hintText: 'موقع المتجر',
+                        keyboardType: TextInputType.text,
+                        suffixIcon: Icon(
+                          Icons.location_on,
+                          color: AppColors.textPrimaryColor,
+                          size: 26,
+                        ),
+                      ),
+                      const SizedBox(height: 17),
+                      UploadImage(
+                        title: 'صورة ملكية المتجر أو عقد إيجار',
+                        subTitle: 'JPEG,JPG,PNG',
+                      ),
+                      const SizedBox(height: 17),
+                      UploadImage(
+                        title: 'صورة للمتجر',
+                        subTitle: 'JPEG,JPG,PNG',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-          const SizedBox(height: 16),
-          CustomTextFormFeild(
-            controller: storeDiscyptionController,
-            hintText: 'وصف المتجر',
-            keyboardType: TextInputType.text,
-            suffixIcon: Icon(
-              Icons.description,
-              color: AppColors.textPrimaryColor,
-              size: 26,
-            ),
-          ),
-          const SizedBox(height: 17),
-          CustomTextFormFeild(
-            controller: storeLocationController,
-            hintText: 'موقع المتجر',
-            keyboardType: TextInputType.text,
-            suffixIcon: Icon(
-              Icons.location_on,
-              color: AppColors.textPrimaryColor,
-              size: 26,
-            ),
-          ),
-          const SizedBox(height: 17),
-          CustomButton(title: 'إرسال', onPressed: createStoreMethod),
-        ],
-      ),
+        ),
+        const SizedBox(height: 17),
+        CustomButton(title: 'إرسال', onPressed: createStoreMethod),
+      ],
     );
   }
 

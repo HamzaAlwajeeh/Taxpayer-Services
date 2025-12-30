@@ -32,6 +32,7 @@ dependencies:
   curved_navigation_bar: ^1.0.6
   delightful_toast: ^1.1.0
   dio: ^5.9.0
+  dotted_border: ^3.1.0
   file_picker: ^10.3.8
   flutter:
     sdk: flutter

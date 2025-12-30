@@ -13,7 +13,7 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 class AppRoutes {
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: LoginView.routeName,
+    initialLocation: CreateStoreView.routeName,
     debugLogDiagnostics: true,
 
     errorBuilder:
