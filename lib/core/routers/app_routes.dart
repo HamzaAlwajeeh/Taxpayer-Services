@@ -13,7 +13,7 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 class AppRoutes {
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: LoginView.routeName,
+    initialLocation: HomeBase.routeName,
     debugLogDiagnostics: true,
 
     errorBuilder:
@@ -42,7 +42,7 @@ class AppRoutes {
       _buildRoute(
         path: HomeBase.routeName,
         child: const HomeBase(),
-        transition: TransitionType.slideFromBottom,
+        transition: TransitionType.fade,
       ),
       _buildRoute(
         path: HomeView.routeName,

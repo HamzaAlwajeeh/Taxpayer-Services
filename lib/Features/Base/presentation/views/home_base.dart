@@ -54,4 +54,66 @@ class _HomeBaseState extends State<HomeBase> {
       ),
     );
   }
+
+  //   SafeArea buildCustomNavBar(BuildContext context) {
+  //   return SafeArea(
+  //     top: false,
+  //     child: Container(
+  //       padding: const EdgeInsets.fromLTRB(8, 8, 8, 16),
+  //       decoration: BoxDecoration(
+  //         color: ColorResources.itemsBackground(context),
+  //         border: Border(
+  //           top: BorderSide(color: ColorResources.inputBorder(context)),
+  //         ),
+  //       ),
+  //       child: Row(
+  //         children: [
+  //           Expanded(
+  //             child: CustomNavBarItem(
+  //               icon: Assets.assetsIconsHome,
+  //               label: getTranslated('home', context),
+  //               index: 0,
+  //               pageIndex: _pageIndex,
+  //               onTap: () => setPage(0),
+  //             ),
+  //           ),
+  //           Expanded(
+  //             child: CustomNavBarItem(
+  //               icon: Assets.assetsIconsOrders,
+  //               label: getTranslated('my_order', context),
+  //               index: 1,
+  //               pageIndex: _pageIndex,
+  //               onTap: () => setPage(1),
+  //             ),
+  //           ),
+  //           Expanded(
+  //             child: CustomNavBarItem(
+  //               icon: Assets.assetsIconsRefunds,
+  //               label: getTranslated('refund', context),
+  //               index: 2,
+  //               pageIndex: _pageIndex,
+  //               onTap: () => setPage(2),
+  //             ),
+  //           ),
+  //           Expanded(
+  //             child: CustomNavBarItem(
+  //               icon: Assets.assetsIconsProfile,
+  //               label: getTranslated('profile', context),
+  //               index: 3,
+  //               pageIndex: _pageIndex,
+  //               onTap: () => setPage(3),
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
+
+  // void setPage(int pageIndex) {
+  //   setState(() {
+  //     _pageController.jumpToPage(pageIndex);
+  //     _pageIndex = pageIndex;
+  //   });
+  // }
 }
