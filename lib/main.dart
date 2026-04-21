@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:marchant_app/core/routers/app_routes.dart';
-import 'package:marchant_app/core/services/service_locator.dart';
-import 'package:marchant_app/core/utils/app_colors.dart';
-import 'package:marchant_app/generated/l10n.dart';
+import 'package:tax_payer/core/routers/app_routes.dart';
+import 'package:tax_payer/core/services/service_locator.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       routerConfig: AppRoutes.router,
-      title: 'Marchant App',
+      title: 'Tax Payer',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
         textTheme: ThemeData.light().textTheme

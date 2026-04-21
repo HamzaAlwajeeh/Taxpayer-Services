@@ -1,10 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:marchant_app/Features/Analysis/presentation/views/analysis_view.dart';
-import 'package:marchant_app/Features/Home/presentation/views/home_view.dart';
-import 'package:marchant_app/Features/Profile/presentation/views/profile_view.dart';
-import 'package:marchant_app/core/utils/app_colors.dart';
-import 'package:marchant_app/core/utils/app_text_style.dart';
+import 'package:tax_payer/Features/Analysis/presentation/views/analysis_view.dart';
+import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
+import 'package:tax_payer/Features/Profile/presentation/views/profile_view.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_text_style.dart';
 
 class HomeBase extends StatefulWidget {
   const HomeBase({super.key});

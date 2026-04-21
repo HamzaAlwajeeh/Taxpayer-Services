@@ -4,10 +4,10 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:marchant_app/Features/Auth/presentation/controllers/upload_image_controller.dart';
-import 'package:marchant_app/core/utils/app_colors.dart';
-import 'package:marchant_app/core/utils/app_images.dart';
-import 'package:marchant_app/core/utils/app_text_style.dart';
+import 'package:tax_payer/Features/Auth/presentation/controllers/upload_image_controller.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_images.dart';
+import 'package:tax_payer/core/utils/app_text_style.dart';
 
 class UploadImage extends StatefulWidget {
   const UploadImage({
@@ -89,11 +89,6 @@ class _UploadImageState extends State<UploadImage>
                                 context,
                                 isStoreImage: widget.isStoreImage,
                               );
-                              // Note: Validation update happens when controller rebuilds,
-                              // but we might need to trigger didChange after image is selected.
-                              // Since this is inside GetBuilder, it rebuilds on update().
-                              // But FormField state needs to be updated.
-                              // Actually, if we use image from controller in validator logic, it should work on Validate call.
                             },
                           ),
                 ),

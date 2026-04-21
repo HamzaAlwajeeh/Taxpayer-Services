@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:marchant_app/Features/Auth/presentation/views/widgets/custom_gradient_text.dart';
-import 'package:marchant_app/Features/Auth/presentation/views/widgets/has_an_account.dart';
-import 'package:marchant_app/Features/Auth/presentation/views/widgets/sign_up_form.dart';
-import 'package:marchant_app/core/utils/app_colors.dart';
-import 'package:marchant_app/core/utils/app_text_style.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/widgets/custom_gradient_text.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/widgets/has_an_account.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/widgets/sign_up_form.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_text_style.dart';
 
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({super.key});

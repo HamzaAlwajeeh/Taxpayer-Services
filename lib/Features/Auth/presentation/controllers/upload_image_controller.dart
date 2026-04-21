@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:marchant_app/core/helper/pick_file.dart';
-import 'package:marchant_app/core/helper/take_photo.dart';
-import 'package:marchant_app/core/utils/app_colors.dart';
-import 'package:marchant_app/core/utils/app_text_style.dart';
+import 'package:tax_payer/core/helper/pick_file.dart';
+import 'package:tax_payer/core/helper/take_photo.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_text_style.dart';
 
 class UploadImageController extends GetxController {
   File? imagePath;

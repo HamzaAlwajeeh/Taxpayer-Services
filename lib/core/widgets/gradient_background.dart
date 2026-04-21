@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:marchant_app/core/utils/app_colors.dart';
-import 'package:marchant_app/core/utils/app_images.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_images.dart';
 
 class GradientBackground extends StatelessWidget {
   const GradientBackground({super.key, required this.child, this.hasImage});

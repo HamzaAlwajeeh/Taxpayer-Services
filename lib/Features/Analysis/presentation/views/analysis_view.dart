@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marchant_app/Features/Analysis/presentation/views/widgets/analysis_view_body.dart';
-import 'package:marchant_app/core/widgets/gradient_background.dart';
+import 'package:tax_payer/Features/Analysis/presentation/views/widgets/analysis_view_body.dart';
+import 'package:tax_payer/core/widgets/gradient_background.dart';
 
 class AnalysisView extends StatelessWidget {
   const AnalysisView({super.key});

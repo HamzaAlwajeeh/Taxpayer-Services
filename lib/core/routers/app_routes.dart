@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:marchant_app/Features/Analysis/presentation/views/analysis_view.dart';
-import 'package:marchant_app/Features/Auth/presentation/views/create_store_view.dart';
-import 'package:marchant_app/Features/Auth/presentation/views/login_view.dart';
-import 'package:marchant_app/Features/Auth/presentation/views/sign_up_view.dart';
-import 'package:marchant_app/Features/Base/presentation/views/home_base.dart';
-import 'package:marchant_app/Features/Home/presentation/views/home_view.dart';
-import 'package:marchant_app/Features/Profile/presentation/views/profile_view.dart';
+import 'package:tax_payer/Features/Analysis/presentation/views/analysis_view.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/create_store_view.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/login_view.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/sign_up_view.dart';
+import 'package:tax_payer/Features/Base/presentation/views/home_base.dart';
+import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
+import 'package:tax_payer/Features/Profile/presentation/views/profile_view.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
 class AppRoutes {
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: CreateStoreView.routeName,
+    initialLocation: LoginView.routeName,
     debugLogDiagnostics: true,
 
     errorBuilder:

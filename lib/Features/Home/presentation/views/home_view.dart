@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marchant_app/Features/Home/presentation/views/widgets/home_view_body.dart';
-import 'package:marchant_app/core/widgets/gradient_background.dart';
+import 'package:tax_payer/Features/Home/presentation/views/widgets/home_view_body.dart';
+import 'package:tax_payer/core/widgets/gradient_background.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:marchant_app/Features/Auth/presentation/views/create_store_view.dart';
-import 'package:marchant_app/core/utils/app_colors.dart';
-import 'package:marchant_app/core/widgets/custom_button.dart';
-import 'package:marchant_app/core/widgets/custom_text_form_feild.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/create_store_view.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/widgets/custom_button.dart';
+import 'package:tax_payer/core/widgets/custom_text_form_feild.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});

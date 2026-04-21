@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:marchant_app/core/helper/get_data_function.dart';
-import 'package:marchant_app/core/utils/app_colors.dart';
-import 'package:marchant_app/core/utils/app_text_style.dart';
+import 'package:tax_payer/core/helper/get_data_function.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_text_style.dart';
 
 class CustomTextFormFeild extends StatefulWidget {
   const CustomTextFormFeild({
@@ -20,7 +20,7 @@ class CustomTextFormFeild extends StatefulWidget {
     this.fillColor,
     this.isPerson,
     this.type,
-    this.passwordController, // للتحقق من تأكيد كلمة المرور
+    this.passwordController,
   });
   final String hintText;
   final TextInputType keyboardType;

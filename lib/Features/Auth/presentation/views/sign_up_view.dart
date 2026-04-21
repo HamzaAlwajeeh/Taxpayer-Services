@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marchant_app/Features/Auth/presentation/views/widgets/sign_up_view_body.dart';
-import 'package:marchant_app/core/widgets/gradient_background.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/widgets/sign_up_view_body.dart';
+import 'package:tax_payer/core/widgets/gradient_background.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});

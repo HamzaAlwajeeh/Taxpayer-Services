@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marchant_app/Features/Profile/presentation/views/widgets/profile_view_body.dart';
-import 'package:marchant_app/core/widgets/gradient_background.dart';
+import 'package:tax_payer/Features/Profile/presentation/views/widgets/profile_view_body.dart';
+import 'package:tax_payer/core/widgets/gradient_background.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
