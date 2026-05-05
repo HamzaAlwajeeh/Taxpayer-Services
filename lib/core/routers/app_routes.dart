@@ -7,13 +7,14 @@ import 'package:tax_payer/Features/Auth/presentation/views/sign_up_view.dart';
 import 'package:tax_payer/Features/Base/presentation/views/home_base.dart';
 import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/profile_view.dart';
+import 'package:tax_payer/core/routers/route_names.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
 class AppRoutes {
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: HomeBase.routeName,
+    initialLocation: RouteNames.base,
     debugLogDiagnostics: true,
 
     errorBuilder:
@@ -40,23 +41,28 @@ class AppRoutes {
 
       // App Routes
       _buildRoute(
-        path: HomeBase.routeName,
+        path: RouteNames.base,
         child: const HomeBase(),
         transition: TransitionType.fade,
       ),
       _buildRoute(
-        path: HomeView.routeName,
+        path: RouteNames.home,
         child: const HomeView(),
         transition: TransitionType.fade,
       ),
       _buildRoute(
-        path: ProfileView.routeName,
-        child: const ProfileView(),
+        path: RouteNames.newFile,
+        child: const AnalysisView(),
         transition: TransitionType.fade,
       ),
       _buildRoute(
-        path: AnalysisView.routeName,
+        path: RouteNames.instructions,
         child: const AnalysisView(),
+        transition: TransitionType.fade,
+      ),
+      _buildRoute(
+        path: RouteNames.profile,
+        child: const ProfileView(),
         transition: TransitionType.fade,
       ),
       // GoRoute(
