@@ -13,7 +13,7 @@ void customToastBar({
   return DelightToastBar(
     builder: (context) {
       return ToastCard(
-        color: backgroundColor.withOpacity(0.7),
+        color: backgroundColor,
         leading: Icon(icon, size: 30, color: textColor),
         title: Text(
           message,
@@ -21,7 +21,7 @@ void customToastBar({
         ),
       );
     },
-    position: DelightSnackbarPosition.top,
+    position: DelightSnackbarPosition.bottom,
     autoDismiss: true,
     animationDuration: Duration(milliseconds: 900),
   ).show(context);
