@@ -40,7 +40,7 @@ class UploadImageController extends GetxController {
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: AppColors.white,
+          backgroundColor: AppColors.white(),
           title: Text("مصدر الصورة ", style: TextStyles.bold16),
           content: Text(
             "اختر من حيث تريد اختيار الصورة",
@@ -54,7 +54,7 @@ class UploadImageController extends GetxController {
               child: Text(
                 "الغاء",
                 style: TextStyles.bold14.copyWith(
-                  color: AppColors.red.withOpacity(0.7),
+                  color: AppColors.red().withOpacity(0.7),
                 ),
               ),
             ),
@@ -66,7 +66,7 @@ class UploadImageController extends GetxController {
               child: Text(
                 "الكاميرا",
                 style: TextStyles.bold14.copyWith(
-                  color: AppColors.textPrimaryColor,
+                  color: AppColors.textPrimaryColor(),
                 ),
               ),
             ),
@@ -76,12 +76,12 @@ class UploadImageController extends GetxController {
                 pickFileImage(isStoreImage: isStoreImage);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryColor,
+                backgroundColor: AppColors.primaryColor(),
               ),
               child: Text(
                 "تحميل ملف",
                 style: TextStyles.bold14.copyWith(
-                  color: AppColors.textPrimaryColor,
+                  color: AppColors.textPrimaryColor(),
                 ),
               ),
             ),

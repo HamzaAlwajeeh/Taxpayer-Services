@@ -65,7 +65,7 @@ class _UploadImageState extends State<UploadImage>
                 DottedBorder(
                   animation: _controller,
                   options: RoundedRectDottedBorderOptions(
-                    color: AppColors.textPrimaryColor,
+                    color: AppColors.textPrimaryColor(),
                     strokeWidth: 2,
                     dashPattern: [6, 6],
                     radius: Radius.circular(12),
@@ -98,7 +98,7 @@ class _UploadImageState extends State<UploadImage>
                     child: Text(
                       formState.errorText!,
                       style: TextStyles.semiBold14.copyWith(
-                        color: AppColors.red.withOpacity(0.8),
+                        color: AppColors.red().withOpacity(0.8),
                       ),
                     ),
                   ),
@@ -133,10 +133,10 @@ class OpenImage extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                color: AppColors.red.withOpacity(0.2),
+                color: AppColors.red().withOpacity(0.2),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.delete, color: AppColors.red, size: 20),
+              child: Icon(Icons.delete, color: AppColors.red(), size: 20),
             ),
           ),
         ),
@@ -165,7 +165,7 @@ class SelectImage extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: AppColors.textFeilColor,
+          color: AppColors.textFeilColor(),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -20,25 +20,25 @@ class _HomeBaseState extends State<HomeBase> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.primaryColor,
+      color: AppColors.primaryColor(),
       child: SafeArea(
         top: false,
         child: Scaffold(
           bottomNavigationBar: CurvedNavigationBar(
             height: 65,
             backgroundColor: Colors.transparent,
-            color: AppColors.primaryColor,
-            buttonBackgroundColor: AppColors.primaryColor,
+            color: AppColors.primaryColor(),
+            buttonBackgroundColor: AppColors.primaryColor(),
             animationCurve: Curves.easeOutCubic,
             animationDuration: const Duration(milliseconds: 300),
-            items: const [
-              Icon(Icons.home, size: 33, color: AppColors.textPrimaryColor),
+            items: [
+              Icon(Icons.home, size: 33, color: AppColors.textPrimaryColor()),
               Icon(
                 Icons.analytics,
                 size: 33,
-                color: AppColors.textPrimaryColor,
+                color: AppColors.textPrimaryColor(),
               ),
-              Icon(Icons.person, size: 33, color: AppColors.textPrimaryColor),
+              Icon(Icons.person, size: 33, color: AppColors.textPrimaryColor()),
             ],
             onTap: (index) {
               setState(() {

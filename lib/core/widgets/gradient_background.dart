@@ -23,7 +23,7 @@ class GradientBackground extends StatelessWidget {
           top: 120,
           left: 233,
           child: _BlurCircle(
-            color: AppColors.primaryColor.withOpacity(0.35),
+            color: AppColors.primaryColor().withOpacity(0.35),
             size: 350,
           ),
         ),

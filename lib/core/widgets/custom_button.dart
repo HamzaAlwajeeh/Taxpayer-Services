@@ -12,13 +12,13 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         minimumSize: const Size.fromHeight(56),
-        backgroundColor: AppColors.primaryColor,
+        backgroundColor: AppColors.primaryColor(),
         padding: const EdgeInsets.symmetric(vertical: 14),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
       child: Text(
         title,
-        style: TextStyles.bold18.copyWith(color: AppColors.textPrimaryColor),
+        style: TextStyles.bold18.copyWith(color: AppColors.textPrimaryColor()),
       ),
     );
   }

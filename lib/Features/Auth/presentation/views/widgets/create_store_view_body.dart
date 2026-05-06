@@ -21,7 +21,7 @@ class CreateStoreViewBody extends StatelessWidget {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: AppColors.white,
+                  color: AppColors.white(),
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(

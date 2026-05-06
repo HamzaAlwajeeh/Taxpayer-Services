@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:tax_payer/Features/Settings/app_settings.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/services/notification_service.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -47,6 +50,15 @@ class HomeViewBody extends StatelessWidget {
                     textColor: Colors.green,
                   );
                 },
+              ),
+              SvgPicture.asset(
+                Assets.assetsIconsActivity,
+                width: 24,
+                height: 24,
+                colorFilter: ColorFilter.mode(
+                  AppColors.textRedColor(),
+                  BlendMode.srcIn,
+                ),
               ),
             ],
           ),

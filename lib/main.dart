@@ -7,6 +7,7 @@ import 'package:tax_payer/core/routers/app_routes.dart';
 import 'package:tax_payer/core/services/notification_service.dart';
 import 'package:tax_payer/core/services/service_locator.dart';
 import 'package:tax_payer/core/services/shared_pref_singleton.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/generated/l10n.dart';
 
 void main() async {
@@ -27,9 +28,12 @@ class MyApp extends StatelessWidget {
       return MaterialApp.router(
         locale: AppSettings.localeSignal.value,
         themeMode: AppSettings.themeModeSignal.value,
-
-        theme: ThemeData.light(),
-        darkTheme: ThemeData.dark(),
+        theme: ThemeData.light().copyWith(
+          scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor(false),
+        ),
+        darkTheme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor(true),
+        ),
 
         localizationsDelegates: const [
           S.delegate,

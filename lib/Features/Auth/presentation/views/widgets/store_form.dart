@@ -48,7 +48,7 @@ class _StoreFormState extends State<StoreForm> {
                       keyboardType: TextInputType.text,
                       suffixIcon: Icon(
                         Icons.store,
-                        color: AppColors.textPrimaryColor,
+                        color: AppColors.textPrimaryColor(),
                         size: 26,
                       ),
                     ),
@@ -59,7 +59,7 @@ class _StoreFormState extends State<StoreForm> {
                       keyboardType: TextInputType.text,
                       suffixIcon: Icon(
                         Icons.description,
-                        color: AppColors.textPrimaryColor,
+                        color: AppColors.textPrimaryColor(),
                         size: 26,
                       ),
                     ),
@@ -70,7 +70,7 @@ class _StoreFormState extends State<StoreForm> {
                       keyboardType: TextInputType.text,
                       suffixIcon: Icon(
                         Icons.location_on,
-                        color: AppColors.textPrimaryColor,
+                        color: AppColors.textPrimaryColor(),
                         size: 26,
                       ),
                     ),

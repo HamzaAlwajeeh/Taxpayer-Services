@@ -22,7 +22,7 @@ class HasAnAccount extends StatelessWidget {
         Text(
           primaryText,
           style: TextStyles.semiBold16.copyWith(
-            color: AppColors.textPrimaryColor,
+            color: AppColors.textPrimaryColor(),
           ),
         ),
         const SizedBox(width: 5),
@@ -34,7 +34,9 @@ class HasAnAccount extends StatelessWidget {
           },
           child: Text(
             secondaryText,
-            style: TextStyles.semiBold16.copyWith(color: AppColors.yello2),
+            style: TextStyles.semiBold16.copyWith(
+              color: AppColors.customBlue(),
+            ),
           ),
         ),
       ],
