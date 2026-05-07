@@ -8,6 +8,7 @@ import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instructions_view.dart';
 import 'package:tax_payer/Features/NewFile/presentation/views/new_file_view.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/profile_view.dart';
+import 'package:tax_payer/Features/Splash/presentation/views/splash_view.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -15,7 +16,7 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 class AppRoutes {
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: RouteNames.dashboard,
+    initialLocation: RouteNames.splash,
     debugLogDiagnostics: true,
 
     errorBuilder:
@@ -23,14 +24,20 @@ class AppRoutes {
             const Scaffold(body: Center(child: Text('Page Not Found'))),
 
     routes: [
+      // Splash Route
+      _buildRoute(
+        path: RouteNames.splash,
+        child: const SplashView(),
+        transition: TransitionType.fade,
+      ),
       // Auth Routes
       _buildRoute(
-        path: LoginView.routeName,
+        path: RouteNames.login,
         child: const LoginView(),
         transition: TransitionType.slideFromRight,
       ),
       _buildRoute(
-        path: SignUpView.routeName,
+        path: RouteNames.register,
         child: const SignUpView(),
         transition: TransitionType.slideFromLeft,
       ),
