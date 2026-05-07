@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_background_colors.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_loading_indicator.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_logo.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
@@ -43,6 +44,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     final isDark = AppColors.isDarkMode(context);
 
     return GradientBackground(
+      hasImage: true,
+      backgroundColors: const SplashBackgroundColors(),
       child: SafeArea(
         child: SizedBox.expand(
           child: Column(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/OnBoarding/data/models/on_boarding_model.dart';
+import 'package:tax_payer/Features/OnBoarding/presentation/views/widgets/on_boarding_background_colors.dart';
 import 'package:tax_payer/Features/OnBoarding/presentation/views/widgets/on_boarding_navigation_bar.dart';
 import 'package:tax_payer/Features/OnBoarding/presentation/views/widgets/on_boarding_page.dart';
 import 'package:tax_payer/Features/OnBoarding/presentation/views/widgets/on_boarding_page_indicator.dart';
@@ -44,6 +45,8 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         rightArrow: Assets.assetsIconsOnBoarding1RightArrow,
         title: S.of(context).OnBoarding1Title,
         subTitle: S.of(context).OnBoarding1SubTitle,
+        leftTopPosition: -50,
+        rightTopPosition: 250,
       ),
       OnBoardingModel(
         image: Assets.assetsIconsOnBoarding2,
@@ -51,6 +54,8 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         rightArrow: Assets.assetsIconsOnBoarding2RightArrow,
         title: S.of(context).OnBoarding2Title,
         subTitle: S.of(context).OnBoarding2SubTitle,
+        leftTopPosition: 250,
+        rightTopPosition: -50,
       ),
       OnBoardingModel(
         image: Assets.assetsIconsOnBoarding3,
@@ -58,6 +63,8 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         rightArrow: Assets.assetsIconsOnBoarding3RightArrow,
         title: S.of(context).OnBoarding3Title,
         subTitle: S.of(context).OnBoarding3SubTitle,
+        leftTopPosition: -50,
+        rightTopPosition: 250,
       ),
     ];
     pageViews = pages
@@ -85,12 +92,15 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   @override
   Widget build(BuildContext context) {
     return GradientBackground(
+      hasImage: true,
+      backgroundColors: const OnBoarrdingBackgroundColors(),
       child: SafeArea(
         child: Column(
           children: [
             Expanded(
-              flex: 7,
+              flex: 6,
               child: PageView(
+                clipBehavior: Clip.none,
                 controller: pageController,
                 allowImplicitScrolling: true,
                 onPageChanged: (value) {
@@ -101,12 +111,11 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                 children: pageViews,
               ),
             ),
-            const SizedBox(height: AppSpacing.s16),
             OnBoardingPageIndicator(
               currentPage: currentPage,
               pageCount: pages.length,
             ),
-            const SizedBox(height: AppSpacing.s24),
+            const SizedBox(height: AppSpacing.s16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: AppSpacing.s24),
               child: AnimatedSwitcher(

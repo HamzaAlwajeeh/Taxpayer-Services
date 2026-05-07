@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/widgets/blur_circle.dart';
 
@@ -16,10 +15,9 @@ class GradientBackground extends StatelessWidget {
   final Widget? backgroundColors;
   @override
   Widget build(BuildContext context) {
-    return backgroundColors != null
-        ? backgroundColors!
-        : Stack(
-          children: [
+    return Stack(
+      children: [
+        backgroundColors ??
             Positioned(
               top: -44,
               left: -233,
@@ -28,25 +26,17 @@ class GradientBackground extends StatelessWidget {
                 size: 350,
               ),
             ),
-            Positioned(
-              top: 120,
-              left: 233,
-              child: BlurCircle(
-                color: AppColors.primaryColor(context).withOpacity(0.35),
-                size: 350,
-              ),
-            ),
-            Visibility(
-              visible: hasImage ?? false,
-              child: Positioned(
-                bottom: 0,
-                right: 0,
-                top: -530,
-                child: SvgPicture.asset(Assets.assetsImagesBackImage),
-              ),
-            ),
-            child,
-          ],
-        );
+        Visibility(
+          visible: hasImage ?? false,
+          child: Positioned(
+            bottom: 0,
+            right: 0,
+            top: -530,
+            child: SvgPicture.asset(Assets.assetsImagesBackImage),
+          ),
+        ),
+        child,
+      ],
+    );
   }
 }

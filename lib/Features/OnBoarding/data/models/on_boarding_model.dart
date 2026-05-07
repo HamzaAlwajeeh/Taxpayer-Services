@@ -4,6 +4,8 @@ class OnBoardingModel {
   final String rightArrow;
   final String title;
   final String subTitle;
+  final double rightTopPosition;
+  final double leftTopPosition;
 
   const OnBoardingModel({
     required this.image,
@@ -11,5 +13,7 @@ class OnBoardingModel {
     required this.rightArrow,
     required this.title,
     required this.subTitle,
+    required this.leftTopPosition,
+    required this.rightTopPosition,
   });
 }
