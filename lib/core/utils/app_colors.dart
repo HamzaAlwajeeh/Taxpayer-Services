@@ -32,7 +32,7 @@ abstract class AppColors {
               : const Color(0xffFFFFFF)
           : const Color(0xff7F1D1D);
   static Color textFeilColor([BuildContext? context]) =>
-      isDarkMode(context) ? const Color(0xffF8FAFC) : const Color(0xffF8FAFC);
+      isDarkMode(context) ? const Color(0xff171F2F) : const Color(0xffF8FAFC);
   static Color itemsColor([BuildContext? context]) =>
       isDarkMode(context) ? const Color(0xff171F2F) : const Color(0xffFFFFFF);
   static Color borderColor([BuildContext? context]) =>

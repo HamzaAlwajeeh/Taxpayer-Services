@@ -13,5 +13,17 @@
     "OnBoarding3Title": "Connect with Your Friends",
     "OnBoarding3SubTitle": "Communicate with your friends and share your experiences, track your line details and manage your services from one place",
     "Skip": "Skip",
-    "StartNow": "Start Now"
+    "StartNow": "Start Now",
+    "LoginSuccess": "Login Successully",
+    "ConnectionTimeout": "Connection timeout with ApiServer",
+    "SendTimeout": "Send timeout with ApiServer",
+    "ReceiveTimeout": "Receive timeout with ApiServer",
+    "BadCertificate": "Bad certificate",
+    "RequestCanceled": "Request to ApiServer was canceled",
+    "NoInternetConnection": "No Internet connection",
+    "UnknownError": "Unknown error, something went wrong, please try again later",
+    "UnauthorizedRequest": "Unauthorized request",
+    "MethodNotFound": "Method Not Found, please try again",
+    "InternalServerError": "Internal Server Error, please try again later",
+    "OopsError": "Oops, there is an error, please try again later"
 }

@@ -1,17 +1,17 @@
 import 'department.dart';
 
 class User {
-  int id;
-  String firstName;
-  String lastName;
-  String idCard;
-  String userName;
-  String phone;
-  String? image;
-  int? createdBy;
-  Department? department;
-  String role;
-  bool? mustChangePassword;
+  final int id;
+  final String firstName;
+  final String lastName;
+  final String idCard;
+  final String userName;
+  final String phone;
+  final String? image;
+  final int? createdBy;
+  final Department? department;
+  final String role;
+  final bool mustChangePassword;
 
   User({
     required this.id,
@@ -24,7 +24,7 @@ class User {
     this.createdBy,
     this.department,
     required this.role,
-    this.mustChangePassword,
+    required this.mustChangePassword,
   });
 
   @override
@@ -39,14 +39,14 @@ class User {
     idCard: json['idCard'] as String,
     userName: json['userName'] as String,
     phone: json['phone'] as String,
-    image: json['image'] as String,
-    createdBy: json['createdBy'] as int,
+    image: json['image'] as String?,
+    createdBy: json['createdBy'] as int?,
     department:
         json['department'] == null
             ? null
             : Department.fromJson(json['department'] as Map<String, dynamic>),
     role: json['role'] as String,
-    mustChangePassword: json['mustChangePassword'] as bool?,
+    mustChangePassword: json['mustChangePassword'] as bool? ?? false,
   );
 
   Map<String, dynamic> toJson() => {

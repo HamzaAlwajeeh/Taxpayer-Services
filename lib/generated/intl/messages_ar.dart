@@ -22,11 +22,29 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "BadCertificate": MessageLookupByLibrary.simpleMessage(
+      "شهادة الاتصال غير صالحة",
+    ),
+    "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
+      "انتهت مهلة الاتصال بالخادم",
+    ),
     "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "Instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
+    "InternalServerError": MessageLookupByLibrary.simpleMessage(
+      "خطأ داخلي في الخادم، يرجى المحاولة لاحقًا",
+    ),
     "Loading": MessageLookupByLibrary.simpleMessage("جار التحميل..."),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "LoginSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم تسجيل الدخول بنجاح",
+    ),
+    "MethodNotFound": MessageLookupByLibrary.simpleMessage(
+      "الطريقة غير موجودة، يرجى المحاولة مرة أخرى",
+    ),
     "NewFile": MessageLookupByLibrary.simpleMessage("ملف جديد"),
+    "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد اتصال بالإنترنت",
+    ),
     "OnBoarding1SubTitle": MessageLookupByLibrary.simpleMessage(
       "أجرِ مكالماتك بكل سهولة ووضوح، وتابع تفاصيل خطك وتحكم في خدماتك من مكان واحد",
     ),
@@ -43,8 +61,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "OnBoarding3Title": MessageLookupByLibrary.simpleMessage(
       "تواصل مع أصدقائك",
     ),
+    "OopsError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ، يرجى المحاولة لاحقًا",
+    ),
     "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
+      "انتهت مهلة استقبال الرد من الخادم",
+    ),
+    "RequestCanceled": MessageLookupByLibrary.simpleMessage("تم إلغاء الطلب"),
+    "SendTimeout": MessageLookupByLibrary.simpleMessage(
+      "انتهت مهلة إرسال الطلب إلى الخادم",
+    ),
     "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+    "UnauthorizedRequest": MessageLookupByLibrary.simpleMessage(
+      "طلب غير مصرح به",
+    ),
+    "UnknownError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ غير معروف، يرجى المحاولة لاحقًا",
+    ),
   };
 }

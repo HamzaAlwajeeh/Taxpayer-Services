@@ -8,8 +8,9 @@ final class LoginLoading extends LoginState {}
 
 final class LoginFailure extends LoginState {
   final String errorMessage;
+  final String? errorKey;
 
-  LoginFailure({required this.errorMessage});
+  LoginFailure({required this.errorMessage, this.errorKey});
 }
 
 final class LoginSuccess extends LoginState {

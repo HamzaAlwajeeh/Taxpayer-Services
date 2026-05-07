@@ -30,7 +30,12 @@ class RegisterCubit extends Cubit<RegisterState> {
       confirmPassword: confirmPassword,
     );
     result.fold(
-      (failure) => emit(RegisterFailure(errorMessage: failure.errorMessage)),
+      (failure) => emit(
+        RegisterFailure(
+          errorMessage: failure.errorMessage,
+          errorKey: failure.errorKey,
+        ),
+      ),
       (message) => emit(RegisterSuccess(message: message)),
     );
   }

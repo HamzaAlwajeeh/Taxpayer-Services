@@ -22,11 +22,25 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "BadCertificate": MessageLookupByLibrary.simpleMessage("Bad certificate"),
+    "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
+      "Connection timeout with ApiServer",
+    ),
     "Home": MessageLookupByLibrary.simpleMessage("Home"),
     "Instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
+    "InternalServerError": MessageLookupByLibrary.simpleMessage(
+      "Internal Server Error, please try again later",
+    ),
     "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
+    "LoginSuccess": MessageLookupByLibrary.simpleMessage("Login Successully"),
+    "MethodNotFound": MessageLookupByLibrary.simpleMessage(
+      "Method Not Found, please try again",
+    ),
     "NewFile": MessageLookupByLibrary.simpleMessage("NewFile"),
+    "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "No Internet connection",
+    ),
     "OnBoarding1SubTitle": MessageLookupByLibrary.simpleMessage(
       "Complete your transactions easily and clearly, track your income details, and manage your services from one place",
     ),
@@ -45,8 +59,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "OnBoarding3Title": MessageLookupByLibrary.simpleMessage(
       "Connect with Your Friends",
     ),
+    "OopsError": MessageLookupByLibrary.simpleMessage(
+      "Oops, there is an error, please try again later",
+    ),
     "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
+      "Receive timeout with ApiServer",
+    ),
+    "RequestCanceled": MessageLookupByLibrary.simpleMessage(
+      "Request to ApiServer was canceled",
+    ),
+    "SendTimeout": MessageLookupByLibrary.simpleMessage(
+      "Send timeout with ApiServer",
+    ),
     "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "StartNow": MessageLookupByLibrary.simpleMessage("Start Now"),
+    "UnauthorizedRequest": MessageLookupByLibrary.simpleMessage(
+      "Unauthorized request",
+    ),
+    "UnknownError": MessageLookupByLibrary.simpleMessage(
+      "Unknown error, something went wrong, please try again later",
+    ),
   };
 }

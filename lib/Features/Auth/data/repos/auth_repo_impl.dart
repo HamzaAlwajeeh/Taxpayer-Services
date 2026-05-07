@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
@@ -25,9 +24,13 @@ class AuthRepoImpl implements AuthRepo {
         body: {'userName': userName, 'password': password},
         token: null,
       );
-      User user = User.fromJson(data['user']);
-      Prefs.setString(AppConstants.kToken, data['access_token']);
-      log('Token: ${data['access_token']}');
+
+      final loginData = data['data'] as Map<String, dynamic>;
+      final accessToken = loginData['access_token'] as String;
+      User user = User.fromJson(loginData['user'] as Map<String, dynamic>);
+
+      Prefs.setString(AppConstants.kToken, accessToken);
+
       return Right(user);
     } catch (e) {
       if (e is DioException) {

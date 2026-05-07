@@ -56,6 +56,7 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
           setState(() {});
         }
       },
+      cursorColor: AppColors.primaryColor(context),
       readOnly: widget.readOnly ?? false,
       controller: widget.controller,
       initialValue: widget.initialValue,
@@ -64,10 +65,6 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'هذا الحقل مطلوب';
-        }
-        if (widget.hintText == 'البريد الإلكتروني' &&
-            !RegExp(r'^[\w-\.]+@gmail\.com$').hasMatch(value)) {
-          return 'الرجاء إدخال بريد إلكتروني من نوع Gmail';
         }
         if (widget.isPassword == true && value.length < 8) {
           return 'يجب أن تكون كلمة المرور 8 أحرف على الأقل';

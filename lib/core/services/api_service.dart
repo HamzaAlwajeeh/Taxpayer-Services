@@ -7,6 +7,23 @@ import 'package:tax_payer/core/constants/constants.dart';
 class ApiService {
   final _baseUrl = AppConstants.kBaseUrl;
 
+  void requestInfo({
+    required String method,
+    required String endPoint,
+    required dynamic body,
+    required String? token,
+    Map<String, String>? headers,
+  }) {
+    log('''
+----------------------------
+Method: $method
+Url: $_baseUrl/$endPoint
+Body: $body
+Token: $token
+Headers: $headers
+''');
+  }
+
   final Dio dio;
   ApiService(this.dio);
 
@@ -22,13 +39,21 @@ class ApiService {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
 
+    requestInfo(
+      method: 'GET',
+      endPoint: endPoint,
+      body: body,
+      token: token,
+      headers: headers,
+    );
+
     var response = await dio.get(
       '$_baseUrl/$endPoint',
       options: Options(headers: headers),
     );
     log('''
 ========================================
-    ${response.data}
+    Response : ${response.data}
 ========================================
     ''');
     return response.data;
@@ -48,11 +73,25 @@ class ApiService {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
 
+    requestInfo(
+      method: 'POST',
+      endPoint: endPoint,
+      body: body,
+      token: token,
+      headers: headers,
+    );
+
     var response = await dio.post(
       '$_baseUrl/$endPoint',
       data: body,
       options: Options(headers: headers),
     );
+
+    log('''
+========================================
+    Response : ${response.data}
+========================================
+    ''');
 
     return response.data;
   }
@@ -69,6 +108,14 @@ class ApiService {
     if (token != null) {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
+
+    requestInfo(
+      method: 'PUT',
+      endPoint: endPoint,
+      body: body,
+      token: token,
+      headers: headers,
+    );
 
     var response = await dio.put(
       '$_baseUrl/$endPoint',
@@ -88,6 +135,14 @@ class ApiService {
     if (token != null) {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
+
+    requestInfo(
+      method: 'DELETE',
+      endPoint: endPoint,
+      body: {},
+      token: token,
+      headers: headers,
+    );
 
     var response = await dio.delete(
       '$_baseUrl/$endPoint',

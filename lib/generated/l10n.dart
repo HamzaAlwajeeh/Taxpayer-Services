@@ -28,10 +28,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -160,6 +159,126 @@ class S {
   /// `Start Now`
   String get StartNow {
     return Intl.message('Start Now', name: 'StartNow', desc: '', args: []);
+  }
+
+  /// `Login Successully`
+  String get LoginSuccess {
+    return Intl.message(
+      'Login Successully',
+      name: 'LoginSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connection timeout with ApiServer`
+  String get ConnectionTimeout {
+    return Intl.message(
+      'Connection timeout with ApiServer',
+      name: 'ConnectionTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send timeout with ApiServer`
+  String get SendTimeout {
+    return Intl.message(
+      'Send timeout with ApiServer',
+      name: 'SendTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Receive timeout with ApiServer`
+  String get ReceiveTimeout {
+    return Intl.message(
+      'Receive timeout with ApiServer',
+      name: 'ReceiveTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bad certificate`
+  String get BadCertificate {
+    return Intl.message(
+      'Bad certificate',
+      name: 'BadCertificate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request to ApiServer was canceled`
+  String get RequestCanceled {
+    return Intl.message(
+      'Request to ApiServer was canceled',
+      name: 'RequestCanceled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Internet connection`
+  String get NoInternetConnection {
+    return Intl.message(
+      'No Internet connection',
+      name: 'NoInternetConnection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown error, something went wrong, please try again later`
+  String get UnknownError {
+    return Intl.message(
+      'Unknown error, something went wrong, please try again later',
+      name: 'UnknownError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unauthorized request`
+  String get UnauthorizedRequest {
+    return Intl.message(
+      'Unauthorized request',
+      name: 'UnauthorizedRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Method Not Found, please try again`
+  String get MethodNotFound {
+    return Intl.message(
+      'Method Not Found, please try again',
+      name: 'MethodNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Internal Server Error, please try again later`
+  String get InternalServerError {
+    return Intl.message(
+      'Internal Server Error, please try again later',
+      name: 'InternalServerError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops, there is an error, please try again later`
+  String get OopsError {
+    return Intl.message(
+      'Oops, there is an error, please try again later',
+      name: 'OopsError',
+      desc: '',
+      args: [],
+    );
   }
 }
 

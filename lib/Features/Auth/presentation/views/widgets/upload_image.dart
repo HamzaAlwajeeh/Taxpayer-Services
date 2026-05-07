@@ -4,7 +4,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:tax_payer/Features/Auth/presentation/controllers/upload_image_controller.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/upload_image_controller.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
@@ -188,3 +188,13 @@ class SelectImage extends StatelessWidget {
     );
   }
 }
+
+
+
+//  String _url(String endPoint) {
+//     return '${_baseUrl.replaceAll(RegExp(r'/+$'), '')}/${endPoint.replaceAll(RegExp(r'^/+'), '')}';
+//   }
+
+//     final url = _url(endPoint);
+//     log('POST $url');
+//     log('BODY $body');

@@ -6,8 +6,9 @@ final class RegisterLoading extends RegisterState {}
 
 final class RegisterFailure extends RegisterState {
   final String errorMessage;
+  final String? errorKey;
 
-  RegisterFailure({required this.errorMessage});
+  RegisterFailure({required this.errorMessage, this.errorKey});
 }
 
 final class RegisterSuccess extends RegisterState {
