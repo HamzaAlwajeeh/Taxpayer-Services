@@ -45,7 +45,7 @@ class _SignUpFormState extends State<SignUpForm> {
             keyboardType: TextInputType.emailAddress,
             suffixIcon: Icon(
               Icons.person,
-              color: AppColors.textPrimaryColor(),
+              color: AppColors.textPrimaryColor(context),
               size: 26,
             ),
           ),
@@ -56,7 +56,7 @@ class _SignUpFormState extends State<SignUpForm> {
             keyboardType: TextInputType.emailAddress,
             suffixIcon: Icon(
               Icons.email,
-              color: AppColors.textPrimaryColor(),
+              color: AppColors.textPrimaryColor(context),
               size: 26,
             ),
           ),
@@ -83,7 +83,7 @@ class _SignUpFormState extends State<SignUpForm> {
             keyboardType: TextInputType.phone,
             suffixIcon: Icon(
               Icons.phone,
-              color: AppColors.textPrimaryColor(),
+              color: AppColors.textPrimaryColor(context),
               size: 26,
             ),
           ),

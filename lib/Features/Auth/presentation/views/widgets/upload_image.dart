@@ -65,7 +65,7 @@ class _UploadImageState extends State<UploadImage>
                 DottedBorder(
                   animation: _controller,
                   options: RoundedRectDottedBorderOptions(
-                    color: AppColors.textPrimaryColor(),
+                    color: AppColors.textPrimaryColor(context),
                     strokeWidth: 2,
                     dashPattern: [6, 6],
                     radius: Radius.circular(12),
@@ -165,7 +165,7 @@ class SelectImage extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: AppColors.textFeilColor(),
+          color: AppColors.textFeilColor(context),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -56,7 +56,7 @@ class HomeViewBody extends StatelessWidget {
                 width: 24,
                 height: 24,
                 colorFilter: ColorFilter.mode(
-                  AppColors.textRedColor(),
+                  AppColors.textRedColor(context),
                   BlendMode.srcIn,
                 ),
               ),

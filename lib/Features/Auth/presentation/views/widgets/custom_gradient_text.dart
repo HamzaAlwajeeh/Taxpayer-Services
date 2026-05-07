@@ -13,7 +13,7 @@ class CustomGradientText extends StatelessWidget {
             colors: [
               Color(0xff4983F6),
               Color(0xffBF4BDB),
-              AppColors.primaryColor(),
+              AppColors.primaryColor(context),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,

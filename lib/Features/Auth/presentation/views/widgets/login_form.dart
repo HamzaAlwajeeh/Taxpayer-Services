@@ -38,7 +38,7 @@ class _LoginFormState extends State<LoginForm> {
             keyboardType: TextInputType.emailAddress,
             suffixIcon: Icon(
               Icons.email,
-              color: AppColors.textPrimaryColor(),
+              color: AppColors.textPrimaryColor(context),
               size: 26,
             ),
           ),

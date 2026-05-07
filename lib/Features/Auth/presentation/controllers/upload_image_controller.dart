@@ -66,7 +66,7 @@ class UploadImageController extends GetxController {
               child: Text(
                 "الكاميرا",
                 style: TextStyles.bold14.copyWith(
-                  color: AppColors.textPrimaryColor(),
+                  color: AppColors.textPrimaryColor(context),
                 ),
               ),
             ),
@@ -76,12 +76,12 @@ class UploadImageController extends GetxController {
                 pickFileImage(isStoreImage: isStoreImage);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryColor(),
+                backgroundColor: AppColors.primaryColor(context),
               ),
               child: Text(
                 "تحميل ملف",
                 style: TextStyles.bold14.copyWith(
-                  color: AppColors.textPrimaryColor(),
+                  color: AppColors.textPrimaryColor(context),
                 ),
               ),
             ),

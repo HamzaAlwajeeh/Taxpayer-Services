@@ -79,7 +79,9 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
         return null;
       },
       obscureText: widget.isPassword == true ? !isVisible : false,
-      style: TextStyles.bold16.copyWith(color: AppColors.textPrimaryColor()),
+      style: TextStyles.bold16.copyWith(
+        color: AppColors.textPrimaryColor(context),
+      ),
       textInputAction: TextInputAction.next,
       keyboardType: widget.keyboardType,
       decoration: InputDecoration(
@@ -102,12 +104,12 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
                         !isVisible
                             ? Icon(
                               Icons.visibility,
-                              color: AppColors.textPrimaryColor(),
+                              color: AppColors.textPrimaryColor(context),
                               size: 26,
                             )
                             : Icon(
                               Icons.visibility_off,
-                              color: AppColors.textPrimaryColor(),
+                              color: AppColors.textPrimaryColor(context),
                               size: 26,
                             ),
                   ),
@@ -130,12 +132,12 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
         filled: true,
         hintText: widget.hintText,
         hintStyle: TextStyles.bold16.copyWith(
-          color: AppColors.textPrimaryColor(),
+          color: AppColors.textPrimaryColor(context),
         ),
-        fillColor: AppColors.textFeilColor(),
-        border: buildBorder(),
-        enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(),
+        fillColor: AppColors.textFeilColor(context),
+        border: buildBorder(context),
+        enabledBorder: buildBorder(context),
+        focusedBorder: buildBorder(context),
         errorStyle: TextStyles.semiBold14.copyWith(
           color: AppColors.red().withOpacity(0.8),
         ),
@@ -143,10 +145,10 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
     );
   }
 
-  OutlineInputBorder buildBorder() {
+  OutlineInputBorder buildBorder(BuildContext context) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: AppColors.borderColor(), width: 1),
+      borderSide: BorderSide(color: AppColors.borderColor(context), width: 1),
     );
   }
 }
