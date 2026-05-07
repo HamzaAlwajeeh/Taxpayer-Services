@@ -1,11 +1,9 @@
 {
-
     "Home": "Home",
     "Profile": "Profile",
     "Instructions": "Instructions",
     "NewFile": "NewFile",
     "Login": "Login",
-    "Sign Up": "Sign Up"
-
-
+    "Sign Up": "Sign Up",
+    "Loading": "Loading..."
 }
