@@ -18,6 +18,10 @@ class Assets {
   /// assets/icons/appIcon.png
   static const String assetsIconsAppIcon = "assets/icons/appIcon.png";
 
+  /// Assets for assetsIconsArrowLeft
+  /// assets/icons/arrow-left.svg
+  static const String assetsIconsArrowLeft = "assets/icons/arrow-left.svg";
+
   /// Assets for assetsIconsBuilding4
   /// assets/icons/building-4.svg
   static const String assetsIconsBuilding4 = "assets/icons/building-4.svg";
@@ -103,12 +107,20 @@ class Assets {
   static const String assetsIconsNotification = "assets/icons/Notification.svg";
 
   /// Assets for assetsIconsOnBoarding1
-  /// assets/icons/onBoarding1.svg
-  static const String assetsIconsOnBoarding1 = "assets/icons/onBoarding1.svg";
+  /// assets/icons/onBoarding1.png
+  static const String assetsIconsOnBoarding1 = "assets/icons/onBoarding1.png";
+
+  /// Assets for assetsIconsOnBoarding1LeftArrow
+  /// assets/icons/onBoarding1_Left_Arrow.svg
+  static const String assetsIconsOnBoarding1LeftArrow = "assets/icons/onBoarding1_Left_Arrow.svg";
+
+  /// Assets for assetsIconsOnBoarding1RightArrow
+  /// assets/icons/onBoarding1_Right_Arrow.svg
+  static const String assetsIconsOnBoarding1RightArrow = "assets/icons/onBoarding1_Right_Arrow.svg";
 
   /// Assets for assetsIconsOnBoarding2
-  /// assets/icons/onBoarding2.svg
-  static const String assetsIconsOnBoarding2 = "assets/icons/onBoarding2.svg";
+  /// assets/icons/onBoarding2.png
+  static const String assetsIconsOnBoarding2 = "assets/icons/onBoarding2.png";
 
   /// Assets for assetsIconsOnBoarding2LeftArrow
   /// assets/icons/onBoarding2_Left_Arrow.svg
@@ -119,8 +131,8 @@ class Assets {
   static const String assetsIconsOnBoarding2RightArrow = "assets/icons/onBoarding2_Right_Arrow.svg";
 
   /// Assets for assetsIconsOnBoarding3
-  /// assets/icons/onBoarding3.svg
-  static const String assetsIconsOnBoarding3 = "assets/icons/onBoarding3.svg";
+  /// assets/icons/onBoarding3.png
+  static const String assetsIconsOnBoarding3 = "assets/icons/onBoarding3.png";
 
   /// Assets for assetsIconsOnBoarding3LeftArrow
   /// assets/icons/onBoarding3_Left_Arrow.svg
@@ -129,10 +141,6 @@ class Assets {
   /// Assets for assetsIconsOnBoarding3RightArrow
   /// assets/icons/onBoarding3_Right_Arrow.svg
   static const String assetsIconsOnBoarding3RightArrow = "assets/icons/onBoarding3_Right_Arrow.svg";
-
-  /// Assets for assetsIconsOnBoardingLeftArrow
-  /// assets/icons/onBoarding_Left_Arrow.svg
-  static const String assetsIconsOnBoardingLeftArrow = "assets/icons/onBoarding_Left_Arrow.svg";
 
   /// Assets for assetsIconsOnBoardingRightArrow
   /// assets/icons/onBoarding_Right_Arrow.svg
@@ -201,6 +209,18 @@ class Assets {
   /// Assets for assetsImagesImagesIcon
   /// assets/images/ImagesIcon.svg
   static const String assetsImagesImagesIcon = "assets/images/ImagesIcon.svg";
+
+  /// Assets for assetsImagesOnBoarding1
+  /// assets/images/on_boarding_1.png
+  static const String assetsImagesOnBoarding1 = "assets/images/on_boarding_1.png";
+
+  /// Assets for assetsImagesOnBoarding2
+  /// assets/images/on_boarding_2.png
+  static const String assetsImagesOnBoarding2 = "assets/images/on_boarding_2.png";
+
+  /// Assets for assetsImagesOnBoarding3
+  /// assets/images/on_boarding_3.png
+  static const String assetsImagesOnBoarding3 = "assets/images/on_boarding_3.png";
 
   /// Assets for assetsImagesProfileImage
   /// assets/images/ProfileImage.svg

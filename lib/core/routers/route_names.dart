@@ -1,5 +1,6 @@
 class RouteNames {
   static const String splash = '/';
+  static const String onBoarding = '/onboarding';
   static const String onBoarding1 = '/onboarding-1';
   static const String onBoarding2 = '/onboarding-2';
   static const String onBoarding3 = '/onboarding-3';

@@ -22,7 +22,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
     super.initState();
-    // _navigationTimer = Timer(_splashDuration, _navigateToDashboard);
+    _navigationTimer = Timer(_splashDuration, _navigateToOnBoarding);
   }
 
   @override
@@ -31,11 +31,11 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     super.dispose();
   }
 
-  void _navigateToDashboard() {
+  void _navigateToOnBoarding() {
     if (!mounted) {
       return;
     }
-    context.go(RouteNames.dashboard);
+    context.go(RouteNames.onBoarding);
   }
 
   @override

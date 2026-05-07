@@ -5,5 +5,13 @@
     "NewFile": "NewFile",
     "Login": "Login",
     "Sign Up": "Sign Up",
-    "Loading": "Loading..."
+    "Loading": "Loading...",
+    "OnBoarding1Title": "Your connection is closer wherever you go",
+    "OnBoarding1SubTitle": "Complete your transactions easily and clearly, track your income details, and manage your services from one place",
+    "OnBoarding2Title": "Manage Your Services",
+    "OnBoarding2SubTitle": "Control your services and manage your line with ease, track your line details and manage your services from one place",
+    "OnBoarding3Title": "Connect with Your Friends",
+    "OnBoarding3SubTitle": "Communicate with your friends and share your experiences, track your line details and manage your services from one place",
+    "Skip": "Skip",
+    "StartNow": "Start Now"
 }
