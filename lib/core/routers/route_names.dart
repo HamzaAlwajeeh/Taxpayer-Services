@@ -13,7 +13,7 @@ class RouteNames {
   static const String updatePassword = '/update-password';
 
   // Dashboard Routes
-  static const String base = '/base';
+  static const String dashboard = '/dashboard';
 
   // Home Routes
   static const String home = '/home';

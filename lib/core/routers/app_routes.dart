@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:tax_payer/Features/Analysis/presentation/views/analysis_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/create_store_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/login_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/sign_up_view.dart';
-import 'package:tax_payer/Features/Base/presentation/views/home_base.dart';
+import 'package:tax_payer/Features/DashBoard/presentation/views/dashboard.dart';
 import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
+import 'package:tax_payer/Features/Instructions/presentation/views/instructions_view.dart';
+import 'package:tax_payer/Features/NewFile/presentation/views/new_file_view.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/profile_view.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
 
@@ -14,7 +15,7 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 class AppRoutes {
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: RouteNames.base,
+    initialLocation: RouteNames.dashboard,
     debugLogDiagnostics: true,
 
     errorBuilder:
@@ -41,8 +42,8 @@ class AppRoutes {
 
       // App Routes
       _buildRoute(
-        path: RouteNames.base,
-        child: const HomeBase(),
+        path: RouteNames.dashboard,
+        child: const DashBoard(),
         transition: TransitionType.fade,
       ),
       _buildRoute(
@@ -51,13 +52,13 @@ class AppRoutes {
         transition: TransitionType.fade,
       ),
       _buildRoute(
-        path: RouteNames.newFile,
-        child: const AnalysisView(),
+        path: RouteNames.instructions,
+        child: const InstructionsView(),
         transition: TransitionType.fade,
       ),
       _buildRoute(
-        path: RouteNames.instructions,
-        child: const AnalysisView(),
+        path: RouteNames.newFile,
+        child: const NewFileView(),
         transition: TransitionType.fade,
       ),
       _buildRoute(

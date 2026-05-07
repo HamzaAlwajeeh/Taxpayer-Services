@@ -10,6 +10,10 @@ class Assets {
   /// assets/icons/add-square.svg
   static const String assetsIconsAddSquare = "assets/icons/add-square.svg";
 
+  /// Assets for assetsIconsAddSquareBold
+  /// assets/icons/add-square-bold.svg
+  static const String assetsIconsAddSquareBold = "assets/icons/add-square-bold.svg";
+
   /// Assets for assetsIconsAppIcon
   /// assets/icons/appIcon.png
   static const String assetsIconsAppIcon = "assets/icons/appIcon.png";
@@ -54,17 +58,25 @@ class Assets {
   /// assets/icons/home.svg
   static const String assetsIconsHome = "assets/icons/home.svg";
 
+  /// Assets for assetsIconsHomeBold
+  /// assets/icons/homeBold.svg
+  static const String assetsIconsHomeBold = "assets/icons/homeBold.svg";
+
   /// Assets for assetsIconsImage
   /// assets/icons/image.svg
   static const String assetsIconsImage = "assets/icons/image.svg";
 
   /// Assets for assetsIconsImage2
-  /// assets/icons/image2.svg
-  static const String assetsIconsImage2 = "assets/icons/image2.svg";
+  /// assets/icons/image2.png
+  static const String assetsIconsImage2 = "assets/icons/image2.png";
 
   /// Assets for assetsIconsLampCharge
   /// assets/icons/lamp-charge.svg
   static const String assetsIconsLampCharge = "assets/icons/lamp-charge.svg";
+
+  /// Assets for assetsIconsLampChargeBold
+  /// assets/icons/lamp-charge-bold.svg
+  static const String assetsIconsLampChargeBold = "assets/icons/lamp-charge-bold.svg";
 
   /// Assets for assetsIconsLocation
   /// assets/icons/location.svg
@@ -145,6 +157,10 @@ class Assets {
   /// Assets for assetsIconsProfile
   /// assets/icons/profile.svg
   static const String assetsIconsProfile = "assets/icons/profile.svg";
+
+  /// Assets for assetsIconsProfileBold
+  /// assets/icons/profile-bold.svg
+  static const String assetsIconsProfileBold = "assets/icons/profile-bold.svg";
 
   /// Assets for assetsIconsSend
   /// assets/icons/send.svg

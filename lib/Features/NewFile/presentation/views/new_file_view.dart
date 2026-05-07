@@ -1,0 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:tax_payer/Features/NewFile/presentation/views/widgets/new_file_view_body.dart';
+import 'package:tax_payer/core/widgets/gradient_background.dart';
+
+class NewFileView extends StatelessWidget {
+  const NewFileView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(body: GradientBackground(child: const NewFileViewBody()));
+  }
+}

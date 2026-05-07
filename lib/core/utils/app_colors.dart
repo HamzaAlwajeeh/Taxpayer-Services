@@ -25,8 +25,12 @@ abstract class AppColors {
           : const Color(0xff463F3F).withValues(alpha: 0.60);
   static Color textBoldColor([BuildContext? context]) =>
       isDarkMode(context) ? const Color(0xffFFFFFF) : const Color(0xff463F3F);
-  static Color textRedColor([BuildContext? context]) =>
-      isDarkMode(context) ? const Color(0xffFFFFFF) : const Color(0xff7F1D1D);
+  static Color textRedColor([BuildContext? context, bool isFixed = false]) =>
+      isDarkMode(context)
+          ? isFixed
+              ? const Color(0xff7F1D1D)
+              : const Color(0xffFFFFFF)
+          : const Color(0xff7F1D1D);
   static Color textFeilColor([BuildContext? context]) =>
       isDarkMode(context) ? const Color(0xffF8FAFC) : const Color(0xffF8FAFC);
   static Color itemsColor([BuildContext? context]) =>

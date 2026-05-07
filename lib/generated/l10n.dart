@@ -53,6 +53,38 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Home`
+  String get Home {
+    return Intl.message('Home', name: 'Home', desc: '', args: []);
+  }
+
+  /// `Profile`
+  String get Profile {
+    return Intl.message('Profile', name: 'Profile', desc: '', args: []);
+  }
+
+  /// `Instructions`
+  String get Instructions {
+    return Intl.message(
+      'Instructions',
+      name: 'Instructions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NewFile`
+  String get NewFile {
+    return Intl.message('NewFile', name: 'NewFile', desc: '', args: []);
+  }
+
+  /// `Login`
+  String get Login {
+    return Intl.message('Login', name: 'Login', desc: '', args: []);
+  }
+
+  // skipped getter for the 'Sign Up' key
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
