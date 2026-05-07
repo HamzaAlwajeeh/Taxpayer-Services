@@ -90,6 +90,76 @@ class S {
   String get Loading {
     return Intl.message('Loading...', name: 'Loading', desc: '', args: []);
   }
+
+  /// `Your connection is closer wherever you go`
+  String get OnBoarding1Title {
+    return Intl.message(
+      'Your connection is closer wherever you go',
+      name: 'OnBoarding1Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complete your transactions easily and clearly, track your income details, and manage your services from one place`
+  String get OnBoarding1SubTitle {
+    return Intl.message(
+      'Complete your transactions easily and clearly, track your income details, and manage your services from one place',
+      name: 'OnBoarding1SubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage Your Services`
+  String get OnBoarding2Title {
+    return Intl.message(
+      'Manage Your Services',
+      name: 'OnBoarding2Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Control your services and manage your line with ease, track your line details and manage your services from one place`
+  String get OnBoarding2SubTitle {
+    return Intl.message(
+      'Control your services and manage your line with ease, track your line details and manage your services from one place',
+      name: 'OnBoarding2SubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connect with Your Friends`
+  String get OnBoarding3Title {
+    return Intl.message(
+      'Connect with Your Friends',
+      name: 'OnBoarding3Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Communicate with your friends and share your experiences, track your line details and manage your services from one place`
+  String get OnBoarding3SubTitle {
+    return Intl.message(
+      'Communicate with your friends and share your experiences, track your line details and manage your services from one place',
+      name: 'OnBoarding3SubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip`
+  String get Skip {
+    return Intl.message('Skip', name: 'Skip', desc: '', args: []);
+  }
+
+  /// `Start Now`
+  String get StartNow {
+    return Intl.message('Start Now', name: 'StartNow', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -27,6 +27,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
     "NewFile": MessageLookupByLibrary.simpleMessage("NewFile"),
+    "OnBoarding1SubTitle": MessageLookupByLibrary.simpleMessage(
+      "Complete your transactions easily and clearly, track your income details, and manage your services from one place",
+    ),
+    "OnBoarding1Title": MessageLookupByLibrary.simpleMessage(
+      "Your connection is closer wherever you go",
+    ),
+    "OnBoarding2SubTitle": MessageLookupByLibrary.simpleMessage(
+      "Control your services and manage your line with ease, track your line details and manage your services from one place",
+    ),
+    "OnBoarding2Title": MessageLookupByLibrary.simpleMessage(
+      "Manage Your Services",
+    ),
+    "OnBoarding3SubTitle": MessageLookupByLibrary.simpleMessage(
+      "Communicate with your friends and share your experiences, track your line details and manage your services from one place",
+    ),
+    "OnBoarding3Title": MessageLookupByLibrary.simpleMessage(
+      "Connect with Your Friends",
+    ),
     "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "StartNow": MessageLookupByLibrary.simpleMessage("Start Now"),
   };
 }

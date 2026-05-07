@@ -27,6 +27,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "Loading": MessageLookupByLibrary.simpleMessage("جار التحميل..."),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "NewFile": MessageLookupByLibrary.simpleMessage("ملف جديد"),
+    "OnBoarding1SubTitle": MessageLookupByLibrary.simpleMessage(
+      "أجرِ مكالماتك بكل سهولة ووضوح، وتابع تفاصيل خطك وتحكم في خدماتك من مكان واحد",
+    ),
+    "OnBoarding1Title": MessageLookupByLibrary.simpleMessage(
+      "اتصالك أقرب مما تتخيل",
+    ),
+    "OnBoarding2SubTitle": MessageLookupByLibrary.simpleMessage(
+      "تحكم في خدماتك وقم بإدارة خطك بسهولة، وتابع تفاصيل خطك وتحكم في خدماتك من مكان واحد",
+    ),
+    "OnBoarding2Title": MessageLookupByLibrary.simpleMessage("تحكم في خدماتك"),
+    "OnBoarding3SubTitle": MessageLookupByLibrary.simpleMessage(
+      "تواصل مع أصدقائك وشاركهم تجاربك، وتابع تفاصيل خطك وتحكم في خدماتك من مكان واحد",
+    ),
+    "OnBoarding3Title": MessageLookupByLibrary.simpleMessage(
+      "تواصل مع أصدقائك",
+    ),
     "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
   };
 }

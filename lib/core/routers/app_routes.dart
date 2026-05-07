@@ -7,6 +7,7 @@ import 'package:tax_payer/Features/DashBoard/presentation/views/dashboard.dart';
 import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instructions_view.dart';
 import 'package:tax_payer/Features/NewFile/presentation/views/new_file_view.dart';
+import 'package:tax_payer/Features/OnBoarding/presentation/views/on_boarding_view.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/profile_view.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/splash_view.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
@@ -28,6 +29,11 @@ class AppRoutes {
       _buildRoute(
         path: RouteNames.splash,
         child: const SplashView(),
+        transition: TransitionType.fade,
+      ),
+      _buildRoute(
+        path: RouteNames.onBoarding,
+        child: const OnBoardingView(),
         transition: TransitionType.fade,
       ),
       // Auth Routes
