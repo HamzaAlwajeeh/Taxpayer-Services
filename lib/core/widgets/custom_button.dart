@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
 
@@ -8,18 +9,33 @@ class CustomButton extends StatelessWidget {
   final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        minimumSize: const Size.fromHeight(56),
-        backgroundColor: AppColors.primaryColor(context),
-        padding: const EdgeInsets.symmetric(vertical: 14),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      ),
-      child: Text(
-        title,
-        style: TextStyles.bold18.copyWith(
-          color: AppColors.textPrimaryColor(context),
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        width: double.infinity,
+        height: 56,
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Color(
+                0xffD31313,
+              ).withOpacity(0.40).withValues(alpha: 0.40),
+              blurRadius: AppSpacing.s16,
+              offset: const Offset(0, 0),
+            ),
+          ],
+          borderRadius: BorderRadius.circular(AppSpacing.radius16),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xff820005), Color(0xffAA1212)],
+          ),
+        ),
+        child: Center(
+          child: Text(
+            title,
+            style: TextStyles.bold22.copyWith(color: AppColors.white()),
+          ),
         ),
       ),
     );
