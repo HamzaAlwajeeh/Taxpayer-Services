@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for assetsIconsActivity
   /// assets/icons/activity.svg
   static const String assetsIconsActivity = "assets/icons/activity.svg";
@@ -12,7 +12,8 @@ class Assets {
 
   /// Assets for assetsIconsAddSquareBold
   /// assets/icons/add-square-bold.svg
-  static const String assetsIconsAddSquareBold = "assets/icons/add-square-bold.svg";
+  static const String assetsIconsAddSquareBold =
+      "assets/icons/add-square-bold.svg";
 
   /// Assets for assetsIconsAppIcon
   /// assets/icons/appIcon.png
@@ -40,11 +41,13 @@ class Assets {
 
   /// Assets for assetsIconsCustomersSupportChat
   /// assets/icons/customers_support_chat.svg
-  static const String assetsIconsCustomersSupportChat = "assets/icons/customers_support_chat.svg";
+  static const String assetsIconsCustomersSupportChat =
+      "assets/icons/customers_support_chat.svg";
 
   /// Assets for assetsIconsDollarCircle
   /// assets/icons/dollar-circle.svg
-  static const String assetsIconsDollarCircle = "assets/icons/dollar-circle.svg";
+  static const String assetsIconsDollarCircle =
+      "assets/icons/dollar-circle.svg";
 
   /// Assets for assetsIconsEdit
   /// assets/icons/edit.svg
@@ -80,7 +83,8 @@ class Assets {
 
   /// Assets for assetsIconsLampChargeBold
   /// assets/icons/lamp-charge-bold.svg
-  static const String assetsIconsLampChargeBold = "assets/icons/lamp-charge-bold.svg";
+  static const String assetsIconsLampChargeBold =
+      "assets/icons/lamp-charge-bold.svg";
 
   /// Assets for assetsIconsLocation
   /// assets/icons/location.svg
@@ -96,7 +100,8 @@ class Assets {
 
   /// Assets for assetsIconsMessageQuestion
   /// assets/icons/message-question.svg
-  static const String assetsIconsMessageQuestion = "assets/icons/message-question.svg";
+  static const String assetsIconsMessageQuestion =
+      "assets/icons/message-question.svg";
 
   /// Assets for assetsIconsMoon
   /// assets/icons/moon.svg
@@ -112,11 +117,13 @@ class Assets {
 
   /// Assets for assetsIconsOnBoarding1LeftArrow
   /// assets/icons/onBoarding1_Left_Arrow.svg
-  static const String assetsIconsOnBoarding1LeftArrow = "assets/icons/onBoarding1_Left_Arrow.svg";
+  static const String assetsIconsOnBoarding1LeftArrow =
+      "assets/icons/onBoarding1_Left_Arrow.svg";
 
   /// Assets for assetsIconsOnBoarding1RightArrow
   /// assets/icons/onBoarding1_Right_Arrow.svg
-  static const String assetsIconsOnBoarding1RightArrow = "assets/icons/onBoarding1_Right_Arrow.svg";
+  static const String assetsIconsOnBoarding1RightArrow =
+      "assets/icons/onBoarding1_Right_Arrow.svg";
 
   /// Assets for assetsIconsOnBoarding2
   /// assets/icons/onBoarding2.png
@@ -124,11 +131,13 @@ class Assets {
 
   /// Assets for assetsIconsOnBoarding2LeftArrow
   /// assets/icons/onBoarding2_Left_Arrow.svg
-  static const String assetsIconsOnBoarding2LeftArrow = "assets/icons/onBoarding2_Left_Arrow.svg";
+  static const String assetsIconsOnBoarding2LeftArrow =
+      "assets/icons/onBoarding2_Left_Arrow.svg";
 
   /// Assets for assetsIconsOnBoarding2RightArrow
   /// assets/icons/onBoarding2_Right_Arrow.svg
-  static const String assetsIconsOnBoarding2RightArrow = "assets/icons/onBoarding2_Right_Arrow.svg";
+  static const String assetsIconsOnBoarding2RightArrow =
+      "assets/icons/onBoarding2_Right_Arrow.svg";
 
   /// Assets for assetsIconsOnBoarding3
   /// assets/icons/onBoarding3.png
@@ -136,15 +145,18 @@ class Assets {
 
   /// Assets for assetsIconsOnBoarding3LeftArrow
   /// assets/icons/onBoarding3_Left_Arrow.svg
-  static const String assetsIconsOnBoarding3LeftArrow = "assets/icons/onBoarding3_Left_Arrow.svg";
+  static const String assetsIconsOnBoarding3LeftArrow =
+      "assets/icons/onBoarding3_Left_Arrow.svg";
 
   /// Assets for assetsIconsOnBoarding3RightArrow
   /// assets/icons/onBoarding3_Right_Arrow.svg
-  static const String assetsIconsOnBoarding3RightArrow = "assets/icons/onBoarding3_Right_Arrow.svg";
+  static const String assetsIconsOnBoarding3RightArrow =
+      "assets/icons/onBoarding3_Right_Arrow.svg";
 
   /// Assets for assetsIconsOnBoardingRightArrow
   /// assets/icons/onBoarding_Right_Arrow.svg
-  static const String assetsIconsOnBoardingRightArrow = "assets/icons/onBoarding_Right_Arrow.svg";
+  static const String assetsIconsOnBoardingRightArrow =
+      "assets/icons/onBoarding_Right_Arrow.svg";
 
   /// Assets for assetsIconsPdf
   /// assets/icons/pdf.svg
@@ -212,19 +224,23 @@ class Assets {
 
   /// Assets for assetsImagesOnBoarding1
   /// assets/images/on_boarding_1.png
-  static const String assetsImagesOnBoarding1 = "assets/images/on_boarding_1.png";
+  static const String assetsImagesOnBoarding1 =
+      "assets/images/on_boarding_1.png";
 
   /// Assets for assetsImagesOnBoarding2
   /// assets/images/on_boarding_2.png
-  static const String assetsImagesOnBoarding2 = "assets/images/on_boarding_2.png";
+  static const String assetsImagesOnBoarding2 =
+      "assets/images/on_boarding_2.png";
 
   /// Assets for assetsImagesOnBoarding3
   /// assets/images/on_boarding_3.png
-  static const String assetsImagesOnBoarding3 = "assets/images/on_boarding_3.png";
+  static const String assetsImagesOnBoarding3 =
+      "assets/images/on_boarding_3.png";
 
   /// Assets for assetsImagesProfileImage
   /// assets/images/ProfileImage.svg
-  static const String assetsImagesProfileImage = "assets/images/ProfileImage.svg";
+  static const String assetsImagesProfileImage =
+      "assets/images/ProfileImage.svg";
 
   /// Assets for assetsImagesPurger
   /// assets/images/Purger.svg
@@ -232,10 +248,11 @@ class Assets {
 
   /// Assets for assetsImagesSplashLogoDark
   /// assets/images/splashLogoDark.png
-  static const String assetsImagesSplashLogoDark = "assets/images/splashLogoDark.png";
+  static const String assetsImagesSplashLogoDark =
+      "assets/images/splashLogoDark.png";
 
   /// Assets for assetsImagesSplashLogoLight
   /// assets/images/splashLogoLight.png
-  static const String assetsImagesSplashLogoLight = "assets/images/splashLogoLight.png";
+  static const String assetsImagesSplashLogoLight =
+      "assets/images/splashLogoLight.png";
 }
-

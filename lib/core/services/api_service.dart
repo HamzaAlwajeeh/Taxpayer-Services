@@ -2,9 +2,10 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:tax_payer/core/constants/constants.dart';
 
 class ApiService {
-  final _baseUrl = 'http://192.168.211.89:8000/api';
+  final _baseUrl = AppConstants.kBaseUrl;
 
   final Dio dio;
   ApiService(this.dio);
