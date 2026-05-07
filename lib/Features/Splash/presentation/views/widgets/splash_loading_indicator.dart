@@ -13,32 +13,6 @@ class SplashLoadingIndicator extends StatefulWidget {
 
 class _SplashLoadingIndicatorState extends State<SplashLoadingIndicator>
     with SingleTickerProviderStateMixin {
-  static const double _indicatorWidth = 112;
-  static const double _indicatorHeight = 5;
-  static const Duration _loadingDuration = Duration(milliseconds: 700);
-
-  late final AnimationController _loadingController;
-  late final Animation<double> _loadingAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadingController = AnimationController(
-      vsync: this,
-      duration: _loadingDuration,
-    )..repeat();
-    _loadingAnimation = CurvedAnimation(
-      parent: _loadingController,
-      curve: Curves.easeInOut,
-    );
-  }
-
-  @override
-  void dispose() {
-    _loadingController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
