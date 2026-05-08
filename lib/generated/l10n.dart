@@ -91,6 +91,16 @@ class S {
 
   // skipped getter for the 'Sign Up' key
 
+  /// `Logout Successfully`
+  String get LogoutSuccess {
+    return Intl.message(
+      'Logout Successfully',
+      name: 'LogoutSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Loading...`
   String get Loading {
     return Intl.message('Loading...', name: 'Loading', desc: '', args: []);

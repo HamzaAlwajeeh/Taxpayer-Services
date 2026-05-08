@@ -41,10 +41,12 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     if (Prefs.getBool(AppConstants.kSeenOnBoarding) == true) {
       if (Prefs.getBool(AppConstants.kIsLogedIn) == true) {
         context.go(RouteNames.dashboard);
+      } else {
+        context.go(RouteNames.login);
       }
-      context.go(RouteNames.login);
+    } else {
+      context.go(RouteNames.onBoarding1);
     }
-    context.go(RouteNames.onBoarding1);
   }
 
   @override

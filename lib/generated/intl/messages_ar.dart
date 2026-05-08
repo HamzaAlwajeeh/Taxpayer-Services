@@ -39,6 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تسجيل الدخول بنجاح",
     ),
     "Logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "LogoutSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم تسجيل الحروج بنجاح",
+    ),
     "MethodNotFound": MessageLookupByLibrary.simpleMessage(
       "الطريقة غير موجودة، يرجى المحاولة مرة أخرى",
     ),
