@@ -32,7 +32,7 @@ class AppRoutes {
         transition: TransitionType.fade,
       ),
       _buildRoute(
-        path: RouteNames.onBoarding,
+        path: RouteNames.onBoarding1,
         child: const OnBoardingView(),
         transition: TransitionType.fade,
       ),

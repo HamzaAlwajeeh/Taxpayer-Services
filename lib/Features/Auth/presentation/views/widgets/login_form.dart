@@ -3,10 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/login_cubit/login_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/login_cubit/login_state.dart';
+import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
 import 'package:tax_payer/core/widgets/custom_text_form_feild.dart';
@@ -44,6 +46,7 @@ class _LoginFormState extends State<LoginForm> {
             icon: Icons.check,
             textColor: AppColors.white(),
           );
+          Prefs.setBool(AppConstants.kIsLogedIn, true);
           context.go(RouteNames.dashboard);
         } else if (state is LoginFailure) {
           customToastBar(

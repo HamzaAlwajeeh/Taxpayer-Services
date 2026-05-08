@@ -188,13 +188,3 @@ class SelectImage extends StatelessWidget {
     );
   }
 }
-
-
-
-//  String _url(String endPoint) {
-//     return '${_baseUrl.replaceAll(RegExp(r'/+$'), '')}/${endPoint.replaceAll(RegExp(r'^/+'), '')}';
-//   }
-
-//     final url = _url(endPoint);
-//     log('POST $url');
-//     log('BODY $body');
