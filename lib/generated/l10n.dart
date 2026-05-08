@@ -84,6 +84,11 @@ class S {
     return Intl.message('Login', name: 'Login', desc: '', args: []);
   }
 
+  /// `Logout`
+  String get Logout {
+    return Intl.message('Logout', name: 'Logout', desc: '', args: []);
+  }
+
   // skipped getter for the 'Sign Up' key
 
   /// `Loading...`

@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
     "LoginSuccess": MessageLookupByLibrary.simpleMessage("Login Successully"),
+    "Logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "MethodNotFound": MessageLookupByLibrary.simpleMessage(
       "Method Not Found, please try again",
     ),
