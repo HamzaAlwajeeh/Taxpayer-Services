@@ -5,11 +5,12 @@ import 'package:tax_payer/Features/OnBoarding/presentation/views/widgets/on_boar
 import 'package:tax_payer/Features/OnBoarding/presentation/views/widgets/on_boarding_navigation_bar.dart';
 import 'package:tax_payer/Features/OnBoarding/presentation/views/widgets/on_boarding_page.dart';
 import 'package:tax_payer/Features/OnBoarding/presentation/views/widgets/on_boarding_page_indicator.dart';
+import 'package:tax_payer/Features/OnBoarding/presentation/views/widgets/on_boarding_text.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
+import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
-import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
-import 'package:tax_payer/core/utils/app_text_style.dart';
 import 'package:tax_payer/core/widgets/gradient_background.dart';
 import 'package:tax_payer/generated/l10n.dart';
 
@@ -80,6 +81,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
 
   void goToNextPage() {
     if (currentPage == pages.length - 1) {
+      Prefs.setBool(AppConstants.kSeenOnBoarding, true);
       context.go(RouteNames.login);
       return;
     }
@@ -116,40 +118,17 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
               pageCount: pages.length,
             ),
             const SizedBox(height: AppSpacing.s16),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.s24),
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 220),
-                child: Column(
-                  key: ValueKey(currentPage),
-                  children: [
-                    Text(
-                      pages[currentPage].title,
-                      textAlign: TextAlign.center,
-                      style: TextStyles.bold24.copyWith(
-                        color: AppColors.textBoldColor(context),
-                      ),
-                    ),
-                    const SizedBox(height: AppSpacing.s16),
-                    Text(
-                      pages[currentPage].subTitle,
-                      textAlign: TextAlign.center,
-                      style: TextStyles.semiBold16.copyWith(
-                        height: 1.35,
-                        color: AppColors.textSecondaryColor(context),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            OnBoardingText(currentPage: currentPage, pages: pages),
             const Spacer(),
             OnBoardingNavigationBar(
               page: pages[currentPage],
               currentPage: currentPage,
               pageCount: pages.length,
               onNext: goToNextPage,
-              onSkip: () => context.go(RouteNames.login),
+              onSkip: () {
+                Prefs.setBool(AppConstants.kSeenOnBoarding, true);
+                context.go(RouteNames.login);
+              },
             ),
           ],
         ),

@@ -5,7 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_background_colors.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_loading_indicator.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_logo.dart';
+import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/widgets/gradient_background.dart';
 
@@ -36,7 +38,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     if (!mounted) {
       return;
     }
-    context.go(RouteNames.onBoarding);
+    if (Prefs.getBool(AppConstants.kSeenOnBoarding) == true) {
+      if (Prefs.getBool(AppConstants.kIsLogedIn) == true) {
+        context.go(RouteNames.dashboard);
+      }
+      context.go(RouteNames.login);
+    }
+    context.go(RouteNames.onBoarding1);
   }
 
   @override
