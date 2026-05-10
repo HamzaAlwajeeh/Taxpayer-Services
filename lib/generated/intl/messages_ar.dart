@@ -41,6 +41,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "انتهت مهلة الاتصال بالخادم",
     ),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "EnterNewPasswordDesc": MessageLookupByLibrary.simpleMessage(
+      "أدخل كلمة المرور الجديدة وقم بتأكيدها",
+    ),
+    "EnterUsernameAndPhone": MessageLookupByLibrary.simpleMessage(
+      "أدخل اسم المستخدم ورقم الهاتف للتحقق من هويتك",
+    ),
+    "EnterVerificationCode": MessageLookupByLibrary.simpleMessage(
+      "أدخل رمز التحقق",
+    ),
+    "EnterVerificationCodeDesc": MessageLookupByLibrary.simpleMessage(
+      "أدخل الرمز المرسل إلى هاتفك للتحقق من هويتك",
+    ),
+    "FieldIsRequired": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "FirstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage(
       "استعادة كلمة المرور",
@@ -95,6 +108,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "حدث خطأ، يرجى المحاولة لاحقًا",
     ),
     "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "PasswordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور بنجاح",
+    ),
+    "PasswordMinLength": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+    ),
+    "PasswordNotMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور غير مطابقة",
+    ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
     "ProfileImage": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
