@@ -23,14 +23,29 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "BadCertificate": MessageLookupByLibrary.simpleMessage("Bad certificate"),
+    "Camera": MessageLookupByLibrary.simpleMessage("Camera"),
+    "CameraSubTitle": MessageLookupByLibrary.simpleMessage("Take a new photo"),
+    "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "ConfirmPassword": MessageLookupByLibrary.simpleMessage("ConfirmPassword"),
     "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
       "Connection timeout with ApiServer",
     ),
+    "Email": MessageLookupByLibrary.simpleMessage("Email"),
+    "FirstName": MessageLookupByLibrary.simpleMessage("First Name"),
     "Home": MessageLookupByLibrary.simpleMessage("Home"),
+    "IdCard": MessageLookupByLibrary.simpleMessage("IdCard"),
+    "ImageIsRequired": MessageLookupByLibrary.simpleMessage(
+      "Image is required",
+    ),
+    "ImageSourceSubTitle": MessageLookupByLibrary.simpleMessage(
+      "Choose how you want to add the image",
+    ),
+    "ImageSourceTitle": MessageLookupByLibrary.simpleMessage("Image source"),
     "Instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
     "InternalServerError": MessageLookupByLibrary.simpleMessage(
       "Internal Server Error, please try again later",
     ),
+    "LastName": MessageLookupByLibrary.simpleMessage("Last Name"),
     "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
     "LoginSuccess": MessageLookupByLibrary.simpleMessage("Login Successully"),
@@ -66,6 +81,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "OopsError": MessageLookupByLibrary.simpleMessage(
       "Oops, there is an error, please try again later",
     ),
+    "Password": MessageLookupByLibrary.simpleMessage("Password"),
+    "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
       "Receive timeout with ApiServer",
@@ -76,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SendTimeout": MessageLookupByLibrary.simpleMessage(
       "Send timeout with ApiServer",
     ),
+    "SignUp": MessageLookupByLibrary.simpleMessage("SignUp"),
     "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "StartNow": MessageLookupByLibrary.simpleMessage("Start Now"),
     "UnauthorizedRequest": MessageLookupByLibrary.simpleMessage(
@@ -84,5 +102,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "UnknownError": MessageLookupByLibrary.simpleMessage(
       "Unknown error, something went wrong, please try again later",
     ),
+    "UploadFile": MessageLookupByLibrary.simpleMessage("Upload file"),
+    "UploadFileSubTitle": MessageLookupByLibrary.simpleMessage(
+      "Select JPEG, JPG, or PNG",
+    ),
+    "UserName": MessageLookupByLibrary.simpleMessage("UserName"),
   };
 }

@@ -4,10 +4,11 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:tax_payer/Features/Auth/presentation/logic/upload_image_controller.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/upload_image_controller.dart';
+import 'package:tax_payer/generated/l10n.dart';
 
 class UploadImage extends StatefulWidget {
   const UploadImage({
@@ -15,10 +16,12 @@ class UploadImage extends StatefulWidget {
     required this.title,
     required this.subTitle,
     required this.isStoreImage,
+    this.onImageChanged,
   });
   final String title;
   final String subTitle;
   final bool isStoreImage;
+  final ValueChanged<File?>? onImageChanged;
   @override
   State<UploadImage> createState() => _UploadImageState();
 }
@@ -54,7 +57,7 @@ class _UploadImageState extends State<UploadImage>
         return FormField<File?>(
           validator: (value) {
             if (image == null) {
-              return 'يجب إضافة صورة ';
+              return S.of(context).ImageIsRequired;
             }
             return null;
           },
@@ -65,7 +68,7 @@ class _UploadImageState extends State<UploadImage>
                 DottedBorder(
                   animation: _controller,
                   options: RoundedRectDottedBorderOptions(
-                    color: AppColors.textPrimaryColor(context),
+                    color: AppColors.primaryColor(context),
                     strokeWidth: 2,
                     dashPattern: [6, 6],
                     radius: Radius.circular(12),
@@ -79,16 +82,22 @@ class _UploadImageState extends State<UploadImage>
                                 isStoreImage: widget.isStoreImage,
                               );
                               formState.didChange(null);
+                              widget.onImageChanged?.call(null);
                             },
                           )
                           : SelectImage(
                             title: widget.title,
                             subTitle: widget.subTitle,
-                            onImageSelected: () {
-                              controller.showImageSourceDialog(
-                                context,
-                                isStoreImage: widget.isStoreImage,
-                              );
+                            onImageSelected: () async {
+                              final selectedImage = await controller
+                                  .showImageSourceDialog(
+                                    context,
+                                    isStoreImage: widget.isStoreImage,
+                                  );
+                              if (selectedImage != null) {
+                                formState.didChange(selectedImage);
+                                widget.onImageChanged?.call(selectedImage);
+                              }
                             },
                           ),
                 ),
@@ -98,7 +107,7 @@ class _UploadImageState extends State<UploadImage>
                     child: Text(
                       formState.errorText!,
                       style: TextStyles.semiBold14.copyWith(
-                        color: AppColors.red().withOpacity(0.8),
+                        color: AppColors.red().withValues(alpha: 0.8),
                       ),
                     ),
                   ),
@@ -133,7 +142,7 @@ class OpenImage extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                color: AppColors.red().withOpacity(0.2),
+                color: AppColors.red().withValues(alpha: 0.2),
                 shape: BoxShape.circle,
               ),
               child: Icon(Icons.delete, color: AppColors.red(), size: 20),
@@ -154,7 +163,7 @@ class SelectImage extends StatelessWidget {
   });
   final String title;
   final String subTitle;
-  final VoidCallback onImageSelected;
+  final Future<void> Function() onImageSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +180,14 @@ class SelectImage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset(Assets.assetsImagesImagesIcon),
+            SvgPicture.asset(
+              Assets.assetsIconsUploadFiles,
+              width: 35,
+              colorFilter: ColorFilter.mode(
+                AppColors.textRedColor(context),
+                BlendMode.srcIn,
+              ),
+            ),
             const SizedBox(height: 10),
             Text(
               title,
