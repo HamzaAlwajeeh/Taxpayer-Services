@@ -157,16 +157,6 @@ class S {
     return Intl.message('Password', name: 'Password', desc: '', args: []);
   }
 
-  /// `ConfirmPassword`
-  String get ConfirmPassword {
-    return Intl.message(
-      'ConfirmPassword',
-      name: 'ConfirmPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `SignUp`
   String get SignUp {
     return Intl.message('SignUp', name: 'SignUp', desc: '', args: []);
@@ -452,6 +442,156 @@ class S {
     return Intl.message(
       'Oops, there is an error, please try again later',
       name: 'OopsError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password`
+  String get ForgotPassword {
+    return Intl.message(
+      'Forgot Password',
+      name: 'ForgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter username and phone number to verify your identity`
+  String get EnterUsernameAndPhone {
+    return Intl.message(
+      'Enter username and phone number to verify your identity',
+      name: 'EnterUsernameAndPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify Code`
+  String get VerifyCodeTitle {
+    return Intl.message(
+      'Verify Code',
+      name: 'VerifyCodeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the code sent to your phone to verify your identity`
+  String get EnterVerificationCodeDesc {
+    return Intl.message(
+      'Enter the code sent to your phone to verify your identity',
+      name: 'EnterVerificationCodeDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get ResetPasswordTitle {
+    return Intl.message(
+      'Reset Password',
+      name: 'ResetPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your new password and confirm it`
+  String get EnterNewPasswordDesc {
+    return Intl.message(
+      'Enter your new password and confirm it',
+      name: 'EnterNewPasswordDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Code sent successfully`
+  String get CodeSentSuccessfully {
+    return Intl.message(
+      'Code sent successfully',
+      name: 'CodeSentSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Code verified successfully`
+  String get CodeVerifiedSuccessfully {
+    return Intl.message(
+      'Code verified successfully',
+      name: 'CodeVerifiedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password changed successfully`
+  String get PasswordChangedSuccessfully {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'PasswordChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get Next {
+    return Intl.message('Next', name: 'Next', desc: '', args: []);
+  }
+
+  /// `Resend Code`
+  String get ResendCode {
+    return Intl.message('Resend Code', name: 'ResendCode', desc: '', args: []);
+  }
+
+  /// `Verification Code`
+  String get VerificationCode {
+    return Intl.message(
+      'Verification Code',
+      name: 'VerificationCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Verification Code`
+  String get EnterVerificationCode {
+    return Intl.message(
+      'Enter Verification Code',
+      name: 'EnterVerificationCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get NewPassword {
+    return Intl.message(
+      'New Password',
+      name: 'NewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get ConfirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'ConfirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get ResetPassword {
+    return Intl.message(
+      'Reset Password',
+      name: 'ResetPassword',
       desc: '',
       args: [],
     );

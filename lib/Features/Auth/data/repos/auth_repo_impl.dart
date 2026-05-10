@@ -93,28 +93,69 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<Either<Failure, String>> changePassword({
-    required String newPassword,
-    required String confirmNewPassword,
-  }) {
-    // TODO: implement changePassword
-    throw UnimplementedError();
+  Future<Either<Failure, String>> forgetPassword({
+    required String userName,
+    required String phone,
+  }) async {
+    try {
+      await apiService.post(
+        endPoint: AppConstants.kForgotPassword,
+        body: {
+          'user_name': userName,
+          'phone': phone,
+        },
+        token: null,
+      );
+      return right('تم إرسال رمز التحقق بنجاح');
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(errorMessage: e.toString()));
+    }
   }
 
   @override
   Future<Either<Failure, String>> confermForgetPassword({
     required String code,
-  }) {
-    // TODO: implement confermForgetPassword
-    throw UnimplementedError();
+  }) async {
+    try {
+      await apiService.post(
+        endPoint: AppConstants.kVerifyCode,
+        body: {
+          'code': code,
+        },
+        token: null,
+      );
+      return right('تم التحقق من الرمز بنجاح');
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(errorMessage: e.toString()));
+    }
   }
 
   @override
-  Future<Either<Failure, String>> forgetPassword({
-    required String userName,
-    required String phone,
-  }) {
-    // TODO: implement forgetPassword
-    throw UnimplementedError();
+  Future<Either<Failure, String>> changePassword({
+    required String newPassword,
+    required String confirmNewPassword,
+  }) async {
+    try {
+      await apiService.post(
+        endPoint: AppConstants.kResetPassword,
+        body: {
+          'new_password': newPassword,
+          'confirm_new_password': confirmNewPassword,
+        },
+        token: Prefs.getString(AppConstants.kToken),
+      );
+      return right('تم تغيير كلمة المرور بنجاح');
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(errorMessage: e.toString()));
+    }
   }
 }

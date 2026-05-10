@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/create_store_view.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/forgot_password_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/login_view.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/reset_password_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/sign_up_view.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/verify_code_view.dart';
 import 'package:tax_payer/Features/DashBoard/presentation/views/dashboard.dart';
 import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instructions_view.dart';
@@ -52,7 +55,21 @@ class AppRoutes {
         child: const CreateStoreView(),
         transition: TransitionType.slideFromLeft,
       ),
-
+      _buildRoute(
+        path: RouteNames.forgotPassword,
+        child: const ForgotPasswordView(),
+        transition: TransitionType.slideFromRight,
+      ),
+      _buildRoute(
+        path: RouteNames.verifyCode,
+        child: const VerifyCodeView(),
+        transition: TransitionType.slideFromRight,
+      ),
+      _buildRoute(
+        path: RouteNames.resetPassword,
+        child: const ResetPasswordView(),
+        transition: TransitionType.slideFromRight,
+      ),
       // App Routes
       _buildRoute(
         path: RouteNames.dashboard,

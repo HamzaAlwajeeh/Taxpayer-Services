@@ -26,15 +26,34 @@ class MessageLookup extends MessageLookupByLibrary {
     "Camera": MessageLookupByLibrary.simpleMessage("Camera"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("Take a new photo"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-    "ConfirmPassword": MessageLookupByLibrary.simpleMessage("ConfirmPassword"),
+    "CodeSentSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Code sent successfully",
+    ),
+    "CodeVerifiedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Code verified successfully",
+    ),
+    "ConfirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
       "Connection timeout with ApiServer",
     ),
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
+    "EnterNewPasswordDesc": MessageLookupByLibrary.simpleMessage(
+      "Enter your new password and confirm it",
+    ),
+    "EnterUsernameAndPhone": MessageLookupByLibrary.simpleMessage(
+      "Enter username and phone number to verify your identity",
+    ),
+    "EnterVerificationCode": MessageLookupByLibrary.simpleMessage(
+      "Enter Verification Code",
+    ),
+    "EnterVerificationCodeDesc": MessageLookupByLibrary.simpleMessage(
+      "Enter the code sent to your phone to verify your identity",
+    ),
     "FieldIsRequired": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
     "FirstName": MessageLookupByLibrary.simpleMessage("First Name"),
+    "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
     "Home": MessageLookupByLibrary.simpleMessage("Home"),
     "IdCard": MessageLookupByLibrary.simpleMessage("IdCard"),
     "ImageIsRequired": MessageLookupByLibrary.simpleMessage(
@@ -60,6 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Method Not Found, please try again",
     ),
     "NewFile": MessageLookupByLibrary.simpleMessage("NewFile"),
+    "NewPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+    "Next": MessageLookupByLibrary.simpleMessage("Next"),
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
       "No Internet connection",
     ),
@@ -85,6 +106,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Oops, there is an error, please try again later",
     ),
     "Password": MessageLookupByLibrary.simpleMessage("Password"),
+    "PasswordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Password changed successfully",
+    ),
     "PasswordMinLength": MessageLookupByLibrary.simpleMessage(
       "Password must be at least 8 characters",
     ),
@@ -99,6 +123,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "RequestCanceled": MessageLookupByLibrary.simpleMessage(
       "Request to ApiServer was canceled",
+    ),
+    "ResendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
+    "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
+    "ResetPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "Reset Password",
     ),
     "SendTimeout": MessageLookupByLibrary.simpleMessage(
       "Send timeout with ApiServer",
@@ -117,5 +146,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Select JPEG, JPG, or PNG",
     ),
     "UserName": MessageLookupByLibrary.simpleMessage("UserName"),
+    "VerificationCode": MessageLookupByLibrary.simpleMessage(
+      "Verification Code",
+    ),
+    "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("Verify Code"),
   };
 }

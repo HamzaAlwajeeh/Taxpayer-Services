@@ -10,6 +10,10 @@ abstract class AppSpacing {
   static const double s40 = 40.0;
   static const double s48 = 48.0;
 
+  static const double spacing50 = 50;
+  static const double spacing17 = 17;
+  static const double spacing24 = 24;
+
   static const double radius12 = 12.0;
   static const double radius16 = 16.0;
   static const double radius50 = 50.0;
