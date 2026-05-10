@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "انتهت مهلة الاتصال بالخادم",
     ),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "FieldIsRequired": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "FirstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
     "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "IdCard": MessageLookupByLibrary.simpleMessage("البطاقة الشخصية"),
@@ -84,6 +85,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "حدث خطأ، يرجى المحاولة لاحقًا",
     ),
     "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "PasswordMinLength": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+    ),
+    "PasswordNotMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور غير مطابقة",
+    ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(

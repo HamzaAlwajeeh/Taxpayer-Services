@@ -31,6 +31,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Connection timeout with ApiServer",
     ),
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
+    "FieldIsRequired": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "FirstName": MessageLookupByLibrary.simpleMessage("First Name"),
     "Home": MessageLookupByLibrary.simpleMessage("Home"),
     "IdCard": MessageLookupByLibrary.simpleMessage("IdCard"),
@@ -82,6 +85,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Oops, there is an error, please try again later",
     ),
     "Password": MessageLookupByLibrary.simpleMessage("Password"),
+    "PasswordMinLength": MessageLookupByLibrary.simpleMessage(
+      "Password must be at least 8 characters",
+    ),
+    "PasswordNotMatch": MessageLookupByLibrary.simpleMessage(
+      "Password does not match",
+    ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(

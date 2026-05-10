@@ -12,7 +12,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     required String firstName,
     required String lastName,
     required String phone,
-    required String idCard,
+    required File idCard,
     required File image,
     required String userName,
     required String password,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tax_payer/core/helper/get_data_function.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
+import 'package:tax_payer/generated/l10n.dart';
 
 class CustomTextFormFeild extends StatefulWidget {
   const CustomTextFormFeild({
@@ -64,14 +65,14 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
       onChanged: widget.onChanged,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'هذا الحقل مطلوب';
+          return S.of(context).FieldIsRequired;
         }
         if (widget.isPassword == true && value.length < 8) {
-          return 'يجب أن تكون كلمة المرور 8 أحرف على الأقل';
+          return S.of(context).PasswordMinLength;
         }
         if (widget.type == 'confirm' &&
             value != widget.passwordController?.text) {
-          return 'كلمة المرور غير مطابقة';
+          return S.of(context).PasswordNotMatch;
         }
         return null;
       },

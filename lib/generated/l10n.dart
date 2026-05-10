@@ -171,6 +171,36 @@ class S {
     );
   }
 
+  /// `This field is required`
+  String get FieldIsRequired {
+    return Intl.message(
+      'This field is required',
+      name: 'FieldIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters`
+  String get PasswordMinLength {
+    return Intl.message(
+      'Password must be at least 8 characters',
+      name: 'PasswordMinLength',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password does not match`
+  String get PasswordNotMatch {
+    return Intl.message(
+      'Password does not match',
+      name: 'PasswordNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Image source`
   String get ImageSourceTitle {
     return Intl.message(

@@ -44,7 +44,7 @@ class AuthRepoImpl implements AuthRepo {
   Future<Either<Failure, String>> register({
     required String firstName,
     required String lastName,
-    required String idCard,
+    required File idCard,
     required String phone,
     required File image,
     required String userName,
@@ -55,12 +55,12 @@ class AuthRepoImpl implements AuthRepo {
       await apiService.post(
         endPoint: AppConstants.kRegister,
         body: {
-          'first_name': firstName,
-          'last_name': lastName,
-          'user_name': userName,
+          'firstName': firstName,
+          'lastName': lastName,
+          'userName': userName,
           'phone': phone,
-          'id_card': idCard,
-          'image': await MultipartFile.fromFile(image.path),
+          'idCard': idCard,
+          'image': image,
           'password': password,
           'password_confirmation': confirmPassword,
         },

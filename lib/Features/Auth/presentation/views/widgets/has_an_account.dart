@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:tax_payer/Features/Auth/presentation/views/sign_up_view.dart';
+import 'package:tax_payer/core/routers/route_names.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
 
@@ -29,7 +29,7 @@ class HasAnAccount extends StatelessWidget {
         GestureDetector(
           onTap: () {
             isLoginView == true
-                ? context.push(SignUpView.routeName)
+                ? context.push(RouteNames.register)
                 : context.pop(); // context.push(SignUpView.routeName);
           },
           child: Text(

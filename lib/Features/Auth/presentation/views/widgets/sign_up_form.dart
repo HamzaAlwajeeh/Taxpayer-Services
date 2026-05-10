@@ -29,7 +29,6 @@ class _SignUpFormState extends State<SignUpForm> {
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
-  TextEditingController idCardController = TextEditingController();
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
@@ -42,7 +41,6 @@ class _SignUpFormState extends State<SignUpForm> {
     firstNameController.dispose();
     lastNameController.dispose();
     phoneController.dispose();
-    idCardController.dispose();
     usernameController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
@@ -84,15 +82,6 @@ class _SignUpFormState extends State<SignUpForm> {
               spacing: AppSpacing.s16,
               children: [
                 CustomTextFormFeild(
-                  controller: idCardController,
-                  hintText: S.of(context).IdCard,
-                  keyboardType: TextInputType.text,
-                  prefixIcon: buildSvgIcon(
-                    context,
-                    Assets.assetsIconsPersonalcard,
-                  ),
-                ),
-                CustomTextFormFeild(
                   controller: firstNameController,
                   hintText: S.of(context).FirstName,
                   keyboardType: TextInputType.text,
@@ -108,7 +97,10 @@ class _SignUpFormState extends State<SignUpForm> {
                   controller: usernameController,
                   hintText: S.of(context).UserName,
                   keyboardType: TextInputType.text,
-                  prefixIcon: buildSvgIcon(context, Assets.assetsIconsUser),
+                  prefixIcon: buildSvgIcon(
+                    context,
+                    Assets.assetsIconsPersonalcard,
+                  ),
                 ),
                 CustomTextFormFeild(
                   controller: phoneController,
@@ -123,7 +115,6 @@ class _SignUpFormState extends State<SignUpForm> {
                   hintText: S.of(context).Password,
                   keyboardType: TextInputType.visiblePassword,
                 ),
-                const SizedBox(height: 16),
                 CustomTextFormFeild(
                   prefixIcon: buildSvgIcon(context, Assets.assetsIconsLock),
                   controller: confirmPasswordController,
@@ -164,7 +155,7 @@ class _SignUpFormState extends State<SignUpForm> {
         firstName: firstNameController.text,
         lastName: lastNameController.text,
         phone: phoneController.text,
-        idCard: idCardController.text,
+        idCard: idCardImage!,
         image: idCardImage!,
         userName: usernameController.text,
         password: passwordController.text,

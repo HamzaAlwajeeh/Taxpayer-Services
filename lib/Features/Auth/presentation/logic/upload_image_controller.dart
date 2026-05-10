@@ -29,7 +29,9 @@ class UploadImageController extends GetxController {
   }
 
   Future<File?> pickFileImage({required bool isStoreImage}) async {
-    String? path = await pickFile(allowedExtensions: ['jpg', 'png', 'jpeg']);
+    String? path = await pickFile(
+      allowedExtensions: ['jpg', 'png', 'jpeg', 'gif'],
+    );
     if (path != null) {
       final image = File(path);
       isStoreImage ? storeImagePath = image : imagePath = image;
