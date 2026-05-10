@@ -28,6 +28,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "Camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
     "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "CodeSentSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال الرمز بنجاح",
+    ),
+    "CodeVerifiedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم التحقق من الرمز بنجاح",
+    ),
     "ConfirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
@@ -35,7 +41,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "انتهت مهلة الاتصال بالخادم",
     ),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "EnterNewPasswordDesc": MessageLookupByLibrary.simpleMessage(
+      "أدخل كلمة المرور الجديدة وقم بتأكيدها",
+    ),
+    "EnterUsernameAndPhone": MessageLookupByLibrary.simpleMessage(
+      "أدخل اسم المستخدم ورقم الهاتف للتحقق من هويتك",
+    ),
+    "EnterVerificationCode": MessageLookupByLibrary.simpleMessage(
+      "أدخل رمز التحقق",
+    ),
+    "EnterVerificationCodeDesc": MessageLookupByLibrary.simpleMessage(
+      "أدخل الرمز المرسل إلى هاتفك للتحقق من هويتك",
+    ),
     "FirstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
+    "ForgotPassword": MessageLookupByLibrary.simpleMessage(
+      "استعادة كلمة المرور",
+    ),
     "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "IdCard": MessageLookupByLibrary.simpleMessage("البطاقة الشخصية"),
     "ImageIsRequired": MessageLookupByLibrary.simpleMessage("الصورة مطلوبة"),
@@ -57,6 +78,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "الطريقة غير موجودة، يرجى المحاولة مرة أخرى",
     ),
     "NewFile": MessageLookupByLibrary.simpleMessage("ملف جديد"),
+    "NewPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+    "Next": MessageLookupByLibrary.simpleMessage("التالي"),
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
       "لا يوجد اتصال بالإنترنت",
     ),
@@ -80,12 +103,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "حدث خطأ، يرجى المحاولة لاحقًا",
     ),
     "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "PasswordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور بنجاح",
+    ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة استقبال الرد من الخادم",
     ),
     "RequestCanceled": MessageLookupByLibrary.simpleMessage("تم إلغاء الطلب"),
+    "ResendCode": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرمز"),
+    "ResetPassword": MessageLookupByLibrary.simpleMessage(
+      "إعادة تعيين كلمة المرور",
+    ),
+    "ResetPasswordTitle": MessageLookupByLibrary.simpleMessage(
+      "إعادة تعيين كلمة المرور",
+    ),
     "SendTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة إرسال الطلب إلى الخادم",
     ),
@@ -103,5 +136,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "اختر صورة JPEG أو JPG أو PNG",
     ),
     "UserName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+    "VerificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
+    "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("التحقق من الرمز"),
   };
 }
