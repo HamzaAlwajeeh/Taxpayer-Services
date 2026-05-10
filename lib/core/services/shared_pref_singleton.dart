@@ -44,6 +44,10 @@ class Prefs {
     return User.fromJson(jsonMap);
   }
 
+  static Future<void> removeUser(String key) async {
+    await inistance.remove(key);
+  }
+
   static removeString(String key) {
     return inistance.remove(key);
   }
