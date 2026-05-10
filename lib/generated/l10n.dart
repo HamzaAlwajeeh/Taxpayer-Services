@@ -91,6 +91,126 @@ class S {
     return Intl.message('Loading...', name: 'Loading', desc: '', args: []);
   }
 
+  /// `First Name`
+  String get FirstName {
+    return Intl.message('First Name', name: 'FirstName', desc: '', args: []);
+  }
+
+  /// `Last Name`
+  String get LastName {
+    return Intl.message('Last Name', name: 'LastName', desc: '', args: []);
+  }
+
+  /// `UserName`
+  String get UserName {
+    return Intl.message('UserName', name: 'UserName', desc: '', args: []);
+  }
+
+  /// `Email`
+  String get Email {
+    return Intl.message('Email', name: 'Email', desc: '', args: []);
+  }
+
+  /// `Phone Number`
+  String get PhoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'PhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `IdCard`
+  String get IdCard {
+    return Intl.message('IdCard', name: 'IdCard', desc: '', args: []);
+  }
+
+  /// `Password`
+  String get Password {
+    return Intl.message('Password', name: 'Password', desc: '', args: []);
+  }
+
+  /// `ConfirmPassword`
+  String get ConfirmPassword {
+    return Intl.message(
+      'ConfirmPassword',
+      name: 'ConfirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SignUp`
+  String get SignUp {
+    return Intl.message('SignUp', name: 'SignUp', desc: '', args: []);
+  }
+
+  /// `Image is required`
+  String get ImageIsRequired {
+    return Intl.message(
+      'Image is required',
+      name: 'ImageIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Image source`
+  String get ImageSourceTitle {
+    return Intl.message(
+      'Image source',
+      name: 'ImageSourceTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose how you want to add the image`
+  String get ImageSourceSubTitle {
+    return Intl.message(
+      'Choose how you want to add the image',
+      name: 'ImageSourceSubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get Camera {
+    return Intl.message('Camera', name: 'Camera', desc: '', args: []);
+  }
+
+  /// `Take a new photo`
+  String get CameraSubTitle {
+    return Intl.message(
+      'Take a new photo',
+      name: 'CameraSubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload file`
+  String get UploadFile {
+    return Intl.message('Upload file', name: 'UploadFile', desc: '', args: []);
+  }
+
+  /// `Select JPEG, JPG, or PNG`
+  String get UploadFileSubTitle {
+    return Intl.message(
+      'Select JPEG, JPG, or PNG',
+      name: 'UploadFileSubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get Cancel {
+    return Intl.message('Cancel', name: 'Cancel', desc: '', args: []);
+  }
+
   /// `Your connection is closer wherever you go`
   String get OnBoarding1Title {
     return Intl.message(

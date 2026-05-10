@@ -25,14 +25,29 @@ class MessageLookup extends MessageLookupByLibrary {
     "BadCertificate": MessageLookupByLibrary.simpleMessage(
       "شهادة الاتصال غير صالحة",
     ),
+    "Camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
+    "CameraSubTitle": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
+    "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "ConfirmPassword": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
     "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة الاتصال بالخادم",
     ),
+    "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "FirstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
     "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "IdCard": MessageLookupByLibrary.simpleMessage("البطاقة الشخصية"),
+    "ImageIsRequired": MessageLookupByLibrary.simpleMessage("الصورة مطلوبة"),
+    "ImageSourceSubTitle": MessageLookupByLibrary.simpleMessage(
+      "اختر الطريقة المناسبة لإضافة الصورة",
+    ),
+    "ImageSourceTitle": MessageLookupByLibrary.simpleMessage("مصدر الصورة"),
     "Instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
     "InternalServerError": MessageLookupByLibrary.simpleMessage(
       "خطأ داخلي في الخادم، يرجى المحاولة لاحقًا",
     ),
+    "LastName": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
     "Loading": MessageLookupByLibrary.simpleMessage("جار التحميل..."),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "LoginSuccess": MessageLookupByLibrary.simpleMessage(
@@ -64,6 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "OopsError": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ، يرجى المحاولة لاحقًا",
     ),
+    "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة استقبال الرد من الخادم",
@@ -72,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SendTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة إرسال الطلب إلى الخادم",
     ),
+    "SignUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "UnauthorizedRequest": MessageLookupByLibrary.simpleMessage(
@@ -80,5 +98,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "UnknownError": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ غير معروف، يرجى المحاولة لاحقًا",
     ),
+    "UploadFile": MessageLookupByLibrary.simpleMessage("تحميل ملف"),
+    "UploadFileSubTitle": MessageLookupByLibrary.simpleMessage(
+      "اختر صورة JPEG أو JPG أو PNG",
+    ),
+    "UserName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
   };
 }
