@@ -5,12 +5,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/register_cubit/register_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/register_cubit/register_state.dart';
-import 'package:tax_payer/Features/Auth/presentation/views/create_store_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/upload_image.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
+import 'package:tax_payer/core/routers/route_names.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/widgets/build_svg_icon.dart';
@@ -33,6 +33,7 @@ class _SignUpFormState extends State<SignUpForm> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
   File? idCardImage;
+  File? profileImage;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
@@ -59,7 +60,7 @@ class _SignUpFormState extends State<SignUpForm> {
             icon: Icons.check,
             textColor: AppColors.white(),
           );
-          context.go(CreateStoreView.routeName);
+          context.go(RouteNames.login);
         } else if (state is RegisterFailure) {
           customToastBar(
             context: context,
@@ -135,6 +136,18 @@ class _SignUpFormState extends State<SignUpForm> {
                     },
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 2),
+                  child: UploadImage(
+                    title: S.of(context).ProfileImage,
+                    subTitle: 'JPEG,JPG,PNG,GIF',
+                    isStoreImage: true,
+                    isRequired: false,
+                    onImageChanged: (image) {
+                      profileImage = image;
+                    },
+                  ),
+                ),
                 state is RegisterLoading
                     ? const CustomLoadingIndicator()
                     : CustomButton(
@@ -156,7 +169,7 @@ class _SignUpFormState extends State<SignUpForm> {
         lastName: lastNameController.text,
         phone: phoneController.text,
         idCard: idCardImage!,
-        image: idCardImage!,
+        image: profileImage,
         userName: usernameController.text,
         password: passwordController.text,
         confirmPassword: confirmPasswordController.text,

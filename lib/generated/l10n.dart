@@ -28,9 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -139,6 +140,16 @@ class S {
   /// `IdCard`
   String get IdCard {
     return Intl.message('IdCard', name: 'IdCard', desc: '', args: []);
+  }
+
+  /// `Profile image`
+  String get ProfileImage {
+    return Intl.message(
+      'Profile image',
+      name: 'ProfileImage',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Password`

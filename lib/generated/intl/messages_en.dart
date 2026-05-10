@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "ProfileImage": MessageLookupByLibrary.simpleMessage("Profile image"),
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
       "Receive timeout with ApiServer",
     ),

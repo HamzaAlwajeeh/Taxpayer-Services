@@ -15,7 +15,7 @@ abstract class AuthRepo {
     required String lastName,
     required String phone,
     required File idCard,
-    required File image,
+    required File? image,
     required String userName,
     required String password,
     required String confirmPassword,

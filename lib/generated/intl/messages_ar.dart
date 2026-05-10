@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "ProfileImage": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة استقبال الرد من الخادم",
     ),

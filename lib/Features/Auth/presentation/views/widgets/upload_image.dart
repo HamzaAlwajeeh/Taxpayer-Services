@@ -16,11 +16,13 @@ class UploadImage extends StatefulWidget {
     required this.title,
     required this.subTitle,
     required this.isStoreImage,
+    this.isRequired = true,
     this.onImageChanged,
   });
   final String title;
   final String subTitle;
   final bool isStoreImage;
+  final bool isRequired;
   final ValueChanged<File?>? onImageChanged;
   @override
   State<UploadImage> createState() => _UploadImageState();
@@ -56,7 +58,7 @@ class _UploadImageState extends State<UploadImage>
                 : controller.imagePath;
         return FormField<File?>(
           validator: (value) {
-            if (image == null) {
+            if (widget.isRequired && image == null) {
               return S.of(context).ImageIsRequired;
             }
             return null;

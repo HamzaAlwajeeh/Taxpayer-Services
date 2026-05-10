@@ -14,6 +14,7 @@
     "Email" : "Email",
     "PhoneNumber" : "Phone Number",
     "IdCard" : "IdCard",
+    "ProfileImage": "Profile image",
     "Password" : "Password",
     "ConfirmPassword" : "ConfirmPassword",
     "SignUp": "SignUp",
