@@ -1,17 +1,20 @@
+import 'dart:convert';
+
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
 
 class Prefs {
   static late SharedPreferences inistance;
+
   static Future<void> init() async {
     inistance = await SharedPreferences.getInstance();
   }
 
-  //create and update together
   static setBool(String key, bool value) {
     inistance.setBool(key, value);
   }
 
-  static getBool(String key) {
+  static bool getBool(String key) {
     return inistance.getBool(key) ?? false;
   }
 
@@ -23,9 +26,22 @@ class Prefs {
     inistance.setString(key, value);
   }
 
-  static getString(String key) {
-    String? value = inistance.getString(key);
-    return value;
+  static String? getString(String key) {
+    return inistance.getString(key);
+  }
+
+  static Future<void> setUser(String key, User value) async {
+    final String jsonUser = jsonEncode(value.toJson());
+    await inistance.setString(key, jsonUser);
+  }
+
+  static User? getUser(String key) {
+    final String? jsonString = inistance.getString(key);
+
+    if (jsonString == null) return null;
+
+    final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+    return User.fromJson(jsonMap);
   }
 
   static removeString(String key) {

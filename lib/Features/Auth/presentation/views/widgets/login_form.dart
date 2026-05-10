@@ -47,6 +47,7 @@ class _LoginFormState extends State<LoginForm> {
             textColor: AppColors.white(),
           );
           Prefs.setBool(AppConstants.kIsLogedIn, true);
+          Prefs.setUser(AppConstants.kCurrentUser, state.user);
           context.go(RouteNames.dashboard);
         } else if (state is LoginFailure) {
           customToastBar(
