@@ -87,6 +87,13 @@ class _LoginFormState extends State<LoginForm> {
                   keyboardType: TextInputType.visiblePassword,
                 ),
                 const SizedBox(height: 17),
+                CustomButton(
+                  title: 'نسيت كلمة المرور',
+                  onPressed: () {
+                    context.go(RouteNames.forgotPassword);
+                  },
+                ),
+                const SizedBox(height: 17),
                 state is LoginLoading
                     ? const CustomLoadingIndicator()
                     : CustomButton(
