@@ -3,12 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/verify_code_cubit/verify_code_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/verify_code_cubit/verify_code_state.dart';
-import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
-import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
 import 'package:tax_payer/core/widgets/custom_text_form_feild.dart';
@@ -59,43 +57,44 @@ class _VerifyCodeFormState extends State<VerifyCodeForm> {
           );
         }
       },
-      builder: (BuildContext context, VerifyCodeState state) => Form(
-        key: formKey,
-        autovalidateMode: autovalidateMode,
-        child: Column(
-          children: [
-            CustomTextFormFeild(
-              controller: codeController,
-              hintText: S.of(context).VerificationCode,
-              keyboardType: TextInputType.number,
-              suffixIcon: Icon(
-                Icons.verified,
-                color: AppColors.textPrimaryColor(context),
-                size: 26,
-              ),
-            ),
-            const SizedBox(height: 17),
-            state is VerifyCodeLoading
-                ? const CustomLoadingIndicator()
-                : CustomButton(
-                    title: S.of(context).Next,
-                    onPressed: () {
-                      verifyCodeMethod(code: codeController.text);
-                    },
+      builder:
+          (BuildContext context, VerifyCodeState state) => Form(
+            key: formKey,
+            autovalidateMode: autovalidateMode,
+            child: Column(
+              children: [
+                CustomTextFormFeild(
+                  controller: codeController,
+                  hintText: S.of(context).VerificationCode,
+                  keyboardType: TextInputType.number,
+                  suffixIcon: Icon(
+                    Icons.verified,
+                    color: AppColors.textPrimaryColor(context),
+                    size: 26,
                   ),
-            const SizedBox(height: 17),
-            TextButton(
-              onPressed: () {
-                // TODO: Implement resend code logic
-              },
-              child: Text(
-                S.of(context).ResendCode,
-                style: TextStyle(color: AppColors.customBlue()),
-              ),
+                ),
+                const SizedBox(height: 17),
+                state is VerifyCodeLoading
+                    ? const CustomLoadingIndicator()
+                    : CustomButton(
+                      title: S.of(context).Next,
+                      onPressed: () {
+                        verifyCodeMethod(code: codeController.text);
+                      },
+                    ),
+                const SizedBox(height: 17),
+                TextButton(
+                  onPressed: () {
+                    // TODO: Implement resend code logic
+                  },
+                  child: Text(
+                    S.of(context).ResendCode,
+                    style: TextStyle(color: AppColors.customBlue()),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
     );
   }
 

@@ -3,12 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_cubit/reset_password_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_cubit/reset_password_state.dart';
-import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
-import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
 import 'package:tax_payer/core/widgets/custom_text_form_feild.dart';
@@ -61,55 +59,59 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
           );
         }
       },
-      builder: (BuildContext context, ResetPasswordState state) => Form(
-        key: formKey,
-        autovalidateMode: autovalidateMode,
-        child: Column(
-          children: [
-            CustomTextFormFeild(
-              controller: newPasswordController,
-              isPassword: true,
-              hintText: S.of(context).NewPassword,
-              keyboardType: TextInputType.visiblePassword,
-              prefixIcon: Icon(
-                Icons.lock,
-                color: AppColors.textPrimaryColor(context),
-                size: 26,
-              ),
-            ),
-            const SizedBox(height: 16),
-            CustomTextFormFeild(
-              controller: confirmPasswordController,
-              isPassword: true,
-              hintText: S.of(context).ConfirmPassword,
-              keyboardType: TextInputType.visiblePassword,
-              prefixIcon: Icon(
-                Icons.lock,
-                color: AppColors.textPrimaryColor(context),
-                size: 26,
-              ),
-              type: 'confirm',
-              passwordController: newPasswordController,
-            ),
-            const SizedBox(height: 17),
-            state is ResetPasswordLoading
-                ? const CustomLoadingIndicator()
-                : CustomButton(
-                    title: S.of(context).ResetPassword,
-                    onPressed: () {
-                      resetPasswordMethod(
-                        newPassword: newPasswordController.text,
-                        confirmNewPassword: confirmPasswordController.text,
-                      );
-                    },
+      builder:
+          (BuildContext context, ResetPasswordState state) => Form(
+            key: formKey,
+            autovalidateMode: autovalidateMode,
+            child: Column(
+              children: [
+                CustomTextFormFeild(
+                  controller: newPasswordController,
+                  isPassword: true,
+                  hintText: S.of(context).NewPassword,
+                  keyboardType: TextInputType.visiblePassword,
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: AppColors.textPrimaryColor(context),
+                    size: 26,
                   ),
-          ],
-        ),
-      ),
+                ),
+                const SizedBox(height: 16),
+                CustomTextFormFeild(
+                  controller: confirmPasswordController,
+                  isPassword: true,
+                  hintText: S.of(context).ConfirmPassword,
+                  keyboardType: TextInputType.visiblePassword,
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: AppColors.textPrimaryColor(context),
+                    size: 26,
+                  ),
+                  type: 'confirm',
+                  passwordController: newPasswordController,
+                ),
+                const SizedBox(height: 17),
+                state is ResetPasswordLoading
+                    ? const CustomLoadingIndicator()
+                    : CustomButton(
+                      title: S.of(context).ResetPassword,
+                      onPressed: () {
+                        resetPasswordMethod(
+                          newPassword: newPasswordController.text,
+                          confirmNewPassword: confirmPasswordController.text,
+                        );
+                      },
+                    ),
+              ],
+            ),
+          ),
     );
   }
 
-  void resetPasswordMethod({required String newPassword, required String confirmNewPassword}) {
+  void resetPasswordMethod({
+    required String newPassword,
+    required String confirmNewPassword,
+  }) {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
       autovalidateMode = AutovalidateMode.disabled;

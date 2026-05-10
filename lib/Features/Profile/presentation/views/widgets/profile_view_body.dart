@@ -31,10 +31,12 @@ class ProfileViewBody extends StatelessWidget {
                 textColor: AppColors.white(),
               );
               Prefs.setBool(AppConstants.kIsLogedIn, false);
+              Prefs.removeUser(AppConstants.kCurrentUser);
               context.go(RouteNames.login);
             }
           },
           builder:
+              // will add => User? user = Prefs.getUser(AppConstants.kCurrentUser);
               (BuildContext context, state) =>
                   state is LogoutLoading
                       ? CustomLoadingIndicator()

@@ -15,12 +15,15 @@ import 'package:tax_payer/generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   setUpServiceLocator();
   await NotificationService.initialize();
   await Prefs.init();
   AppSettings.init();
-  runApp(const MyApp());
+
   Bloc.observer = SimpleBlocObserver();
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

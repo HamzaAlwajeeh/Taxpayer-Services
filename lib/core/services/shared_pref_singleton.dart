@@ -10,7 +10,7 @@ class Prefs {
     inistance = await SharedPreferences.getInstance();
   }
 
-  static setBool(String key, bool value) {
+  static void setBool(String key, bool value) {
     inistance.setBool(key, value);
   }
 
@@ -18,11 +18,11 @@ class Prefs {
     return inistance.getBool(key) ?? false;
   }
 
-  static removeBool(String key) {
-    return inistance.remove(key);
+  static void removeBool(String key) {
+    inistance.remove(key);
   }
 
-  static setString(String key, String value) {
+  static void setString(String key, String value) {
     inistance.setString(key, value);
   }
 
@@ -30,9 +30,13 @@ class Prefs {
     return inistance.getString(key);
   }
 
-  static Future<void> setUser(String key, User value) async {
+  static void removeString(String key) {
+    inistance.remove(key);
+  }
+
+  static void setUser(String key, User value) {
     final String jsonUser = jsonEncode(value.toJson());
-    await inistance.setString(key, jsonUser);
+    inistance.setString(key, jsonUser);
   }
 
   static User? getUser(String key) {
@@ -40,15 +44,23 @@ class Prefs {
 
     if (jsonString == null) return null;
 
-    final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
-    return User.fromJson(jsonMap);
+    try {
+      final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+      return User.fromJson(jsonMap);
+    } catch (_) {
+      return null;
+    }
   }
 
-  static Future<void> removeUser(String key) async {
-    await inistance.remove(key);
+  static void removeUser(String key) {
+    inistance.remove(key);
   }
 
-  static removeString(String key) {
-    return inistance.remove(key);
+  static bool contains(String key) {
+    return inistance.containsKey(key);
+  }
+
+  static void clear() {
+    inistance.clear();
   }
 }
