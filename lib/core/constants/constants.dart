@@ -4,6 +4,7 @@ class AppConstants {
   static const String kSeenOnBoarding = 'seenOnBoarding';
   static const String kIsLogedIn = 'isLogedIn';
   static const String krememberMe = 'rememberMe';
+  static const String kCurrentUser = 'currentUser';
   static const String kToken = 'token';
 
   static const String kCurrentLanguageKey = 'selected_language';
