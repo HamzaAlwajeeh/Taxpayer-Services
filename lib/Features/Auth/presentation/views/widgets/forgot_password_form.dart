@@ -60,51 +60,55 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
         }
       },
       builder:
-          (BuildContext context, ForgotPasswordState state) => Form(
-            key: formKey,
-            autovalidateMode: autovalidateMode,
-            child: Column(
-              children: [
-                CustomTextFormFeild(
-                  controller: userNameController,
-                  hintText: S.of(context).UserName,
-                  keyboardType: TextInputType.text,
-                  suffixIcon: Icon(
-                    Icons.person,
-                    color: AppColors.textPrimaryColor(context),
-                    size: 26,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                CustomTextFormFeild(
-                  controller: phoneController,
-                  hintText: S.of(context).PhoneNumber,
-                  keyboardType: TextInputType.phone,
-                  suffixIcon: Icon(
-                    Icons.phone,
-                    color: AppColors.textPrimaryColor(context),
-                    size: 26,
-                  ),
-                ),
-                const SizedBox(height: 17),
-                state is ForgotPasswordLoading
-                    ? const CustomLoadingIndicator()
-                    : CustomButton(
-                      title: S.of(context).Next,
-                      onPressed: () {
-                        forgotPasswordMethod(
-                          userName: userNameController.text,
-                          phone: phoneController.text,
-                        );
-                      },
+          (BuildContext context, ForgotPasswordState state) => AbsorbPointer(
+            absorbing: state is ForgotPasswordLoading,
+            child: Form(
+              key: formKey,
+              autovalidateMode: autovalidateMode,
+              child: Column(
+                children: [
+                  CustomTextFormFeild(
+                    controller: userNameController,
+                    hintText: S.of(context).UserName,
+                    keyboardType: TextInputType.text,
+                    suffixIcon: Icon(
+                      Icons.person,
+                      color: AppColors.textPrimaryColor(context),
+                      size: 26,
                     ),
-              ],
+                  ),
+                  const SizedBox(height: 16),
+                  CustomTextFormFeild(
+                    controller: phoneController,
+                    hintText: S.of(context).PhoneNumber,
+                    keyboardType: TextInputType.phone,
+                    suffixIcon: Icon(
+                      Icons.phone,
+                      color: AppColors.textPrimaryColor(context),
+                      size: 26,
+                    ),
+                  ),
+                  const SizedBox(height: 17),
+                  state is ForgotPasswordLoading
+                      ? const CustomLoadingIndicator()
+                      : CustomButton(
+                        title: S.of(context).Next,
+                        onPressed: () {
+                          forgotPasswordMethod(
+                            userName: userNameController.text,
+                            phone: phoneController.text,
+                          );
+                        },
+                      ),
+                ],
+              ),
             ),
           ),
     );
   }
 
   void forgotPasswordMethod({required String userName, required String phone}) {
+    FocusScope.of(context).unfocus();
     context.push(RouteNames.verifyCode);
     // if (formKey.currentState!.validate()) {
     //   formKey.currentState!.save();

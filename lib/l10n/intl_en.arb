@@ -63,5 +63,20 @@
     "EnterVerificationCode": "Enter Verification Code",
     "NewPassword": "New Password",
     "ConfirmPassword": "Confirm Password",
-    "ResetPassword": "Reset Password"
+    "ResetPassword": "Reset Password",
+    "StoreName": "Al-Safaa Supermarket",
+    "ActiveStatus": "Active",
+    "DarkMode": "Dark Mode",
+    "Disabled": "Disabled",
+    "Language": "Language",
+    "Arabic": "Arabic",
+    "SecurityAndPrivacy": "Security and Privacy",
+    "ClickToViewDetails": "Click to view details",
+    "BasicInfo": "Basic Information",
+    "EditProfile": "Edit Profile",
+    "Guest": "Guest",
+    "AppVersion": "App Version",
+    "Enabled": "Enabled",
+    "Active": "Active",
+    "English": "English"
 }

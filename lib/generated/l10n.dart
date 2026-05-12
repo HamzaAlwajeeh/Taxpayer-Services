@@ -595,6 +595,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Al-Safaa Supermarket`
+  String get StoreName {
+    return Intl.message(
+      'Al-Safaa Supermarket',
+      name: 'StoreName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active`
+  String get ActiveStatus {
+    return Intl.message('Active', name: 'ActiveStatus', desc: '', args: []);
+  }
+
+  /// `Dark Mode`
+  String get DarkMode {
+    return Intl.message('Dark Mode', name: 'DarkMode', desc: '', args: []);
+  }
+
+  /// `Disabled`
+  String get Disabled {
+    return Intl.message('Disabled', name: 'Disabled', desc: '', args: []);
+  }
+
+  /// `Language`
+  String get Language {
+    return Intl.message('Language', name: 'Language', desc: '', args: []);
+  }
+
+  /// `Arabic`
+  String get Arabic {
+    return Intl.message('Arabic', name: 'Arabic', desc: '', args: []);
+  }
+
+  /// `Security and Privacy`
+  String get SecurityAndPrivacy {
+    return Intl.message(
+      'Security and Privacy',
+      name: 'SecurityAndPrivacy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click to view details`
+  String get ClickToViewDetails {
+    return Intl.message(
+      'Click to view details',
+      name: 'ClickToViewDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Basic Information`
+  String get BasicInfo {
+    return Intl.message(
+      'Basic Information',
+      name: 'BasicInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get EditProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'EditProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Guest`
+  String get Guest {
+    return Intl.message('Guest', name: 'Guest', desc: '', args: []);
+  }
+
+  /// `App Version`
+  String get AppVersion {
+    return Intl.message('App Version', name: 'AppVersion', desc: '', args: []);
+  }
+
+  /// `Enabled`
+  String get Enabled {
+    return Intl.message('Enabled', name: 'Enabled', desc: '', args: []);
+  }
+
+  /// `Active`
+  String get Active {
+    return Intl.message('Active', name: 'Active', desc: '', args: []);
+  }
+
+  /// `English`
+  String get English {
+    return Intl.message('English', name: 'English', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

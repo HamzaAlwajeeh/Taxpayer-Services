@@ -76,91 +76,95 @@ class _SignUpFormState extends State<SignUpForm> {
         }
       },
       builder:
-          (BuildContext context, RegisterState state) => Form(
-            key: formKey,
-            autovalidateMode: autovalidateMode,
-            child: Column(
-              spacing: AppSpacing.s16,
-              children: [
-                CustomTextFormFeild(
-                  controller: firstNameController,
-                  hintText: S.of(context).FirstName,
-                  keyboardType: TextInputType.text,
-                  prefixIcon: buildSvgIcon(context, Assets.assetsIconsUser),
-                ),
-                CustomTextFormFeild(
-                  controller: lastNameController,
-                  hintText: S.of(context).LastName,
-                  keyboardType: TextInputType.text,
-                  prefixIcon: buildSvgIcon(context, Assets.assetsIconsUser),
-                ),
-                CustomTextFormFeild(
-                  controller: usernameController,
-                  hintText: S.of(context).UserName,
-                  keyboardType: TextInputType.text,
-                  prefixIcon: buildSvgIcon(
-                    context,
-                    Assets.assetsIconsPersonalcard,
+          (BuildContext context, RegisterState state) => AbsorbPointer(
+            absorbing: state is RegisterLoading,
+            child: Form(
+              key: formKey,
+              autovalidateMode: autovalidateMode,
+              child: Column(
+                spacing: AppSpacing.s16,
+                children: [
+                  CustomTextFormFeild(
+                    controller: firstNameController,
+                    hintText: S.of(context).FirstName,
+                    keyboardType: TextInputType.text,
+                    prefixIcon: buildSvgIcon(context, Assets.assetsIconsUser),
                   ),
-                ),
-                CustomTextFormFeild(
-                  controller: phoneController,
-                  hintText: S.of(context).PhoneNumber,
-                  keyboardType: TextInputType.phone,
-                  prefixIcon: buildSvgIcon(context, Assets.assetsIconsPhone),
-                ),
-                CustomTextFormFeild(
-                  prefixIcon: buildSvgIcon(context, Assets.assetsIconsLock),
-                  controller: passwordController,
-                  isPassword: true,
-                  hintText: S.of(context).Password,
-                  keyboardType: TextInputType.visiblePassword,
-                ),
-                CustomTextFormFeild(
-                  prefixIcon: buildSvgIcon(context, Assets.assetsIconsLock),
-                  controller: confirmPasswordController,
-                  isPassword: true,
-                  hintText: S.of(context).ConfirmPassword,
-                  keyboardType: TextInputType.visiblePassword,
-                  type: 'confirm',
-                  passwordController: passwordController,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
-                  child: UploadImage(
-                    title: S.of(context).IdCard,
-                    subTitle: 'JPEG,JPG,PNG',
-                    isStoreImage: false,
-                    onImageChanged: (image) {
-                      idCardImage = image;
-                    },
+                  CustomTextFormFeild(
+                    controller: lastNameController,
+                    hintText: S.of(context).LastName,
+                    keyboardType: TextInputType.text,
+                    prefixIcon: buildSvgIcon(context, Assets.assetsIconsUser),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
-                  child: UploadImage(
-                    title: S.of(context).ProfileImage,
-                    subTitle: 'JPEG,JPG,PNG,GIF',
-                    isStoreImage: true,
-                    isRequired: false,
-                    onImageChanged: (image) {
-                      profileImage = image;
-                    },
-                  ),
-                ),
-                state is RegisterLoading
-                    ? const CustomLoadingIndicator()
-                    : CustomButton(
-                      title: S.of(context).SignUp,
-                      onPressed: signUpMethod,
+                  CustomTextFormFeild(
+                    controller: usernameController,
+                    hintText: S.of(context).UserName,
+                    keyboardType: TextInputType.text,
+                    prefixIcon: buildSvgIcon(
+                      context,
+                      Assets.assetsIconsPersonalcard,
                     ),
-              ],
+                  ),
+                  CustomTextFormFeild(
+                    controller: phoneController,
+                    hintText: S.of(context).PhoneNumber,
+                    keyboardType: TextInputType.phone,
+                    prefixIcon: buildSvgIcon(context, Assets.assetsIconsPhone),
+                  ),
+                  CustomTextFormFeild(
+                    prefixIcon: buildSvgIcon(context, Assets.assetsIconsLock),
+                    controller: passwordController,
+                    isPassword: true,
+                    hintText: S.of(context).Password,
+                    keyboardType: TextInputType.visiblePassword,
+                  ),
+                  CustomTextFormFeild(
+                    prefixIcon: buildSvgIcon(context, Assets.assetsIconsLock),
+                    controller: confirmPasswordController,
+                    isPassword: true,
+                    hintText: S.of(context).ConfirmPassword,
+                    keyboardType: TextInputType.visiblePassword,
+                    type: 'confirm',
+                    passwordController: passwordController,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 2),
+                    child: UploadImage(
+                      title: S.of(context).IdCard,
+                      subTitle: 'JPEG,JPG,PNG',
+                      isStoreImage: false,
+                      onImageChanged: (image) {
+                        idCardImage = image;
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 2),
+                    child: UploadImage(
+                      title: S.of(context).ProfileImage,
+                      subTitle: 'JPEG,JPG,PNG,GIF',
+                      isStoreImage: true,
+                      isRequired: false,
+                      onImageChanged: (image) {
+                        profileImage = image;
+                      },
+                    ),
+                  ),
+                  state is RegisterLoading
+                      ? const CustomLoadingIndicator()
+                      : CustomButton(
+                        title: S.of(context).SignUp,
+                        onPressed: signUpMethod,
+                      ),
+                ],
+              ),
             ),
           ),
     );
   }
 
   void signUpMethod() {
+    FocusScope.of(context).unfocus();
     if (formKey.currentState!.validate() && idCardImage != null) {
       formKey.currentState!.save();
       autovalidateMode = AutovalidateMode.disabled;

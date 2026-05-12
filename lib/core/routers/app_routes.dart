@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/create_store_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/forgot_password_view.dart';
@@ -11,9 +12,14 @@ import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instructions_view.dart';
 import 'package:tax_payer/Features/NewFile/presentation/views/new_file_view.dart';
 import 'package:tax_payer/Features/OnBoarding/presentation/views/on_boarding_view.dart';
+import 'package:tax_payer/Features/Profile/data/repos/profile.repo.dart';
+import 'package:tax_payer/Features/Profile/presentation/logic/edit_profile_cubit/edit_profile_cubit.dart';
+import 'package:tax_payer/Features/Profile/presentation/views/edit_profile_view.dart';
+import 'package:tax_payer/Features/Profile/presentation/views/privacy_and_security_view.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/profile_view.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/splash_view.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
+import 'package:tax_payer/core/services/service_locator.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -94,6 +100,19 @@ class AppRoutes {
       _buildRoute(
         path: RouteNames.profile,
         child: const ProfileView(),
+        transition: TransitionType.fade,
+      ),
+      _buildRoute(
+        path: RouteNames.editProfile,
+        child: BlocProvider(
+          create: (context) => EditProfileCubit(getIt<ProfileRepo>()),
+          child: const EditProfileView(),
+        ),
+        transition: TransitionType.fade,
+      ),
+      _buildRoute(
+        path: RouteNames.safetyAndPrivacy,
+        child: const PrivacyAndSecurityView(),
         transition: TransitionType.fade,
       ),
       // GoRoute(

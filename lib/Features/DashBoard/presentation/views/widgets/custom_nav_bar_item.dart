@@ -90,7 +90,7 @@ class _CustomNavBarItemState extends State<CustomNavBarItem>
             height: 36,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
-              color: isSelected ? AppColors.customRed() : null,
+              color: isSelected ? AppColors.customRed(context, true) : null,
             ),
             child: AnimatedBuilder(
               animation: _scaleAnim,

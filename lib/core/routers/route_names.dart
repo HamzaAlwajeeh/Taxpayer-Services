@@ -32,6 +32,7 @@ class RouteNames {
 
   // Profile Routes
   static const String profile = '/profile';
+  static const String editProfile = '/editProfile';
   static const String changePassword = '/change-password';
   static const String safetyAndPrivacy = '/safety-and-privacy';
 }

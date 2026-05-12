@@ -7,6 +7,8 @@ import 'package:tax_payer/Features/Auth/presentation/logic/logout_cubit/logout_c
 import 'package:tax_payer/Features/Auth/presentation/logic/register_cubit/register_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_cubit/reset_password_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/verify_code_cubit/verify_code_cubit.dart';
+import 'package:tax_payer/Features/Profile/data/repos/profile.repo.dart';
+import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_cubit.dart';
 import 'package:tax_payer/core/services/service_locator.dart';
 
 class BlocProviders {
@@ -24,6 +26,9 @@ class BlocProviders {
         BlocProvider(create: (context) => VerifyCodeCubit(getIt<AuthRepo>())),
         BlocProvider(
           create: (context) => ResetPasswordCubit(getIt<AuthRepo>()),
+        ),
+        BlocProvider(
+          create: (context) => UserProfileCubit(getIt<ProfileRepo>()),
         ),
       ],
       child: child,

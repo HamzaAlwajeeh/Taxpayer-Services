@@ -64,16 +64,38 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
       onSaved: widget.onSaved,
       onChanged: widget.onChanged,
       validator: (value) {
-        if (value == null || value.isEmpty) {
+        final text = value?.trim() ?? '';
+
+        if (widget.type == 'confirm') {
+          final password = widget.passwordController?.text.trim() ?? '';
+
+          if (password.isNotEmpty && text.isEmpty) {
+            return S.of(context).FieldIsRequired;
+          }
+
+          if (password.isNotEmpty && text != password) {
+            return S.of(context).PasswordNotMatch;
+          }
+
+          return null;
+        }
+
+        if (widget.isPassword == true) {
+          if (text.isEmpty) {
+            return null;
+          }
+
+          if (text.length < 8) {
+            return S.of(context).PasswordMinLength;
+          }
+
+          return null;
+        }
+
+        if (text.isEmpty) {
           return S.of(context).FieldIsRequired;
         }
-        if (widget.isPassword == true && value.length < 8) {
-          return S.of(context).PasswordMinLength;
-        }
-        if (widget.type == 'confirm' &&
-            value != widget.passwordController?.text) {
-          return S.of(context).PasswordNotMatch;
-        }
+
         return null;
       },
       obscureText: widget.isPassword == true ? !isVisible : false,

@@ -63,5 +63,20 @@
     "EnterVerificationCode": "أدخل رمز التحقق",
     "NewPassword": "كلمة المرور الجديدة",
     "ConfirmPassword": "تأكيد كلمة المرور",
-    "ResetPassword": "إعادة تعيين كلمة المرور"
+    "ResetPassword": "إعادة تعيين كلمة المرور",
+    "StoreName": "سوبر ماركت الصفاء",
+    "ActiveStatus": "شغال",
+    "DarkMode": "الوضع الليلي",
+    "Disabled": "معطل",
+    "Language": "اللغه",
+    "Arabic": "العربيه",
+    "SecurityAndPrivacy": "الامان والخصوصية",
+    "ClickToViewDetails": "انقر لعرض التفاصيل",
+    "BasicInfo": "البيانات الأساسية",
+    "EditProfile": "تعديل الملف الشخصي",
+    "Guest": "ضيف",
+    "AppVersion": "إصدار التطبيق",
+    "Enabled": "مفعل",
+    "Active": "قيد التفعيل",
+    "English": "الإنجليزية"
 }

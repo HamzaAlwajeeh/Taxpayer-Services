@@ -60,49 +60,52 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
         }
       },
       builder:
-          (BuildContext context, ResetPasswordState state) => Form(
-            key: formKey,
-            autovalidateMode: autovalidateMode,
-            child: Column(
-              children: [
-                CustomTextFormFeild(
-                  controller: newPasswordController,
-                  isPassword: true,
-                  hintText: S.of(context).NewPassword,
-                  keyboardType: TextInputType.visiblePassword,
-                  prefixIcon: Icon(
-                    Icons.lock,
-                    color: AppColors.textPrimaryColor(context),
-                    size: 26,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                CustomTextFormFeild(
-                  controller: confirmPasswordController,
-                  isPassword: true,
-                  hintText: S.of(context).ConfirmPassword,
-                  keyboardType: TextInputType.visiblePassword,
-                  prefixIcon: Icon(
-                    Icons.lock,
-                    color: AppColors.textPrimaryColor(context),
-                    size: 26,
-                  ),
-                  type: 'confirm',
-                  passwordController: newPasswordController,
-                ),
-                const SizedBox(height: 17),
-                state is ResetPasswordLoading
-                    ? const CustomLoadingIndicator()
-                    : CustomButton(
-                      title: S.of(context).ResetPassword,
-                      onPressed: () {
-                        resetPasswordMethod(
-                          newPassword: newPasswordController.text,
-                          confirmNewPassword: confirmPasswordController.text,
-                        );
-                      },
+          (BuildContext context, ResetPasswordState state) => AbsorbPointer(
+            absorbing: state is ResetPasswordLoading,
+            child: Form(
+              key: formKey,
+              autovalidateMode: autovalidateMode,
+              child: Column(
+                children: [
+                  CustomTextFormFeild(
+                    controller: newPasswordController,
+                    isPassword: true,
+                    hintText: S.of(context).NewPassword,
+                    keyboardType: TextInputType.visiblePassword,
+                    prefixIcon: Icon(
+                      Icons.lock,
+                      color: AppColors.textPrimaryColor(context),
+                      size: 26,
                     ),
-              ],
+                  ),
+                  const SizedBox(height: 16),
+                  CustomTextFormFeild(
+                    controller: confirmPasswordController,
+                    isPassword: true,
+                    hintText: S.of(context).ConfirmPassword,
+                    keyboardType: TextInputType.visiblePassword,
+                    prefixIcon: Icon(
+                      Icons.lock,
+                      color: AppColors.textPrimaryColor(context),
+                      size: 26,
+                    ),
+                    type: 'confirm',
+                    passwordController: newPasswordController,
+                  ),
+                  const SizedBox(height: 17),
+                  state is ResetPasswordLoading
+                      ? const CustomLoadingIndicator()
+                      : CustomButton(
+                        title: S.of(context).ResetPassword,
+                        onPressed: () {
+                          resetPasswordMethod(
+                            newPassword: newPasswordController.text,
+                            confirmNewPassword: confirmPasswordController.text,
+                          );
+                        },
+                      ),
+                ],
+              ),
             ),
           ),
     );
@@ -112,6 +115,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
     required String newPassword,
     required String confirmNewPassword,
   }) {
+    FocusScope.of(context).unfocus();
     context.go(RouteNames.login);
     // if (formKey.currentState!.validate()) {
     //   formKey.currentState!.save();
