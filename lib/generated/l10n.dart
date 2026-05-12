@@ -595,6 +595,61 @@ class S {
       args: [],
     );
   }
+
+  /// `Al-Safaa Supermarket`
+  String get StoreName {
+    return Intl.message(
+      'Al-Safaa Supermarket',
+      name: 'StoreName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active`
+  String get ActiveStatus {
+    return Intl.message('Active', name: 'ActiveStatus', desc: '', args: []);
+  }
+
+  /// `Dark Mode`
+  String get DarkMode {
+    return Intl.message('Dark Mode', name: 'DarkMode', desc: '', args: []);
+  }
+
+  /// `Disabled`
+  String get Disabled {
+    return Intl.message('Disabled', name: 'Disabled', desc: '', args: []);
+  }
+
+  /// `Language`
+  String get Language {
+    return Intl.message('Language', name: 'Language', desc: '', args: []);
+  }
+
+  /// `Arabic`
+  String get Arabic {
+    return Intl.message('Arabic', name: 'Arabic', desc: '', args: []);
+  }
+
+  /// `Security and Privacy`
+  String get SecurityAndPrivacy {
+    return Intl.message(
+      'Security and Privacy',
+      name: 'SecurityAndPrivacy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click to view details`
+  String get ClickToViewDetails {
+    return Intl.message(
+      'Click to view details',
+      name: 'ClickToViewDetails',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

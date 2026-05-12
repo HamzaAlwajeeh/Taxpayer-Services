@@ -29,9 +29,9 @@ class _SwhitchWidgetState extends State<SwhitchWidget> {
           setState(() {});
           widget.onChanged(state);
         },
-        activeTrackColor: AppColors.textRedColor(context),
-        // activeThumbColor: AppColors.borderColor,
-        inactiveTrackColor: Color(0xff888FA0),
+        activeTrackColor: AppColors.primaryColor(context),
+        activeThumbColor: AppColors.white(),
+        inactiveTrackColor: AppColors.itemsColor(context),
         inactiveThumbColor: AppColors.textSecondaryColor(context),
       ),
     );

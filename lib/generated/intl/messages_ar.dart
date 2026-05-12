@@ -22,12 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "ActiveStatus": MessageLookupByLibrary.simpleMessage("شغال"),
+    "Arabic": MessageLookupByLibrary.simpleMessage("العربيه"),
     "BadCertificate": MessageLookupByLibrary.simpleMessage(
       "شهادة الاتصال غير صالحة",
     ),
     "Camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
     "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "ClickToViewDetails": MessageLookupByLibrary.simpleMessage(
+      "انقر لعرض التفاصيل",
+    ),
     "CodeSentSuccessfully": MessageLookupByLibrary.simpleMessage(
       "تم إرسال الرمز بنجاح",
     ),
@@ -40,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة الاتصال بالخادم",
     ),
+    "DarkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
+    "Disabled": MessageLookupByLibrary.simpleMessage("معطل"),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "EnterNewPasswordDesc": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة المرور الجديدة وقم بتأكيدها",
@@ -69,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "InternalServerError": MessageLookupByLibrary.simpleMessage(
       "خطأ داخلي في الخادم، يرجى المحاولة لاحقًا",
     ),
+    "Language": MessageLookupByLibrary.simpleMessage("اللغه"),
     "LastName": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
     "Loading": MessageLookupByLibrary.simpleMessage("جار التحميل..."),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -131,12 +139,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "ResetPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "إعادة تعيين كلمة المرور",
     ),
+    "SecurityAndPrivacy": MessageLookupByLibrary.simpleMessage(
+      "الامان والخصوصية",
+    ),
     "SendTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة إرسال الطلب إلى الخادم",
     ),
     "SignUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+    "StoreName": MessageLookupByLibrary.simpleMessage("سوبر ماركت الصفاء"),
     "UnauthorizedRequest": MessageLookupByLibrary.simpleMessage(
       "طلب غير مصرح به",
     ),

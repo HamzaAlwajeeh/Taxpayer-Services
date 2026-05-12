@@ -11,6 +11,8 @@ import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instructions_view.dart';
 import 'package:tax_payer/Features/NewFile/presentation/views/new_file_view.dart';
 import 'package:tax_payer/Features/OnBoarding/presentation/views/on_boarding_view.dart';
+import 'package:tax_payer/Features/Profile/presentation/views/edit_profile_view.dart';
+import 'package:tax_payer/Features/Profile/presentation/views/privacy_and_security_view.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/profile_view.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/splash_view.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
@@ -94,6 +96,16 @@ class AppRoutes {
       _buildRoute(
         path: RouteNames.profile,
         child: const ProfileView(),
+        transition: TransitionType.fade,
+      ),
+      _buildRoute(
+        path: RouteNames.editProfile,
+        child: const EditProfileView(),
+        transition: TransitionType.fade,
+      ),
+      _buildRoute(
+        path: RouteNames.safetyAndPrivacy,
+        child: const PrivacyAndSecurityView(),
         transition: TransitionType.fade,
       ),
       // GoRoute(

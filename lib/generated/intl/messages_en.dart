@@ -22,10 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "ActiveStatus": MessageLookupByLibrary.simpleMessage("Active"),
+    "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "BadCertificate": MessageLookupByLibrary.simpleMessage("Bad certificate"),
     "Camera": MessageLookupByLibrary.simpleMessage("Camera"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("Take a new photo"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "ClickToViewDetails": MessageLookupByLibrary.simpleMessage(
+      "Click to view details",
+    ),
     "CodeSentSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Code sent successfully",
     ),
@@ -36,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
       "Connection timeout with ApiServer",
     ),
+    "DarkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
+    "Disabled": MessageLookupByLibrary.simpleMessage("Disabled"),
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
     "EnterNewPasswordDesc": MessageLookupByLibrary.simpleMessage(
       "Enter your new password and confirm it",
@@ -67,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "InternalServerError": MessageLookupByLibrary.simpleMessage(
       "Internal Server Error, please try again later",
     ),
+    "Language": MessageLookupByLibrary.simpleMessage("Language"),
     "LastName": MessageLookupByLibrary.simpleMessage("Last Name"),
     "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -129,12 +137,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "ResetPasswordTitle": MessageLookupByLibrary.simpleMessage(
       "Reset Password",
     ),
+    "SecurityAndPrivacy": MessageLookupByLibrary.simpleMessage(
+      "Security and Privacy",
+    ),
     "SendTimeout": MessageLookupByLibrary.simpleMessage(
       "Send timeout with ApiServer",
     ),
     "SignUp": MessageLookupByLibrary.simpleMessage("SignUp"),
     "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "StartNow": MessageLookupByLibrary.simpleMessage("Start Now"),
+    "StoreName": MessageLookupByLibrary.simpleMessage("Al-Safaa Supermarket"),
     "UnauthorizedRequest": MessageLookupByLibrary.simpleMessage(
       "Unauthorized request",
     ),

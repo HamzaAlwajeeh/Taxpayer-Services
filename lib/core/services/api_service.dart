@@ -197,9 +197,17 @@ Headers: $headers
     required dynamic body,
     required String? token,
   }) async {
+    final requestBody = await _prepareRequestBody(body);
+    final isMultipart = requestBody is FormData;
     Map<String, String> headers = {};
 
-    headers.addAll({'Content-Type': 'application/json'});
+    headers.addAll({
+      'Content-Type':
+          isMultipart
+              ? Headers.multipartFormDataContentType
+              : Headers.jsonContentType,
+    });
+
     headers.addAll({'Accept': 'application/json'});
     if (token != null) {
       headers.addAll({'Authorization': 'Bearer $token'});
@@ -208,14 +216,14 @@ Headers: $headers
     requestInfo(
       method: 'PUT',
       endPoint: endPoint,
-      body: body,
+      body: requestBody,
       token: token,
       headers: headers,
     );
 
     var response = await dio.put(
       '$_baseUrl/$endPoint',
-      data: body,
+      data: requestBody,
       options: Options(headers: headers),
     );
     return response.data;

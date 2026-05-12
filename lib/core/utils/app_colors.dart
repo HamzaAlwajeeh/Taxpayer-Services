@@ -12,7 +12,7 @@ abstract class AppColors {
   static Color primaryColor([BuildContext? context]) =>
       isDarkMode(context) ? const Color(0xffAA1212) : const Color(0xffAA1212);
   static Color secondaryColor([BuildContext? context]) =>
-      isDarkMode(context) ? const Color(0xffE4C58F) : const Color(0xffE4C58F);
+      isDarkMode(context) ? const Color(0xFFB8B7B7) : const Color(0xff757575);
   static Color scaffoldBackgroundColor([bool? isDark, BuildContext? context]) =>
       (isDark ?? isDarkMode(context))
           ? const Color(0xff101828)
@@ -31,6 +31,12 @@ abstract class AppColors {
               ? const Color(0xff7F1D1D)
               : const Color(0xffFFFFFF)
           : const Color(0xff7F1D1D);
+  static Color customRed([BuildContext? context, bool isFixed = false]) =>
+      isDarkMode(context)
+          ? isFixed
+              ? const Color(0xffFFD4D4)
+              : const Color(0xffAA1212)
+          : const Color(0xffFFD4D4);
   static Color textFeilColor([BuildContext? context]) =>
       isDarkMode(context) ? const Color(0xff171F2F) : const Color(0xffF8FAFC);
   static Color itemsColor([BuildContext? context]) =>
@@ -39,16 +45,16 @@ abstract class AppColors {
       isDarkMode(context) ? const Color(0xff212838) : const Color(0xffE7E6E9);
   static Color fieldFocusColor([BuildContext? context]) =>
       isDarkMode(context) ? const Color(0xff1D2738) : const Color(0xffFFF8F8);
+
   static Color shadowColor([BuildContext? context]) =>
       isDarkMode(context)
           ? const Color(0xff000000).withValues(alpha: 0.28)
-          : const Color(0xff101828).withValues(alpha: 0.10);
+          : const Color(0xff736E6E).withValues(alpha: 0.10);
   static Color successSoft() => const Color(0xffE7F7F4);
   static Color errorSoft() => const Color(0xffFEECEC);
   static Color red() => const Color(0xffE7040E);
   static Color customGreen() => const Color(0xff2A9D90);
   static Color customOrange() => const Color(0xffE76E50);
   static Color customBlue() => const Color(0xff275ECD);
-  static Color customRed() => const Color(0xffFFD4D4);
   static Color white() => const Color(0xffFFFFFF);
 }
