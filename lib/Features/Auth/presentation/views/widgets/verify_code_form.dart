@@ -58,47 +58,51 @@ class _VerifyCodeFormState extends State<VerifyCodeForm> {
         }
       },
       builder:
-          (BuildContext context, VerifyCodeState state) => Form(
-            key: formKey,
-            autovalidateMode: autovalidateMode,
-            child: Column(
-              children: [
-                CustomTextFormFeild(
-                  controller: codeController,
-                  hintText: S.of(context).VerificationCode,
-                  keyboardType: TextInputType.number,
-                  suffixIcon: Icon(
-                    Icons.verified,
-                    color: AppColors.textPrimaryColor(context),
-                    size: 26,
-                  ),
-                ),
-                const SizedBox(height: 17),
-                state is VerifyCodeLoading
-                    ? const CustomLoadingIndicator()
-                    : CustomButton(
-                      title: S.of(context).Next,
-                      onPressed: () {
-                        verifyCodeMethod(code: codeController.text);
-                      },
+          (BuildContext context, VerifyCodeState state) => AbsorbPointer(
+            absorbing: state is VerifyCodeLoading,
+            child: Form(
+              key: formKey,
+              autovalidateMode: autovalidateMode,
+              child: Column(
+                children: [
+                  CustomTextFormFeild(
+                    controller: codeController,
+                    hintText: S.of(context).VerificationCode,
+                    keyboardType: TextInputType.number,
+                    suffixIcon: Icon(
+                      Icons.verified,
+                      color: AppColors.textPrimaryColor(context),
+                      size: 26,
                     ),
-                const SizedBox(height: 17),
-                TextButton(
-                  onPressed: () {
-                    // TODO: Implement resend code logic
-                  },
-                  child: Text(
-                    S.of(context).ResendCode,
-                    style: TextStyle(color: AppColors.customBlue()),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 17),
+                  state is VerifyCodeLoading
+                      ? const CustomLoadingIndicator()
+                      : CustomButton(
+                        title: S.of(context).Next,
+                        onPressed: () {
+                          verifyCodeMethod(code: codeController.text);
+                        },
+                      ),
+                  const SizedBox(height: 17),
+                  TextButton(
+                    onPressed: () {
+                      // TODO: Implement resend code logic
+                    },
+                    child: Text(
+                      S.of(context).ResendCode,
+                      style: TextStyle(color: AppColors.customBlue()),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
     );
   }
 
   void verifyCodeMethod({required String code}) {
+    FocusScope.of(context).unfocus();
     context.push(RouteNames.resetPassword);
     // if (formKey.currentState!.validate()) {
     //   formKey.currentState!.save();

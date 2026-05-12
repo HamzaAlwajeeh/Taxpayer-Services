@@ -64,54 +64,58 @@ class _LoginFormState extends State<LoginForm> {
         }
       },
       builder:
-          (BuildContext context, LoginState state) => Form(
-            key: formKey,
-            autovalidateMode: autovalidateMode,
-            child: Column(
-              children: [
-                CustomTextFormFeild(
-                  controller: userNameController,
-                  hintText: 'اسم المستخدم',
-                  keyboardType: TextInputType.text,
-                  suffixIcon: Icon(
-                    Icons.person,
-                    color: AppColors.textPrimaryColor(context),
-                    size: 26,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                CustomTextFormFeild(
-                  controller: passwordController,
-                  isPassword: true,
-                  hintText: 'كلمة المرور',
-                  keyboardType: TextInputType.visiblePassword,
-                ),
-                const SizedBox(height: 17),
-                CustomButton(
-                  title: 'نسيت كلمة المرور',
-                  onPressed: () {
-                    context.go(RouteNames.forgotPassword);
-                  },
-                ),
-                const SizedBox(height: 17),
-                state is LoginLoading
-                    ? const CustomLoadingIndicator()
-                    : CustomButton(
-                      title: 'تسجيل الدخول',
-                      onPressed: () {
-                        loginMethod(
-                          userName: userNameController.text,
-                          password: passwordController.text,
-                        );
-                      },
+          (BuildContext context, LoginState state) => AbsorbPointer(
+            absorbing: state is LoginLoading,
+            child: Form(
+              key: formKey,
+              autovalidateMode: autovalidateMode,
+              child: Column(
+                children: [
+                  CustomTextFormFeild(
+                    controller: userNameController,
+                    hintText: 'اسم المستخدم',
+                    keyboardType: TextInputType.text,
+                    suffixIcon: Icon(
+                      Icons.person,
+                      color: AppColors.textPrimaryColor(context),
+                      size: 26,
                     ),
-              ],
+                  ),
+                  const SizedBox(height: 16),
+                  CustomTextFormFeild(
+                    controller: passwordController,
+                    isPassword: true,
+                    hintText: 'كلمة المرور',
+                    keyboardType: TextInputType.visiblePassword,
+                  ),
+                  const SizedBox(height: 17),
+                  CustomButton(
+                    title: 'نسيت كلمة المرور',
+                    onPressed: () {
+                      context.go(RouteNames.forgotPassword);
+                    },
+                  ),
+                  const SizedBox(height: 17),
+                  state is LoginLoading
+                      ? const CustomLoadingIndicator()
+                      : CustomButton(
+                        title: 'تسجيل الدخول',
+                        onPressed: () {
+                          loginMethod(
+                            userName: userNameController.text,
+                            password: passwordController.text,
+                          );
+                        },
+                      ),
+                ],
+              ),
             ),
           ),
     );
   }
 
   void loginMethod({required String userName, required String password}) {
+    FocusScope.of(context).unfocus();
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
       autovalidateMode = AutovalidateMode.disabled;

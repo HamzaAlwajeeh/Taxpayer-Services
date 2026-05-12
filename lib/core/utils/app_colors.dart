@@ -3,7 +3,7 @@ import 'package:tax_payer/Features/Settings/app_settings.dart';
 
 abstract class AppColors {
   static bool isDarkMode([BuildContext? context]) {
-    if (context != null) {
+    if (context != null && context.mounted) {
       return Theme.of(context).brightness == Brightness.dark;
     }
     return AppSettings.themeModeSignal.value == ThemeMode.dark;

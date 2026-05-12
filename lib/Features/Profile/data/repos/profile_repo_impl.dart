@@ -6,6 +6,7 @@ import 'package:tax_payer/Features/Profile/data/repos/profile.repo.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/services/api_service.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 
 class ProfileRepoImpl implements ProfileRepo {
   ApiService apiService;
@@ -23,21 +24,25 @@ class ProfileRepoImpl implements ProfileRepo {
     required String? confirmPassword,
   }) async {
     try {
+      Map<String, dynamic> body = {
+        'firstName': firstName,
+        'lastName': lastName,
+        'userName': userName,
+        'phone': phone,
+        'idCard': idCard,
+        'image': image,
+        'password': password,
+        'password_confirmation': confirmPassword,
+      };
+
+      body.removeWhere((key, value) => value == null || value == '');
+
       await apiService.put(
         endPoint: AppConstants.kUpdateProfile,
-        body: {
-          'firstName': firstName,
-          'lastName': lastName,
-          'userName': userName,
-          'phone': phone,
-          'idCard': idCard,
-          'image': image,
-          'password': password,
-          'password_confirmation': confirmPassword,
-        },
-        token: null,
+        body: body,
+        token: Prefs.getString(AppConstants.kToken),
       );
-      return right('User Created Successfully');
+      return right('User Updated Successfully');
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));

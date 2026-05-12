@@ -87,54 +87,59 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
               backgroundColor: const Color(0xffF9F9F9),
               appBar: CustomAppBar(title: S.of(context).EditProfile),
               body: SafeArea(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 24,
-                    vertical: 30,
-                  ),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        EditProfileImage(
-                          onImageChanged: (image) {
-                            setState(() {
-                              _selectedImage = image;
-                            });
-                          },
-                        ),
-                        const SizedBox(height: AppSpacing.s32),
-                        EditProfileForm(
-                          firstNameController: _firstNameController,
-                          lastNameController: _lastNameController,
-                          phoneController: _phoneController,
-                          passwordController: _passwordController,
-                          confirmPasswordController: _confirmPasswordController,
-                        ),
-                        const SizedBox(height: AppSpacing.s40),
-                        state is EditProfileLoading
-                            ? CustomLoadingIndicator()
-                            : CustomButton(
-                              title: S.of(context).EditProfile,
-                              onPressed: () {
-                                if (_formKey.currentState!.validate()) {
-                                  context.read<EditProfileCubit>().editProfile(
-                                    idCard: _selectedImage,
-                                    userName: _userNameController.text,
-                                    firstName: _firstNameController.text,
-                                    lastName: _lastNameController.text,
-                                    phone: _phoneController.text,
-                                    image: _selectedImage,
-                                    password: _passwordController.text,
-                                    confirmPassword:
-                                        _confirmPasswordController.text,
-                                  );
-                                }
-                              },
-                            ),
-                        const SizedBox(height: AppSpacing.s20),
-                      ],
+                child: AbsorbPointer(
+                  absorbing: state is EditProfileLoading,
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 30,
+                    ),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          EditProfileImage(
+                            currentImage: Prefs.getUser(AppConstants.kCurrentUser)?.image,
+                            onImageChanged: (image) {
+                              setState(() {
+                                _selectedImage = image;
+                              });
+                            },
+                          ),
+                          const SizedBox(height: AppSpacing.s32),
+                          EditProfileForm(
+                            firstNameController: _firstNameController,
+                            lastNameController: _lastNameController,
+                            phoneController: _phoneController,
+                            passwordController: _passwordController,
+                            confirmPasswordController: _confirmPasswordController,
+                          ),
+                          const SizedBox(height: AppSpacing.s40),
+                          state is EditProfileLoading
+                              ? CustomLoadingIndicator()
+                              : CustomButton(
+                                title: S.of(context).EditProfile,
+                                onPressed: () {
+                                  FocusScope.of(context).unfocus();
+                                  if (_formKey.currentState!.validate()) {
+                                    User? user = Prefs.getUser(AppConstants.kCurrentUser);
+                                    context.read<EditProfileCubit>().editProfile(
+                                      idCard: null,
+                                      userName: _userNameController.text == user?.userName ? null : _userNameController.text,
+                                      firstName: _firstNameController.text == user?.firstName ? null : _firstNameController.text,
+                                      lastName: _lastNameController.text == user?.lastName ? null : _lastNameController.text,
+                                      phone: _phoneController.text == user?.phone ? null : _phoneController.text,
+                                      image: _selectedImage,
+                                      password: _passwordController.text.isEmpty ? null : _passwordController.text,
+                                      confirmPassword: _confirmPasswordController.text.isEmpty ? null : _confirmPasswordController.text,
+                                    );
+                                  }
+                                },
+                              ),
+                          const SizedBox(height: AppSpacing.s20),
+                        ],
+                      ),
                     ),
                   ),
                 ),

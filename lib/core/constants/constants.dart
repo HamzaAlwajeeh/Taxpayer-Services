@@ -21,9 +21,10 @@ class AppConstants {
   static const String kLogin = 'tax-payer-mobile-login';
   static const String kRegister = 'create-tax-payer-mobile';
   static const String kUpdateProfile = 'update-tax-payer-mobile';
-  static const String kForgotPassword = '/forgot-password';
-  static const String kVerifyCode = '/verify-code';
-  static const String kResetPassword = '/reset-password';
+  static const String kForgotPassword = 'forgot-password';
+  static const String kVerifyCode = 'verify-code';
+  static const String kResetPassword = 'reset-password';
   static const String kChangePassword = 'change-password';
   static const String kLogout = 'tax-payer-mobile-logout';
+  static const String kgetUserProfile = 'tax-payer-mobile-profile';
 }
