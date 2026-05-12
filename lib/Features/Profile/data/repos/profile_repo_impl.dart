@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
 import 'package:tax_payer/Features/Profile/data/repos/profile.repo.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
@@ -43,6 +44,23 @@ class ProfileRepoImpl implements ProfileRepo {
         token: Prefs.getString(AppConstants.kToken),
       );
       return right('User Updated Successfully');
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(errorMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, User>> getUserProfile() async {
+    try {
+      var response = await apiService.get(
+        endPoint: AppConstants.kgetUserProfile,
+        body: null,
+        token: Prefs.getString(AppConstants.kToken),
+      );
+      return right(User.fromJson(response['data']));
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));

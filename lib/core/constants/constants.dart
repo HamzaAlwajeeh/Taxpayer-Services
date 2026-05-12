@@ -26,5 +26,5 @@ class AppConstants {
   static const String kResetPassword = 'reset-password';
   static const String kChangePassword = 'change-password';
   static const String kLogout = 'tax-payer-mobile-logout';
-  static const String kgetUserProfile = 'tax-payer-mobile-profile';
+  static const String kgetUserProfile = 'get-tax-payer-mobile-profile';
 }

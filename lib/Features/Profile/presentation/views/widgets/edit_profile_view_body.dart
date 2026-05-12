@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/edit_profile_cubit/edit_profile_state.dart';
+import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/widgets/edit_profile_form.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/widgets/edit_profile_image.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
@@ -62,6 +63,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
     return BlocConsumer<EditProfileCubit, EditProfileState>(
       listener: (context, state) {
         if (state is EditProfileSuccess) {
+          context.read<UserProfileCubit>().getUserProfile();
           customToastBar(
             context: context,
             message: state.message,

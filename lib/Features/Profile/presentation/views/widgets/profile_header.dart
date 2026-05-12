@@ -43,10 +43,10 @@ class ProfileHeader extends StatelessWidget {
               ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(50)),
                 child: CustomImageWidget(
-                  width: 80,
-                  height: 80,
+                  width: 85,
+                  height: 85,
                   image: image,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
               ),
               if (Prefs.getUser(AppConstants.kCurrentUser) != null)
