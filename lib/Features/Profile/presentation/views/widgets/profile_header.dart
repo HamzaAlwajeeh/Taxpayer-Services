@@ -1,7 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
@@ -47,35 +49,36 @@ class ProfileHeader extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
               ),
-              Positioned(
-                bottom: -5,
-                right: -10,
-                child: Container(
-                  width: 40,
-                  height: 40,
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: AppColors.itemsColor(context),
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: AppColors.borderColor(context),
-                      width: 1,
+              if (Prefs.getUser(AppConstants.kCurrentUser) != null)
+                Positioned(
+                  bottom: -5,
+                  right: -10,
+                  child: Container(
+                    width: 40,
+                    height: 40,
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: AppColors.itemsColor(context),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: AppColors.borderColor(context),
+                        width: 1,
+                      ),
                     ),
-                  ),
-                  child: GestureDetector(
-                    onTap: () => context.push(RouteNames.editProfile),
-                    child: Center(
-                      child: SvgPicture.asset(
-                        Assets.assetsIconsEdit,
-                        colorFilter: ColorFilter.mode(
-                          AppColors.textRedColor(context),
-                          BlendMode.srcIn,
+                    child: GestureDetector(
+                      onTap: () => context.push(RouteNames.editProfile),
+                      child: Center(
+                        child: SvgPicture.asset(
+                          Assets.assetsIconsEdit,
+                          colorFilter: ColorFilter.mode(
+                            AppColors.textRedColor(context),
+                            BlendMode.srcIn,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
             ],
           ),
           const SizedBox(height: 10),

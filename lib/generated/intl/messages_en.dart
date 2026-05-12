@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ActiveStatus": MessageLookupByLibrary.simpleMessage("Active"),
     "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "BadCertificate": MessageLookupByLibrary.simpleMessage("Bad certificate"),
+    "BasicInfo": MessageLookupByLibrary.simpleMessage("Basic Information"),
     "Camera": MessageLookupByLibrary.simpleMessage("Camera"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("Take a new photo"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
@@ -43,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "DarkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "Disabled": MessageLookupByLibrary.simpleMessage("Disabled"),
+    "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
     "EnterNewPasswordDesc": MessageLookupByLibrary.simpleMessage(
       "Enter your new password and confirm it",

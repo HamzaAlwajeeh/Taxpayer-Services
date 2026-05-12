@@ -71,5 +71,8 @@
     "Language": "Language",
     "Arabic": "Arabic",
     "SecurityAndPrivacy": "Security and Privacy",
-    "ClickToViewDetails": "Click to view details"
+    "ClickToViewDetails": "Click to view details",
+    "BasicInfo": "Basic Information",
+    "EditProfile": "Edit Profile",
+    "Guest":"Guest"
 }

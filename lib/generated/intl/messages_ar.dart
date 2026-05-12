@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "BadCertificate": MessageLookupByLibrary.simpleMessage(
       "شهادة الاتصال غير صالحة",
     ),
+    "BasicInfo": MessageLookupByLibrary.simpleMessage("البيانات الأساسية"),
     "Camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
     "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
@@ -47,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "DarkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
     "Disabled": MessageLookupByLibrary.simpleMessage("معطل"),
+    "EditProfile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "EnterNewPasswordDesc": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة المرور الجديدة وقم بتأكيدها",

@@ -71,5 +71,8 @@
     "Language": "اللغه",
     "Arabic": "العربيه",
     "SecurityAndPrivacy": "الامان والخصوصية",
-    "ClickToViewDetails": "انقر لعرض التفاصيل"
+    "ClickToViewDetails": "انقر لعرض التفاصيل",
+    "BasicInfo": "البيانات الأساسية",
+    "EditProfile": "تعديل الملف الشخصي",
+    "Guest":"ضيف"
 }

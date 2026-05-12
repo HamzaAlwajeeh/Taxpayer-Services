@@ -650,6 +650,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Basic Information`
+  String get BasicInfo {
+    return Intl.message(
+      'Basic Information',
+      name: 'BasicInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get EditProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'EditProfile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -13,68 +13,87 @@ class CustomButton extends StatelessWidget {
     this.backgroundColor,
     this.textColor,
     this.borderColor,
-    this.isLogout,
+    this.isLogout = false,
   });
+
   final String title;
   final Color? backgroundColor;
   final Color? textColor;
   final Color? borderColor;
   final void Function()? onPressed;
-  final bool? isLogout;
+  final bool isLogout;
+
   @override
   Widget build(BuildContext context) {
+    final bool isOutlinedLogout = isLogout;
+
     return InkWell(
+      borderRadius: BorderRadius.circular(AppSpacing.radius16),
       onTap: onPressed,
       child: Container(
         width: double.infinity,
         height: 56,
         decoration: BoxDecoration(
           boxShadow:
-              backgroundColor != null
+              !isOutlinedLogout
                   ? [
                     BoxShadow(
-                      color: Color(
-                        0xffD31313,
-                      ).withOpacity(0.40).withValues(alpha: 0.40),
+                      color: const Color(0xffD31313).withOpacity(0.40),
                       blurRadius: AppSpacing.s16,
                       offset: const Offset(0, 0),
                     ),
                   ]
                   : [],
-          border: Border.all(color: borderColor ?? Colors.transparent),
-          borderRadius: BorderRadius.circular(AppSpacing.radius16),
-          color: backgroundColor,
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomCenter,
-            colors:
-                backgroundColor == null
-                    ? [Color(0xff820005), Color(0xffAA1212)]
-                    : [],
+
+          border: Border.all(
+            color:
+                isOutlinedLogout
+                    ? borderColor ?? AppColors.primaryColor(context)
+                    : Colors.transparent,
           ),
+
+          borderRadius: BorderRadius.circular(AppSpacing.radius16),
+
+          color:
+              isOutlinedLogout ? backgroundColor ?? Colors.transparent : null,
+
+          gradient:
+              isOutlinedLogout
+                  ? null
+                  : const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomCenter,
+                    colors: [Color(0xff820005), Color(0xffAA1212)],
+                  ),
         ),
+
         child: Center(
           child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Visibility(
-                visible: isLogout != null,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: SvgPicture.asset(
-                    Assets.assetsIconsLogout,
-                    width: 25,
-                    height: 25,
-                    colorFilter: ColorFilter.mode(
-                      AppColors.primaryColor(context),
-                      BlendMode.srcIn,
-                    ),
+              if (isOutlinedLogout) ...[
+                SvgPicture.asset(
+                  Assets.assetsIconsLogout,
+                  width: 24,
+                  height: 24,
+                  colorFilter: ColorFilter.mode(
+                    textColor ?? AppColors.primaryColor(context),
+                    BlendMode.srcIn,
                   ),
                 ),
-              ),
+
+                const SizedBox(width: 10),
+              ],
+
               Text(
                 title,
                 style: TextStyles.bold22.copyWith(
-                  color: textColor ?? AppColors.white(),
+                  color:
+                      textColor ??
+                      (isOutlinedLogout
+                          ? AppColors.primaryColor(context)
+                          : AppColors.white()),
                 ),
               ),
             ],
