@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/login_cubit/login_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/login_cubit/login_state.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/has_an_account.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/widgets/remember_me_widget.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
@@ -23,10 +24,14 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-  TextEditingController userNameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController userNameController = TextEditingController();
+
+  final TextEditingController passwordController = TextEditingController();
+
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
   bool isRememberMe = false;
 
   @override
@@ -37,10 +42,13 @@ class _LoginFormState extends State<LoginForm> {
 
   void _loadSavedCredentials() {
     final savedUsername = Prefs.getString(AppConstants.kSavedUsername);
+
     final savedPassword = Prefs.getString(AppConstants.kSavedPassword);
+
     if (savedUsername != null && savedPassword != null) {
       userNameController.text = savedUsername;
       passwordController.text = savedPassword;
+
       setState(() {
         isRememberMe = true;
       });
@@ -64,6 +72,7 @@ class _LoginFormState extends State<LoginForm> {
               AppConstants.kSavedUsername,
               userNameController.text,
             );
+
             Prefs.setString(
               AppConstants.kSavedPassword,
               passwordController.text,
@@ -72,6 +81,7 @@ class _LoginFormState extends State<LoginForm> {
             Prefs.removeString(AppConstants.kSavedUsername);
             Prefs.removeString(AppConstants.kSavedPassword);
           }
+
           customToastBar(
             context: context,
             message: S.of(context).LoginSuccess,
@@ -79,8 +89,11 @@ class _LoginFormState extends State<LoginForm> {
             icon: Icons.check,
             textColor: AppColors.white(),
           );
+
           Prefs.setBool(AppConstants.kIsLogedIn, true);
+
           Prefs.setUser(AppConstants.kCurrentUser, state.user);
+
           context.go(RouteNames.dashboard);
         } else if (state is LoginFailure) {
           customToastBar(
@@ -96,8 +109,11 @@ class _LoginFormState extends State<LoginForm> {
           );
         }
       },
-      builder:
-          (BuildContext context, LoginState state) => Form(
+
+      builder: (BuildContext context, LoginState state) {
+        return AbsorbPointer(
+          absorbing: state is LoginLoading,
+          child: Form(
             key: formKey,
             autovalidateMode: autovalidateMode,
             child: Column(
@@ -112,14 +128,18 @@ class _LoginFormState extends State<LoginForm> {
                     size: 26,
                   ),
                 ),
+
                 const SizedBox(height: 16),
+
                 CustomTextFormFeild(
                   controller: passwordController,
                   isPassword: true,
                   hintText: 'كلمة المرور',
                   keyboardType: TextInputType.visiblePassword,
                 ),
+
                 const SizedBox(height: 12),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -140,122 +160,59 @@ class _LoginFormState extends State<LoginForm> {
                         ),
                       ),
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          'تذكرني',
-                          style: TextStyle(
-                            color: AppColors.textPrimaryColor(context),
-                            fontWeight: FontWeight.w600,
-                          ),
+                    RememberMeWidget(
+                      value: isRememberMe,
+                      onChanged: (value) {
+                        setState(() {
+                          isRememberMe = value ?? false;
+                        });
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    const HasAnAccount(
+                      isLoginView: true,
+                      primaryText: 'ليس لديك حساب؟',
+                      secondaryText: 'إنشاء حساب',
+                    ),
+                    const SizedBox(height: 17),
+                    state is LoginLoading
+                        ? const CustomLoadingIndicator()
+                        : CustomButton(
+                          title: 'تسجيل الدخول',
+                          onPressed: () {
+                            loginMethod(
+                              userName: userNameController.text,
+                              password: passwordController.text,
+                            );
+                          },
                         ),
-                        const SizedBox(width: 4),
-                        SizedBox(
-                          height: 24,
-                          width: 24,
-                          child: Checkbox(
-                            value: isRememberMe,
-                            onChanged: (value) {
-                              setState(() {
-                                isRememberMe = value ?? false;
-                              });
-                            },
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                            activeColor: AppColors.primaryColor(context),
-                            side: BorderSide(
-                              color: AppColors.borderColor(context),
-                            ),
-                          ),
-                        ),
-                      ],
+                    const SizedBox(height: 12),
+                    CustomButton(
+                      title: 'الدخول كضيف',
+                      onPressed: () {
+                        context.go(RouteNames.dashboard);
+                      },
                     ),
                   ],
                 ),
-                const SizedBox(height: 12),
-                const HasAnAccount(
-                  isLoginView: true,
-                  primaryText: 'ليس لديك حساب؟',
-                  secondaryText: 'إنشاء حساب',
-                ),
-                const SizedBox(height: 17),
-                state is LoginLoading
-                    ? const CustomLoadingIndicator()
-                    : CustomButton(
-                      title: 'تسجيل الدخول',
-                      onPressed: () {
-                        loginMethod(
-                          userName: userNameController.text,
-                          password: passwordController.text,
-                        );
-                      },
-                    ),
-                const SizedBox(height: 12),
-                CustomButton(
-                  title: 'الدخول كضيف',
-                  // backgroundColor: const Color(0xFFDCB785),
-                  // textColor: Colors.white,
-                  onPressed: () {
-                    context.go(RouteNames.dashboard);
-                  },
-                ),
               ],
-          (BuildContext context, LoginState state) => AbsorbPointer(
-            absorbing: state is LoginLoading,
-            child: Form(
-              key: formKey,
-              autovalidateMode: autovalidateMode,
-              child: Column(
-                children: [
-                  CustomTextFormFeild(
-                    controller: userNameController,
-                    hintText: 'اسم المستخدم',
-                    keyboardType: TextInputType.text,
-                    suffixIcon: Icon(
-                      Icons.person,
-                      color: AppColors.textPrimaryColor(context),
-                      size: 26,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  CustomTextFormFeild(
-                    controller: passwordController,
-                    isPassword: true,
-                    hintText: 'كلمة المرور',
-                    keyboardType: TextInputType.visiblePassword,
-                  ),
-                  const SizedBox(height: 17),
-                  CustomButton(
-                    title: 'نسيت كلمة المرور',
-                    onPressed: () {
-                      context.go(RouteNames.forgotPassword);
-                    },
-                  ),
-                  const SizedBox(height: 17),
-                  state is LoginLoading
-                      ? const CustomLoadingIndicator()
-                      : CustomButton(
-                        title: 'تسجيل الدخول',
-                        onPressed: () {
-                          loginMethod(
-                            userName: userNameController.text,
-                            password: passwordController.text,
-                          );
-                        },
-                      ),
-                ],
-              ),
             ),
           ),
+        );
+      },
     );
   }
 
   void loginMethod({required String userName, required String password}) {
     FocusScope.of(context).unfocus();
+
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
-      autovalidateMode = AutovalidateMode.disabled;
+
+      setState(() {
+        autovalidateMode = AutovalidateMode.disabled;
+      });
+
       BlocProvider.of<LoginCubit>(
         context,
       ).login(userName: userName, password: password);
