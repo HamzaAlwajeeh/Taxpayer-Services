@@ -105,16 +105,17 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
   }
 
   void forgotPasswordMethod({required String userName, required String phone}) {
-    if (formKey.currentState!.validate()) {
-      formKey.currentState!.save();
-      autovalidateMode = AutovalidateMode.disabled;
-      BlocProvider.of<ForgotPasswordCubit>(
-        context,
-      ).forgetPassword(userName: userName, phone: phone);
-    } else {
-      setState(() {
-        autovalidateMode = AutovalidateMode.always;
-      });
-    }
+    context.push(RouteNames.verifyCode);
+    // if (formKey.currentState!.validate()) {
+    //   formKey.currentState!.save();
+    //   autovalidateMode = AutovalidateMode.disabled;
+    //   BlocProvider.of<ForgotPasswordCubit>(
+    //     context,
+    //   ).forgetPassword(userName: userName, phone: phone);
+    // } else {
+    //   setState(() {
+    //     autovalidateMode = AutovalidateMode.always;
+    //   });
+    // }
   }
 }

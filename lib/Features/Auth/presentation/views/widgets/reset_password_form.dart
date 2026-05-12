@@ -112,17 +112,18 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
     required String newPassword,
     required String confirmNewPassword,
   }) {
-    if (formKey.currentState!.validate()) {
-      formKey.currentState!.save();
-      autovalidateMode = AutovalidateMode.disabled;
-      BlocProvider.of<ResetPasswordCubit>(context).changePassword(
-        newPassword: newPassword,
-        confirmNewPassword: confirmNewPassword,
-      );
-    } else {
-      setState(() {
-        autovalidateMode = AutovalidateMode.always;
-      });
-    }
+    context.go(RouteNames.login);
+    // if (formKey.currentState!.validate()) {
+    //   formKey.currentState!.save();
+    //   autovalidateMode = AutovalidateMode.disabled;
+    //   BlocProvider.of<ResetPasswordCubit>(context).changePassword(
+    //     newPassword: newPassword,
+    //     confirmNewPassword: confirmNewPassword,
+    //   );
+    // } else {
+    //   setState(() {
+    //     autovalidateMode = AutovalidateMode.always;
+    //   });
+    // }
   }
 }

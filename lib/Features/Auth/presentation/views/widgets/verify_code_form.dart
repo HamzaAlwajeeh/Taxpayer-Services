@@ -99,14 +99,15 @@ class _VerifyCodeFormState extends State<VerifyCodeForm> {
   }
 
   void verifyCodeMethod({required String code}) {
-    if (formKey.currentState!.validate()) {
-      formKey.currentState!.save();
-      autovalidateMode = AutovalidateMode.disabled;
-      BlocProvider.of<VerifyCodeCubit>(context).verifyCode(code: code);
-    } else {
-      setState(() {
-        autovalidateMode = AutovalidateMode.always;
-      });
-    }
+    context.push(RouteNames.resetPassword);
+    // if (formKey.currentState!.validate()) {
+    //   formKey.currentState!.save();
+    //   autovalidateMode = AutovalidateMode.disabled;
+    //   BlocProvider.of<VerifyCodeCubit>(context).verifyCode(code: code);
+    // } else {
+    //   setState(() {
+    //     autovalidateMode = AutovalidateMode.always;
+    //   });
+    // }
   }
 }
