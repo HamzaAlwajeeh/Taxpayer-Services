@@ -16,16 +16,10 @@ class ProfileBackgroundColor extends StatelessWidget {
         child: SvgPicture.asset(
           Assets.assetsImagesProfileBackgroundColor,
           fit: BoxFit.cover,
-          colorFilter:
-              isDark
-                  ? ColorFilter.mode(
-                    AppColors.customRed(context, true),
-                    BlendMode.srcIn,
-                  )
-                  : ColorFilter.mode(
-                    AppColors.itemsColor(context),
-                    BlendMode.srcIn,
-                  ),
+          colorFilter: ColorFilter.mode(
+            AppColors.customRed(context, true),
+            BlendMode.srcIn,
+          ),
         ),
       ),
     );
