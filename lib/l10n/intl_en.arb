@@ -74,5 +74,9 @@
     "ClickToViewDetails": "Click to view details",
     "BasicInfo": "Basic Information",
     "EditProfile": "Edit Profile",
-    "Guest":"Guest"
+    "Guest": "Guest",
+    "AppVersion": "App Version",
+    "Enabled": "Enabled",
+    "Active": "Active",
+    "English": "English"
 }

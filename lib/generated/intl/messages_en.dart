@@ -22,7 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Active": MessageLookupByLibrary.simpleMessage("Active"),
     "ActiveStatus": MessageLookupByLibrary.simpleMessage("Active"),
+    "AppVersion": MessageLookupByLibrary.simpleMessage("App Version"),
     "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "BadCertificate": MessageLookupByLibrary.simpleMessage("Bad certificate"),
     "BasicInfo": MessageLookupByLibrary.simpleMessage("Basic Information"),
@@ -46,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "Disabled": MessageLookupByLibrary.simpleMessage("Disabled"),
     "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
+    "Enabled": MessageLookupByLibrary.simpleMessage("Enabled"),
+    "English": MessageLookupByLibrary.simpleMessage("English"),
     "EnterNewPasswordDesc": MessageLookupByLibrary.simpleMessage(
       "Enter your new password and confirm it",
     ),
@@ -63,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "FirstName": MessageLookupByLibrary.simpleMessage("First Name"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
+    "Guest": MessageLookupByLibrary.simpleMessage("Guest"),
     "Home": MessageLookupByLibrary.simpleMessage("Home"),
     "IdCard": MessageLookupByLibrary.simpleMessage("IdCard"),
     "ImageIsRequired": MessageLookupByLibrary.simpleMessage(

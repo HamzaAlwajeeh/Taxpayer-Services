@@ -20,16 +20,9 @@ class AppSettings {
         theme == AppConstants.kDarkTheme ? ThemeMode.dark : ThemeMode.light;
   }
 
-  static void changeLanguage() {
-    final isArabic =
-        AppSettings.localeSignal.value.languageCode == AppConstants.kArabicLang;
-
-    final newLocale =
-        isArabic
-            ? const Locale(AppConstants.kEnglishLang)
-            : const Locale(AppConstants.kArabicLang);
+  static void changeLanguage(String newLangCode) {
+    final newLocale = Locale(newLangCode);
     AppSettings.localeSignal.value = newLocale;
-
     Prefs.setString(AppConstants.kCurrentLanguageKey, newLocale.languageCode);
   }
 

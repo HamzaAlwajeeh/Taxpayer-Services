@@ -41,7 +41,7 @@ class HomeViewBody extends StatelessWidget {
               CustomButton(
                 title: 'تغيير اللغة',
                 onPressed: () {
-                  AppSettings.changeLanguage();
+                  // AppSettings.changeLanguage();
                   customToastBar(
                     context: context,
                     message: 'تم تغيير اللغة',

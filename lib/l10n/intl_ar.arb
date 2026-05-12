@@ -74,5 +74,9 @@
     "ClickToViewDetails": "انقر لعرض التفاصيل",
     "BasicInfo": "البيانات الأساسية",
     "EditProfile": "تعديل الملف الشخصي",
-    "Guest":"ضيف"
+    "Guest": "ضيف",
+    "AppVersion": "إصدار التطبيق",
+    "Enabled": "مفعل",
+    "Active": "قيد التفعيل",
+    "English": "الإنجليزية"
 }

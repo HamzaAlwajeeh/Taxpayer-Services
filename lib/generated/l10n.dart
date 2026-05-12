@@ -670,6 +670,31 @@ class S {
       args: [],
     );
   }
+
+  /// `Guest`
+  String get Guest {
+    return Intl.message('Guest', name: 'Guest', desc: '', args: []);
+  }
+
+  /// `App Version`
+  String get AppVersion {
+    return Intl.message('App Version', name: 'AppVersion', desc: '', args: []);
+  }
+
+  /// `Enabled`
+  String get Enabled {
+    return Intl.message('Enabled', name: 'Enabled', desc: '', args: []);
+  }
+
+  /// `Active`
+  String get Active {
+    return Intl.message('Active', name: 'Active', desc: '', args: []);
+  }
+
+  /// `English`
+  String get English {
+    return Intl.message('English', name: 'English', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

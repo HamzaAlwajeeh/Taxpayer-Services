@@ -22,7 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Active": MessageLookupByLibrary.simpleMessage("قيد التفعيل"),
     "ActiveStatus": MessageLookupByLibrary.simpleMessage("شغال"),
+    "AppVersion": MessageLookupByLibrary.simpleMessage("إصدار التطبيق"),
     "Arabic": MessageLookupByLibrary.simpleMessage("العربيه"),
     "BadCertificate": MessageLookupByLibrary.simpleMessage(
       "شهادة الاتصال غير صالحة",
@@ -50,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "Disabled": MessageLookupByLibrary.simpleMessage("معطل"),
     "EditProfile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "Enabled": MessageLookupByLibrary.simpleMessage("مفعل"),
+    "English": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
     "EnterNewPasswordDesc": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة المرور الجديدة وقم بتأكيدها",
     ),
@@ -67,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ForgotPassword": MessageLookupByLibrary.simpleMessage(
       "استعادة كلمة المرور",
     ),
+    "Guest": MessageLookupByLibrary.simpleMessage("ضيف"),
     "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "IdCard": MessageLookupByLibrary.simpleMessage("البطاقة الشخصية"),
     "ImageIsRequired": MessageLookupByLibrary.simpleMessage("الصورة مطلوبة"),

@@ -11,6 +11,7 @@ import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/generated/l10n.dart';
 
 class ProfileViewBody extends StatefulWidget {
   const ProfileViewBody({super.key});
@@ -31,7 +32,9 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     return BlocBuilder<UserProfileCubit, UserProfileState>(
       builder: (context, state) {
-        User? user = context.read<UserProfileCubit>().currentUser ?? Prefs.getUser(AppConstants.kCurrentUser);
+        User? user =
+            context.read<UserProfileCubit>().currentUser ??
+            Prefs.getUser(AppConstants.kCurrentUser);
         return Stack(
           children: [
             ProfileBackgroundColor(isDark: isDark),
@@ -52,7 +55,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                       userName:
                           user != null
                               ? "${user.firstName} ${user.lastName}"
-                              : 'ضيف',
+                              : S.of(context).Guest,
                       phone: user?.phone ?? '',
                     ),
                     SizedBox(height: 24),
@@ -63,7 +66,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                     Center(
                       child: Text(
                         textAlign: TextAlign.center,
-                        AppConstants.kAppVersion,
+                        '${S.of(context).AppVersion} ${AppConstants.kAppVersion}',
                         style: TextStyle(
                           fontSize: 12,
                           color: AppColors.secondaryColor(context),
