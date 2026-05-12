@@ -44,12 +44,6 @@ class LoginViewBody extends StatelessWidget {
                       ),
                       const SizedBox(height: 17),
                       LoginForm(),
-                      const SizedBox(height: 17),
-                      HasAnAccount(
-                        isLoginView: true,
-                        primaryText: 'ليس لديك حساب؟',
-                        secondaryText: 'إنشاء حساب',
-                      ),
                     ],
                   ),
                 ),
