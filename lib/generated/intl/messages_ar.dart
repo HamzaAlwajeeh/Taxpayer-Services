@@ -33,6 +33,34 @@ class MessageLookup extends MessageLookupByLibrary {
     "Camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
     "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "CharitableCompanyFile": MessageLookupByLibrary.simpleMessage("شركة خيرية"),
+    "CharitableCompanyFileDesc": MessageLookupByLibrary.simpleMessage(
+      "متطلبات فتح ملف لشركة خيرية",
+    ),
+    "CharitableCompanyFileRequirements": MessageLookupByLibrary.simpleMessage(
+      "متطلبات فتح ملف شركة خيرية",
+    ),
+    "CharitableNote": MessageLookupByLibrary.simpleMessage(
+      "المؤسسات الخيرية المسجلة قد تكون مؤهلة لإعفاءات ضريبية خاصة. يرجى الاستفسار عن الشروط المحددة.",
+    ),
+    "CharitableReq1": MessageLookupByLibrary.simpleMessage(
+      "قرار التأسيس من الجهة المختصة",
+    ),
+    "CharitableReq2": MessageLookupByLibrary.simpleMessage(
+      "النظام الأساسي للمؤسسة الخيرية",
+    ),
+    "CharitableReq3": MessageLookupByLibrary.simpleMessage(
+      "شهادة تسجيل المؤسسة الخيرية",
+    ),
+    "CharitableReq4": MessageLookupByLibrary.simpleMessage(
+      "صورة البطاقة الشخصية لرئيس مجلس الإدارة",
+    ),
+    "CharitableReq5": MessageLookupByLibrary.simpleMessage(
+      "كشف حساب بنكي باسم المؤسسة",
+    ),
+    "CharitableReq6": MessageLookupByLibrary.simpleMessage(
+      "تقرير سنوي عن أنشطة المؤسسة",
+    ),
     "ClickToViewDetails": MessageLookupByLibrary.simpleMessage(
       "انقر لعرض التفاصيل",
     ),
@@ -41,6 +69,37 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CodeVerifiedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "تم التحقق من الرمز بنجاح",
+    ),
+    "CompanyFile": MessageLookupByLibrary.simpleMessage("ملف شركة"),
+    "CompanyFileDesc": MessageLookupByLibrary.simpleMessage(
+      "متطلبات فتح ملف ضريبي لشركة",
+    ),
+    "CompanyFileRequirements": MessageLookupByLibrary.simpleMessage(
+      "متطلبات فتح ملف شركة",
+    ),
+    "CompanyNote": MessageLookupByLibrary.simpleMessage(
+      "يتطلب فتح ملف الشركة حضور المدير المفوض شخصياً أو تفويض رسمي موثق. جميع المستندات يجب أن تكون مترجمة للعربية إذا كانت بلغة أجنبية.",
+    ),
+    "CompanyReq1": MessageLookupByLibrary.simpleMessage(
+      "عقد تأسيس الشركة مصدق",
+    ),
+    "CompanyReq2": MessageLookupByLibrary.simpleMessage(
+      "السجل التجاري ساري المفعول",
+    ),
+    "CompanyReq3": MessageLookupByLibrary.simpleMessage(
+      "البطاقة الضريبية (إن وجدت)",
+    ),
+    "CompanyReq4": MessageLookupByLibrary.simpleMessage(
+      "صورة البطاقة الشخصية للمدير المفوض",
+    ),
+    "CompanyReq5": MessageLookupByLibrary.simpleMessage(
+      "عقد إيجار أو ملكية المقر الرئيسي",
+    ),
+    "CompanyReq6": MessageLookupByLibrary.simpleMessage(
+      "محضر اجتماع الجمعية العامة",
+    ),
+    "CompanyReq7": MessageLookupByLibrary.simpleMessage(
+      "قائمة بأسماء الشركاء والمساهمين",
     ),
     "ConfirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
@@ -67,10 +126,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "أدخل الرمز المرسل إلى هاتفك للتحقق من هويتك",
     ),
     "FieldIsRequired": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+    "FileOpeningRequirements": MessageLookupByLibrary.simpleMessage(
+      "متطلبات فتح الملفات",
+    ),
+    "FileOpeningRequirementsDesc": MessageLookupByLibrary.simpleMessage(
+      "اختر نوع الملف لمعرفة المتطلبات",
+    ),
     "FirstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage(
       "استعادة كلمة المرور",
     ),
+    "GeneralInstructions": MessageLookupByLibrary.simpleMessage("تعليمات عامة"),
     "Guest": MessageLookupByLibrary.simpleMessage("ضيف"),
     "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "IdCard": MessageLookupByLibrary.simpleMessage("البطاقة الشخصية"),
@@ -79,7 +145,40 @@ class MessageLookup extends MessageLookupByLibrary {
       "اختر الطريقة المناسبة لإضافة الصورة",
     ),
     "ImageSourceTitle": MessageLookupByLibrary.simpleMessage("مصدر الصورة"),
+    "ImportantNote": MessageLookupByLibrary.simpleMessage("ملاحظة مهمة"),
+    "IndividualFile": MessageLookupByLibrary.simpleMessage("ملف فرد"),
+    "IndividualFileDesc": MessageLookupByLibrary.simpleMessage(
+      "متطلبات فتح ملف ضريبي لفرد",
+    ),
+    "IndividualFileRequirements": MessageLookupByLibrary.simpleMessage(
+      "متطلبات فتح ملف فرد",
+    ),
+    "IndividualNote": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تكون جميع المستندات سارية المفعول ومصدقة من الجهات المختصة. يمكنك مراجعة أقرب مكتب ضريبي للمساعدة.",
+    ),
+    "IndividualReq1": MessageLookupByLibrary.simpleMessage(
+      "صورة البطاقة الشخصية",
+    ),
+    "IndividualReq2": MessageLookupByLibrary.simpleMessage(
+      "شهادة ممارسة النشاط أو السجل التجاري",
+    ),
+    "IndividualReq3": MessageLookupByLibrary.simpleMessage(
+      "عقد إيجار أو ملكية لمقر النشاط",
+    ),
+    "IndividualReq4": MessageLookupByLibrary.simpleMessage(
+      "رقم هاتف فعال باسم المكلف",
+    ),
+    "IndividualReq5": MessageLookupByLibrary.simpleMessage("صورة شخصية حديثة"),
+    "IndividualReq6": MessageLookupByLibrary.simpleMessage(
+      "إثبات العنوان (فاتورة كهرباء أو ماء)",
+    ),
     "Instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
+    "InstructionsSubtitle": MessageLookupByLibrary.simpleMessage(
+      "كل ما تحتاج معرفته للبدء في خدمات المكلفين",
+    ),
+    "InstructionsTitle": MessageLookupByLibrary.simpleMessage(
+      "التعليمات والإرشادات",
+    ),
     "InternalServerError": MessageLookupByLibrary.simpleMessage(
       "خطأ داخلي في الخادم، يرجى المحاولة لاحقًا",
     ),
@@ -132,6 +231,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "PasswordNotMatch": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير مطابقة",
     ),
+    "Penalties": MessageLookupByLibrary.simpleMessage("الغرامات والجزاءات"),
+    "PenaltiesDesc": MessageLookupByLibrary.simpleMessage(
+      "المخالفات الضريبية والغرامات المترتبة عليها",
+    ),
+    "PenaltiesStep1": MessageLookupByLibrary.simpleMessage(
+      "غرامة التأخير في تقديم الإقرار الضريبي",
+    ),
+    "PenaltiesStep2": MessageLookupByLibrary.simpleMessage(
+      "غرامة التأخير في سداد المستحقات الضريبية",
+    ),
+    "PenaltiesStep3": MessageLookupByLibrary.simpleMessage(
+      "غرامة عدم مسك الدفاتر والسجلات المحاسبية",
+    ),
+    "PenaltiesStep4": MessageLookupByLibrary.simpleMessage(
+      "غرامة تقديم بيانات غير صحيحة أو مضللة",
+    ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
     "ProfileImage": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
@@ -139,6 +254,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "انتهت مهلة استقبال الرد من الخادم",
     ),
     "RequestCanceled": MessageLookupByLibrary.simpleMessage("تم إلغاء الطلب"),
+    "RequiredDocuments": MessageLookupByLibrary.simpleMessage(
+      "المستندات المطلوبة",
+    ),
     "ResendCode": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرمز"),
     "ResetPassword": MessageLookupByLibrary.simpleMessage(
       "إعادة تعيين كلمة المرور",
@@ -155,7 +273,59 @@ class MessageLookup extends MessageLookupByLibrary {
     "SignUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+    "StepsToFollow": MessageLookupByLibrary.simpleMessage("الخطوات المطلوبة"),
     "StoreName": MessageLookupByLibrary.simpleMessage("سوبر ماركت الصفاء"),
+    "TaxDeclaration": MessageLookupByLibrary.simpleMessage("الإقرار الضريبي"),
+    "TaxDeclarationDesc": MessageLookupByLibrary.simpleMessage(
+      "كيفية تقديم الإقرار الضريبي والمواعيد النهائية",
+    ),
+    "TaxDeclarationStep1": MessageLookupByLibrary.simpleMessage(
+      "الدخول إلى النظام الإلكتروني للإقرارات",
+    ),
+    "TaxDeclarationStep2": MessageLookupByLibrary.simpleMessage(
+      "تعبئة نموذج الإقرار الضريبي بالبيانات المالية",
+    ),
+    "TaxDeclarationStep3": MessageLookupByLibrary.simpleMessage(
+      "إرفاق القوائم المالية والمستندات الداعمة",
+    ),
+    "TaxDeclarationStep4": MessageLookupByLibrary.simpleMessage(
+      "مراجعة البيانات والتأكد من صحتها",
+    ),
+    "TaxDeclarationStep5": MessageLookupByLibrary.simpleMessage(
+      "تقديم الإقرار واستلام رقم المرجع",
+    ),
+    "TaxExemptions": MessageLookupByLibrary.simpleMessage("الإعفاءات الضريبية"),
+    "TaxExemptionsDesc": MessageLookupByLibrary.simpleMessage(
+      "الحالات المؤهلة للإعفاء الضريبي وشروطها",
+    ),
+    "TaxExemptionsStep1": MessageLookupByLibrary.simpleMessage(
+      "تقديم طلب الإعفاء عبر النظام الإلكتروني",
+    ),
+    "TaxExemptionsStep2": MessageLookupByLibrary.simpleMessage(
+      "إرفاق المستندات التي تثبت استحقاق الإعفاء",
+    ),
+    "TaxExemptionsStep3": MessageLookupByLibrary.simpleMessage(
+      "انتظار مراجعة الطلب من الجهة المختصة",
+    ),
+    "TaxExemptionsStep4": MessageLookupByLibrary.simpleMessage(
+      "استلام قرار الإعفاء أو الرفض مع الأسباب",
+    ),
+    "TaxPayment": MessageLookupByLibrary.simpleMessage("سداد الضريبة"),
+    "TaxPaymentDesc": MessageLookupByLibrary.simpleMessage(
+      "طرق وآليات سداد المستحقات الضريبية",
+    ),
+    "TaxPaymentStep1": MessageLookupByLibrary.simpleMessage(
+      "الحصول على إشعار السداد من النظام",
+    ),
+    "TaxPaymentStep2": MessageLookupByLibrary.simpleMessage(
+      "اختيار طريقة الدفع (بنكي / إلكتروني)",
+    ),
+    "TaxPaymentStep3": MessageLookupByLibrary.simpleMessage(
+      "إتمام عملية الدفع وحفظ إيصال السداد",
+    ),
+    "TaxPaymentStep4": MessageLookupByLibrary.simpleMessage(
+      "التحقق من تحديث حالة الملف الضريبي",
+    ),
     "UnauthorizedRequest": MessageLookupByLibrary.simpleMessage(
       "طلب غير مصرح به",
     ),
@@ -169,5 +339,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "UserName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "VerificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("التحقق من الرمز"),
+    "ViewDetails": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
   };
 }

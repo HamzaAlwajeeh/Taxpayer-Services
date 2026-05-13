@@ -31,6 +31,36 @@ class MessageLookup extends MessageLookupByLibrary {
     "Camera": MessageLookupByLibrary.simpleMessage("Camera"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("Take a new photo"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "CharitableCompanyFile": MessageLookupByLibrary.simpleMessage(
+      "Charitable Company",
+    ),
+    "CharitableCompanyFileDesc": MessageLookupByLibrary.simpleMessage(
+      "Requirements for opening a charitable company file",
+    ),
+    "CharitableCompanyFileRequirements": MessageLookupByLibrary.simpleMessage(
+      "Charitable Company File Requirements",
+    ),
+    "CharitableNote": MessageLookupByLibrary.simpleMessage(
+      "Registered charitable organizations may be eligible for special tax exemptions. Please inquire about specific conditions.",
+    ),
+    "CharitableReq1": MessageLookupByLibrary.simpleMessage(
+      "Establishment decision from competent authority",
+    ),
+    "CharitableReq2": MessageLookupByLibrary.simpleMessage(
+      "Articles of association of the charitable organization",
+    ),
+    "CharitableReq3": MessageLookupByLibrary.simpleMessage(
+      "Charitable organization registration certificate",
+    ),
+    "CharitableReq4": MessageLookupByLibrary.simpleMessage(
+      "Copy of board chairman\'s ID card",
+    ),
+    "CharitableReq5": MessageLookupByLibrary.simpleMessage(
+      "Bank statement in the organization\'s name",
+    ),
+    "CharitableReq6": MessageLookupByLibrary.simpleMessage(
+      "Annual report on organization activities",
+    ),
     "ClickToViewDetails": MessageLookupByLibrary.simpleMessage(
       "Click to view details",
     ),
@@ -39,6 +69,37 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CodeVerifiedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Code verified successfully",
+    ),
+    "CompanyFile": MessageLookupByLibrary.simpleMessage("Company File"),
+    "CompanyFileDesc": MessageLookupByLibrary.simpleMessage(
+      "Requirements for opening a company tax file",
+    ),
+    "CompanyFileRequirements": MessageLookupByLibrary.simpleMessage(
+      "Company File Requirements",
+    ),
+    "CompanyNote": MessageLookupByLibrary.simpleMessage(
+      "Opening a company file requires personal attendance of the authorized manager or an official notarized authorization. All documents must be translated to Arabic if in a foreign language.",
+    ),
+    "CompanyReq1": MessageLookupByLibrary.simpleMessage(
+      "Certified company incorporation contract",
+    ),
+    "CompanyReq2": MessageLookupByLibrary.simpleMessage(
+      "Valid commercial registration",
+    ),
+    "CompanyReq3": MessageLookupByLibrary.simpleMessage(
+      "Tax card (if available)",
+    ),
+    "CompanyReq4": MessageLookupByLibrary.simpleMessage(
+      "Copy of authorized manager\'s ID card",
+    ),
+    "CompanyReq5": MessageLookupByLibrary.simpleMessage(
+      "Lease or ownership contract for headquarters",
+    ),
+    "CompanyReq6": MessageLookupByLibrary.simpleMessage(
+      "General assembly meeting minutes",
+    ),
+    "CompanyReq7": MessageLookupByLibrary.simpleMessage(
+      "List of partners and shareholders",
     ),
     "ConfirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
@@ -65,8 +126,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "FieldIsRequired": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
+    "FileOpeningRequirements": MessageLookupByLibrary.simpleMessage(
+      "File Opening Requirements",
+    ),
+    "FileOpeningRequirementsDesc": MessageLookupByLibrary.simpleMessage(
+      "Select file type to view requirements",
+    ),
     "FirstName": MessageLookupByLibrary.simpleMessage("First Name"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
+    "GeneralInstructions": MessageLookupByLibrary.simpleMessage(
+      "General Instructions",
+    ),
     "Guest": MessageLookupByLibrary.simpleMessage("Guest"),
     "Home": MessageLookupByLibrary.simpleMessage("Home"),
     "IdCard": MessageLookupByLibrary.simpleMessage("IdCard"),
@@ -77,7 +147,42 @@ class MessageLookup extends MessageLookupByLibrary {
       "Choose how you want to add the image",
     ),
     "ImageSourceTitle": MessageLookupByLibrary.simpleMessage("Image source"),
+    "ImportantNote": MessageLookupByLibrary.simpleMessage("Important Note"),
+    "IndividualFile": MessageLookupByLibrary.simpleMessage("Individual File"),
+    "IndividualFileDesc": MessageLookupByLibrary.simpleMessage(
+      "Requirements for opening an individual tax file",
+    ),
+    "IndividualFileRequirements": MessageLookupByLibrary.simpleMessage(
+      "Individual File Requirements",
+    ),
+    "IndividualNote": MessageLookupByLibrary.simpleMessage(
+      "All documents must be valid and certified by competent authorities. You can visit the nearest tax office for assistance.",
+    ),
+    "IndividualReq1": MessageLookupByLibrary.simpleMessage(
+      "Copy of personal ID card",
+    ),
+    "IndividualReq2": MessageLookupByLibrary.simpleMessage(
+      "Business practice certificate or commercial registration",
+    ),
+    "IndividualReq3": MessageLookupByLibrary.simpleMessage(
+      "Lease or ownership contract for business premises",
+    ),
+    "IndividualReq4": MessageLookupByLibrary.simpleMessage(
+      "Active phone number registered to the taxpayer",
+    ),
+    "IndividualReq5": MessageLookupByLibrary.simpleMessage(
+      "Recent personal photo",
+    ),
+    "IndividualReq6": MessageLookupByLibrary.simpleMessage(
+      "Address proof (electricity or water bill)",
+    ),
     "Instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
+    "InstructionsSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Everything you need to know to get started with taxpayer services",
+    ),
+    "InstructionsTitle": MessageLookupByLibrary.simpleMessage(
+      "Instructions & Guidelines",
+    ),
     "InternalServerError": MessageLookupByLibrary.simpleMessage(
       "Internal Server Error, please try again later",
     ),
@@ -130,6 +235,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "PasswordNotMatch": MessageLookupByLibrary.simpleMessage(
       "Password does not match",
     ),
+    "Penalties": MessageLookupByLibrary.simpleMessage("Penalties & Sanctions"),
+    "PenaltiesDesc": MessageLookupByLibrary.simpleMessage(
+      "Tax violations and associated penalties",
+    ),
+    "PenaltiesStep1": MessageLookupByLibrary.simpleMessage(
+      "Late tax declaration submission penalty",
+    ),
+    "PenaltiesStep2": MessageLookupByLibrary.simpleMessage(
+      "Late tax payment penalty",
+    ),
+    "PenaltiesStep3": MessageLookupByLibrary.simpleMessage(
+      "Failure to maintain accounting books penalty",
+    ),
+    "PenaltiesStep4": MessageLookupByLibrary.simpleMessage(
+      "Submitting incorrect or misleading data penalty",
+    ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "ProfileImage": MessageLookupByLibrary.simpleMessage("Profile image"),
@@ -138,6 +259,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "RequestCanceled": MessageLookupByLibrary.simpleMessage(
       "Request to ApiServer was canceled",
+    ),
+    "RequiredDocuments": MessageLookupByLibrary.simpleMessage(
+      "Required Documents",
     ),
     "ResendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
     "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
@@ -153,7 +277,59 @@ class MessageLookup extends MessageLookupByLibrary {
     "SignUp": MessageLookupByLibrary.simpleMessage("SignUp"),
     "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "StartNow": MessageLookupByLibrary.simpleMessage("Start Now"),
+    "StepsToFollow": MessageLookupByLibrary.simpleMessage("Steps to Follow"),
     "StoreName": MessageLookupByLibrary.simpleMessage("Al-Safaa Supermarket"),
+    "TaxDeclaration": MessageLookupByLibrary.simpleMessage("Tax Declaration"),
+    "TaxDeclarationDesc": MessageLookupByLibrary.simpleMessage(
+      "How to submit your tax declaration and deadlines",
+    ),
+    "TaxDeclarationStep1": MessageLookupByLibrary.simpleMessage(
+      "Access the electronic declaration system",
+    ),
+    "TaxDeclarationStep2": MessageLookupByLibrary.simpleMessage(
+      "Fill in the tax declaration form with financial data",
+    ),
+    "TaxDeclarationStep3": MessageLookupByLibrary.simpleMessage(
+      "Attach financial statements and supporting documents",
+    ),
+    "TaxDeclarationStep4": MessageLookupByLibrary.simpleMessage(
+      "Review data and verify accuracy",
+    ),
+    "TaxDeclarationStep5": MessageLookupByLibrary.simpleMessage(
+      "Submit declaration and receive reference number",
+    ),
+    "TaxExemptions": MessageLookupByLibrary.simpleMessage("Tax Exemptions"),
+    "TaxExemptionsDesc": MessageLookupByLibrary.simpleMessage(
+      "Cases eligible for tax exemption and conditions",
+    ),
+    "TaxExemptionsStep1": MessageLookupByLibrary.simpleMessage(
+      "Submit exemption request via electronic system",
+    ),
+    "TaxExemptionsStep2": MessageLookupByLibrary.simpleMessage(
+      "Attach documents proving exemption eligibility",
+    ),
+    "TaxExemptionsStep3": MessageLookupByLibrary.simpleMessage(
+      "Wait for review by competent authority",
+    ),
+    "TaxExemptionsStep4": MessageLookupByLibrary.simpleMessage(
+      "Receive approval or rejection with reasons",
+    ),
+    "TaxPayment": MessageLookupByLibrary.simpleMessage("Tax Payment"),
+    "TaxPaymentDesc": MessageLookupByLibrary.simpleMessage(
+      "Methods and procedures for paying tax dues",
+    ),
+    "TaxPaymentStep1": MessageLookupByLibrary.simpleMessage(
+      "Obtain payment notification from the system",
+    ),
+    "TaxPaymentStep2": MessageLookupByLibrary.simpleMessage(
+      "Choose payment method (bank / electronic)",
+    ),
+    "TaxPaymentStep3": MessageLookupByLibrary.simpleMessage(
+      "Complete payment and save receipt",
+    ),
+    "TaxPaymentStep4": MessageLookupByLibrary.simpleMessage(
+      "Verify tax file status update",
+    ),
     "UnauthorizedRequest": MessageLookupByLibrary.simpleMessage(
       "Unauthorized request",
     ),
@@ -169,5 +345,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Verification Code",
     ),
     "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("Verify Code"),
+    "ViewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
   };
 }

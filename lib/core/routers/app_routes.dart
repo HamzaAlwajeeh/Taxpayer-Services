@@ -9,6 +9,11 @@ import 'package:tax_payer/Features/Auth/presentation/views/sign_up_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/verify_code_view.dart';
 import 'package:tax_payer/Features/DashBoard/presentation/views/dashboard.dart';
 import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
+import 'package:tax_payer/Features/Instructions/data/models/instruction_detail_model.dart';
+import 'package:tax_payer/Features/Instructions/presentation/views/charitable_company_file_instruction_view.dart';
+import 'package:tax_payer/Features/Instructions/presentation/views/company_file_instruction_view.dart';
+import 'package:tax_payer/Features/Instructions/presentation/views/individual_file_instruction_view.dart';
+import 'package:tax_payer/Features/Instructions/presentation/views/instruction_detail_view.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instructions_view.dart';
 import 'package:tax_payer/Features/NewFile/presentation/views/new_file_view.dart';
 import 'package:tax_payer/Features/OnBoarding/presentation/views/on_boarding_view.dart';
@@ -20,6 +25,8 @@ import 'package:tax_payer/Features/Profile/presentation/views/profile_view.dart'
 import 'package:tax_payer/Features/Splash/presentation/views/splash_view.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
 import 'package:tax_payer/core/services/service_locator.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/generated/l10n.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -28,13 +35,10 @@ class AppRoutes {
     navigatorKey: rootNavigatorKey,
     initialLocation: RouteNames.splash,
     debugLogDiagnostics: true,
-
     errorBuilder:
         (context, state) =>
             const Scaffold(body: Center(child: Text('Page Not Found'))),
-
     routes: [
-      // Splash Route
       _buildRoute(
         path: RouteNames.splash,
         child: const SplashView(),
@@ -45,7 +49,6 @@ class AppRoutes {
         child: const OnBoardingView(),
         transition: TransitionType.fade,
       ),
-      // Auth Routes
       _buildRoute(
         path: RouteNames.login,
         child: const LoginView(),
@@ -76,7 +79,6 @@ class AppRoutes {
         child: const ResetPasswordView(),
         transition: TransitionType.slideFromRight,
       ),
-      // App Routes
       _buildRoute(
         path: RouteNames.dashboard,
         child: const DashBoard(),
@@ -91,6 +93,41 @@ class AppRoutes {
         path: RouteNames.instructions,
         child: const InstructionsView(),
         transition: TransitionType.fade,
+      ),
+      _buildRoute(
+        path: RouteNames.individualFileInstruction,
+        child: const IndividualFileInstructionView(),
+        transition: TransitionType.slideFromRight,
+      ),
+      _buildRoute(
+        path: RouteNames.companyFileInstruction,
+        child: const CompanyFileInstructionView(),
+        transition: TransitionType.slideFromRight,
+      ),
+      _buildRoute(
+        path: RouteNames.charitableCompanyFileInstruction,
+        child: const CharitableCompanyFileInstructionView(),
+        transition: TransitionType.slideFromRight,
+      ),
+      _buildRoute(
+        path: RouteNames.taxDeclaration,
+        child: const _TaxDeclarationBuilder(),
+        transition: TransitionType.slideFromRight,
+      ),
+      _buildRoute(
+        path: RouteNames.taxPayment,
+        child: const _TaxPaymentBuilder(),
+        transition: TransitionType.slideFromRight,
+      ),
+      _buildRoute(
+        path: RouteNames.taxExemptions,
+        child: const _TaxExemptionsBuilder(),
+        transition: TransitionType.slideFromRight,
+      ),
+      _buildRoute(
+        path: RouteNames.penalties,
+        child: const _PenaltiesBuilder(),
+        transition: TransitionType.slideFromRight,
       ),
       _buildRoute(
         path: RouteNames.newFile,
@@ -115,21 +152,9 @@ class AppRoutes {
         child: const PrivacyAndSecurityView(),
         transition: TransitionType.fade,
       ),
-      // GoRoute(
-      //   path: EditContactView.routeName,
-      //   pageBuilder: (context, state) {
-      //     final contact = state.extra as ContactModel;
-      //     return _buildTransitionPage(
-      //       state,
-      //       EditContactView(contact: contact),
-      //       TransitionType.slideFromRight,
-      //     );
-      //   },
-      // ),
     ],
   );
 
-  // Route builder
   static GoRoute _buildRoute({
     required String path,
     required Widget child,
@@ -142,19 +167,16 @@ class AppRoutes {
     );
   }
 
-  // Transition Page
-  static CustomTransitionPage _buildTransitionPage(
+  static Page _buildTransitionPage(
     GoRouterState state,
     Widget child,
-    TransitionType transitionType,
+    TransitionType transition,
   ) {
     return CustomTransitionPage(
       key: state.pageKey,
       child: child,
-      transitionDuration: const Duration(milliseconds: 300),
-      reverseTransitionDuration: const Duration(milliseconds: 300),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        switch (transitionType) {
+        switch (transition) {
           case TransitionType.fade:
             return FadeTransition(opacity: animation, child: child);
           case TransitionType.slideFromRight:
@@ -163,7 +185,7 @@ class AppRoutes {
                 begin: const Offset(1.0, 0.0),
                 end: Offset.zero,
               ).animate(
-                CurvedAnimation(parent: animation, curve: Curves.easeInOut),
+                CurvedAnimation(parent: animation, curve: Curves.easeOut),
               ),
               child: child,
             );
@@ -173,7 +195,7 @@ class AppRoutes {
                 begin: const Offset(-1.0, 0.0),
                 end: Offset.zero,
               ).animate(
-                CurvedAnimation(parent: animation, curve: Curves.easeInOut),
+                CurvedAnimation(parent: animation, curve: Curves.easeOut),
               ),
               child: child,
             );
@@ -201,4 +223,97 @@ enum TransitionType {
   slideFromLeft,
   slideFromBottom,
   scale,
+}
+
+class _TaxDeclarationBuilder extends StatelessWidget {
+  const _TaxDeclarationBuilder();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = S.of(context);
+    return InstructionDetailView(
+      model: InstructionDetailModel(
+        title: l10n.TaxDeclaration,
+        headerIcon: Icons.description_rounded,
+        headerDescription: l10n.TaxDeclarationDesc,
+        accentColor: AppColors.customGreen(),
+        steps: [
+          l10n.TaxDeclarationStep1,
+          l10n.TaxDeclarationStep2,
+          l10n.TaxDeclarationStep3,
+          l10n.TaxDeclarationStep4,
+          l10n.TaxDeclarationStep5,
+        ],
+      ),
+    );
+  }
+}
+
+class _TaxPaymentBuilder extends StatelessWidget {
+  const _TaxPaymentBuilder();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = S.of(context);
+    return InstructionDetailView(
+      model: InstructionDetailModel(
+        title: l10n.TaxPayment,
+        headerIcon: Icons.payment_rounded,
+        headerDescription: l10n.TaxPaymentDesc,
+        accentColor: AppColors.customBlue(),
+        steps: [
+          l10n.TaxPaymentStep1,
+          l10n.TaxPaymentStep2,
+          l10n.TaxPaymentStep3,
+          l10n.TaxPaymentStep4,
+        ],
+      ),
+    );
+  }
+}
+
+class _TaxExemptionsBuilder extends StatelessWidget {
+  const _TaxExemptionsBuilder();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = S.of(context);
+    return InstructionDetailView(
+      model: InstructionDetailModel(
+        title: l10n.TaxExemptions,
+        headerIcon: Icons.verified_rounded,
+        headerDescription: l10n.TaxExemptionsDesc,
+        accentColor: AppColors.customOrange(),
+        steps: [
+          l10n.TaxExemptionsStep1,
+          l10n.TaxExemptionsStep2,
+          l10n.TaxExemptionsStep3,
+          l10n.TaxExemptionsStep4,
+        ],
+      ),
+    );
+  }
+}
+
+class _PenaltiesBuilder extends StatelessWidget {
+  const _PenaltiesBuilder();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = S.of(context);
+    return InstructionDetailView(
+      model: InstructionDetailModel(
+        title: l10n.Penalties,
+        headerIcon: Icons.gavel_rounded,
+        headerDescription: l10n.PenaltiesDesc,
+        accentColor: AppColors.primaryColor(context),
+        steps: [
+          l10n.PenaltiesStep1,
+          l10n.PenaltiesStep2,
+          l10n.PenaltiesStep3,
+          l10n.PenaltiesStep4,
+        ],
+      ),
+    );
+  }
 }

@@ -26,6 +26,10 @@ class RouteNames {
   static const String companyFileInstruction = '/company-file-instruction';
   static const String charitableCompanyFileInstruction =
       '/charitable-company-file-instruction';
+  static const String taxDeclaration = '/tax-declaration';
+  static const String taxPayment = '/tax-payment';
+  static const String taxExemptions = '/tax-exemptions';
+  static const String penalties = '/penalties';
 
   // New File Routes
   static const String newFile = '/new-file';

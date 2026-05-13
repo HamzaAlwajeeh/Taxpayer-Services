@@ -695,6 +695,651 @@ class S {
   String get English {
     return Intl.message('English', name: 'English', desc: '', args: []);
   }
+
+  /// `Instructions & Guidelines`
+  String get InstructionsTitle {
+    return Intl.message(
+      'Instructions & Guidelines',
+      name: 'InstructionsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Everything you need to know to get started with taxpayer services`
+  String get InstructionsSubtitle {
+    return Intl.message(
+      'Everything you need to know to get started with taxpayer services',
+      name: 'InstructionsSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `File Opening Requirements`
+  String get FileOpeningRequirements {
+    return Intl.message(
+      'File Opening Requirements',
+      name: 'FileOpeningRequirements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select file type to view requirements`
+  String get FileOpeningRequirementsDesc {
+    return Intl.message(
+      'Select file type to view requirements',
+      name: 'FileOpeningRequirementsDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Individual File`
+  String get IndividualFile {
+    return Intl.message(
+      'Individual File',
+      name: 'IndividualFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Requirements for opening an individual tax file`
+  String get IndividualFileDesc {
+    return Intl.message(
+      'Requirements for opening an individual tax file',
+      name: 'IndividualFileDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Company File`
+  String get CompanyFile {
+    return Intl.message(
+      'Company File',
+      name: 'CompanyFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Requirements for opening a company tax file`
+  String get CompanyFileDesc {
+    return Intl.message(
+      'Requirements for opening a company tax file',
+      name: 'CompanyFileDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Charitable Company`
+  String get CharitableCompanyFile {
+    return Intl.message(
+      'Charitable Company',
+      name: 'CharitableCompanyFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Requirements for opening a charitable company file`
+  String get CharitableCompanyFileDesc {
+    return Intl.message(
+      'Requirements for opening a charitable company file',
+      name: 'CharitableCompanyFileDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General Instructions`
+  String get GeneralInstructions {
+    return Intl.message(
+      'General Instructions',
+      name: 'GeneralInstructions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tax Declaration`
+  String get TaxDeclaration {
+    return Intl.message(
+      'Tax Declaration',
+      name: 'TaxDeclaration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to submit your tax declaration and deadlines`
+  String get TaxDeclarationDesc {
+    return Intl.message(
+      'How to submit your tax declaration and deadlines',
+      name: 'TaxDeclarationDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tax Payment`
+  String get TaxPayment {
+    return Intl.message('Tax Payment', name: 'TaxPayment', desc: '', args: []);
+  }
+
+  /// `Methods and procedures for paying tax dues`
+  String get TaxPaymentDesc {
+    return Intl.message(
+      'Methods and procedures for paying tax dues',
+      name: 'TaxPaymentDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tax Exemptions`
+  String get TaxExemptions {
+    return Intl.message(
+      'Tax Exemptions',
+      name: 'TaxExemptions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cases eligible for tax exemption and conditions`
+  String get TaxExemptionsDesc {
+    return Intl.message(
+      'Cases eligible for tax exemption and conditions',
+      name: 'TaxExemptionsDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Penalties & Sanctions`
+  String get Penalties {
+    return Intl.message(
+      'Penalties & Sanctions',
+      name: 'Penalties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tax violations and associated penalties`
+  String get PenaltiesDesc {
+    return Intl.message(
+      'Tax violations and associated penalties',
+      name: 'PenaltiesDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Required Documents`
+  String get RequiredDocuments {
+    return Intl.message(
+      'Required Documents',
+      name: 'RequiredDocuments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Individual File Requirements`
+  String get IndividualFileRequirements {
+    return Intl.message(
+      'Individual File Requirements',
+      name: 'IndividualFileRequirements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Company File Requirements`
+  String get CompanyFileRequirements {
+    return Intl.message(
+      'Company File Requirements',
+      name: 'CompanyFileRequirements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Charitable Company File Requirements`
+  String get CharitableCompanyFileRequirements {
+    return Intl.message(
+      'Charitable Company File Requirements',
+      name: 'CharitableCompanyFileRequirements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy of personal ID card`
+  String get IndividualReq1 {
+    return Intl.message(
+      'Copy of personal ID card',
+      name: 'IndividualReq1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Business practice certificate or commercial registration`
+  String get IndividualReq2 {
+    return Intl.message(
+      'Business practice certificate or commercial registration',
+      name: 'IndividualReq2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lease or ownership contract for business premises`
+  String get IndividualReq3 {
+    return Intl.message(
+      'Lease or ownership contract for business premises',
+      name: 'IndividualReq3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active phone number registered to the taxpayer`
+  String get IndividualReq4 {
+    return Intl.message(
+      'Active phone number registered to the taxpayer',
+      name: 'IndividualReq4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recent personal photo`
+  String get IndividualReq5 {
+    return Intl.message(
+      'Recent personal photo',
+      name: 'IndividualReq5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address proof (electricity or water bill)`
+  String get IndividualReq6 {
+    return Intl.message(
+      'Address proof (electricity or water bill)',
+      name: 'IndividualReq6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Certified company incorporation contract`
+  String get CompanyReq1 {
+    return Intl.message(
+      'Certified company incorporation contract',
+      name: 'CompanyReq1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Valid commercial registration`
+  String get CompanyReq2 {
+    return Intl.message(
+      'Valid commercial registration',
+      name: 'CompanyReq2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tax card (if available)`
+  String get CompanyReq3 {
+    return Intl.message(
+      'Tax card (if available)',
+      name: 'CompanyReq3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy of authorized manager's ID card`
+  String get CompanyReq4 {
+    return Intl.message(
+      'Copy of authorized manager\'s ID card',
+      name: 'CompanyReq4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lease or ownership contract for headquarters`
+  String get CompanyReq5 {
+    return Intl.message(
+      'Lease or ownership contract for headquarters',
+      name: 'CompanyReq5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General assembly meeting minutes`
+  String get CompanyReq6 {
+    return Intl.message(
+      'General assembly meeting minutes',
+      name: 'CompanyReq6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `List of partners and shareholders`
+  String get CompanyReq7 {
+    return Intl.message(
+      'List of partners and shareholders',
+      name: 'CompanyReq7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Establishment decision from competent authority`
+  String get CharitableReq1 {
+    return Intl.message(
+      'Establishment decision from competent authority',
+      name: 'CharitableReq1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Articles of association of the charitable organization`
+  String get CharitableReq2 {
+    return Intl.message(
+      'Articles of association of the charitable organization',
+      name: 'CharitableReq2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Charitable organization registration certificate`
+  String get CharitableReq3 {
+    return Intl.message(
+      'Charitable organization registration certificate',
+      name: 'CharitableReq3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy of board chairman's ID card`
+  String get CharitableReq4 {
+    return Intl.message(
+      'Copy of board chairman\'s ID card',
+      name: 'CharitableReq4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bank statement in the organization's name`
+  String get CharitableReq5 {
+    return Intl.message(
+      'Bank statement in the organization\'s name',
+      name: 'CharitableReq5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Annual report on organization activities`
+  String get CharitableReq6 {
+    return Intl.message(
+      'Annual report on organization activities',
+      name: 'CharitableReq6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Access the electronic declaration system`
+  String get TaxDeclarationStep1 {
+    return Intl.message(
+      'Access the electronic declaration system',
+      name: 'TaxDeclarationStep1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fill in the tax declaration form with financial data`
+  String get TaxDeclarationStep2 {
+    return Intl.message(
+      'Fill in the tax declaration form with financial data',
+      name: 'TaxDeclarationStep2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach financial statements and supporting documents`
+  String get TaxDeclarationStep3 {
+    return Intl.message(
+      'Attach financial statements and supporting documents',
+      name: 'TaxDeclarationStep3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Review data and verify accuracy`
+  String get TaxDeclarationStep4 {
+    return Intl.message(
+      'Review data and verify accuracy',
+      name: 'TaxDeclarationStep4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit declaration and receive reference number`
+  String get TaxDeclarationStep5 {
+    return Intl.message(
+      'Submit declaration and receive reference number',
+      name: 'TaxDeclarationStep5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Obtain payment notification from the system`
+  String get TaxPaymentStep1 {
+    return Intl.message(
+      'Obtain payment notification from the system',
+      name: 'TaxPaymentStep1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose payment method (bank / electronic)`
+  String get TaxPaymentStep2 {
+    return Intl.message(
+      'Choose payment method (bank / electronic)',
+      name: 'TaxPaymentStep2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complete payment and save receipt`
+  String get TaxPaymentStep3 {
+    return Intl.message(
+      'Complete payment and save receipt',
+      name: 'TaxPaymentStep3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify tax file status update`
+  String get TaxPaymentStep4 {
+    return Intl.message(
+      'Verify tax file status update',
+      name: 'TaxPaymentStep4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit exemption request via electronic system`
+  String get TaxExemptionsStep1 {
+    return Intl.message(
+      'Submit exemption request via electronic system',
+      name: 'TaxExemptionsStep1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach documents proving exemption eligibility`
+  String get TaxExemptionsStep2 {
+    return Intl.message(
+      'Attach documents proving exemption eligibility',
+      name: 'TaxExemptionsStep2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wait for review by competent authority`
+  String get TaxExemptionsStep3 {
+    return Intl.message(
+      'Wait for review by competent authority',
+      name: 'TaxExemptionsStep3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Receive approval or rejection with reasons`
+  String get TaxExemptionsStep4 {
+    return Intl.message(
+      'Receive approval or rejection with reasons',
+      name: 'TaxExemptionsStep4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Late tax declaration submission penalty`
+  String get PenaltiesStep1 {
+    return Intl.message(
+      'Late tax declaration submission penalty',
+      name: 'PenaltiesStep1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Late tax payment penalty`
+  String get PenaltiesStep2 {
+    return Intl.message(
+      'Late tax payment penalty',
+      name: 'PenaltiesStep2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failure to maintain accounting books penalty`
+  String get PenaltiesStep3 {
+    return Intl.message(
+      'Failure to maintain accounting books penalty',
+      name: 'PenaltiesStep3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submitting incorrect or misleading data penalty`
+  String get PenaltiesStep4 {
+    return Intl.message(
+      'Submitting incorrect or misleading data penalty',
+      name: 'PenaltiesStep4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Important Note`
+  String get ImportantNote {
+    return Intl.message(
+      'Important Note',
+      name: 'ImportantNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All documents must be valid and certified by competent authorities. You can visit the nearest tax office for assistance.`
+  String get IndividualNote {
+    return Intl.message(
+      'All documents must be valid and certified by competent authorities. You can visit the nearest tax office for assistance.',
+      name: 'IndividualNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Opening a company file requires personal attendance of the authorized manager or an official notarized authorization. All documents must be translated to Arabic if in a foreign language.`
+  String get CompanyNote {
+    return Intl.message(
+      'Opening a company file requires personal attendance of the authorized manager or an official notarized authorization. All documents must be translated to Arabic if in a foreign language.',
+      name: 'CompanyNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Registered charitable organizations may be eligible for special tax exemptions. Please inquire about specific conditions.`
+  String get CharitableNote {
+    return Intl.message(
+      'Registered charitable organizations may be eligible for special tax exemptions. Please inquire about specific conditions.',
+      name: 'CharitableNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Steps to Follow`
+  String get StepsToFollow {
+    return Intl.message(
+      'Steps to Follow',
+      name: 'StepsToFollow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View Details`
+  String get ViewDetails {
+    return Intl.message(
+      'View Details',
+      name: 'ViewDetails',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
