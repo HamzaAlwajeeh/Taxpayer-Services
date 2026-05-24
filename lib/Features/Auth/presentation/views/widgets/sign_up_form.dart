@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/register_cubit/register_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/register_cubit/register_state.dart';
-import 'package:tax_payer/Features/Auth/presentation/views/widgets/upload_image.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/widgets/upload_file.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
@@ -129,7 +129,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 2),
-                    child: UploadImage(
+                    child: UploadFile(
                       title: S.of(context).IdCard,
                       subTitle: 'JPEG,JPG,PNG',
                       isStoreImage: false,
@@ -140,7 +140,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 2),
-                    child: UploadImage(
+                    child: UploadFile(
                       title: S.of(context).ProfileImage,
                       subTitle: 'JPEG,JPG,PNG,GIF',
                       isStoreImage: true,

@@ -22,8 +22,6 @@ import 'package:tax_payer/Features/Instructions/presentation/views/company_file_
 import 'package:tax_payer/Features/Instructions/presentation/views/individual_file_instruction_view.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instruction_detail_view.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instructions_view.dart';
-import 'package:tax_payer/Features/NewFile/data/repos/new_file_repo.dart';
-import 'package:tax_payer/Features/NewFile/presentation/logic/new_file_cubit/new_file_cubit.dart';
 import 'package:tax_payer/Features/NewFile/presentation/views/new_file_view.dart';
 import 'package:tax_payer/Features/OnBoarding/presentation/views/on_boarding_view.dart';
 import 'package:tax_payer/Features/Profile/data/repos/profile.repo.dart';
@@ -105,7 +103,10 @@ class AppRoutes {
       ),
       _buildRoute(
         path: RouteNames.dashboard,
-        child: const DashBoard(),
+        child: BlocProvider(
+          create: (context) => LogoutCubit(getIt<AuthRepo>()),
+          child: const DashBoard(),
+        ),
         transition: TransitionType.fade,
       ),
       _buildRoute(
@@ -155,18 +156,12 @@ class AppRoutes {
       ),
       _buildRoute(
         path: RouteNames.newFile,
-        child: BlocProvider(
-          create: (context) => NewFileCubit(getIt<NewFileRepo>()),
-          child: const NewFileView(),
-        ),
+        child: const NewFileView(),
         transition: TransitionType.fade,
       ),
       _buildRoute(
         path: RouteNames.profile,
-        child: BlocProvider(
-          create: (context) => LogoutCubit(getIt<AuthRepo>()),
-          child: const ProfileView(),
-        ),
+        child: const ProfileView(),
         transition: TransitionType.fade,
       ),
       _buildRoute(

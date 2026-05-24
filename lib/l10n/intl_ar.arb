@@ -143,5 +143,20 @@
     "CompanyNote": "يتطلب فتح ملف الشركة حضور المدير المفوض شخصياً أو تفويض رسمي موثق. جميع المستندات يجب أن تكون مترجمة للعربية إذا كانت بلغة أجنبية.",
     "CharitableNote": "المؤسسات الخيرية المسجلة قد تكون مؤهلة لإعفاءات ضريبية خاصة. يرجى الاستفسار عن الشروط المحددة.",
     "StepsToFollow": "الخطوات المطلوبة",
-    "ViewDetails": "عرض التفاصيل"
+    "ViewDetails": "عرض التفاصيل",
+    "FileType": "نوع الملف",
+    "TradeNameField": "الاسم التجاري",
+    "CommercialRecordField": "السجل التجاري",
+    "ActivityLicenseField": "ترخيص مزاولة النشاط",
+    "TradePictureField": "قيد تسجيل الاسم التجاري",
+    "InsuranceCardField": "البطاقة التأمينية",
+    "PropertyDocPictureField": "عقد الملكية أو الإيجار",
+    "ArticlesOfIncorporationField": "عقد التأسيس و النظام الأساسي",
+    "GovernmentLicenseField": "ترخيص الشركة من قبل المحافظ",
+    "PartinersIDCardsField": "البطائق الشخصية للشركاء",
+    "BylawsCopyField": "صورة من النظام الأساسي",
+    "SubmitNewFileRequest": "إرسال الطلب",
+    "UploadAllDocumentsError": "الرجاء رفع جميع المستندات المطلوبة أولاً!",
+    "NewFileDetailsTitle": "تفاصيل الملف الجديد",
+    "NewFileDetailsDesc": "أدخل البيانات وارفق الملفات المطلوبة لتقديم الطلب"
 }

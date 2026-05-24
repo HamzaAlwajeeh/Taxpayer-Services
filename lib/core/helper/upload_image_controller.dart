@@ -28,9 +28,12 @@ class UploadImageController extends GetxController {
     return image;
   }
 
-  Future<File?> pickFileImage({required bool isStoreImage}) async {
+  Future<File?> pickFileImage({
+    required bool isStoreImage,
+    List<String> allowedExtensions = const ['jpg', 'png', 'jpeg', 'gif'],
+  }) async {
     String? path = await pickFile(
-      allowedExtensions: ['jpg', 'png', 'jpeg', 'gif'],
+      allowedExtensions: allowedExtensions,
     );
     if (path != null) {
       final image = File(path);
@@ -44,6 +47,7 @@ class UploadImageController extends GetxController {
   Future<File?> showImageSourceDialog(
     BuildContext context, {
     required bool isStoreImage,
+    List<String> allowedExtensions = const ['jpg', 'png', 'jpeg', 'gif'],
   }) {
     return showDialog<File?>(
       barrierColor: Colors.black.withValues(alpha: 0.55),
@@ -57,7 +61,10 @@ class UploadImageController extends GetxController {
             }
           },
           onFilePressed: () async {
-            final image = await pickFileImage(isStoreImage: isStoreImage);
+            final image = await pickFileImage(
+              isStoreImage: isStoreImage,
+              allowedExtensions: allowedExtensions,
+            );
             if (context.mounted) {
               Navigator.pop(context, image);
             }

@@ -32,15 +32,17 @@ class NewFileRepoImpl implements NewFileRepo {
         'tradeName': tradeName,
         'commercialRecord': commercialRecord,
         'activityLicense': activityLicense,
-        'tradePicture': tradePicture,
+        'tradePict': tradePicture,
         'insuranceCard': insuranceCard,
-        'propertyDocPicture': propertyDocPicture,
+        'propertyDocPict': propertyDocPicture,
         'articlesOfIncorporation': articlesOfIncorporation,
-        'governmentLicense': governmentLicense,
-        'partinersIDCards': partinersIDCards,
-        'bylawsCopy': bylawsCopy,
+        'govemorLicense': governmentLicense,
+        'partnersIDCards': partinersIDCards,
+        'byLawsCopy': bylawsCopy,
         'fileType': fileType,
       };
+
+      body.removeWhere((key, value) => value == null);
 
       final response = await apiService.post(
         endPoint: AppConstants.kCreateNewFile,

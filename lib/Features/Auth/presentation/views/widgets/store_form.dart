@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/login_view.dart';
-import 'package:tax_payer/Features/Auth/presentation/views/widgets/upload_image.dart';
+import 'package:tax_payer/Features/Auth/presentation/views/widgets/upload_file.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
 import 'package:tax_payer/core/widgets/custom_text_form_feild.dart';
@@ -77,7 +77,7 @@ class _StoreFormState extends State<StoreForm> {
                     const SizedBox(height: 17),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 2),
-                      child: UploadImage(
+                      child: UploadFile(
                         title: 'صورة ملكية المتجر أو عقد إيجار',
                         subTitle: 'JPEG,JPG,PNG',
                         isStoreImage: false,
@@ -86,7 +86,7 @@ class _StoreFormState extends State<StoreForm> {
                     const SizedBox(height: 17),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 2),
-                      child: UploadImage(
+                      child: UploadFile(
                         title: 'صورة للمتجر',
                         subTitle: 'JPEG,JPG,PNG',
                         isStoreImage: true,

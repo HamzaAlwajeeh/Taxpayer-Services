@@ -1,16 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/logout_cubit/logout_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/logout_cubit/logout_state.dart';
-import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
-import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
-import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
+import 'package:tax_payer/core/widgets/sign_out_confirmation_dialog_widget.dart';
 import 'package:tax_payer/generated/l10n.dart';
 
 class PofileCustomButton extends StatelessWidget {
@@ -20,21 +19,7 @@ class PofileCustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LogoutCubit, LogoutState>(
-      listener: (context, state) {
-        if (state is LogoutSuccess) {
-          customToastBar(
-            context: context,
-            message: S.of(context).LogoutSuccess,
-            backgroundColor: AppColors.customGreen(),
-            icon: Icons.check,
-            textColor: AppColors.white(),
-          );
-          Prefs.setBool(AppConstants.kIsLogedIn, false);
-          Prefs.removeUser(AppConstants.kCurrentUser);
-          context.go(RouteNames.login);
-        }
-      },
+    return BlocBuilder<LogoutCubit, LogoutState>(
       builder: (BuildContext context, state) {
         if (user == null) {
           return CustomButton(
@@ -53,7 +38,14 @@ class PofileCustomButton extends StatelessWidget {
             : CustomButton(
               title: S.of(context).Logout,
               onPressed: () {
-                BlocProvider.of<LogoutCubit>(context).logout();
+                showCupertinoModalPopup(
+                  context: context,
+                  builder: (_) => SignOutConfirmationDialogWidget(
+                    onConfirm: () {
+                      BlocProvider.of<LogoutCubit>(context).logout();
+                    },
+                  ),
+                );
               },
             );
       },

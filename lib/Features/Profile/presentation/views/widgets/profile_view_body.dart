@@ -24,7 +24,9 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
   @override
   void initState() {
     super.initState();
-    context.read<UserProfileCubit>().getUserProfile();
+    if (Prefs.getBool(AppConstants.kIsLogedIn) == true) {
+      context.read<UserProfileCubit>().getUserProfile();
+    }
   }
 
   @override

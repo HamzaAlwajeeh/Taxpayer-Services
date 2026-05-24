@@ -168,32 +168,32 @@ class _LoginFormState extends State<LoginForm> {
                         });
                       },
                     ),
-                    const SizedBox(height: 12),
-                    const HasAnAccount(
-                      isLoginView: true,
-                      primaryText: 'ليس لديك حساب؟',
-                      secondaryText: 'إنشاء حساب',
-                    ),
-                    const SizedBox(height: 17),
-                    state is LoginLoading
-                        ? const CustomLoadingIndicator()
-                        : CustomButton(
-                          title: 'تسجيل الدخول',
-                          onPressed: () {
-                            loginMethod(
-                              userName: userNameController.text,
-                              password: passwordController.text,
-                            );
-                          },
-                        ),
-                    const SizedBox(height: 12),
-                    CustomButton(
-                      title: 'الدخول كضيف',
+                  ],
+                ),
+                const SizedBox(height: 12),
+                const HasAnAccount(
+                  isLoginView: true,
+                  primaryText: 'ليس لديك حساب؟',
+                  secondaryText: 'إنشاء حساب',
+                ),
+                const SizedBox(height: 17),
+                state is LoginLoading
+                    ? const CustomLoadingIndicator()
+                    : CustomButton(
+                      title: 'تسجيل الدخول',
                       onPressed: () {
-                        context.go(RouteNames.dashboard);
+                        loginMethod(
+                          userName: userNameController.text,
+                          password: passwordController.text,
+                        );
                       },
                     ),
-                  ],
+                const SizedBox(height: 12),
+                CustomButton(
+                  title: 'الدخول كضيف',
+                  onPressed: () {
+                    context.go(RouteNames.dashboard);
+                  },
                 ),
               ],
             ),

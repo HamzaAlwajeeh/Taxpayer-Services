@@ -1340,6 +1340,151 @@ class S {
       args: [],
     );
   }
+
+  /// `File Type`
+  String get FileType {
+    return Intl.message('File Type', name: 'FileType', desc: '', args: []);
+  }
+
+  /// `Trade Name`
+  String get TradeNameField {
+    return Intl.message(
+      'Trade Name',
+      name: 'TradeNameField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Commercial Record`
+  String get CommercialRecordField {
+    return Intl.message(
+      'Commercial Record',
+      name: 'CommercialRecordField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity License`
+  String get ActivityLicenseField {
+    return Intl.message(
+      'Activity License',
+      name: 'ActivityLicenseField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Trade Picture`
+  String get TradePictureField {
+    return Intl.message(
+      'Trade Picture',
+      name: 'TradePictureField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insurance Card`
+  String get InsuranceCardField {
+    return Intl.message(
+      'Insurance Card',
+      name: 'InsuranceCardField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Property / Rental Doc`
+  String get PropertyDocPictureField {
+    return Intl.message(
+      'Property / Rental Doc',
+      name: 'PropertyDocPictureField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Articles of Incorporation (Optional)`
+  String get ArticlesOfIncorporationField {
+    return Intl.message(
+      'Articles of Incorporation (Optional)',
+      name: 'ArticlesOfIncorporationField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Government License (Optional)`
+  String get GovernmentLicenseField {
+    return Intl.message(
+      'Government License (Optional)',
+      name: 'GovernmentLicenseField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Partners ID Cards (Optional)`
+  String get PartinersIDCardsField {
+    return Intl.message(
+      'Partners ID Cards (Optional)',
+      name: 'PartinersIDCardsField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bylaws Copy (Optional)`
+  String get BylawsCopyField {
+    return Intl.message(
+      'Bylaws Copy (Optional)',
+      name: 'BylawsCopyField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit Request`
+  String get SubmitNewFileRequest {
+    return Intl.message(
+      'Submit Request',
+      name: 'SubmitNewFileRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please upload all required documents first!`
+  String get UploadAllDocumentsError {
+    return Intl.message(
+      'Please upload all required documents first!',
+      name: 'UploadAllDocumentsError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New File Details`
+  String get NewFileDetailsTitle {
+    return Intl.message(
+      'New File Details',
+      name: 'NewFileDetailsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter details and attach documents to submit request`
+  String get NewFileDetailsDesc {
+    return Intl.message(
+      'Enter details and attach documents to submit request',
+      name: 'NewFileDetailsDesc',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

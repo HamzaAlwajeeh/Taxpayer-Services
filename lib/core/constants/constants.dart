@@ -1,7 +1,7 @@
 class AppConstants {
   static const String kAppName = 'Tax Payer Services';
   static const String kAppVersion = '1.0.0';
-  static const String kIp = '192.168.8.89:8000';
+  static const String kIp = '172.16.1.80:8000';
   static const String kSeenOnBoarding = 'seenOnBoarding';
   static const String kIsLogedIn = 'isLogedIn';
   static const String krememberMe = 'rememberMe';
@@ -29,5 +29,5 @@ class AppConstants {
   static const String kChangePassword = 'change-password';
   static const String kLogout = 'tax-payer-mobile-logout';
   static const String kgetUserProfile = 'get-tax-payer-mobile-profile';
-  static const String kCreateNewFile = 'create-tax-payer-file';
+  static const String kCreateNewFile = 'requests';
 }

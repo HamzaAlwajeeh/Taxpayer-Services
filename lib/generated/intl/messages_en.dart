@@ -24,10 +24,19 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Active": MessageLookupByLibrary.simpleMessage("Active"),
     "ActiveStatus": MessageLookupByLibrary.simpleMessage("Active"),
+    "ActivityLicenseField": MessageLookupByLibrary.simpleMessage(
+      "Activity License",
+    ),
     "AppVersion": MessageLookupByLibrary.simpleMessage("App Version"),
     "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "ArticlesOfIncorporationField": MessageLookupByLibrary.simpleMessage(
+      "Articles of Incorporation (Optional)",
+    ),
     "BadCertificate": MessageLookupByLibrary.simpleMessage("Bad certificate"),
     "BasicInfo": MessageLookupByLibrary.simpleMessage("Basic Information"),
+    "BylawsCopyField": MessageLookupByLibrary.simpleMessage(
+      "Bylaws Copy (Optional)",
+    ),
     "Camera": MessageLookupByLibrary.simpleMessage("Camera"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("Take a new photo"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
@@ -69,6 +78,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CodeVerifiedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Code verified successfully",
+    ),
+    "CommercialRecordField": MessageLookupByLibrary.simpleMessage(
+      "Commercial Record",
     ),
     "CompanyFile": MessageLookupByLibrary.simpleMessage("Company File"),
     "CompanyFileDesc": MessageLookupByLibrary.simpleMessage(
@@ -132,10 +144,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "FileOpeningRequirementsDesc": MessageLookupByLibrary.simpleMessage(
       "Select file type to view requirements",
     ),
+    "FileType": MessageLookupByLibrary.simpleMessage("File Type"),
     "FirstName": MessageLookupByLibrary.simpleMessage("First Name"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
     "GeneralInstructions": MessageLookupByLibrary.simpleMessage(
       "General Instructions",
+    ),
+    "GovernmentLicenseField": MessageLookupByLibrary.simpleMessage(
+      "Government License (Optional)",
     ),
     "Guest": MessageLookupByLibrary.simpleMessage("Guest"),
     "Home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -183,6 +199,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "InstructionsTitle": MessageLookupByLibrary.simpleMessage(
       "Instructions & Guidelines",
     ),
+    "InsuranceCardField": MessageLookupByLibrary.simpleMessage(
+      "Insurance Card",
+    ),
     "InternalServerError": MessageLookupByLibrary.simpleMessage(
       "Internal Server Error, please try again later",
     ),
@@ -199,6 +218,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Method Not Found, please try again",
     ),
     "NewFile": MessageLookupByLibrary.simpleMessage("NewFile"),
+    "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(
+      "Enter details and attach documents to submit request",
+    ),
+    "NewFileDetailsTitle": MessageLookupByLibrary.simpleMessage(
+      "New File Details",
+    ),
     "NewPassword": MessageLookupByLibrary.simpleMessage("New Password"),
     "Next": MessageLookupByLibrary.simpleMessage("Next"),
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
@@ -224,6 +249,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "OopsError": MessageLookupByLibrary.simpleMessage(
       "Oops, there is an error, please try again later",
+    ),
+    "PartinersIDCardsField": MessageLookupByLibrary.simpleMessage(
+      "Partners ID Cards (Optional)",
     ),
     "Password": MessageLookupByLibrary.simpleMessage("Password"),
     "PasswordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -254,6 +282,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "ProfileImage": MessageLookupByLibrary.simpleMessage("Profile image"),
+    "PropertyDocPictureField": MessageLookupByLibrary.simpleMessage(
+      "Property / Rental Doc",
+    ),
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
       "Receive timeout with ApiServer",
     ),
@@ -279,6 +310,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "StartNow": MessageLookupByLibrary.simpleMessage("Start Now"),
     "StepsToFollow": MessageLookupByLibrary.simpleMessage("Steps to Follow"),
     "StoreName": MessageLookupByLibrary.simpleMessage("Al-Safaa Supermarket"),
+    "SubmitNewFileRequest": MessageLookupByLibrary.simpleMessage(
+      "Submit Request",
+    ),
     "TaxDeclaration": MessageLookupByLibrary.simpleMessage("Tax Declaration"),
     "TaxDeclarationDesc": MessageLookupByLibrary.simpleMessage(
       "How to submit your tax declaration and deadlines",
@@ -330,11 +364,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "TaxPaymentStep4": MessageLookupByLibrary.simpleMessage(
       "Verify tax file status update",
     ),
+    "TradeNameField": MessageLookupByLibrary.simpleMessage("Trade Name"),
+    "TradePictureField": MessageLookupByLibrary.simpleMessage("Trade Picture"),
     "UnauthorizedRequest": MessageLookupByLibrary.simpleMessage(
       "Unauthorized request",
     ),
     "UnknownError": MessageLookupByLibrary.simpleMessage(
       "Unknown error, something went wrong, please try again later",
+    ),
+    "UploadAllDocumentsError": MessageLookupByLibrary.simpleMessage(
+      "Please upload all required documents first!",
     ),
     "UploadFile": MessageLookupByLibrary.simpleMessage("Upload file"),
     "UploadFileSubTitle": MessageLookupByLibrary.simpleMessage(

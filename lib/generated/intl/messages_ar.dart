@@ -24,12 +24,21 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Active": MessageLookupByLibrary.simpleMessage("قيد التفعيل"),
     "ActiveStatus": MessageLookupByLibrary.simpleMessage("شغال"),
+    "ActivityLicenseField": MessageLookupByLibrary.simpleMessage(
+      "ترخيص مزاولة النشاط",
+    ),
     "AppVersion": MessageLookupByLibrary.simpleMessage("إصدار التطبيق"),
     "Arabic": MessageLookupByLibrary.simpleMessage("العربيه"),
+    "ArticlesOfIncorporationField": MessageLookupByLibrary.simpleMessage(
+      "عقد التأسيس و النظام الأساسي",
+    ),
     "BadCertificate": MessageLookupByLibrary.simpleMessage(
       "شهادة الاتصال غير صالحة",
     ),
     "BasicInfo": MessageLookupByLibrary.simpleMessage("البيانات الأساسية"),
+    "BylawsCopyField": MessageLookupByLibrary.simpleMessage(
+      "صورة من النظام الأساسي",
+    ),
     "Camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
     "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
@@ -69,6 +78,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CodeVerifiedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "تم التحقق من الرمز بنجاح",
+    ),
+    "CommercialRecordField": MessageLookupByLibrary.simpleMessage(
+      "السجل التجاري",
     ),
     "CompanyFile": MessageLookupByLibrary.simpleMessage("ملف شركة"),
     "CompanyFileDesc": MessageLookupByLibrary.simpleMessage(
@@ -132,11 +144,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "FileOpeningRequirementsDesc": MessageLookupByLibrary.simpleMessage(
       "اختر نوع الملف لمعرفة المتطلبات",
     ),
+    "FileType": MessageLookupByLibrary.simpleMessage("نوع الملف"),
     "FirstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage(
       "استعادة كلمة المرور",
     ),
     "GeneralInstructions": MessageLookupByLibrary.simpleMessage("تعليمات عامة"),
+    "GovernmentLicenseField": MessageLookupByLibrary.simpleMessage(
+      "ترخيص الشركة من قبل المحافظ",
+    ),
     "Guest": MessageLookupByLibrary.simpleMessage("ضيف"),
     "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "IdCard": MessageLookupByLibrary.simpleMessage("البطاقة الشخصية"),
@@ -179,6 +195,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "InstructionsTitle": MessageLookupByLibrary.simpleMessage(
       "التعليمات والإرشادات",
     ),
+    "InsuranceCardField": MessageLookupByLibrary.simpleMessage(
+      "البطاقة التأمينية",
+    ),
     "InternalServerError": MessageLookupByLibrary.simpleMessage(
       "خطأ داخلي في الخادم، يرجى المحاولة لاحقًا",
     ),
@@ -197,6 +216,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "الطريقة غير موجودة، يرجى المحاولة مرة أخرى",
     ),
     "NewFile": MessageLookupByLibrary.simpleMessage("ملف جديد"),
+    "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(
+      "أدخل البيانات وارفق الملفات المطلوبة لتقديم الطلب",
+    ),
+    "NewFileDetailsTitle": MessageLookupByLibrary.simpleMessage(
+      "تفاصيل الملف الجديد",
+    ),
     "NewPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
     "Next": MessageLookupByLibrary.simpleMessage("التالي"),
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
@@ -220,6 +245,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "OopsError": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ، يرجى المحاولة لاحقًا",
+    ),
+    "PartinersIDCardsField": MessageLookupByLibrary.simpleMessage(
+      "البطائق الشخصية للشركاء",
     ),
     "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "PasswordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -250,6 +278,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
     "ProfileImage": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
+    "PropertyDocPictureField": MessageLookupByLibrary.simpleMessage(
+      "عقد الملكية أو الإيجار",
+    ),
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة استقبال الرد من الخادم",
     ),
@@ -275,6 +306,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "StepsToFollow": MessageLookupByLibrary.simpleMessage("الخطوات المطلوبة"),
     "StoreName": MessageLookupByLibrary.simpleMessage("سوبر ماركت الصفاء"),
+    "SubmitNewFileRequest": MessageLookupByLibrary.simpleMessage("إرسال الطلب"),
     "TaxDeclaration": MessageLookupByLibrary.simpleMessage("الإقرار الضريبي"),
     "TaxDeclarationDesc": MessageLookupByLibrary.simpleMessage(
       "كيفية تقديم الإقرار الضريبي والمواعيد النهائية",
@@ -326,11 +358,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "TaxPaymentStep4": MessageLookupByLibrary.simpleMessage(
       "التحقق من تحديث حالة الملف الضريبي",
     ),
+    "TradeNameField": MessageLookupByLibrary.simpleMessage("الاسم التجاري"),
+    "TradePictureField": MessageLookupByLibrary.simpleMessage(
+      "قيد تسجيل الاسم التجاري",
+    ),
     "UnauthorizedRequest": MessageLookupByLibrary.simpleMessage(
       "طلب غير مصرح به",
     ),
     "UnknownError": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ غير معروف، يرجى المحاولة لاحقًا",
+    ),
+    "UploadAllDocumentsError": MessageLookupByLibrary.simpleMessage(
+      "الرجاء رفع جميع المستندات المطلوبة أولاً!",
     ),
     "UploadFile": MessageLookupByLibrary.simpleMessage("تحميل ملف"),
     "UploadFileSubTitle": MessageLookupByLibrary.simpleMessage(
