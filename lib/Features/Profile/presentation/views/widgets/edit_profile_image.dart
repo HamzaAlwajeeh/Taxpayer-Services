@@ -1,12 +1,17 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tax_payer/Features/Auth/presentation/logic/upload_image_controller.dart';
+import 'package:tax_payer/core/helper/upload_image_controller.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/widgets/cashed_networ_image.dart';
 
 class EditProfileImage extends StatelessWidget {
-  const EditProfileImage({super.key, this.currentImage, required this.onImageChanged});
+  const EditProfileImage({
+    super.key,
+    this.currentImage,
+    required this.onImageChanged,
+  });
 
   final String? currentImage;
   final ValueChanged<File?> onImageChanged;
@@ -37,24 +42,30 @@ class EditProfileImage extends StatelessWidget {
                   height: 100,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(color: AppColors.primaryColor(context), width: 2),
-                    color: AppColors.primaryColor(context).withValues(alpha: 0.1),
+                    border: Border.all(
+                      color: AppColors.primaryColor(context),
+                      width: 2,
+                    ),
+                    color: AppColors.primaryColor(
+                      context,
+                    ).withValues(alpha: 0.1),
                   ),
                   child: ClipOval(
-                    child: image != null
-                        ? Image.file(image, fit: BoxFit.cover)
-                        : (currentImage != null
-                            ? CustomImageWidget(
-                                image: currentImage,
-                                width: 100,
-                                height: 100,
-                                fit: BoxFit.cover,
-                              )
-                            : Icon(
-                                Icons.person,
-                                size: 50,
-                                color: AppColors.primaryColor(context),
-                              )),
+                    child:
+                        image != null
+                            ? Image.file(image, fit: BoxFit.cover)
+                            : (currentImage != null
+                                ? CustomImageWidget(
+                                  image: currentImage,
+                                  width: 100,
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                )
+                                : Icon(
+                                  Icons.person,
+                                  size: 50,
+                                  color: AppColors.primaryColor(context),
+                                )),
                   ),
                 ),
                 Positioned(
@@ -70,7 +81,7 @@ class EditProfileImage extends StatelessWidget {
                           color: Colors.black.withValues(alpha: 0.1),
                           blurRadius: 4,
                           offset: const Offset(0, 2),
-                        )
+                        ),
                       ],
                     ),
                     child: Icon(

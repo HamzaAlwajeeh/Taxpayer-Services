@@ -1,0 +1,1215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tax Payer Services - Vertical App Flow</title>
+    <style>
+      :root {
+        --primary: #aa1212;
+        --primary-dark: #820005;
+        --primary-deep: #7f1d1d;
+        --primary-soft: #ffd4d4;
+        --bg: #f9fafb;
+        --surface: #ffffff;
+        --field: #f8fafc;
+        --focus: #fff8f8;
+        --border: #e7e6e9;
+        --text: #463f3f;
+        --muted: #757575;
+        --soft-text: rgba(70, 63, 63, 0.62);
+        --success: #2a9d90;
+        --blue: #275ecd;
+        --orange: #e76e50;
+        --button-shadow: rgba(211, 19, 19, 0.4);
+        --shadow: rgba(115, 110, 110, 0.1);
+        --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --mono: "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--bg);
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          linear-gradient(180deg, rgba(255, 212, 212, 0.48), transparent 520px),
+          var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        letter-spacing: 0;
+        padding-bottom: 126px;
+      }
+
+      button {
+        border: 0;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        min-height: 78px;
+        padding: 12px 30px;
+        border-bottom: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 10px 30px rgba(115, 110, 110, 0.08);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .app-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 14px;
+        box-shadow: 0 10px 24px rgba(170, 18, 18, 0.16);
+      }
+
+      .brand-logo {
+        width: min(236px, 42vw);
+        max-height: 44px;
+        object-fit: contain;
+        object-position: left center;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 0 14px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+        color: var(--text);
+        font-weight: 820;
+        white-space: nowrap;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      }
+
+      .nav-btn:hover,
+      .operation-btn:hover,
+      .project-button:hover,
+      .rail-dot:hover {
+        transform: translateY(-2px);
+      }
+
+      .nav-btn:hover,
+      .operation-btn:hover {
+        border-color: var(--primary-soft);
+        background: var(--focus);
+        box-shadow: 0 10px 24px rgba(170, 18, 18, 0.1);
+      }
+
+      .nav-btn.primary {
+        color: var(--primary);
+        border-color: var(--primary-soft);
+        background: var(--focus);
+      }
+
+      .page {
+        width: min(1680px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 28px 0 60px;
+      }
+
+      .intro {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: 430px;
+        margin-bottom: 38px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background:
+          linear-gradient(90deg, rgba(170, 18, 18, 0.08) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(170, 18, 18, 0.06) 1px, transparent 1px),
+          radial-gradient(circle at 50% 0%, rgba(255, 212, 212, 0.78), transparent 48%),
+          var(--surface);
+        background-size: 34px 34px, 34px 34px, auto, auto;
+        box-shadow: 0 22px 70px var(--shadow);
+      }
+
+      .intro::before,
+      .intro::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .intro::before {
+        background:
+          linear-gradient(115deg, transparent 0 22%, rgba(170, 18, 18, 0.12) 22.2% 22.8%, transparent 23% 100%),
+          linear-gradient(245deg, transparent 0 35%, rgba(39, 94, 205, 0.12) 35.2% 35.8%, transparent 36% 100%);
+      }
+
+      .intro::after {
+        inset: 18px;
+        border: 1px solid rgba(170, 18, 18, 0.08);
+        border-radius: 22px;
+      }
+
+      .intro-content {
+        position: relative;
+        z-index: 1;
+        max-width: 1050px;
+        padding: 42px 28px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        padding: 0 12px;
+        border: 1px solid var(--primary-soft);
+        border-radius: 999px;
+        background: var(--focus);
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .intro h2 {
+        margin: 16px 0 12px;
+        font-size: clamp(40px, 6vw, 86px);
+        line-height: 0.94;
+        letter-spacing: 0;
+      }
+
+      .intro p {
+        max-width: 920px;
+        margin: 0 auto;
+        color: var(--soft-text);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .field {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        margin-bottom: 10px;
+        padding: 0 13px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--surface);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .project-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 56px;
+        border-radius: 16px;
+        color: #fff;
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        box-shadow: 0 0 16px var(--button-shadow);
+        font-size: 22px;
+        font-weight: 900;
+        transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+      }
+
+      .project-button:hover {
+        box-shadow: 0 0 24px rgba(211, 19, 19, 0.52);
+        filter: saturate(1.08);
+      }
+
+      .project-button.floating-login {
+        width: 190px;
+        flex: 0 0 190px;
+      }
+
+      .loader-slot {
+        display: none;
+        place-items: center;
+        width: 100%;
+        height: 56px;
+      }
+
+      .floating-debug .loader-slot {
+        width: 190px;
+        flex: 0 0 190px;
+      }
+
+      .is-running .project-button {
+        display: none;
+      }
+
+      .is-running .loader-slot {
+        display: grid;
+      }
+
+      .app-loader {
+        width: 34px;
+        height: 34px;
+        border: 4px solid rgba(170, 18, 18, 0.18);
+        border-top-color: var(--primary);
+        border-radius: 999px;
+        animation: spin 780ms linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .floating-debug {
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
+        z-index: 70;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        width: min(720px, calc(100vw - 28px));
+        padding: 12px;
+        border: 1px solid rgba(231, 230, 233, 0.9);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 20px 70px rgba(70, 63, 63, 0.18);
+        backdrop-filter: blur(18px);
+        transform: translateX(-50%);
+      }
+
+      .operation-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .operation-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        min-width: 148px;
+        padding: 0 14px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--surface);
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 860;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      }
+
+      .operation-btn.icon-btn {
+        width: 58px;
+        min-width: 58px;
+        padding: 0;
+      }
+
+      .chevron {
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-top: 3px solid currentColor;
+        border-right: 3px solid currentColor;
+      }
+
+      .chevron.left {
+        transform: rotate(-135deg);
+      }
+
+      .chevron.right {
+        transform: rotate(45deg);
+      }
+
+      .operation-btn.primary {
+        color: var(--primary);
+        border-color: var(--primary-soft);
+        background: var(--focus);
+      }
+
+      .run-meta {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .meta-box {
+        min-height: 54px;
+        padding: 8px 10px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--field);
+      }
+
+      .meta-box span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .meta-box b {
+        display: block;
+        margin-top: 4px;
+        font-size: 12px;
+        line-height: 1.32;
+      }
+
+      .progress-rail {
+        position: fixed;
+        left: 18px;
+        top: 104px;
+        z-index: 20;
+        display: grid;
+        gap: 8px;
+      }
+
+      .rail-dot {
+        width: 10px;
+        height: 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: #fff;
+        transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      }
+
+      .rail-dot.active {
+        transform: scale(1.7);
+        border-color: var(--primary);
+        background: var(--primary);
+      }
+
+      .vertical-flow {
+        display: grid;
+        gap: 34px;
+      }
+
+      .flow-section {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.34fr) minmax(380px, 0.66fr);
+        gap: 24px;
+        align-items: start;
+        min-height: calc(100vh - 110px);
+        padding: 28px 0 38px;
+        border-top: 1px solid var(--border);
+        scroll-margin-top: 92px;
+      }
+
+      .flow-section::before {
+        content: "";
+        position: absolute;
+        inset: 16px -18px 18px;
+        z-index: -1;
+        border-radius: 30px;
+        opacity: 0.82;
+        transition: opacity 220ms ease, transform 220ms ease;
+      }
+
+      .flow-section:nth-child(4n + 1)::before {
+        background:
+          linear-gradient(90deg, rgba(170, 18, 18, 0.06) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(170, 18, 18, 0.05) 1px, transparent 1px),
+          radial-gradient(circle at 16% 18%, rgba(255, 212, 212, 0.64), transparent 32%),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.45));
+        background-size: 28px 28px, 28px 28px, auto, auto;
+      }
+
+      .flow-section:nth-child(4n + 2)::before {
+        background:
+          repeating-linear-gradient(115deg, rgba(39, 94, 205, 0.09) 0 1px, transparent 1px 18px),
+          radial-gradient(circle at 84% 12%, rgba(39, 94, 205, 0.12), transparent 34%),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 248, 0.72));
+      }
+
+      .flow-section:nth-child(4n + 3)::before {
+        background:
+          linear-gradient(135deg, transparent 0 31%, rgba(42, 157, 144, 0.11) 31.2% 31.8%, transparent 32%),
+          linear-gradient(45deg, transparent 0 56%, rgba(170, 18, 18, 0.08) 56.2% 56.8%, transparent 57%),
+          radial-gradient(circle at 10% 90%, rgba(42, 157, 144, 0.12), transparent 35%),
+          rgba(255, 255, 255, 0.76);
+      }
+
+      .flow-section:nth-child(4n)::before {
+        background:
+          radial-gradient(circle at 20% 20%, rgba(231, 110, 80, 0.13), transparent 30%),
+          radial-gradient(circle at 85% 76%, rgba(170, 18, 18, 0.11), transparent 34%),
+          linear-gradient(90deg, rgba(170, 18, 18, 0.05) 1px, transparent 1px),
+          rgba(255, 255, 255, 0.78);
+        background-size: auto, auto, 42px 42px, auto;
+      }
+
+      .flow-section:hover::before {
+        opacity: 1;
+        transform: scale(1.006);
+      }
+
+      .flow-section:first-child {
+        border-top: 0;
+      }
+
+      .media-block {
+        position: sticky;
+        top: 96px;
+      }
+
+      .section-kicker {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .step-pill,
+      .file-pill,
+      .exec-pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 11px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .step-pill {
+        color: #fff;
+        background: var(--primary);
+        box-shadow: 0 10px 22px rgba(170, 18, 18, 0.18);
+      }
+
+      .file-pill {
+        color: var(--primary);
+        border: 1px solid var(--primary-soft);
+        background: var(--focus);
+      }
+
+      .exec-pill {
+        display: none;
+        color: #fff;
+        background: var(--success);
+      }
+
+      .flow-section.executed .exec-pill {
+        display: inline-flex;
+      }
+
+      .flow-section.running .exec-pill {
+        display: inline-flex;
+        background: var(--primary);
+      }
+
+      .screenshot {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1366 / 768;
+        object-fit: contain;
+        background: #222833;
+        border: 1px solid rgba(231, 230, 233, 0.9);
+        border-radius: 22px;
+        box-shadow:
+          0 18px 44px rgba(70, 63, 63, 0.12),
+          0 0 0 8px rgba(255, 255, 255, 0.66);
+        transition: transform 260ms ease, box-shadow 260ms ease, filter 260ms ease;
+      }
+
+      .screenshot:hover {
+        transform: translateY(-4px) scale(1.006);
+        filter: saturate(1.04) contrast(1.02);
+        box-shadow:
+          0 26px 70px rgba(70, 63, 63, 0.18),
+          0 0 0 8px rgba(255, 248, 248, 0.92);
+      }
+
+      .screenshot.compact {
+        aspect-ratio: 1366 / 728;
+      }
+
+      .content-block h3 {
+        margin: 0;
+        font-size: clamp(28px, 3.4vw, 48px);
+        line-height: 1.02;
+      }
+
+      .content-block > p {
+        margin: 12px 0 0;
+        color: var(--soft-text);
+        font-size: 15px;
+        line-height: 1.72;
+      }
+
+      .point-list {
+        display: grid;
+        gap: 12px;
+        margin: 18px 0;
+      }
+
+      .point {
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 10px;
+        align-items: start;
+        padding: 8px;
+        border-radius: 16px;
+        transition: background 180ms ease, transform 180ms ease;
+      }
+
+      .point:hover {
+        background: rgba(255, 255, 255, 0.72);
+        transform: translateX(3px);
+      }
+
+      .point-num {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        color: var(--primary);
+        background: var(--primary-soft);
+        font-weight: 900;
+      }
+
+      .point b {
+        display: block;
+        font-size: 14px;
+      }
+
+      .point span {
+        display: block;
+        margin-top: 3px;
+        color: var(--soft-text);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .code-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin: 18px 0 9px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .code {
+        margin: 0;
+        max-height: 360px;
+        overflow: auto;
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--surface);
+        color: #302b2b;
+        font-family: var(--mono);
+        font-size: 12px;
+        line-height: 1.65;
+        box-shadow: 0 12px 32px rgba(115, 110, 110, 0.08);
+        transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      }
+
+      .code:hover {
+        transform: translateY(-2px);
+        border-color: var(--primary-soft);
+        box-shadow: 0 20px 48px rgba(115, 110, 110, 0.12);
+      }
+
+      .execution-note {
+        display: none;
+        margin-top: 14px;
+        padding: 12px 13px;
+        border: 1px solid var(--primary-soft);
+        border-radius: 16px;
+        background: var(--focus);
+        color: var(--primary-deep);
+        font-size: 13px;
+        font-weight: 780;
+        line-height: 1.5;
+      }
+
+      .flow-section.running .execution-note,
+      .flow-section.executed .execution-note {
+        display: block;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition: opacity 650ms ease, transform 650ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .flow-section.running .screenshot {
+        animation: focusPulse 1100ms ease both;
+      }
+
+      @keyframes focusPulse {
+        0% {
+          box-shadow: 0 18px 44px rgba(70, 63, 63, 0.12);
+          transform: scale(1);
+        }
+        45% {
+          box-shadow:
+            0 20px 62px rgba(170, 18, 18, 0.26),
+            0 0 0 8px rgba(255, 212, 212, 0.9);
+          transform: scale(1.01);
+        }
+        100% {
+          box-shadow:
+            0 18px 44px rgba(70, 63, 63, 0.12),
+            0 0 0 8px rgba(255, 255, 255, 0.66);
+          transform: scale(1);
+        }
+      }
+
+      .toast {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 60;
+        width: min(390px, calc(100vw - 44px));
+        padding: 14px 16px;
+        border: 1px solid rgba(42, 157, 144, 0.34);
+        border-radius: 16px;
+        background: var(--surface);
+        box-shadow: 0 18px 52px rgba(70, 63, 63, 0.18);
+        transform: translateY(130%);
+        transition: transform 220ms ease;
+      }
+
+      .toast.show {
+        transform: translateY(0);
+      }
+
+      .toast b,
+      .toast span {
+        display: block;
+      }
+
+      .toast span {
+        margin-top: 4px;
+        color: var(--soft-text);
+        font-size: 13px;
+      }
+
+      @media (max-width: 1220px) {
+        .flow-section {
+          grid-template-columns: 1fr;
+        }
+
+        .media-block {
+          position: relative;
+          top: auto;
+        }
+
+        .progress-rail {
+          display: none;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .navbar {
+          grid-template-columns: 1fr;
+          padding: 12px 16px;
+        }
+
+        .nav-actions,
+        .run-meta {
+          grid-template-columns: 1fr;
+          flex-wrap: wrap;
+        }
+
+        .operation-controls {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        .operation-btn,
+        .project-button.floating-login,
+        .floating-debug .loader-slot {
+          width: 100%;
+          min-width: 0;
+          flex-basis: auto;
+        }
+
+        .page {
+          width: min(100% - 20px, 1680px);
+          padding-top: 18px;
+        }
+
+        .brand {
+          align-items: flex-start;
+        }
+
+        .brand-logo {
+          width: min(210px, 58vw);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="brand">
+        <img class="app-icon" src="assets/screenshots/appIcon.png" alt="Tax Payer Services app icon" />
+        <img class="brand-logo" src="assets/screenshots/splashLogoLight.png" alt="Tax Payer Services logo" />
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn" id="topBtn">Top</button>
+        <button class="nav-btn primary" id="loginNavBtn">Login Method</button>
+      </div>
+    </nav>
+
+    <div class="progress-rail" id="progressRail"></div>
+
+    <main class="page">
+      <section class="intro reveal">
+        <div class="intro-content">
+          <span class="eyebrow">Screen explanation</span>
+          <h2>How the Flutter project is structured and how execution moves through it.</h2>
+          <p>
+            The project starts in <b>main.dart</b>, where services, preferences, notifications, app settings, and Bloc
+            observation are initialized. Shared infrastructure lives in <b>core</b>: API transport, routing, constants,
+            dependency injection, reusable widgets, and local storage. Business work is grouped inside <b>Features</b>,
+            where each domain owns its UI, state logic, data contracts, repositories, and models. The login path shows
+            that structure in action: the form validates input, the Cubit emits states, the repository calls the API,
+            Dio sends the request, and SharedPreferences stores the token for later authenticated requests.
+          </p>
+        </div>
+      </section>
+
+      <section class="vertical-flow" id="flowRoot"></section>
+    </main>
+
+    <div class="toast" id="toast">
+      <b>Login flow complete</b>
+      <span>The access token is saved with Prefs.setString(AppConstants.kToken, accessToken).</span>
+    </div>
+
+    <div class="floating-debug" id="loginLab">
+      <div class="operation-controls">
+        <button class="operation-btn icon-btn" id="prevOperationBtn" aria-label="Previous Operation" title="Previous Operation">
+          <span class="chevron left" aria-hidden="true"></span>
+        </button>
+        <button class="project-button floating-login" id="loginButton">Login</button>
+        <div class="loader-slot"><div class="app-loader" aria-label="Loading"></div></div>
+        <button class="operation-btn icon-btn primary" id="nextOperationBtn" aria-label="Next Operation" title="Next Operation">
+          <span class="chevron right" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="run-meta">
+        <div class="meta-box"><span>Button</span><b id="statusButton">Ready</b></div>
+        <div class="meta-box"><span>Cubit</span><b id="statusCubit">LoginInitial</b></div>
+        <div class="meta-box"><span>Token</span><b id="statusToken">Not stored</b></div>
+      </div>
+    </div>
+
+    <script>
+      const screens = [
+        {
+          title: "lib Folder Content",
+          subtitle: "The root of the Flutter application source.",
+          layer: "Source",
+          file: "lib",
+          image: "assets/screenshots/01-lib-folder.png",
+          compact: false,
+          text: "The app source is organized under lib. It separates reusable infrastructure in core, product modules in Features, generated localization files, ARB files, and the main.dart entry point.",
+          points: [["main.dart", "Bootstraps services and launches MyApp."], ["core", "Shared API, routing, constants, widgets, and preferences."], ["Features", "Domain modules such as Auth, Profile, Home, and Dashboard."]],
+          execution: "Application boot starts here: services are prepared before the first screen is rendered.",
+          code: `void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  setUpServiceLocator();
+  await NotificationService.initialize();
+  await Prefs.init();
+  AppSettings.init();
+  Bloc.observer = SimpleBlocObserver();
+  runApp(const MyApp());
+}`
+        },
+        {
+          title: "core Folder Content",
+          subtitle: "Shared infrastructure used by all features.",
+          layer: "Core",
+          file: "lib/core",
+          image: "assets/screenshots/02-core-folder.png",
+          compact: false,
+          text: "Core contains the reusable building blocks: API service, service locator, preferences wrapper, constants, routing, helper functions, shared widgets, and app colors.",
+          points: [["services", "ApiService, Prefs, BlocProviders, service locator."], ["constants", "Base URL, endpoint names, token and preference keys."], ["widgets", "Reusable UI components such as CustomButton and loading indicator."]],
+          execution: "Core gives the login path its constants, API client, repository registration, and persistent storage.",
+          code: `static const String kBaseUrl = 'http://$kIp/api';
+static const String kLogin = 'tax-payer-mobile-login';
+static const String kToken = 'token';`
+        },
+        {
+          title: "Features Folder Content",
+          subtitle: "Product modules grouped by domain.",
+          layer: "Features",
+          file: "lib/Features",
+          image: "assets/screenshots/03-features-folder.png",
+          compact: false,
+          text: "Each feature folder represents a business area. Auth contains login and account workflows; Profile later reuses the stored token for authenticated profile calls.",
+          points: [["Auth", "Login, register, logout, forgot password, reset password."], ["Profile", "Loads user profile using the saved token."], ["Splash / OnBoarding", "Routes users before they reach auth screens."]],
+          execution: "The execution path enters the Auth feature when the user reaches the login screen.",
+          code: `lib/Features
+  Auth/
+  DashBoard/
+  Home/
+  Instructions/
+  Profile/
+  Splash/`
+        },
+        {
+          title: "Auth Feature Content",
+          subtitle: "Auth is split into data and presentation.",
+          layer: "Auth",
+          file: "lib/Features/Auth",
+          image: "assets/screenshots/04-auth-feature.png",
+          compact: false,
+          text: "Auth follows a layered feature shape. The data folder owns models and repository implementations. The presentation folder owns screens, widgets, and Cubit logic.",
+          points: [["data", "AuthRepo contract, AuthRepoImpl, and user models."], ["presentation", "Views, widgets, and logic folders."], ["logic", "Separate Cubits for login, register, logout, and reset flows."]],
+          execution: "Auth separates what the user sees from how data is requested and parsed.",
+          code: `Auth/
+  data/
+    models/
+    repos/
+  presentation/
+    logic/
+    views/`
+        },
+        {
+          title: "Auth Data Content",
+          subtitle: "The repository owns API-oriented login work.",
+          layer: "Data",
+          file: "lib/Features/Auth/data",
+          image: "assets/screenshots/05-data-content.png",
+          compact: false,
+          text: "The data layer contains the Auth repository contract and implementation. This is where login becomes a network request and response parsing step.",
+          points: [["auth_repo.dart", "Abstract API used by presentation logic."], ["auth_repo_impl.dart", "Concrete implementation that receives ApiService."], ["user.dart", "Model built from the login response user JSON."]],
+          execution: "During login, the Cubit delegates to AuthRepo, and AuthRepoImpl handles the concrete work.",
+          code: `abstract class AuthRepo {
+  Future<Either<Failure, User>> login({
+    required String userName,
+    required String password,
+  });
+}`
+        },
+        {
+          title: "Auth Presentation Content",
+          subtitle: "Widgets and Cubits connect the screen to the repo.",
+          layer: "Presentation",
+          file: "lib/Features/Auth/presentation",
+          image: "assets/screenshots/06-presentation-content.png",
+          compact: false,
+          text: "Presentation contains the visible login screen and the Cubit state machine. LoginForm uses BlocConsumer to react to loading, failure, and success states.",
+          points: [["login_form.dart", "Contains loginMethod and the login button."], ["login_cubit", "Emits LoginLoading, LoginFailure, and LoginSuccess."], ["BlocConsumer", "Separates state reactions from UI rendering."]],
+          execution: "The UI starts execution here when the user presses the login button.",
+          code: `state is LoginLoading
+  ? const CustomLoadingIndicator()
+  : CustomButton(
+      title: 'Login',
+      onPressed: () => loginMethod(...),
+    )`
+        },
+        {
+          title: "Login Method",
+          subtitle: "Validation gate before Cubit execution.",
+          layer: "Method",
+          file: "login_form.dart",
+          image: "assets/screenshots/07-login-method.png",
+          compact: true,
+          text: "loginMethod closes the keyboard, validates the form, saves it, disables autovalidation, then calls LoginCubit.login with username and password.",
+          points: [["Focus", "FocusScope.of(context).unfocus() closes the keyboard."], ["Validation", "Only valid forms continue to Cubit execution."], ["Cubit call", "BlocProvider.of<LoginCubit>(context).login(...) starts the state machine."]],
+          execution: "Breakpoint 1: the method validates input and forwards credentials to LoginCubit.",
+          code: `void loginMethod({required String userName, required String password}) {
+  FocusScope.of(context).unfocus();
+  if (formKey.currentState!.validate()) {
+    formKey.currentState!.save();
+    setState(() {
+      autovalidateMode = AutovalidateMode.disabled;
+    });
+    BlocProvider.of<LoginCubit>(context)
+      .login(userName: userName, password: password);
+  }
+}`
+        },
+        {
+          title: "Login Cubit",
+          subtitle: "Loading state and repository delegation.",
+          layer: "Cubit",
+          file: "login_cubit.dart",
+          image: "assets/screenshots/08-login-cubit.png",
+          compact: true,
+          text: "LoginCubit emits LoginLoading immediately, awaits AuthRepo.login, and folds the result into either LoginFailure or LoginSuccess.",
+          points: [["Loading", "emit(LoginLoading()) makes the form show CustomLoadingIndicator."], ["Repository", "authRepo.login performs the real data operation."], ["Fold", "Failure becomes LoginFailure, user becomes LoginSuccess."]],
+          execution: "Breakpoint 2: the button becomes a loading indicator while the repository request is awaited.",
+          code: `emit(LoginLoading());
+var result = await authRepo.login(
+  userName: userName,
+  password: password,
+);
+result.fold(
+  (failure) => emit(LoginFailure(...)),
+  (user) => emit(LoginSuccess(user: user)),
+);`
+        },
+        {
+          title: "Login Repository",
+          subtitle: "API call, response parsing, and token persistence.",
+          layer: "Repo",
+          file: "auth_repo_impl.dart",
+          image: "assets/screenshots/09-login-repo.png",
+          compact: true,
+          text: "AuthRepoImpl.login posts credentials to the login endpoint, extracts access_token and user, stores the token, and returns Right(user).",
+          points: [["Endpoint", "AppConstants.kLogin is tax-payer-mobile-login."], ["Response", "data['data'] contains access_token and user."], ["Token", "Prefs.setString(AppConstants.kToken, accessToken) saves it for future requests."]],
+          execution: "Breakpoint 3: the repository calls the API, parses the response, and saves the token.",
+          code: `var data = await apiService.post(
+  endPoint: AppConstants.kLogin,
+  body: {'userName': userName, 'password': password},
+  token: null,
+);
+final accessToken = loginData['access_token'] as String;
+User user = User.fromJson(loginData['user'] as Map<String, dynamic>);
+Prefs.setString(AppConstants.kToken, accessToken);
+return Right(user);`
+        },
+        {
+          title: "POST API Service",
+          subtitle: "Dio request construction and response return.",
+          layer: "API",
+          file: "api_service.dart",
+          image: "assets/screenshots/10-api-service-post.png",
+          compact: true,
+          text: "ApiService.post prepares the request body, detects multipart uploads, builds headers, attaches Authorization only when a token exists, then returns response.data.",
+          points: [["Headers", "Content-Type and Accept are prepared for every request."], ["Authorization", "Bearer token is added only when token is not null."], ["Return", "response.data goes back to AuthRepoImpl.login."]],
+          execution: "Breakpoint 4: Dio sends POST to baseUrl/endpoint and returns response.data to the repository.",
+          code: `var response = await dio.post(
+  '$_baseUrl/$endPoint',
+  data: requestBody,
+  options: Options(headers: headers),
+);
+return response.data;`
+        }
+      ];
+
+      const loginSteps = [
+        { screen: 6, button: "Tapped", cubit: "LoginInitial", token: "Not stored" },
+        { screen: 6, button: "Validating form", cubit: "LoginInitial", token: "Not stored" },
+        { screen: 7, button: "CustomLoadingIndicator", cubit: "LoginLoading", token: "Not stored" },
+        { screen: 8, button: "Waiting for repo", cubit: "Awaiting AuthRepo", token: "Waiting" },
+        { screen: 9, button: "HTTP request running", cubit: "Awaiting Dio", token: "Waiting" },
+        { screen: 8, button: "Response received", cubit: "Preparing success", token: "Stored" },
+        { screen: 7, button: "Ready again", cubit: "LoginSuccess", token: "Ready for Bearer calls" }
+      ];
+
+      const flowRoot = document.getElementById("flowRoot");
+      const rail = document.getElementById("progressRail");
+      const toast = document.getElementById("toast");
+      let loginLab;
+      let statusButton;
+      let statusCubit;
+      let statusToken;
+      let flowIndex = -1;
+
+      function pointList(points) {
+        return points.map((point, index) => `
+          <div class="point">
+            <div class="point-num">${index + 1}</div>
+            <div><b>${point[0]}</b><span>${point[1]}</span></div>
+          </div>`).join("");
+      }
+
+      function renderSections() {
+        flowRoot.innerHTML = screens.map((screen, index) => `
+          <article class="flow-section reveal" id="step-${index}" data-index="${index}">
+            <div class="media-block reveal">
+              <div class="section-kicker">
+                <span class="step-pill">${String(index + 1).padStart(2, "0")}</span>
+                <span class="file-pill">${screen.file}</span>
+                <span class="exec-pill">Executing</span>
+              </div>
+              <img class="screenshot ${screen.compact ? "compact" : ""}" src="${screen.image}" alt="${screen.title}" />
+            </div>
+            <div class="content-block reveal">
+              <div class="section-kicker">
+                <span class="file-pill">${screen.layer}</span>
+              </div>
+              <h3>${screen.title}</h3>
+              <p>${screen.text}</p>
+              <div class="point-list">${pointList(screen.points)}</div>
+              <div class="code-title"><span>Related code</span><span>${screen.subtitle}</span></div>
+              <pre class="code"><code>${escapeHtml(screen.code)}</code></pre>
+              <div class="execution-note">${screen.execution}</div>
+            </div>
+          </article>`).join("");
+
+        rail.innerHTML = screens.map((_, index) => `<button class="rail-dot" data-rail="${index}" aria-label="Go to step ${index + 1}"></button>`).join("");
+      }
+
+      function cacheDebugElements() {
+        loginLab = document.getElementById("loginLab");
+        statusButton = document.getElementById("statusButton");
+        statusCubit = document.getElementById("statusCubit");
+        statusToken = document.getElementById("statusToken");
+      }
+
+      function escapeHtml(value) {
+        return value
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;");
+      }
+
+      function setupReveal() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, { threshold: 0.18 });
+
+        document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
+      }
+
+      function setupActiveRail() {
+        const observer = new IntersectionObserver((entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (!visible) return;
+          const index = Number(visible.target.dataset.index);
+          document.querySelectorAll(".rail-dot").forEach((dot) => dot.classList.remove("active"));
+          document.querySelector(`[data-rail="${index}"]`)?.classList.add("active");
+        }, { threshold: [0.28, 0.45, 0.65] });
+
+        document.querySelectorAll(".flow-section").forEach((node) => observer.observe(node));
+      }
+
+      function markExecution(screenIndex, state) {
+        document.querySelectorAll(".flow-section").forEach((section) => {
+          section.classList.remove("running");
+          if (state === "reset") section.classList.remove("executed");
+        });
+        const current = document.getElementById(`step-${screenIndex}`);
+        if (current && state === "running") {
+          current.classList.add("running", "visible");
+          current.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        if (current && state === "done") {
+          current.classList.add("executed");
+        }
+      }
+
+      function wait(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      function resetOperations() {
+        flowIndex = -1;
+        document.querySelectorAll(".flow-section").forEach((section) => {
+          section.classList.remove("running", "executed");
+        });
+        loginLab?.classList.remove("is-running");
+        statusButton.textContent = "Ready";
+        statusCubit.textContent = "LoginInitial";
+        statusToken.textContent = "Not stored";
+      }
+
+      function setOperation(index) {
+        flowIndex = Math.max(-1, Math.min(loginSteps.length - 1, index));
+        document.querySelectorAll(".flow-section").forEach((section) => {
+          section.classList.remove("running", "executed");
+        });
+
+        if (flowIndex === -1) {
+          resetOperations();
+          document.getElementById("step-6")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+
+        for (let previous = 0; previous < flowIndex; previous += 1) {
+          document.getElementById(`step-${loginSteps[previous].screen}`)?.classList.add("executed");
+        }
+
+        const step = loginSteps[flowIndex];
+        markExecution(step.screen, "running");
+        loginLab.classList.toggle("is-running", flowIndex >= 2 && flowIndex <= 5);
+        statusButton.textContent = step.button;
+        statusCubit.textContent = step.cubit;
+        statusToken.textContent = step.token;
+
+        if (flowIndex === loginSteps.length - 1) {
+          loginLab.classList.remove("is-running");
+          toast.classList.add("show");
+          setTimeout(() => toast.classList.remove("show"), 3000);
+        }
+      }
+
+      function nextOperation() {
+        setOperation(flowIndex + 1);
+      }
+
+      function previousOperation() {
+        setOperation(flowIndex - 1);
+      }
+
+      function startLoginDebug() {
+        setOperation(0);
+      }
+
+      renderSections();
+      cacheDebugElements();
+      setupReveal();
+      setupActiveRail();
+
+      document.getElementById("loginButton").addEventListener("click", startLoginDebug);
+      document.getElementById("nextOperationBtn").addEventListener("click", nextOperation);
+      document.getElementById("prevOperationBtn").addEventListener("click", previousOperation);
+      document.getElementById("loginNavBtn").addEventListener("click", () => {
+        document.getElementById("step-6")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      document.getElementById("topBtn").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      document.addEventListener("click", (event) => {
+        const dot = event.target.closest("[data-rail]");
+        if (!dot) return;
+        document.getElementById(`step-${dot.dataset.rail}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    </script>
+  </body>
+</html>
