@@ -163,7 +163,8 @@ Headers: $headers
     if (extension == 'jpeg' ||
         extension == 'jpg' ||
         extension == 'png' ||
-        extension == 'gif') {
+        extension == 'gif' ||
+        extension == 'pdf') {
       return name;
     }
 
@@ -177,6 +178,7 @@ Headers: $headers
       'png' => DioMediaType('image', 'png'),
       'gif' => DioMediaType('image', 'gif'),
       'jpg' || 'jpeg' => DioMediaType('image', 'jpeg'),
+      'pdf' => DioMediaType('application', 'pdf'),
       _ => DioMediaType('image', 'jpeg'),
     };
   }

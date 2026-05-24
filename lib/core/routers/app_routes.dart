@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tax_payer/Features/Auth/data/repos/auth_repo.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/forgot_password_cubit/forgot_password_cubit.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/login_cubit/login_cubit.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/logout_cubit/logout_cubit.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/register_cubit/register_cubit.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_cubit/reset_password_cubit.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/verify_code_cubit/verify_code_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/create_store_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/forgot_password_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/login_view.dart';
@@ -15,6 +22,8 @@ import 'package:tax_payer/Features/Instructions/presentation/views/company_file_
 import 'package:tax_payer/Features/Instructions/presentation/views/individual_file_instruction_view.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instruction_detail_view.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instructions_view.dart';
+import 'package:tax_payer/Features/NewFile/data/repos/new_file_repo.dart';
+import 'package:tax_payer/Features/NewFile/presentation/logic/new_file_cubit/new_file_cubit.dart';
 import 'package:tax_payer/Features/NewFile/presentation/views/new_file_view.dart';
 import 'package:tax_payer/Features/OnBoarding/presentation/views/on_boarding_view.dart';
 import 'package:tax_payer/Features/Profile/data/repos/profile.repo.dart';
@@ -51,12 +60,18 @@ class AppRoutes {
       ),
       _buildRoute(
         path: RouteNames.login,
-        child: const LoginView(),
+        child: BlocProvider(
+          create: (context) => LoginCubit(getIt<AuthRepo>()),
+          child: const LoginView(),
+        ),
         transition: TransitionType.slideFromRight,
       ),
       _buildRoute(
         path: RouteNames.register,
-        child: const SignUpView(),
+        child: BlocProvider(
+          create: (context) => RegisterCubit(getIt<AuthRepo>()),
+          child: const SignUpView(),
+        ),
         transition: TransitionType.slideFromLeft,
       ),
       _buildRoute(
@@ -66,17 +81,26 @@ class AppRoutes {
       ),
       _buildRoute(
         path: RouteNames.forgotPassword,
-        child: const ForgotPasswordView(),
+        child: BlocProvider(
+          create: (context) => ForgotPasswordCubit(getIt<AuthRepo>()),
+          child: const ForgotPasswordView(),
+        ),
         transition: TransitionType.slideFromRight,
       ),
       _buildRoute(
         path: RouteNames.verifyCode,
-        child: const VerifyCodeView(),
+        child: BlocProvider(
+          create: (context) => VerifyCodeCubit(getIt<AuthRepo>()),
+          child: const VerifyCodeView(),
+        ),
         transition: TransitionType.slideFromRight,
       ),
       _buildRoute(
         path: RouteNames.resetPassword,
-        child: const ResetPasswordView(),
+        child: BlocProvider(
+          create: (context) => ResetPasswordCubit(getIt<AuthRepo>()),
+          child: const ResetPasswordView(),
+        ),
         transition: TransitionType.slideFromRight,
       ),
       _buildRoute(
@@ -131,12 +155,18 @@ class AppRoutes {
       ),
       _buildRoute(
         path: RouteNames.newFile,
-        child: const NewFileView(),
+        child: BlocProvider(
+          create: (context) => NewFileCubit(getIt<NewFileRepo>()),
+          child: const NewFileView(),
+        ),
         transition: TransitionType.fade,
       ),
       _buildRoute(
         path: RouteNames.profile,
-        child: const ProfileView(),
+        child: BlocProvider(
+          create: (context) => LogoutCubit(getIt<AuthRepo>()),
+          child: const ProfileView(),
+        ),
         transition: TransitionType.fade,
       ),
       _buildRoute(
