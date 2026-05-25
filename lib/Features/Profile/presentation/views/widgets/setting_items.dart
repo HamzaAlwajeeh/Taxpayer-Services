@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:signals_flutter/signals_flutter.dart';
@@ -47,9 +48,8 @@ class SettingItems extends StatelessWidget {
           onSwitchChanged: (value) {},
           switchValue: true,
           onTap: () {
-            showModalBottomSheet(
+            showCupertinoModalPopup(
               context: context,
-              backgroundColor: Colors.transparent,
               builder: (context) => const LanguageBottomSheet(),
             );
           },

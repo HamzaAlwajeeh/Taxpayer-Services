@@ -219,6 +219,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(
       "أدخل البيانات وارفق الملفات المطلوبة لتقديم الطلب",
     ),
+    "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
+      "اختر لغتك المفضلة",
+    ),
     "NewFileDetailsTitle": MessageLookupByLibrary.simpleMessage(
       "تفاصيل الملف الجديد",
     ),

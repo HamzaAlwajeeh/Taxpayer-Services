@@ -158,5 +158,6 @@
     "SubmitNewFileRequest": "إرسال الطلب",
     "UploadAllDocumentsError": "الرجاء رفع جميع المستندات المطلوبة أولاً!",
     "NewFileDetailsTitle": "تفاصيل الملف الجديد",
-    "NewFileDetailsDesc": "أدخل البيانات وارفق الملفات المطلوبة لتقديم الطلب"
+    "NewFileDetailsDesc": "أدخل البيانات وارفق الملفات المطلوبة لتقديم الطلب",
+    "SelectLanguageMessage": "اختر لغتك المفضلة"
 }

@@ -1485,6 +1485,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Select your preferred language`
+  String get SelectLanguageMessage {
+    return Intl.message(
+      'Select your preferred language',
+      name: 'SelectLanguageMessage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
