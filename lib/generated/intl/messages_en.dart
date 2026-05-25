@@ -221,9 +221,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(
       "Enter details and attach documents to submit request",
     ),
-    "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
-      "Select your preferred language",
-    ),
     "NewFileDetailsTitle": MessageLookupByLibrary.simpleMessage(
       "New File Details",
     ),
@@ -304,6 +301,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SecurityAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "Security and Privacy",
+    ),
+    "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
+      "Select your preferred language",
     ),
     "SendTimeout": MessageLookupByLibrary.simpleMessage(
       "Send timeout with ApiServer",

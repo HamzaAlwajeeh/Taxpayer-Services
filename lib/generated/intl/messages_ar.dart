@@ -219,9 +219,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(
       "أدخل البيانات وارفق الملفات المطلوبة لتقديم الطلب",
     ),
-    "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
-      "اختر لغتك المفضلة",
-    ),
     "NewFileDetailsTitle": MessageLookupByLibrary.simpleMessage(
       "تفاصيل الملف الجديد",
     ),
@@ -300,6 +297,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SecurityAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "الامان والخصوصية",
+    ),
+    "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
+      "اختر لغتك المفضلة",
     ),
     "SendTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة إرسال الطلب إلى الخادم",
