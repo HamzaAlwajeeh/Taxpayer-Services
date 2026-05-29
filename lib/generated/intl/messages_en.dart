@@ -362,5 +362,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("Verify Code"),
     "ViewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
+    "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+    "privacyPolicyText": MessageLookupByLibrary.simpleMessage(
+      "Your privacy is important to us. We collect data to improve our services.",
+    ),
   };
 }

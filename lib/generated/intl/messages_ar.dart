@@ -368,5 +368,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "VerificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("التحقق من الرمز"),
     "ViewDetails": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
+    "privacyPolicy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
+    "privacyPolicyText": MessageLookupByLibrary.simpleMessage(
+      "تعد خصوصيتك مهمة بالنسبة لنا. نقوم بجمع البيانات لتحسين خدماتنا.",
+    ),
   };
 }

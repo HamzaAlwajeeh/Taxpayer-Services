@@ -1406,6 +1406,26 @@ class S {
     );
   }
 
+  /// `Privacy Policy`
+  String get privacyPolicy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your privacy is important to us. We collect data to improve our services.`
+  String get privacyPolicyText {
+    return Intl.message(
+      'Your privacy is important to us. We collect data to improve our services.',
+      name: 'privacyPolicyText',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Tax Office Location`
   String get TaxOfficeLocation {
     return Intl.message(
