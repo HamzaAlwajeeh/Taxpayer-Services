@@ -159,5 +159,7 @@
     "UploadAllDocumentsError": "الرجاء رفع جميع المستندات المطلوبة أولاً!",
     "NewFileDetailsTitle": "تفاصيل الملف الجديد",
     "NewFileDetailsDesc": "أدخل البيانات وارفق الملفات المطلوبة لتقديم الطلب",
-    "SelectLanguageMessage": "اختر لغتك المفضلة"
+    "SelectLanguageMessage": "اختر لغتك المفضلة",
+    "privacyPolicy": "سياسة الخصوصية",
+    "privacyPolicyText": "تعد خصوصيتك مهمة بالنسبة لنا. نقوم بجمع البيانات لتحسين خدماتنا.",
 }
