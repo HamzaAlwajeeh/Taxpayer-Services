@@ -4,7 +4,7 @@ import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.title});
+  const CustomAppBar({super.key, required this.title, required color});
 
   final String title;
 

@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "BylawsCopyField": MessageLookupByLibrary.simpleMessage(
       "صورة من النظام الأساسي",
     ),
+    "Call": MessageLookupByLibrary.simpleMessage("اتصال"),
     "Camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
     "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
@@ -53,22 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "المؤسسات الخيرية المسجلة قد تكون مؤهلة لإعفاءات ضريبية خاصة. يرجى الاستفسار عن الشروط المحددة.",
     ),
     "CharitableReq1": MessageLookupByLibrary.simpleMessage(
-      "قرار التأسيس من الجهة المختصة",
-    ),
-    "CharitableReq2": MessageLookupByLibrary.simpleMessage(
-      "النظام الأساسي للمؤسسة الخيرية",
-    ),
-    "CharitableReq3": MessageLookupByLibrary.simpleMessage(
-      "شهادة تسجيل المؤسسة الخيرية",
-    ),
-    "CharitableReq4": MessageLookupByLibrary.simpleMessage(
-      "صورة البطاقة الشخصية لرئيس مجلس الإدارة",
-    ),
-    "CharitableReq5": MessageLookupByLibrary.simpleMessage(
-      "كشف حساب بنكي باسم المؤسسة",
-    ),
-    "CharitableReq6": MessageLookupByLibrary.simpleMessage(
-      "تقرير سنوي عن أنشطة المؤسسة",
+      "صورة من النظام الأساسي",
     ),
     "ClickToViewDetails": MessageLookupByLibrary.simpleMessage(
       "انقر لعرض التفاصيل",
@@ -93,25 +79,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "يتطلب فتح ملف الشركة حضور المدير المفوض شخصياً أو تفويض رسمي موثق. جميع المستندات يجب أن تكون مترجمة للعربية إذا كانت بلغة أجنبية.",
     ),
     "CompanyReq1": MessageLookupByLibrary.simpleMessage(
-      "عقد تأسيس الشركة مصدق",
+      "عقد التأسيس والنظام الأساسي",
     ),
     "CompanyReq2": MessageLookupByLibrary.simpleMessage(
-      "السجل التجاري ساري المفعول",
+      "ترخيص الشركة من قبل المحافظ",
     ),
     "CompanyReq3": MessageLookupByLibrary.simpleMessage(
-      "البطاقة الضريبية (إن وجدت)",
-    ),
-    "CompanyReq4": MessageLookupByLibrary.simpleMessage(
-      "صورة البطاقة الشخصية للمدير المفوض",
-    ),
-    "CompanyReq5": MessageLookupByLibrary.simpleMessage(
-      "عقد إيجار أو ملكية المقر الرئيسي",
-    ),
-    "CompanyReq6": MessageLookupByLibrary.simpleMessage(
-      "محضر اجتماع الجمعية العامة",
-    ),
-    "CompanyReq7": MessageLookupByLibrary.simpleMessage(
-      "قائمة بأسماء الشركاء والمساهمين",
+      "البطائق الشخصية للشركاء",
     ),
     "ConfirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
@@ -154,6 +128,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "ترخيص الشركة من قبل المحافظ",
     ),
     "Guest": MessageLookupByLibrary.simpleMessage("ضيف"),
+    "HadhramoutTaxOffice": MessageLookupByLibrary.simpleMessage(
+      "مكتب ضرائب حضرموت الساحل",
+    ),
     "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "IdCard": MessageLookupByLibrary.simpleMessage("البطاقة الشخصية"),
     "ImageIsRequired": MessageLookupByLibrary.simpleMessage("الصورة مطلوبة"),
@@ -172,21 +149,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "IndividualNote": MessageLookupByLibrary.simpleMessage(
       "يجب أن تكون جميع المستندات سارية المفعول ومصدقة من الجهات المختصة. يمكنك مراجعة أقرب مكتب ضريبي للمساعدة.",
     ),
-    "IndividualReq1": MessageLookupByLibrary.simpleMessage(
-      "صورة البطاقة الشخصية",
-    ),
-    "IndividualReq2": MessageLookupByLibrary.simpleMessage(
-      "شهادة ممارسة النشاط أو السجل التجاري",
-    ),
+    "IndividualReq1": MessageLookupByLibrary.simpleMessage("الإسم التجاري"),
+    "IndividualReq2": MessageLookupByLibrary.simpleMessage("السجل التجاري"),
     "IndividualReq3": MessageLookupByLibrary.simpleMessage(
-      "عقد إيجار أو ملكية لمقر النشاط",
+      "ترخيص مزاولة النشاط",
     ),
     "IndividualReq4": MessageLookupByLibrary.simpleMessage(
-      "رقم هاتف فعال باسم المكلف",
+      "قيد تسجيل الاسم التجاري",
     ),
-    "IndividualReq5": MessageLookupByLibrary.simpleMessage("صورة شخصية حديثة"),
+    "IndividualReq5": MessageLookupByLibrary.simpleMessage(
+      "صورة البطاقة التأمينية",
+    ),
     "IndividualReq6": MessageLookupByLibrary.simpleMessage(
-      "إثبات العنوان (فاتورة كهرباء أو ماء)",
+      "صورة من عقد الايجار أو ملكية مقر النشاط",
     ),
     "Instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
     "InstructionsSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -212,15 +187,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "LogoutSuccess": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الحروج بنجاح",
     ),
+    "Maps": MessageLookupByLibrary.simpleMessage("خرائط"),
     "MethodNotFound": MessageLookupByLibrary.simpleMessage(
       "الطريقة غير موجودة، يرجى المحاولة مرة أخرى",
     ),
     "NewFile": MessageLookupByLibrary.simpleMessage("ملف جديد"),
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(
       "أدخل البيانات وارفق الملفات المطلوبة لتقديم الطلب",
-    ),
-    "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
-      "اختر لغتك المفضلة",
     ),
     "NewFileDetailsTitle": MessageLookupByLibrary.simpleMessage(
       "تفاصيل الملف الجديد",
@@ -301,6 +274,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SecurityAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "الامان والخصوصية",
     ),
+    "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
+      "اختر لغتك المفضلة",
+    ),
     "SendTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة إرسال الطلب إلى الخادم",
     ),
@@ -344,6 +320,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "TaxExemptionsStep4": MessageLookupByLibrary.simpleMessage(
       "استلام قرار الإعفاء أو الرفض مع الأسباب",
+    ),
+    "TaxOfficeLocation": MessageLookupByLibrary.simpleMessage(
+      "موقع مكتب الضرائب",
+    ),
+    "TaxOfficeLocationDetails": MessageLookupByLibrary.simpleMessage(
+      "الشارع الرئيسي - الديس - مقابل معرض البريمي للسيارات",
     ),
     "TaxPayment": MessageLookupByLibrary.simpleMessage("سداد الضريبة"),
     "TaxPaymentDesc": MessageLookupByLibrary.simpleMessage(

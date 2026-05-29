@@ -21,6 +21,7 @@ class RouteNames {
 
   // Instractions Routes
   static const String instructions = '/instructions';
+  static const String instructionsDetail = '/instructions-detail';
   static const String individualFileInstruction =
       '/individual-file-instruction';
   static const String companyFileInstruction = '/company-file-instruction';

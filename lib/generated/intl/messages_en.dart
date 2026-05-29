@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "BylawsCopyField": MessageLookupByLibrary.simpleMessage(
       "Bylaws Copy (Optional)",
     ),
+    "Call": MessageLookupByLibrary.simpleMessage("Call"),
     "Camera": MessageLookupByLibrary.simpleMessage("Camera"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("Take a new photo"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
@@ -53,22 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Registered charitable organizations may be eligible for special tax exemptions. Please inquire about specific conditions.",
     ),
     "CharitableReq1": MessageLookupByLibrary.simpleMessage(
-      "Establishment decision from competent authority",
-    ),
-    "CharitableReq2": MessageLookupByLibrary.simpleMessage(
-      "Articles of association of the charitable organization",
-    ),
-    "CharitableReq3": MessageLookupByLibrary.simpleMessage(
-      "Charitable organization registration certificate",
-    ),
-    "CharitableReq4": MessageLookupByLibrary.simpleMessage(
-      "Copy of board chairman\'s ID card",
-    ),
-    "CharitableReq5": MessageLookupByLibrary.simpleMessage(
-      "Bank statement in the organization\'s name",
-    ),
-    "CharitableReq6": MessageLookupByLibrary.simpleMessage(
-      "Annual report on organization activities",
+      "Copy of the bylaws",
     ),
     "ClickToViewDetails": MessageLookupByLibrary.simpleMessage(
       "Click to view details",
@@ -93,26 +79,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Opening a company file requires personal attendance of the authorized manager or an official notarized authorization. All documents must be translated to Arabic if in a foreign language.",
     ),
     "CompanyReq1": MessageLookupByLibrary.simpleMessage(
-      "Certified company incorporation contract",
+      "Articles of Incorporation",
     ),
-    "CompanyReq2": MessageLookupByLibrary.simpleMessage(
-      "Valid commercial registration",
-    ),
-    "CompanyReq3": MessageLookupByLibrary.simpleMessage(
-      "Tax card (if available)",
-    ),
-    "CompanyReq4": MessageLookupByLibrary.simpleMessage(
-      "Copy of authorized manager\'s ID card",
-    ),
-    "CompanyReq5": MessageLookupByLibrary.simpleMessage(
-      "Lease or ownership contract for headquarters",
-    ),
-    "CompanyReq6": MessageLookupByLibrary.simpleMessage(
-      "General assembly meeting minutes",
-    ),
-    "CompanyReq7": MessageLookupByLibrary.simpleMessage(
-      "List of partners and shareholders",
-    ),
+    "CompanyReq2": MessageLookupByLibrary.simpleMessage("Government License"),
+    "CompanyReq3": MessageLookupByLibrary.simpleMessage("Partners ID Cards"),
     "ConfirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
       "Connection timeout with ApiServer",
@@ -154,6 +124,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Government License (Optional)",
     ),
     "Guest": MessageLookupByLibrary.simpleMessage("Guest"),
+    "HadhramoutTaxOffice": MessageLookupByLibrary.simpleMessage(
+      "Hadhramout Tax Office",
+    ),
     "Home": MessageLookupByLibrary.simpleMessage("Home"),
     "IdCard": MessageLookupByLibrary.simpleMessage("IdCard"),
     "ImageIsRequired": MessageLookupByLibrary.simpleMessage(
@@ -174,23 +147,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "IndividualNote": MessageLookupByLibrary.simpleMessage(
       "All documents must be valid and certified by competent authorities. You can visit the nearest tax office for assistance.",
     ),
-    "IndividualReq1": MessageLookupByLibrary.simpleMessage(
-      "Copy of personal ID card",
-    ),
-    "IndividualReq2": MessageLookupByLibrary.simpleMessage(
-      "Business practice certificate or commercial registration",
-    ),
-    "IndividualReq3": MessageLookupByLibrary.simpleMessage(
-      "Lease or ownership contract for business premises",
-    ),
-    "IndividualReq4": MessageLookupByLibrary.simpleMessage(
-      "Active phone number registered to the taxpayer",
-    ),
-    "IndividualReq5": MessageLookupByLibrary.simpleMessage(
-      "Recent personal photo",
-    ),
+    "IndividualReq1": MessageLookupByLibrary.simpleMessage("Trade Name"),
+    "IndividualReq2": MessageLookupByLibrary.simpleMessage("Commercial Record"),
+    "IndividualReq3": MessageLookupByLibrary.simpleMessage("Activity License"),
+    "IndividualReq4": MessageLookupByLibrary.simpleMessage("Trade Picture"),
+    "IndividualReq5": MessageLookupByLibrary.simpleMessage("Insurance Card"),
     "IndividualReq6": MessageLookupByLibrary.simpleMessage(
-      "Address proof (electricity or water bill)",
+      "Property Document Picture",
     ),
     "Instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
     "InstructionsSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -214,15 +177,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "LogoutSuccess": MessageLookupByLibrary.simpleMessage(
       "Logout Successfully",
     ),
+    "Maps": MessageLookupByLibrary.simpleMessage("Maps"),
     "MethodNotFound": MessageLookupByLibrary.simpleMessage(
       "Method Not Found, please try again",
     ),
     "NewFile": MessageLookupByLibrary.simpleMessage("NewFile"),
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(
       "Enter details and attach documents to submit request",
-    ),
-    "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
-      "Select your preferred language",
     ),
     "NewFileDetailsTitle": MessageLookupByLibrary.simpleMessage(
       "New File Details",
@@ -305,6 +266,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SecurityAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "Security and Privacy",
     ),
+    "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
+      "Select your preferred language",
+    ),
     "SendTimeout": MessageLookupByLibrary.simpleMessage(
       "Send timeout with ApiServer",
     ),
@@ -350,6 +314,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "TaxExemptionsStep4": MessageLookupByLibrary.simpleMessage(
       "Receive approval or rejection with reasons",
+    ),
+    "TaxOfficeLocation": MessageLookupByLibrary.simpleMessage(
+      "Tax Office Location",
+    ),
+    "TaxOfficeLocationDetails": MessageLookupByLibrary.simpleMessage(
+      "Main Street - Addis - Opposite Al-Buraimi Car Showroom",
     ),
     "TaxPayment": MessageLookupByLibrary.simpleMessage("Tax Payment"),
     "TaxPaymentDesc": MessageLookupByLibrary.simpleMessage(
