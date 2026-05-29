@@ -48,120 +48,135 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      onTap: () {
-        if (widget.isCalender == true) {
-          getDate(context).then((value) {
-            widget.controller?.text = value;
-          });
-          setState(() {});
-        }
-      },
-      cursorColor: AppColors.primaryColor(context),
-      readOnly: widget.readOnly ?? false,
-      controller: widget.controller,
-      initialValue: widget.initialValue,
-      onSaved: widget.onSaved,
-      onChanged: widget.onChanged,
-      validator: (value) {
-        final text = value?.trim() ?? '';
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Text(
+            widget.hintText,
+            style: TextStyles.semiBold16.copyWith(
+              color: AppColors.textRedColor(context),
+            ),
+          ),
+        ),
+        const SizedBox(height: 8),
+        TextFormField(
+          onTap: () {
+            if (widget.isCalender == true) {
+              getDate(context).then((value) {
+                widget.controller?.text = value;
+              });
+              setState(() {});
+            }
+          },
+          cursorColor: AppColors.primaryColor(context),
+          readOnly: widget.readOnly ?? false,
+          controller: widget.controller,
+          initialValue: widget.initialValue,
+          onSaved: widget.onSaved,
+          onChanged: widget.onChanged,
+          validator: (value) {
+            final text = value?.trim() ?? '';
 
-        if (widget.type == 'confirm') {
-          final password = widget.passwordController?.text.trim() ?? '';
+            if (widget.type == 'confirm') {
+              final password = widget.passwordController?.text.trim() ?? '';
 
-          if (password.isNotEmpty && text.isEmpty) {
-            return S.of(context).FieldIsRequired;
-          }
+              if (password.isNotEmpty && text.isEmpty) {
+                return S.of(context).FieldIsRequired;
+              }
 
-          if (password.isNotEmpty && text != password) {
-            return S.of(context).PasswordNotMatch;
-          }
+              if (password.isNotEmpty && text != password) {
+                return S.of(context).PasswordNotMatch;
+              }
 
-          return null;
-        }
+              return null;
+            }
 
-        if (widget.isPassword == true) {
-          if (text.isEmpty) {
+            if (widget.isPassword == true) {
+              if (text.isEmpty) {
+                return null;
+              }
+
+              if (text.length < 8) {
+                return S.of(context).PasswordMinLength;
+              }
+
+              return null;
+            }
+
+            if (text.isEmpty) {
+              return S.of(context).FieldIsRequired;
+            }
+
             return null;
-          }
-
-          if (text.length < 8) {
-            return S.of(context).PasswordMinLength;
-          }
-
-          return null;
-        }
-
-        if (text.isEmpty) {
-          return S.of(context).FieldIsRequired;
-        }
-
-        return null;
-      },
-      obscureText: widget.isPassword == true ? !isVisible : false,
-      style: TextStyles.bold16.copyWith(
-        color: AppColors.textPrimaryColor(context),
-      ),
-      textInputAction: TextInputAction.next,
-      keyboardType: widget.keyboardType,
-      decoration: InputDecoration(
-        prefixIcon: widget.prefixIcon,
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 16,
+          },
+          obscureText: widget.isPassword == true ? !isVisible : false,
+          style: TextStyles.bold16.copyWith(
+            color: AppColors.textPrimaryColor(context),
+          ),
+          textInputAction: TextInputAction.next,
+          keyboardType: widget.keyboardType,
+          decoration: InputDecoration(
+            prefixIcon: widget.prefixIcon,
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 16,
+            ),
+            suffixIcon:
+                widget.isPassword ?? false
+                    ? Padding(
+                      padding: const EdgeInsets.only(left: 15),
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        onPressed: () {
+                          isVisible = !isVisible;
+                          setState(() {});
+                        },
+                        icon:
+                            !isVisible
+                                ? Icon(
+                                  Icons.visibility,
+                                  color: AppColors.textPrimaryColor(context),
+                                  size: 26,
+                                )
+                                : Icon(
+                                  Icons.visibility_off,
+                                  color: AppColors.textPrimaryColor(context),
+                                  size: 26,
+                                ),
+                      ),
+                    )
+                    : GestureDetector(
+                      onTap:
+                          (widget.isCalender == true)
+                              ? () async {
+                                await getDate(context).then((value) {
+                                  widget.controller?.text = value;
+                                });
+                                setState(() {});
+                              }
+                              : null,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: widget.suffixIcon,
+                      ),
+                    ),
+            filled: true,
+            hintText: widget.hintText,
+            hintStyle: TextStyles.bold16.copyWith(
+              color: AppColors.textPrimaryColor(context),
+            ),
+            fillColor: AppColors.textFeilColor(context),
+            border: buildBorder(context),
+            enabledBorder: buildBorder(context),
+            focusedBorder: buildBorder(context),
+            errorStyle: TextStyles.semiBold14.copyWith(
+              color: AppColors.red().withOpacity(0.8),
+            ),
+          ),
         ),
-        suffixIcon:
-            widget.isPassword ?? false
-                ? Padding(
-                  padding: const EdgeInsets.only(left: 15),
-                  child: IconButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () {
-                      isVisible = !isVisible;
-                      setState(() {});
-                    },
-                    icon:
-                        !isVisible
-                            ? Icon(
-                              Icons.visibility,
-                              color: AppColors.textPrimaryColor(context),
-                              size: 26,
-                            )
-                            : Icon(
-                              Icons.visibility_off,
-                              color: AppColors.textPrimaryColor(context),
-                              size: 26,
-                            ),
-                  ),
-                )
-                : GestureDetector(
-                  onTap:
-                      (widget.isCalender == true)
-                          ? () async {
-                            await getDate(context).then((value) {
-                              widget.controller?.text = value;
-                            });
-                            setState(() {});
-                          }
-                          : null,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: widget.suffixIcon,
-                  ),
-                ),
-        filled: true,
-        hintText: widget.hintText,
-        hintStyle: TextStyles.bold16.copyWith(
-          color: AppColors.textPrimaryColor(context),
-        ),
-        fillColor: AppColors.textFeilColor(context),
-        border: buildBorder(context),
-        enabledBorder: buildBorder(context),
-        focusedBorder: buildBorder(context),
-        errorStyle: TextStyles.semiBold14.copyWith(
-          color: AppColors.red().withOpacity(0.8),
-        ),
-      ),
+      ],
     );
   }
 

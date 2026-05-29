@@ -4,12 +4,12 @@ import 'package:tax_payer/Features/Instructions/data/instructions_items_list.dar
 import 'package:tax_payer/Features/Instructions/data/models/instruction_detail_model.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/widgets/instruction_section_title.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/widgets/instruction_tile.dart';
-import 'package:tax_payer/Features/Instructions/presentation/views/widgets/instructions_header.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/widgets/location_card.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
+import 'package:tax_payer/core/widgets/header_card.dart';
 import 'package:tax_payer/generated/l10n.dart';
 
 class InstructionsViewBody extends StatelessWidget {
@@ -32,7 +32,10 @@ class InstructionsViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const InstructionsHeader(),
+            HeaderCard(
+              title: l10n.InstructionsTitle,
+              subTitle: l10n.InstructionsSubtitle,
+            ),
             const SizedBox(height: AppSpacing.s24),
             InstructionSectionTitle(
               title: l10n.FileOpeningRequirements,

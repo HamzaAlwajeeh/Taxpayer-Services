@@ -155,7 +155,8 @@
     "TaxOfficeLocationDetails": "الشارع الرئيسي - الديس - مقابل معرض البريمي للسيارات",
     "HadhramoutTaxOffice": "مكتب ضرائب حضرموت الساحل",
     "Maps" : "خرائط",
-    "Call" : "اتصال"
+    "Call" : "اتصال",
+    "NewFileHeroTitle" : "إنشاء ملف جديد",
+    "NewFileHeroDetails" : "قم بتحديد نوع الملف ثم ادخل البيانات المطلوبه"
     
-
 }

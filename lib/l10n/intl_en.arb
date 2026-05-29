@@ -155,5 +155,7 @@
     "TaxOfficeLocationDetails": "Main Street - Addis - Opposite Al-Buraimi Car Showroom",
     "HadhramoutTaxOffice": "Hadhramout Tax Office",
     "Maps" : "Maps",
-    "Call" : "Call"
+    "Call" : "Call",
+    "NewFileHeroTitle" : "Create New File",
+    "NewFileHeroDetails" : "Select the file type and enter the required data"
 }

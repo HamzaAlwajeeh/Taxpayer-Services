@@ -1445,6 +1445,26 @@ class S {
   String get Call {
     return Intl.message('Call', name: 'Call', desc: '', args: []);
   }
+
+  /// `Create New File`
+  String get NewFileHeroTitle {
+    return Intl.message(
+      'Create New File',
+      name: 'NewFileHeroTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select the file type and enter the required data`
+  String get NewFileHeroDetails {
+    return Intl.message(
+      'Select the file type and enter the required data',
+      name: 'NewFileHeroDetails',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

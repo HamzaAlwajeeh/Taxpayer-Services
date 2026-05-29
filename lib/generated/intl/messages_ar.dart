@@ -198,6 +198,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "NewFileDetailsTitle": MessageLookupByLibrary.simpleMessage(
       "تفاصيل الملف الجديد",
     ),
+    "NewFileHeroDetails": MessageLookupByLibrary.simpleMessage(
+      "قم بتحديد نوع الملف ثم ادخل البيانات المطلوبه",
+    ),
+    "NewFileHeroTitle": MessageLookupByLibrary.simpleMessage("إنشاء ملف جديد"),
     "NewPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
     "Next": MessageLookupByLibrary.simpleMessage("التالي"),
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(

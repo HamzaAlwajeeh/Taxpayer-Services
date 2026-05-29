@@ -188,6 +188,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "NewFileDetailsTitle": MessageLookupByLibrary.simpleMessage(
       "New File Details",
     ),
+    "NewFileHeroDetails": MessageLookupByLibrary.simpleMessage(
+      "Select the file type and enter the required data",
+    ),
+    "NewFileHeroTitle": MessageLookupByLibrary.simpleMessage("Create New File"),
     "NewPassword": MessageLookupByLibrary.simpleMessage("New Password"),
     "Next": MessageLookupByLibrary.simpleMessage("Next"),
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(

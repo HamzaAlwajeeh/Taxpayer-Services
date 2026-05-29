@@ -90,225 +90,220 @@ class _NewFileFormState extends State<NewFileForm> {
       builder: (BuildContext context, NewFileState state) {
         return AbsorbPointer(
           absorbing: state is NewFileLoading,
-          child: SafeArea(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-              child: Form(
-                key: formKey,
-                autovalidateMode: autovalidateMode,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+          child: Form(
+            key: formKey,
+            autovalidateMode: autovalidateMode,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l10n.FileType,
+                  style: TextStyles.bold16.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.textBoldColor(context),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Row(
                   children: [
-                    Text(
-                      l10n.FileType,
-                      style: TextStyles.bold16.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textBoldColor(context),
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: FileTypeSelectorCard(
-                            title: l10n.IndividualFile,
-                            icon: Icons.person_outline_rounded,
-                            isSelected: selectedFileType == 'Individual',
-                            onTap: () {
-                              setState(() {
-                                selectedFileType = 'Individual';
-                              });
-                            },
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: FileTypeSelectorCard(
-                            title: l10n.CompanyFile,
-                            icon: Icons.business_outlined,
-                            isSelected: selectedFileType == 'Company',
-                            onTap: () {
-                              setState(() {
-                                selectedFileType = 'Company';
-                              });
-                            },
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: FileTypeSelectorCard(
-                            title: l10n.CharitableCompanyFile,
-                            icon: Icons.volunteer_activism_outlined,
-                            isSelected: selectedFileType == 'CharitableCompany',
-                            onTap: () {
-                              setState(() {
-                                selectedFileType = 'CharitableCompany';
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 24),
-                    CustomTextFormFeild(
-                      controller: tradeNameController,
-                      hintText: l10n.TradeNameField,
-                      keyboardType: TextInputType.text,
-                      prefixIcon: Icon(
-                        Icons.storefront_rounded,
-                        color: AppColors.textPrimaryColor(context),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-
-                    // Common Required files
-                    UploadFile(
-                      title: l10n.CommercialRecordField,
-                      subTitle: 'PDF , JPG , PNG',
-                      isStoreImage: false,
-                      allowPdf: true,
-                      useLocalState: true,
-                      file: commercialRecord,
-                      onImageChanged: (file) {
-                        setState(() {
-                          commercialRecord = file;
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    UploadFile(
-                      title: l10n.ActivityLicenseField,
-                      subTitle: 'PDF , JPG , PNG',
-                      isStoreImage: false,
-                      allowPdf: true,
-                      useLocalState: true,
-                      file: activityLicense,
-                      onImageChanged: (file) {
-                        setState(() {
-                          activityLicense = file;
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    UploadFile(
-                      title: l10n.TradePictureField,
-                      subTitle: 'PDF , JPG , PNG',
-                      isStoreImage: false,
-                      allowPdf: true,
-                      useLocalState: true,
-                      file: tradePicture,
-                      onImageChanged: (file) {
-                        setState(() {
-                          tradePicture = file;
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    UploadFile(
-                      title: l10n.InsuranceCardField,
-                      subTitle: 'PDF , JPG , PNG',
-                      isStoreImage: false,
-                      allowPdf: true,
-                      useLocalState: true,
-                      file: insuranceCard,
-                      onImageChanged: (file) {
-                        setState(() {
-                          insuranceCard = file;
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    UploadFile(
-                      title: l10n.PropertyDocPictureField,
-                      subTitle: 'PDF , JPG , PNG',
-                      isStoreImage: false,
-                      allowPdf: true,
-                      useLocalState: true,
-                      file: propertyDocPicture,
-                      onImageChanged: (file) {
-                        setState(() {
-                          propertyDocPicture = file;
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 16),
-
-                    // Conditionally visible fields
-                    if (selectedFileType == 'Company') ...[
-                      UploadFile(
-                        title: l10n.ArticlesOfIncorporationField,
-                        subTitle: 'PDF , JPG , PNG',
-                        isStoreImage: false,
-                        allowPdf: true,
-                        useLocalState: true,
-                        isRequired: true,
-                        file: articlesOfIncorporation,
-                        onImageChanged: (file) {
+                    Expanded(
+                      child: FileTypeSelectorCard(
+                        title: l10n.IndividualFile,
+                        icon: Icons.person_outline_rounded,
+                        isSelected: selectedFileType == 'Individual',
+                        onTap: () {
                           setState(() {
-                            articlesOfIncorporation = file;
+                            selectedFileType = 'Individual';
                           });
                         },
                       ),
-                      const SizedBox(height: 16),
-                      UploadFile(
-                        title: l10n.GovernmentLicenseField,
-                        subTitle: 'PDF , JPG , PNG',
-                        isStoreImage: false,
-                        allowPdf: true,
-                        useLocalState: true,
-                        isRequired: true,
-                        file: governmentLicense,
-                        onImageChanged: (file) {
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: FileTypeSelectorCard(
+                        title: l10n.CompanyFile,
+                        icon: Icons.business_outlined,
+                        isSelected: selectedFileType == 'Company',
+                        onTap: () {
                           setState(() {
-                            governmentLicense = file;
+                            selectedFileType = 'Company';
                           });
                         },
                       ),
-                      const SizedBox(height: 16),
-                      UploadFile(
-                        title: l10n.PartinersIDCardsField,
-                        subTitle: 'PDF , JPG , PNG',
-                        isStoreImage: false,
-                        allowPdf: true,
-                        useLocalState: true,
-                        isRequired: true,
-                        file: partinersIDCards,
-                        onImageChanged: (file) {
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: FileTypeSelectorCard(
+                        title: l10n.CharitableCompanyFile,
+                        icon: Icons.volunteer_activism_outlined,
+                        isSelected: selectedFileType == 'CharitableCompany',
+                        onTap: () {
                           setState(() {
-                            partinersIDCards = file;
+                            selectedFileType = 'CharitableCompany';
                           });
                         },
                       ),
-                      const SizedBox(height: 16),
-                    ],
-
-                    if (selectedFileType == 'CharitableCompany') ...[
-                      UploadFile(
-                        title: l10n.BylawsCopyField,
-                        subTitle: 'PDF , JPG , PNG',
-                        isStoreImage: false,
-                        allowPdf: true,
-                        useLocalState: true,
-                        isRequired: true,
-                        file: bylawsCopy,
-                        onImageChanged: (file) {
-                          setState(() {
-                            bylawsCopy = file;
-                          });
-                        },
-                      ),
-                      const SizedBox(height: 16),
-                    ],
-
-                    state is NewFileLoading
-                        ? const Center(child: CustomLoadingIndicator())
-                        : CustomButton(
-                          title: l10n.SubmitNewFileRequest,
-                          onPressed: () => createNewFile(context),
-                        ),
+                    ),
                   ],
                 ),
-              ),
+                const SizedBox(height: 24),
+                CustomTextFormFeild(
+                  controller: tradeNameController,
+                  hintText: l10n.TradeNameField,
+                  keyboardType: TextInputType.text,
+                  prefixIcon: Icon(
+                    Icons.storefront_rounded,
+                    color: AppColors.textPrimaryColor(context),
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                // Common Required files
+                UploadFile(
+                  title: l10n.CommercialRecordField,
+                  subTitle: 'PDF , JPG , PNG',
+                  isStoreImage: false,
+                  allowPdf: true,
+                  useLocalState: true,
+                  file: commercialRecord,
+                  onImageChanged: (file) {
+                    setState(() {
+                      commercialRecord = file;
+                    });
+                  },
+                ),
+                const SizedBox(height: 16),
+                UploadFile(
+                  title: l10n.ActivityLicenseField,
+                  subTitle: 'PDF , JPG , PNG',
+                  isStoreImage: false,
+                  allowPdf: true,
+                  useLocalState: true,
+                  file: activityLicense,
+                  onImageChanged: (file) {
+                    setState(() {
+                      activityLicense = file;
+                    });
+                  },
+                ),
+                const SizedBox(height: 16),
+                UploadFile(
+                  title: l10n.TradePictureField,
+                  subTitle: 'PDF , JPG , PNG',
+                  isStoreImage: false,
+                  allowPdf: true,
+                  useLocalState: true,
+                  file: tradePicture,
+                  onImageChanged: (file) {
+                    setState(() {
+                      tradePicture = file;
+                    });
+                  },
+                ),
+                const SizedBox(height: 16),
+                UploadFile(
+                  title: l10n.InsuranceCardField,
+                  subTitle: 'PDF , JPG , PNG',
+                  isStoreImage: false,
+                  allowPdf: true,
+                  useLocalState: true,
+                  file: insuranceCard,
+                  onImageChanged: (file) {
+                    setState(() {
+                      insuranceCard = file;
+                    });
+                  },
+                ),
+                const SizedBox(height: 16),
+                UploadFile(
+                  title: l10n.PropertyDocPictureField,
+                  subTitle: 'PDF , JPG , PNG',
+                  isStoreImage: false,
+                  allowPdf: true,
+                  useLocalState: true,
+                  file: propertyDocPicture,
+                  onImageChanged: (file) {
+                    setState(() {
+                      propertyDocPicture = file;
+                    });
+                  },
+                ),
+                const SizedBox(height: 16),
+
+                // Conditionally visible fields
+                if (selectedFileType == 'Company') ...[
+                  UploadFile(
+                    title: l10n.ArticlesOfIncorporationField,
+                    subTitle: 'PDF , JPG , PNG',
+                    isStoreImage: false,
+                    allowPdf: true,
+                    useLocalState: true,
+                    isRequired: true,
+                    file: articlesOfIncorporation,
+                    onImageChanged: (file) {
+                      setState(() {
+                        articlesOfIncorporation = file;
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                  UploadFile(
+                    title: l10n.GovernmentLicenseField,
+                    subTitle: 'PDF , JPG , PNG',
+                    isStoreImage: false,
+                    allowPdf: true,
+                    useLocalState: true,
+                    isRequired: true,
+                    file: governmentLicense,
+                    onImageChanged: (file) {
+                      setState(() {
+                        governmentLicense = file;
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                  UploadFile(
+                    title: l10n.PartinersIDCardsField,
+                    subTitle: 'PDF , JPG , PNG',
+                    isStoreImage: false,
+                    allowPdf: true,
+                    useLocalState: true,
+                    isRequired: true,
+                    file: partinersIDCards,
+                    onImageChanged: (file) {
+                      setState(() {
+                        partinersIDCards = file;
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                ],
+
+                if (selectedFileType == 'CharitableCompany') ...[
+                  UploadFile(
+                    title: l10n.BylawsCopyField,
+                    subTitle: 'PDF , JPG , PNG',
+                    isStoreImage: false,
+                    allowPdf: true,
+                    useLocalState: true,
+                    isRequired: true,
+                    file: bylawsCopy,
+                    onImageChanged: (file) {
+                      setState(() {
+                        bylawsCopy = file;
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                ],
+
+                state is NewFileLoading
+                    ? const Center(child: CustomLoadingIndicator())
+                    : CustomButton(
+                      title: l10n.SubmitNewFileRequest,
+                      onPressed: () => createNewFile(context),
+                    ),
+              ],
             ),
           ),
         );

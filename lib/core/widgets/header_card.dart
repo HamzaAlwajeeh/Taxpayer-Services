@@ -4,14 +4,13 @@ import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
-import 'package:tax_payer/generated/l10n.dart';
 
-class InstructionsHeader extends StatelessWidget {
-  const InstructionsHeader({super.key});
-
+class HeaderCard extends StatelessWidget {
+  const HeaderCard({super.key, required this.title, required this.subTitle});
+  final String title;
+  final String subTitle;
   @override
   Widget build(BuildContext context) {
-    final l10n = S.of(context);
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(AppSpacing.s20),
@@ -19,10 +18,7 @@ class InstructionsHeader extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            const Color(0xff820005),
-            AppColors.primaryColor(context)
-          ],
+          colors: [const Color(0xff820005), AppColors.primaryColor(context)],
         ),
         borderRadius: BorderRadius.circular(AppSpacing.radius16),
         boxShadow: [
@@ -57,12 +53,12 @@ class InstructionsHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  l10n.InstructionsTitle,
+                  title,
                   style: TextStyles.bold18.copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: AppSpacing.s4),
                 Text(
-                  l10n.InstructionsSubtitle,
+                  subTitle,
                   style: TextStyles.regular14.copyWith(
                     color: Colors.white.withOpacity(0.85),
                     height: 1.4,
