@@ -36,10 +36,7 @@ class InstructionTile extends StatelessWidget {
               offset: const Offset(0, 4),
             ),
           ],
-          border: Border.all(
-            color: color.withOpacity(0.12),
-            width: 1,
-          ),
+          border: Border.all(color: color.withOpacity(0.12), width: 1),
         ),
         child: Row(
           children: [
@@ -91,17 +88,16 @@ class InstructionTile extends StatelessWidget {
               padding: const EdgeInsets.all(6),
               decoration: BoxDecoration(
                 color: color.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(7),
               ),
               child: Icon(
                 Icons.arrow_forward_ios_rounded,
                 color: color,
-                size: 14,
+                size: 18,
               ),
             ),
           ],
         ),
-
       ),
     );
   }
