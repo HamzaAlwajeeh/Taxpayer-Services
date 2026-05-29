@@ -218,6 +218,14 @@ class Assets {
   /// assets/images/lightUserPlaseholder.png
   static const String assetsImagesLightUserPlaseholder = "assets/images/lightUserPlaseholder.png";
 
+  /// Assets for assetsImagesLocation
+  /// assets/images/Location.jpg
+  static const String assetsImagesLocation = "assets/images/Location.jpg";
+
+  /// Assets for assetsImagesLocationDark
+  /// assets/images/Location_dark.jpg
+  static const String assetsImagesLocationDark = "assets/images/Location_dark.jpg";
+
   /// Assets for assetsImagesOnBoarding1
   /// assets/images/on_boarding_1.png
   static const String assetsImagesOnBoarding1 = "assets/images/on_boarding_1.png";

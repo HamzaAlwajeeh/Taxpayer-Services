@@ -921,191 +921,101 @@ class S {
     );
   }
 
-  /// `Copy of personal ID card`
+  /// `Trade Name`
   String get IndividualReq1 {
     return Intl.message(
-      'Copy of personal ID card',
+      'Trade Name',
       name: 'IndividualReq1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Business practice certificate or commercial registration`
+  /// `Commercial Record`
   String get IndividualReq2 {
     return Intl.message(
-      'Business practice certificate or commercial registration',
+      'Commercial Record',
       name: 'IndividualReq2',
       desc: '',
       args: [],
     );
   }
 
-  /// `Lease or ownership contract for business premises`
+  /// `Activity License`
   String get IndividualReq3 {
     return Intl.message(
-      'Lease or ownership contract for business premises',
+      'Activity License',
       name: 'IndividualReq3',
       desc: '',
       args: [],
     );
   }
 
-  /// `Active phone number registered to the taxpayer`
+  /// `Trade Picture`
   String get IndividualReq4 {
     return Intl.message(
-      'Active phone number registered to the taxpayer',
+      'Trade Picture',
       name: 'IndividualReq4',
       desc: '',
       args: [],
     );
   }
 
-  /// `Recent personal photo`
+  /// `Insurance Card`
   String get IndividualReq5 {
     return Intl.message(
-      'Recent personal photo',
+      'Insurance Card',
       name: 'IndividualReq5',
       desc: '',
       args: [],
     );
   }
 
-  /// `Address proof (electricity or water bill)`
+  /// `Property Document Picture`
   String get IndividualReq6 {
     return Intl.message(
-      'Address proof (electricity or water bill)',
+      'Property Document Picture',
       name: 'IndividualReq6',
       desc: '',
       args: [],
     );
   }
 
-  /// `Certified company incorporation contract`
+  /// `Articles of Incorporation`
   String get CompanyReq1 {
     return Intl.message(
-      'Certified company incorporation contract',
+      'Articles of Incorporation',
       name: 'CompanyReq1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Valid commercial registration`
+  /// `Government License`
   String get CompanyReq2 {
     return Intl.message(
-      'Valid commercial registration',
+      'Government License',
       name: 'CompanyReq2',
       desc: '',
       args: [],
     );
   }
 
-  /// `Tax card (if available)`
+  /// `Partners ID Cards`
   String get CompanyReq3 {
     return Intl.message(
-      'Tax card (if available)',
+      'Partners ID Cards',
       name: 'CompanyReq3',
       desc: '',
       args: [],
     );
   }
 
-  /// `Copy of authorized manager's ID card`
-  String get CompanyReq4 {
-    return Intl.message(
-      'Copy of authorized manager\'s ID card',
-      name: 'CompanyReq4',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Lease or ownership contract for headquarters`
-  String get CompanyReq5 {
-    return Intl.message(
-      'Lease or ownership contract for headquarters',
-      name: 'CompanyReq5',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `General assembly meeting minutes`
-  String get CompanyReq6 {
-    return Intl.message(
-      'General assembly meeting minutes',
-      name: 'CompanyReq6',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `List of partners and shareholders`
-  String get CompanyReq7 {
-    return Intl.message(
-      'List of partners and shareholders',
-      name: 'CompanyReq7',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Establishment decision from competent authority`
+  /// `Copy of the bylaws`
   String get CharitableReq1 {
     return Intl.message(
-      'Establishment decision from competent authority',
+      'Copy of the bylaws',
       name: 'CharitableReq1',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Articles of association of the charitable organization`
-  String get CharitableReq2 {
-    return Intl.message(
-      'Articles of association of the charitable organization',
-      name: 'CharitableReq2',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Charitable organization registration certificate`
-  String get CharitableReq3 {
-    return Intl.message(
-      'Charitable organization registration certificate',
-      name: 'CharitableReq3',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Copy of board chairman's ID card`
-  String get CharitableReq4 {
-    return Intl.message(
-      'Copy of board chairman\'s ID card',
-      name: 'CharitableReq4',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Bank statement in the organization's name`
-  String get CharitableReq5 {
-    return Intl.message(
-      'Bank statement in the organization\'s name',
-      name: 'CharitableReq5',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Annual report on organization activities`
-  String get CharitableReq6 {
-    return Intl.message(
-      'Annual report on organization activities',
-      name: 'CharitableReq6',
       desc: '',
       args: [],
     );
@@ -1494,6 +1404,46 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Tax Office Location`
+  String get TaxOfficeLocation {
+    return Intl.message(
+      'Tax Office Location',
+      name: 'TaxOfficeLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main Street - Addis - Opposite Al-Buraimi Car Showroom`
+  String get TaxOfficeLocationDetails {
+    return Intl.message(
+      'Main Street - Addis - Opposite Al-Buraimi Car Showroom',
+      name: 'TaxOfficeLocationDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hadhramout Tax Office`
+  String get HadhramoutTaxOffice {
+    return Intl.message(
+      'Hadhramout Tax Office',
+      name: 'HadhramoutTaxOffice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Maps`
+  String get Maps {
+    return Intl.message('Maps', name: 'Maps', desc: '', args: []);
+  }
+
+  /// `Call`
+  String get Call {
+    return Intl.message('Call', name: 'Call', desc: '', args: []);
   }
 }
 
