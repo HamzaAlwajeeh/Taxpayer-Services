@@ -151,6 +151,8 @@
     "NewFileDetailsTitle": "تفاصيل الملف الجديد",
     "NewFileDetailsDesc": "أدخل البيانات وارفق الملفات المطلوبة لتقديم الطلب",
     "SelectLanguageMessage": "اختر لغتك المفضلة",
+    "privacyPolicy": "سياسة الخصوصية",
+    "privacyPolicyText": "تعد خصوصيتك مهمة بالنسبة لنا. نقوم بجمع البيانات لتحسين خدماتنا.",
     "TaxOfficeLocation": "موقع مكتب الضرائب",
     "TaxOfficeLocationDetails": "الشارع الرئيسي - الديس - مقابل معرض البريمي للسيارات",
     "HadhramoutTaxOffice": "مكتب ضرائب حضرموت الساحل",
@@ -158,5 +160,4 @@
     "Call" : "اتصال",
     "NewFileHeroTitle" : "إنشاء ملف جديد",
     "NewFileHeroDetails" : "قم بتحديد نوع الملف ثم ادخل البيانات المطلوبه"
-    
 }

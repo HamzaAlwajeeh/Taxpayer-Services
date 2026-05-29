@@ -151,6 +151,8 @@
     "NewFileDetailsTitle": "New File Details",
     "NewFileDetailsDesc": "Enter details and attach documents to submit request",
     "SelectLanguageMessage": "Select your preferred language",
+    "privacyPolicy": "Privacy Policy",
+    "privacyPolicyText": "Your privacy is important to us. We collect data to improve our services.",
     "TaxOfficeLocation": "Tax Office Location",
     "TaxOfficeLocationDetails": "Main Street - Addis - Opposite Al-Buraimi Car Showroom",
     "HadhramoutTaxOffice": "Hadhramout Tax Office",
