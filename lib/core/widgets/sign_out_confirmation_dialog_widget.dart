@@ -12,9 +12,10 @@ class SignOutConfirmationDialogWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = S.of(context);
     final isArabic = Localizations.localeOf(context).languageCode == 'ar';
-    final message = isArabic
-        ? 'هل أنت متأكد من أنك تريد تسجيل الخروج؟'
-        : 'Are you sure you want to log out?';
+    final message =
+        isArabic
+            ? 'هل أنت متأكد من أنك تريد تسجيل الخروج؟'
+            : 'Are you sure you want to log out?';
 
     return CupertinoActionSheet(
       title: Text(

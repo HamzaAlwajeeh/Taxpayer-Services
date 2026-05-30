@@ -45,9 +45,10 @@ class LanguageBottomSheet extends StatelessWidget {
               Text(
                 l10n.Arabic,
                 style: TextStyle(
-                  color: isArabic
-                      ? AppColors.primaryColor(context)
-                      : AppColors.textBoldColor(context),
+                  color:
+                      isArabic
+                          ? AppColors.primaryColor(context)
+                          : AppColors.textBoldColor(context),
                   fontWeight: isArabic ? FontWeight.bold : FontWeight.normal,
                   fontFamily: 'Cairo',
                 ),
@@ -74,9 +75,10 @@ class LanguageBottomSheet extends StatelessWidget {
               Text(
                 l10n.English,
                 style: TextStyle(
-                  color: !isArabic
-                      ? AppColors.primaryColor(context)
-                      : AppColors.textBoldColor(context),
+                  color:
+                      !isArabic
+                          ? AppColors.primaryColor(context)
+                          : AppColors.textBoldColor(context),
                   fontWeight: !isArabic ? FontWeight.bold : FontWeight.normal,
                   fontFamily: isArabic ? 'Cairo' : null,
                 ),

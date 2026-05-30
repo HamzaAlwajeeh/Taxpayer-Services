@@ -32,9 +32,7 @@ class UploadImageController extends GetxController {
     required bool isStoreImage,
     List<String> allowedExtensions = const ['jpg', 'png', 'jpeg', 'gif'],
   }) async {
-    String? path = await pickFile(
-      allowedExtensions: allowedExtensions,
-    );
+    String? path = await pickFile(allowedExtensions: allowedExtensions);
     if (path != null) {
       final image = File(path);
       isStoreImage ? storeImagePath = image : imagePath = image;

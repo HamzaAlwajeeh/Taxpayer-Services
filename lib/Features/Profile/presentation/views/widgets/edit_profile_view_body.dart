@@ -102,7 +102,8 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           EditProfileImage(
-                            currentImage: Prefs.getUser(AppConstants.kCurrentUser)?.image,
+                            currentImage:
+                                Prefs.getUser(AppConstants.kCurrentUser)?.image,
                             onImageChanged: (image) {
                               setState(() {
                                 _selectedImage = image;
@@ -115,7 +116,8 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                             lastNameController: _lastNameController,
                             phoneController: _phoneController,
                             passwordController: _passwordController,
-                            confirmPasswordController: _confirmPasswordController,
+                            confirmPasswordController:
+                                _confirmPasswordController,
                           ),
                           const SizedBox(height: AppSpacing.s40),
                           state is EditProfileLoading
@@ -125,17 +127,46 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
                                 onPressed: () {
                                   FocusScope.of(context).unfocus();
                                   if (_formKey.currentState!.validate()) {
-                                    User? user = Prefs.getUser(AppConstants.kCurrentUser);
-                                    context.read<EditProfileCubit>().editProfile(
-                                      idCard: null,
-                                      userName: _userNameController.text == user?.userName ? null : _userNameController.text,
-                                      firstName: _firstNameController.text == user?.firstName ? null : _firstNameController.text,
-                                      lastName: _lastNameController.text == user?.lastName ? null : _lastNameController.text,
-                                      phone: _phoneController.text == user?.phone ? null : _phoneController.text,
-                                      image: _selectedImage,
-                                      password: _passwordController.text.isEmpty ? null : _passwordController.text,
-                                      confirmPassword: _confirmPasswordController.text.isEmpty ? null : _confirmPasswordController.text,
+                                    User? user = Prefs.getUser(
+                                      AppConstants.kCurrentUser,
                                     );
+                                    context
+                                        .read<EditProfileCubit>()
+                                        .editProfile(
+                                          idCard: null,
+                                          userName:
+                                              _userNameController.text ==
+                                                      user?.userName
+                                                  ? null
+                                                  : _userNameController.text,
+                                          firstName:
+                                              _firstNameController.text ==
+                                                      user?.firstName
+                                                  ? null
+                                                  : _firstNameController.text,
+                                          lastName:
+                                              _lastNameController.text ==
+                                                      user?.lastName
+                                                  ? null
+                                                  : _lastNameController.text,
+                                          phone:
+                                              _phoneController.text ==
+                                                      user?.phone
+                                                  ? null
+                                                  : _phoneController.text,
+                                          image: _selectedImage,
+                                          password:
+                                              _passwordController.text.isEmpty
+                                                  ? null
+                                                  : _passwordController.text,
+                                          confirmPassword:
+                                              _confirmPasswordController
+                                                      .text
+                                                      .isEmpty
+                                                  ? null
+                                                  : _confirmPasswordController
+                                                      .text,
+                                        );
                                   }
                                 },
                               ),

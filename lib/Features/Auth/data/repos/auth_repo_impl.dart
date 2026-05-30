@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:tax_payer/Features/Auth/data/models/reset_password.dart';
 import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
 import 'package:tax_payer/Features/Auth/data/repos/auth_repo.dart';
 import 'package:tax_payer/core/constants/constants.dart';
@@ -93,20 +94,17 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<Either<Failure, String>> forgetPassword({
+  Future<Either<Failure, ResetPassword>> resetPasswordRequest({
     required String userName,
-    required String phone,
   }) async {
     try {
-      await apiService.post(
-        endPoint: AppConstants.kForgotPassword,
-        body: {
-          'user_name': userName,
-          'phone': phone,
-        },
+      var data = await apiService.post(
+        endPoint: AppConstants.kResetPasswordRequest,
+        body: {'userName': userName},
         token: null,
       );
-      return right('تم إرسال رمز التحقق بنجاح');
+      ResetPassword resetPassword = ResetPassword.fromJson(data);
+      return right(resetPassword);
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
@@ -116,15 +114,14 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<Either<Failure, String>> confermForgetPassword({
-    required String code,
+  Future<Either<Failure, String>> verifyResetPasswordCode({
+    required int userId,
+    required int code,
   }) async {
     try {
       await apiService.post(
-        endPoint: AppConstants.kVerifyCode,
-        body: {
-          'code': code,
-        },
+        endPoint: AppConstants.kVerifyResetPasswordCode,
+        body: {'userId': userId, 'code': code},
         token: null,
       );
       return right('تم التحقق من الرمز بنجاح');
@@ -137,7 +134,9 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<Either<Failure, String>> changePassword({
+  Future<Either<Failure, String>> resetPassword({
+    required int userId,
+    required int code,
     required String newPassword,
     required String confirmNewPassword,
   }) async {
@@ -145,8 +144,10 @@ class AuthRepoImpl implements AuthRepo {
       await apiService.post(
         endPoint: AppConstants.kResetPassword,
         body: {
+          'userId': userId,
+          'code': code,
           'new_password': newPassword,
-          'confirm_new_password': confirmNewPassword,
+          'newPassword_confirmation': confirmNewPassword,
         },
         token: Prefs.getString(AppConstants.kToken),
       );

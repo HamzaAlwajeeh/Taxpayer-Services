@@ -64,11 +64,12 @@ class _HomeBaseState extends State<DashBoard> {
           } else {
             showCupertinoModalPopup(
               context: context,
-              builder: (_) => SignOutConfirmationDialogWidget(
-                onConfirm: () {
-                  context.read<LogoutCubit>().logout();
-                },
-              ),
+              builder:
+                  (_) => SignOutConfirmationDialogWidget(
+                    onConfirm: () {
+                      context.read<LogoutCubit>().logout();
+                    },
+                  ),
             );
           }
         },
@@ -82,7 +83,10 @@ class _HomeBaseState extends State<DashBoard> {
               return _screens[index];
             },
           ),
-          bottomNavigationBar: CustomNavBar(pageIndex: _pageIndex, onTap: setPage),
+          bottomNavigationBar: CustomNavBar(
+            pageIndex: _pageIndex,
+            onTap: setPage,
+          ),
         ),
       ),
     );

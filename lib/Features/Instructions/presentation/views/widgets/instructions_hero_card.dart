@@ -25,10 +25,7 @@ class InstructionsHeroCard extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            color,
-            color.withOpacity(0.85),
-          ],
+          colors: [color, color.withOpacity(0.85)],
         ),
         borderRadius: BorderRadius.circular(AppSpacing.radius16),
         boxShadow: [

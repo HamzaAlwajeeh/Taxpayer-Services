@@ -49,10 +49,7 @@ class InstructionDetailCard extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [
-                  color.withOpacity(0.12),
-                  color.withOpacity(0.04),
-                ],
+                colors: [color.withOpacity(0.12), color.withOpacity(0.04)],
               ),
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(AppSpacing.radius16),
@@ -135,7 +132,6 @@ class InstructionDetailCard extends StatelessWidget {
       ),
     );
   }
-
 
   Widget _buildItemRow(
     BuildContext context,

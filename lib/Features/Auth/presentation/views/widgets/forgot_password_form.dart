@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:tax_payer/Features/Auth/presentation/logic/forgot_password_cubit/forgot_password_cubit.dart';
-import 'package:tax_payer/Features/Auth/presentation/logic/forgot_password_cubit/forgot_password_state.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_request_cubit/reset_password_request_cubit.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_request_cubit/reset_password_request_state.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
@@ -21,22 +21,20 @@ class ForgotPasswordForm extends StatefulWidget {
 
 class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
   TextEditingController userNameController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   @override
   void dispose() {
     userNameController.dispose();
-    phoneController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ForgotPasswordCubit, ForgotPasswordState>(
+    return BlocConsumer<ResetPasswordRequestCubit, ResetPasswordRequestState>(
       listener: (context, state) {
-        if (state is ForgotPasswordSuccess) {
+        if (state is ResetPasswordRequestSuccess) {
           customToastBar(
             context: context,
             message: S.of(context).CodeSentSuccessfully,
@@ -45,7 +43,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
             textColor: AppColors.white(),
           );
           context.push(RouteNames.verifyCode);
-        } else if (state is ForgotPasswordFailure) {
+        } else if (state is ResetPasswordRequestFailure) {
           customToastBar(
             context: context,
             message: Failure.localizedMessage(
@@ -60,66 +58,55 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
         }
       },
       builder:
-          (BuildContext context, ForgotPasswordState state) => AbsorbPointer(
-            absorbing: state is ForgotPasswordLoading,
-            child: Form(
-              key: formKey,
-              autovalidateMode: autovalidateMode,
-              child: Column(
-                children: [
-                  CustomTextFormFeild(
-                    controller: userNameController,
-                    hintText: S.of(context).UserName,
-                    keyboardType: TextInputType.text,
-                    suffixIcon: Icon(
-                      Icons.person,
-                      color: AppColors.textPrimaryColor(context),
-                      size: 26,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  CustomTextFormFeild(
-                    controller: phoneController,
-                    hintText: S.of(context).PhoneNumber,
-                    keyboardType: TextInputType.phone,
-                    suffixIcon: Icon(
-                      Icons.phone,
-                      color: AppColors.textPrimaryColor(context),
-                      size: 26,
-                    ),
-                  ),
-                  const SizedBox(height: 17),
-                  state is ForgotPasswordLoading
-                      ? const CustomLoadingIndicator()
-                      : CustomButton(
-                        title: S.of(context).Next,
-                        onPressed: () {
-                          forgotPasswordMethod(
-                            userName: userNameController.text,
-                            phone: phoneController.text,
-                          );
-                        },
+          (BuildContext context, ResetPasswordRequestState state) =>
+              AbsorbPointer(
+                absorbing: state is ResetPasswordRequestLoading,
+                child: Form(
+                  key: formKey,
+                  autovalidateMode: autovalidateMode,
+                  child: Column(
+                    children: [
+                      CustomTextFormFeild(
+                        controller: userNameController,
+                        hintText: S.of(context).UserName,
+                        keyboardType: TextInputType.text,
+                        suffixIcon: Icon(
+                          Icons.person,
+                          color: AppColors.textPrimaryColor(context),
+                          size: 26,
+                        ),
                       ),
-                ],
+                      const SizedBox(height: 17),
+                      state is ResetPasswordRequestLoading
+                          ? const CustomLoadingIndicator()
+                          : CustomButton(
+                            title: S.of(context).Next,
+                            onPressed: () {
+                              resetPasswordRequestMethod(
+                                userName: userNameController.text,
+                              );
+                            },
+                          ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ),
     );
   }
 
-  void forgotPasswordMethod({required String userName, required String phone}) {
+  void resetPasswordRequestMethod({required String userName}) {
     FocusScope.of(context).unfocus();
     context.push(RouteNames.verifyCode);
-    // if (formKey.currentState!.validate()) {
-    //   formKey.currentState!.save();
-    //   autovalidateMode = AutovalidateMode.disabled;
-    //   BlocProvider.of<ForgotPasswordCubit>(
-    //     context,
-    //   ).forgetPassword(userName: userName, phone: phone);
-    // } else {
-    //   setState(() {
-    //     autovalidateMode = AutovalidateMode.always;
-    //   });
-    // }
+    if (formKey.currentState!.validate()) {
+      formKey.currentState!.save();
+      autovalidateMode = AutovalidateMode.disabled;
+      BlocProvider.of<ResetPasswordRequestCubit>(
+        context,
+      ).resetPasswordRequest(userName: userName);
+    } else {
+      setState(() {
+        autovalidateMode = AutovalidateMode.always;
+      });
+    }
   }
 }

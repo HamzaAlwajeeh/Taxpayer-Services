@@ -23,7 +23,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
     final result = await profileRepo.editProfile(
       firstName: firstName,
       lastName: lastName,
-      idCard: idCard ,
+      idCard: idCard,
       phone: phone,
       image: image,
       userName: userName,

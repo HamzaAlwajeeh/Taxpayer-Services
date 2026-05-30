@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/data/repos/auth_repo.dart';
-import 'package:tax_payer/Features/Auth/presentation/logic/forgot_password_cubit/forgot_password_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/login_cubit/login_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/logout_cubit/logout_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/register_cubit/register_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_cubit/reset_password_cubit.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_request_cubit/reset_password_request_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/verify_code_cubit/verify_code_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/create_store_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/forgot_password_view.dart';
@@ -83,7 +83,7 @@ class AppRoutes {
         path: RouteNames.forgotPassword,
         builder:
             (context, state) => BlocProvider(
-              create: (context) => ForgotPasswordCubit(getIt<AuthRepo>()),
+              create: (context) => ResetPasswordRequestCubit(getIt<AuthRepo>()),
               child: const ForgotPasswordView(),
             ),
         transition: TransitionType.slideFromRight,

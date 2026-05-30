@@ -41,7 +41,9 @@ Widget languageItemBottomSheet({
             child: Center(
               child: Text(
                 badgeText,
-                style: TextStyles.bold18.copyWith(color: AppColors.textRedColor(context)),
+                style: TextStyles.bold18.copyWith(
+                  color: AppColors.textRedColor(context),
+                ),
               ),
             ),
           ),

@@ -7,7 +7,10 @@ class VerifyCodeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GradientBackground(hasImage: true, child: const VerifyCodeViewBody()),
+      body: GradientBackground(
+        hasImage: true,
+        child: const VerifyCodeViewBody(),
+      ),
     );
   }
 }

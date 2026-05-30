@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_request_cubit/reset_password_request_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/verify_code_cubit/verify_code_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/verify_code_cubit/verify_code_state.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
@@ -14,7 +15,6 @@ import 'package:tax_payer/generated/l10n.dart';
 
 class VerifyCodeForm extends StatefulWidget {
   const VerifyCodeForm({super.key});
-
   @override
   State<VerifyCodeForm> createState() => _VerifyCodeFormState();
 }
@@ -81,7 +81,13 @@ class _VerifyCodeFormState extends State<VerifyCodeForm> {
                       : CustomButton(
                         title: S.of(context).Next,
                         onPressed: () {
-                          verifyCodeMethod(code: codeController.text);
+                          verifyCodeMethod(
+                            code: int.tryParse(codeController.text) ?? 0,
+                            userId:
+                                BlocProvider.of<ResetPasswordRequestCubit>(
+                                  context,
+                                ).userId,
+                          );
                         },
                       ),
                   const SizedBox(height: 17),
@@ -101,17 +107,20 @@ class _VerifyCodeFormState extends State<VerifyCodeForm> {
     );
   }
 
-  void verifyCodeMethod({required String code}) {
+  void verifyCodeMethod({required int code, required int userId}) {
+    FocusScope.of(context).unfocus();
     FocusScope.of(context).unfocus();
     context.push(RouteNames.resetPassword);
-    // if (formKey.currentState!.validate()) {
-    //   formKey.currentState!.save();
-    //   autovalidateMode = AutovalidateMode.disabled;
-    //   BlocProvider.of<VerifyCodeCubit>(context).verifyCode(code: code);
-    // } else {
-    //   setState(() {
-    //     autovalidateMode = AutovalidateMode.always;
-    //   });
-    // }
+    if (formKey.currentState!.validate()) {
+      formKey.currentState!.save();
+      autovalidateMode = AutovalidateMode.disabled;
+      BlocProvider.of<VerifyCodeCubit>(
+        context,
+      ).verifyCode(code: code, userId: userId);
+    } else {
+      setState(() {
+        autovalidateMode = AutovalidateMode.always;
+      });
+    }
   }
 }

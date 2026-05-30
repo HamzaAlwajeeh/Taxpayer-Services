@@ -6,11 +6,12 @@ class VerifyCodeCubit extends Cubit<VerifyCodeState> {
   final AuthRepo authRepo;
   VerifyCodeCubit(this.authRepo) : super(VerifyCodeInitial());
 
-  Future<void> verifyCode({
-    required String code,
-  }) async {
+  Future<void> verifyCode({required int userId, required int code}) async {
     emit(VerifyCodeLoading());
-    var result = await authRepo.confermForgetPassword(code: code);
+    var result = await authRepo.verifyResetPasswordCode(
+      userId: userId,
+      code: code,
+    );
     result.fold(
       (failure) => emit(
         VerifyCodeFailure(

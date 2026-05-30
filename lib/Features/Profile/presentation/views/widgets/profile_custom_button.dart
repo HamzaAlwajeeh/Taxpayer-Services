@@ -40,11 +40,12 @@ class PofileCustomButton extends StatelessWidget {
               onPressed: () {
                 showCupertinoModalPopup(
                   context: context,
-                  builder: (_) => SignOutConfirmationDialogWidget(
-                    onConfirm: () {
-                      BlocProvider.of<LogoutCubit>(context).logout();
-                    },
-                  ),
+                  builder:
+                      (_) => SignOutConfirmationDialogWidget(
+                        onConfirm: () {
+                          BlocProvider.of<LogoutCubit>(context).logout();
+                        },
+                      ),
                 );
               },
             );

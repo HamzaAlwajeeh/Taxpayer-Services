@@ -7,7 +7,10 @@ class ResetPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GradientBackground(hasImage: true, child: const ResetPasswordViewBody()),
+      body: GradientBackground(
+        hasImage: true,
+        child: const ResetPasswordViewBody(),
+      ),
     );
   }
 }

@@ -23,11 +23,7 @@ class InstructionSectionTitle extends StatelessWidget {
             color: AppColors.customRed(context),
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Icon(
-            icon,
-            color: AppColors.textRedColor(context),
-            size: 18,
-          ),
+          child: Icon(icon, color: AppColors.textRedColor(context), size: 18),
         ),
         const SizedBox(width: AppSpacing.s10),
         Text(

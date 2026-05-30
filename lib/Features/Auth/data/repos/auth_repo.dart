@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
+import 'package:tax_payer/Features/Auth/data/models/reset_password.dart';
 import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 
@@ -21,14 +22,18 @@ abstract class AuthRepo {
     required String confirmPassword,
   });
 
-  Future<Either<Failure, String>> forgetPassword({
+  Future<Either<Failure, ResetPassword>> resetPasswordRequest({
     required String userName,
-    required String phone,
   });
 
-  Future<Either<Failure, String>> confermForgetPassword({required String code});
+  Future<Either<Failure, String>> verifyResetPasswordCode({
+    required int userId,
+    required int code,
+  });
 
-  Future<Either<Failure, String>> changePassword({
+  Future<Either<Failure, String>> resetPassword({
+    required int userId,
+    required int code,
     required String newPassword,
     required String confirmNewPassword,
   });
