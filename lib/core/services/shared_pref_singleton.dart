@@ -34,6 +34,18 @@ class Prefs {
     inistance.remove(key);
   }
 
+  static void setInt(String key, int value) {
+    inistance.setInt(key, value);
+  }
+
+  static int getInt(String key) {
+    return inistance.getInt(key) ?? 0;
+  }
+
+  static void removeInt(String key) {
+    inistance.remove(key);
+  }
+
   static void setUser(String key, User value) {
     final String jsonUser = jsonEncode(value.toJson());
     inistance.setString(key, jsonUser);
