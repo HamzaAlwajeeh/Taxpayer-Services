@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ActivityLicenseField": MessageLookupByLibrary.simpleMessage(
       "Activity License",
     ),
+    "ActivityStartDate": MessageLookupByLibrary.simpleMessage(
+      "Activity Start Date",
+    ),
     "AlreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
     ),
@@ -121,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "FileOpeningRequirementsDesc": MessageLookupByLibrary.simpleMessage(
       "Select file type to view requirements",
     ),
+    "FileStatus": MessageLookupByLibrary.simpleMessage("File Status"),
     "FileType": MessageLookupByLibrary.simpleMessage("File Type"),
     "FirstName": MessageLookupByLibrary.simpleMessage("First Name"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
@@ -134,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "HadhramoutTaxOffice": MessageLookupByLibrary.simpleMessage(
       "Hadhramout Tax Office",
     ),
+    "Hello": MessageLookupByLibrary.simpleMessage("Hello"),
     "Home": MessageLookupByLibrary.simpleMessage("Home"),
     "IdCard": MessageLookupByLibrary.simpleMessage("IdCard"),
     "ImageIsRequired": MessageLookupByLibrary.simpleMessage(
@@ -175,8 +180,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "InternalServerError": MessageLookupByLibrary.simpleMessage(
       "Internal Server Error, please try again later",
     ),
+    "InventoryNumber": MessageLookupByLibrary.simpleMessage("Inventory Number"),
     "Language": MessageLookupByLibrary.simpleMessage("Language"),
     "LastName": MessageLookupByLibrary.simpleMessage("Last Name"),
+    "LoadUserFiles": MessageLookupByLibrary.simpleMessage("Load User Files"),
     "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
     "LoginAsGuest": MessageLookupByLibrary.simpleMessage("Login as guest"),
@@ -209,6 +216,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
       "No Internet connection",
     ),
+    "NotAvailable": MessageLookupByLibrary.simpleMessage("Not Available"),
     "OnBoarding1SubTitle": MessageLookupByLibrary.simpleMessage(
       "Access your tax file and view taxpayer information and tax-related details securely and conveniently.",
     ),
@@ -337,6 +345,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "TaxExemptionsStep4": MessageLookupByLibrary.simpleMessage(
       "Receive approval or rejection with reasons",
     ),
+    "TaxNumber": MessageLookupByLibrary.simpleMessage("Tax Number"),
     "TaxOfficeLocation": MessageLookupByLibrary.simpleMessage(
       "Tax Office Location",
     ),
@@ -367,12 +376,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "UnknownError": MessageLookupByLibrary.simpleMessage(
       "Unknown error, something went wrong, please try again later",
     ),
+    "UnknownFile": MessageLookupByLibrary.simpleMessage("Unknown File"),
     "UploadAllDocumentsError": MessageLookupByLibrary.simpleMessage(
       "Please upload all required documents first!",
     ),
     "UploadFile": MessageLookupByLibrary.simpleMessage("Upload file"),
     "UploadFileSubTitle": MessageLookupByLibrary.simpleMessage(
       "Select JPEG, JPG, or PNG",
+    ),
+    "UserFiles": MessageLookupByLibrary.simpleMessage("User Files"),
+    "UserFilesDashboard": MessageLookupByLibrary.simpleMessage(
+      "User Files Dashboard",
+    ),
+    "UserFilesSubtitle": MessageLookupByLibrary.simpleMessage(
+      "List of your tax files",
     ),
     "UserName": MessageLookupByLibrary.simpleMessage("UserName"),
     "VerificationCode": MessageLookupByLibrary.simpleMessage(

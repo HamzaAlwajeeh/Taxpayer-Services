@@ -1,5 +1,6 @@
 {
     "Home": "الرئيسية",
+    "Hello" : "مرحباً",
     "Profile": "حسابي",
     "Instructions": "التعليمات",
     "NewFile": "ملف جديد",
@@ -169,5 +170,15 @@
     "SignUpToManageProducts": "قم بإنشاء حساب للوصول لكل مميزات التطبيق",
     "AlreadyHaveAccount": "لديك حساب بالفعل ؟ ",
     "ChangeFile" : "تغيير الملف",
-    "SelectFileMessage" : "اختر الملف الذي تريد عرضه"
+    "SelectFileMessage" : "اختر الملف الذي تريد عرضه",
+    "UserFiles": "ملفات المستخدم",
+    "UserFilesSubtitle": "قائمة بملفاتك الضريبية",
+    "LoadUserFiles": "تحميل ملفات المستخدم",
+    "UserFilesDashboard": "لوحة التحكم - ملفات المستخدم",
+    "TaxNumber": "الرقم الضريبي",
+    "InventoryNumber": "رقم الجرد",
+    "ActivityStartDate": "تاريخ بدء النشاط",
+    "FileStatus": "حالة الملف",
+    "UnknownFile": "ملف غير معروف",
+    "NotAvailable": "غير متوفر"
 }

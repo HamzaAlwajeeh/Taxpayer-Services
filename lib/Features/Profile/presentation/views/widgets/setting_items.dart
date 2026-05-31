@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:signals_flutter/signals_flutter.dart';
+import 'package:tax_payer/Features/DashBoard/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/widgets/item_card.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/widgets/language_bottom_sheet.dart';
 import 'package:tax_payer/Features/Settings/app_settings.dart';
@@ -24,8 +26,16 @@ class SettingItems extends StatelessWidget {
       spacing: AppSpacing.s16,
       children: [
         ItemCard(
-          title: S.of(context).StoreName,
-          subtitle: S.of(context).ActiveStatus,
+          title:
+              BlocProvider.of<UserFileCubit>(
+                context,
+              ).userFile.taxPayer?.tradeName ??
+              'Not Found',
+          subtitle:
+              BlocProvider.of<UserFileCubit>(
+                context,
+              ).userFile.file?.fileStatus ??
+              'Not Found',
           icon: Assets.assetsIconsActivity,
           onSwitchChanged: (value) {},
           hasIcon: false,

@@ -1,5 +1,6 @@
 {
     "Home": "Home",
+    "Hello" : "Hello",
     "Profile": "Profile",
     "Instructions": "Instructions",
     "NewFile": "NewFile",
@@ -169,5 +170,15 @@
     "SignUpToManageProducts": "Sign up to access all app features",
     "AlreadyHaveAccount": "Already have an account? ",
     "ChangeFile" : "Change File",
-    "SelectFileMessage" : "Select the file you want to view"
+    "SelectFileMessage" : "Select the file you want to view",
+    "UserFiles": "User Files",
+    "UserFilesSubtitle": "List of your tax files",
+    "LoadUserFiles": "Load User Files",
+    "UserFilesDashboard": "User Files Dashboard",
+    "TaxNumber": "Tax Number",
+    "InventoryNumber": "Inventory Number",
+    "ActivityStartDate": "Activity Start Date",
+    "FileStatus": "File Status",
+    "UnknownFile": "Unknown File",
+    "NotAvailable": "Not Available"
 }

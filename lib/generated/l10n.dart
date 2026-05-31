@@ -59,6 +59,11 @@ class S {
     return Intl.message('Home', name: 'Home', desc: '', args: []);
   }
 
+  /// `Hello`
+  String get Hello {
+    return Intl.message('Hello', name: 'Hello', desc: '', args: []);
+  }
+
   /// `Profile`
   String get Profile {
     return Intl.message('Profile', name: 'Profile', desc: '', args: []);
@@ -1566,6 +1571,91 @@ class S {
     return Intl.message(
       'Select the file you want to view',
       name: 'SelectFileMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Files`
+  String get UserFiles {
+    return Intl.message('User Files', name: 'UserFiles', desc: '', args: []);
+  }
+
+  /// `List of your tax files`
+  String get UserFilesSubtitle {
+    return Intl.message(
+      'List of your tax files',
+      name: 'UserFilesSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Load User Files`
+  String get LoadUserFiles {
+    return Intl.message(
+      'Load User Files',
+      name: 'LoadUserFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Files Dashboard`
+  String get UserFilesDashboard {
+    return Intl.message(
+      'User Files Dashboard',
+      name: 'UserFilesDashboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tax Number`
+  String get TaxNumber {
+    return Intl.message('Tax Number', name: 'TaxNumber', desc: '', args: []);
+  }
+
+  /// `Inventory Number`
+  String get InventoryNumber {
+    return Intl.message(
+      'Inventory Number',
+      name: 'InventoryNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity Start Date`
+  String get ActivityStartDate {
+    return Intl.message(
+      'Activity Start Date',
+      name: 'ActivityStartDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `File Status`
+  String get FileStatus {
+    return Intl.message('File Status', name: 'FileStatus', desc: '', args: []);
+  }
+
+  /// `Unknown File`
+  String get UnknownFile {
+    return Intl.message(
+      'Unknown File',
+      name: 'UnknownFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not Available`
+  String get NotAvailable {
+    return Intl.message(
+      'Not Available',
+      name: 'NotAvailable',
       desc: '',
       args: [],
     );

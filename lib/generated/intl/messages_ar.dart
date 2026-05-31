@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ActivityLicenseField": MessageLookupByLibrary.simpleMessage(
       "ترخيص مزاولة النشاط",
     ),
+    "ActivityStartDate": MessageLookupByLibrary.simpleMessage(
+      "تاريخ بدء النشاط",
+    ),
     "AlreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل ؟ ",
     ),
@@ -123,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "FileOpeningRequirementsDesc": MessageLookupByLibrary.simpleMessage(
       "اختر نوع الملف لمعرفة المتطلبات",
     ),
+    "FileStatus": MessageLookupByLibrary.simpleMessage("حالة الملف"),
     "FileType": MessageLookupByLibrary.simpleMessage("نوع الملف"),
     "FirstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
@@ -134,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "HadhramoutTaxOffice": MessageLookupByLibrary.simpleMessage(
       "مكتب ضرائب حضرموت الساحل",
     ),
+    "Hello": MessageLookupByLibrary.simpleMessage("مرحباً"),
     "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "IdCard": MessageLookupByLibrary.simpleMessage("البطاقة الشخصية"),
     "ImageIsRequired": MessageLookupByLibrary.simpleMessage("الصورة مطلوبة"),
@@ -179,8 +184,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "InternalServerError": MessageLookupByLibrary.simpleMessage(
       "خطأ داخلي في الخادم، يرجى المحاولة لاحقًا",
     ),
+    "InventoryNumber": MessageLookupByLibrary.simpleMessage("رقم الجرد"),
     "Language": MessageLookupByLibrary.simpleMessage("اللغه"),
     "LastName": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
+    "LoadUserFiles": MessageLookupByLibrary.simpleMessage(
+      "تحميل ملفات المستخدم",
+    ),
     "Loading": MessageLookupByLibrary.simpleMessage("جار التحميل..."),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "LoginAsGuest": MessageLookupByLibrary.simpleMessage("الدخول كضيف"),
@@ -215,6 +224,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
       "لا يوجد اتصال بالإنترنت",
     ),
+    "NotAvailable": MessageLookupByLibrary.simpleMessage("غير متوفر"),
     "OnBoarding1SubTitle": MessageLookupByLibrary.simpleMessage(
       "تمكّن من الدخول إلى ملفك الضريبي واستعراض بيانات المكلف ومعلوماته الضريبية بكل سهولة وأمان.",
     ),
@@ -341,6 +351,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "TaxExemptionsStep4": MessageLookupByLibrary.simpleMessage(
       "استلام قرار الإعفاء أو الرفض مع الأسباب",
     ),
+    "TaxNumber": MessageLookupByLibrary.simpleMessage("الرقم الضريبي"),
     "TaxOfficeLocation": MessageLookupByLibrary.simpleMessage(
       "موقع مكتب الضرائب",
     ),
@@ -373,12 +384,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "UnknownError": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ غير معروف، يرجى المحاولة لاحقًا",
     ),
+    "UnknownFile": MessageLookupByLibrary.simpleMessage("ملف غير معروف"),
     "UploadAllDocumentsError": MessageLookupByLibrary.simpleMessage(
       "الرجاء رفع جميع المستندات المطلوبة أولاً!",
     ),
     "UploadFile": MessageLookupByLibrary.simpleMessage("تحميل ملف"),
     "UploadFileSubTitle": MessageLookupByLibrary.simpleMessage(
       "اختر صورة JPEG أو JPG أو PNG",
+    ),
+    "UserFiles": MessageLookupByLibrary.simpleMessage("ملفات المستخدم"),
+    "UserFilesDashboard": MessageLookupByLibrary.simpleMessage(
+      "لوحة التحكم - ملفات المستخدم",
+    ),
+    "UserFilesSubtitle": MessageLookupByLibrary.simpleMessage(
+      "قائمة بملفاتك الضريبية",
     ),
     "UserName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "VerificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),

@@ -24,28 +24,27 @@ class ChangeAccountBottomSheet extends StatelessWidget {
         BlocBuilder<UserFileCubit, UserFileState>(
           builder: (context, state) {
             final files = cubit.filesList;
-
             return SizedBox(
               height: 300,
               child: ListView.builder(
                 itemCount: files.length,
                 itemBuilder: (context, index) {
                   final file = files[index];
-
                   return FileItemWidget(
                     file: file,
                     isSelected: file.id == currentId,
                     onTap: () async {
-                      Navigator.pop(context);
+                      final cubit = context.read<UserFileCubit>();
+                      final navigator = Navigator.of(context);
 
                       final id = file.id ?? 0;
                       if (id == 0) return;
 
                       Prefs.setInt(AppConstants.kCurrentFile, id);
 
-                      await context
-                          .read<UserFileCubit>()
-                          .initializeCurrentFile();
+                      navigator.pop();
+
+                      await cubit.initializeCurrentFile();
                     },
                   );
                 },
