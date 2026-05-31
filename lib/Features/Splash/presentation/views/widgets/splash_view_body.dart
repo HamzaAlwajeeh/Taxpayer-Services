@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tax_payer/Features/DashBoard/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_background_colors.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_loading_indicator.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_logo.dart';
@@ -34,12 +36,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     super.dispose();
   }
 
-  void _navigateToOnBoarding() {
+  void _navigateToOnBoarding() async {
     if (!mounted) {
       return;
     }
     if (Prefs.getBool(AppConstants.kSeenOnBoarding) == true) {
       if (Prefs.getBool(AppConstants.kIsLogedIn) == true) {
+        await context.read<UserFileCubit>().initializeCurrentFile();
         context.go(RouteNames.dashboard);
       } else {
         context.go(RouteNames.login);

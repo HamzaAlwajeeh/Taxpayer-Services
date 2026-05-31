@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -29,10 +28,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -1553,6 +1551,21 @@ class S {
     return Intl.message(
       'Already have an account? ',
       name: 'AlreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change File`
+  String get ChangeFile {
+    return Intl.message('Change File', name: 'ChangeFile', desc: '', args: []);
+  }
+
+  /// `Select the file you want to view`
+  String get SelectFileMessage {
+    return Intl.message(
+      'Select the file you want to view',
+      name: 'SelectFileMessage',
       desc: '',
       args: [],
     );

@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Camera": MessageLookupByLibrary.simpleMessage("Camera"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("Take a new photo"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "ChangeFile": MessageLookupByLibrary.simpleMessage("Change File"),
     "CharitableCompanyFile": MessageLookupByLibrary.simpleMessage(
       "Charitable Company",
     ),
@@ -280,6 +281,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SecurityAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "Security and Privacy",
+    ),
+    "SelectFileMessage": MessageLookupByLibrary.simpleMessage(
+      "Select the file you want to view",
     ),
     "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
       "Select your preferred language",

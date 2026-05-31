@@ -1,6 +1,8 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tax_payer/Features/Profile/presentation/views/widgets/change_account_bottom_sheet.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
 import 'package:tax_payer/core/services/shared_pref_singleton.dart';
@@ -82,14 +84,31 @@ class ProfileHeader extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 10),
-          Text(
-            userName,
-            maxLines: 1,
-            textAlign: TextAlign.center,
-            style: TextStyles.bold18.copyWith(
-              color: AppColors.textRedColor(context),
-              height: 1.2,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                userName,
+                maxLines: 1,
+                textAlign: TextAlign.center,
+                style: TextStyles.bold18.copyWith(
+                  color: AppColors.textRedColor(context),
+                  height: 1.2,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  showCupertinoModalPopup(
+                    context: context,
+                    builder: (context) => const ChangeAccountBottomSheet(),
+                  );
+                },
+                icon: Icon(
+                  Icons.arrow_drop_down_circle_outlined,
+                  color: AppColors.textRedColor(context),
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 5),
           Text(

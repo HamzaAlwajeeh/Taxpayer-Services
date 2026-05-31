@@ -167,5 +167,7 @@
     "LoginAsGuest": "Login as guest",
     "New": "New",
     "SignUpToManageProducts": "Sign up to access all app features",
-    "AlreadyHaveAccount": "Already have an account? "
+    "AlreadyHaveAccount": "Already have an account? ",
+    "ChangeFile" : "Change File",
+    "SelectFileMessage" : "Select the file you want to view"
 }

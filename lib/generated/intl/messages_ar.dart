@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
     "CameraSubTitle": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
     "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "ChangeFile": MessageLookupByLibrary.simpleMessage("تغيير الملف"),
     "CharitableCompanyFile": MessageLookupByLibrary.simpleMessage("شركة خيرية"),
     "CharitableCompanyFileDesc": MessageLookupByLibrary.simpleMessage(
       "متطلبات فتح ملف لشركة خيرية",
@@ -286,6 +287,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SecurityAndPrivacy": MessageLookupByLibrary.simpleMessage(
       "الامان والخصوصية",
+    ),
+    "SelectFileMessage": MessageLookupByLibrary.simpleMessage(
+      "اختر الملف الذي تريد عرضه",
     ),
     "SelectLanguageMessage": MessageLookupByLibrary.simpleMessage(
       "اختر لغتك المفضلة",

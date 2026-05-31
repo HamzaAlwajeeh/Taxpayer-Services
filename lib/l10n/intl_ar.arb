@@ -167,5 +167,7 @@
     "LoginAsGuest": "الدخول كضيف",
     "New": "جديد",
     "SignUpToManageProducts": "قم بإنشاء حساب للوصول لكل مميزات التطبيق",
-    "AlreadyHaveAccount": "لديك حساب بالفعل ؟ "
+    "AlreadyHaveAccount": "لديك حساب بالفعل ؟ ",
+    "ChangeFile" : "تغيير الملف",
+    "SelectFileMessage" : "اختر الملف الذي تريد عرضه"
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:signals_flutter/signals_flutter.dart';
 import 'package:tax_payer/Features/Settings/app_settings.dart';
 import 'package:tax_payer/core/constants/constants.dart';
@@ -22,7 +21,6 @@ class LanguageBottomSheet extends StatelessWidget {
           color: AppColors.textBoldColor(context),
           fontSize: 18,
           fontWeight: FontWeight.bold,
-          fontFamily: isArabic ? 'Cairo' : null,
         ),
       ),
       message: Text(
@@ -30,7 +28,6 @@ class LanguageBottomSheet extends StatelessWidget {
         style: TextStyle(
           color: AppColors.textSecondaryColor(context),
           fontSize: 14,
-          fontFamily: isArabic ? 'Cairo' : null,
         ),
       ),
       actions: [
@@ -50,7 +47,6 @@ class LanguageBottomSheet extends StatelessWidget {
                           ? AppColors.primaryColor(context)
                           : AppColors.textBoldColor(context),
                   fontWeight: isArabic ? FontWeight.bold : FontWeight.normal,
-                  fontFamily: 'Cairo',
                 ),
               ),
               if (isArabic) ...[
@@ -80,7 +76,6 @@ class LanguageBottomSheet extends StatelessWidget {
                           ? AppColors.primaryColor(context)
                           : AppColors.textBoldColor(context),
                   fontWeight: !isArabic ? FontWeight.bold : FontWeight.normal,
-                  fontFamily: isArabic ? 'Cairo' : null,
                 ),
               ),
               if (!isArabic) ...[
@@ -98,10 +93,7 @@ class LanguageBottomSheet extends StatelessWidget {
       cancelButton: CupertinoActionSheetAction(
         child: Text(
           l10n.Cancel,
-          style: TextStyle(
-            color: AppColors.primaryColor(context),
-            fontFamily: isArabic ? 'Cairo' : null,
-          ),
+          style: TextStyle(color: AppColors.primaryColor(context)),
         ),
         onPressed: () {
           Navigator.pop(context);
