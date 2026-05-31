@@ -7,6 +7,7 @@ class AppConstants {
   static const String krememberMe = 'rememberMe';
   static const String kCurrentUser = 'currentUser';
   static const String kToken = 'token';
+  static const String kCurrentFile = 'currentFile';
 
   static const String kCurrentLanguageKey = 'selected_language';
   static const String kArabicLang = 'ar';
@@ -30,4 +31,6 @@ class AppConstants {
   static const String kResetPasswordRequest = 'request';
   static const String kVerifyResetPasswordCode = 'verify';
   static const String kResetPassword = 'reset';
+  static const String kGetUserFiles = 'get-tax-payer-mobile-files';
+  static const String kGetUserFileById = 'get-tax-payer-mobile-file_By_Id';
 }

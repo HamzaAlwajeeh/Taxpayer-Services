@@ -100,14 +100,16 @@ class InstructionDetailCard extends StatelessWidget {
               ),
               padding: const EdgeInsets.all(AppSpacing.s12),
               decoration: BoxDecoration(
-                color: AppColors.isDarkMode(context)
-                    ? AppColors.customOrange().withValues(alpha: 0.15)
-                    : const Color(0xffFFF8E1),
+                color:
+                    AppColors.isDarkMode(context)
+                        ? AppColors.customOrange().withValues(alpha: 0.15)
+                        : const Color(0xffFFF8E1),
                 borderRadius: BorderRadius.circular(AppSpacing.radius12),
                 border: Border.all(
-                  color: AppColors.isDarkMode(context)
-                      ? AppColors.customOrange().withValues(alpha: 0.3)
-                      : const Color(0xffFFD54F).withOpacity(0.5),
+                  color:
+                      AppColors.isDarkMode(context)
+                          ? AppColors.customOrange().withValues(alpha: 0.3)
+                          : const Color(0xffFFD54F).withOpacity(0.5),
                 ),
               ),
               child: Row(
@@ -115,9 +117,10 @@ class InstructionDetailCard extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.info_outline_rounded,
-                    color: AppColors.isDarkMode(context)
-                        ? AppColors.customOrange()
-                        : const Color(0xffF57F17),
+                    color:
+                        AppColors.isDarkMode(context)
+                            ? AppColors.customOrange()
+                            : const Color(0xffF57F17),
                     size: 20,
                   ),
                   const SizedBox(width: AppSpacing.s8),
@@ -125,9 +128,10 @@ class InstructionDetailCard extends StatelessWidget {
                     child: Text(
                       note!,
                       style: TextStyles.regular14.copyWith(
-                        color: AppColors.isDarkMode(context)
-                            ? AppColors.textPrimaryColor(context)
-                            : const Color(0xff5D4037),
+                        color:
+                            AppColors.isDarkMode(context)
+                                ? AppColors.textPrimaryColor(context)
+                                : const Color(0xff5D4037),
                         height: 1.6,
                       ),
                     ),

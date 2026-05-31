@@ -71,8 +71,6 @@ class AppRoutes {
         transition: TransitionType.slideFromLeft,
       ),
 
-
-
       _buildRoute(
         path: RouteNames.forgotPassword,
         builder: (context, state) => const ForgotPasswordView(),
