@@ -143,23 +143,6 @@ class _LoginFormState extends State<LoginForm> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextButton(
-                      onPressed: () {
-                        context.push(RouteNames.forgotPassword);
-                      },
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                        minimumSize: const Size(50, 30),
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      ),
-                      child: Text(
-                        S.of(context).ForgotPassword,
-                        style: TextStyle(
-                          color: AppColors.primaryColor(context),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
                     RememberMeWidget(
                       value: isRememberMe,
                       onChanged: (value) {
@@ -167,6 +150,26 @@ class _LoginFormState extends State<LoginForm> {
                           isRememberMe = value ?? false;
                         });
                       },
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: TextButton(
+                        onPressed: () {
+                          context.push(RouteNames.forgotPassword);
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: const Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        child: Text(
+                          S.of(context).ForgotPassword,
+                          style: TextStyle(
+                            color: AppColors.primaryColor(context),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),

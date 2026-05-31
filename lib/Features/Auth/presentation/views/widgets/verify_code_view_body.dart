@@ -3,8 +3,8 @@ import 'package:tax_payer/Features/Auth/presentation/views/widgets/custom_gradie
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/verify_code_form.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
-import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
+import 'package:tax_payer/core/widgets/logo_widget.dart';
 import 'package:tax_payer/generated/l10n.dart';
 
 class VerifyCodeViewBody extends StatelessWidget {
@@ -19,33 +19,7 @@ class VerifyCodeViewBody extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Beautiful Premium Logo Container
-              Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: AppColors.itemsColor(context),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: AppColors.borderColor(context),
-                    width: 1.5,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.shadowColor(context),
-                      blurRadius: 24,
-                      offset: const Offset(0, 8),
-                    ),
-                  ],
-                ),
-                child: ClipOval(
-                  child: Image.asset(
-                    Assets.assetsIconsAppIcon,
-                    height: 72,
-                    width: 72,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              LogoWidget(),
               const SizedBox(height: 16),
               Text(
                 S.of(context).VerifyCodeTitle,
@@ -72,7 +46,10 @@ class VerifyCodeViewBody extends StatelessWidget {
                   ],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 28,
+                  ),
                   child: Column(
                     children: [
                       CustomGradientText(text: S.of(context).VerifyCodeTitle),

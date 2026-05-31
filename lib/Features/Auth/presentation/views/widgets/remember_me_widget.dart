@@ -15,27 +15,25 @@ class RememberMeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        SizedBox(
+          height: 28,
+          width: 28,
+          child: Checkbox(
+            value: value,
+            onChanged: onChanged,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+            activeColor: AppColors.primaryColor(context),
+            side: BorderSide(color: AppColors.borderColor(context)),
+          ),
+        ),
+        const SizedBox(width: 4),
         Text(
           'تذكرني',
           style: TextStyle(
             color: AppColors.textPrimaryColor(context),
             fontWeight: FontWeight.w600,
-          ),
-        ),
-
-        const SizedBox(width: 4),
-
-        SizedBox(
-          height: 24,
-          width: 24,
-          child: Checkbox(
-            value: value,
-            onChanged: onChanged,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4),
-            ),
-            activeColor: AppColors.primaryColor(context),
-            side: BorderSide(color: AppColors.borderColor(context)),
           ),
         ),
       ],
