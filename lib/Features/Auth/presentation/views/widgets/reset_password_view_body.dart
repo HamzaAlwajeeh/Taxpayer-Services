@@ -54,7 +54,7 @@ class ResetPasswordViewBody extends StatelessWidget {
                       Text(
                         S.of(context).ResetPasswordTitle,
                         style: TextStyles.bold30.copyWith(
-                          color: AppColors.textRedColor(),
+                          color: AppColors.primaryColor(),
                         ),
                       ),
                       const SizedBox(height: 12),

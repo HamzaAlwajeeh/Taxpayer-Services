@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tax_payer/Features/Auth/presentation/views/widgets/custom_gradient_text.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/verify_code_form.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
@@ -52,16 +51,13 @@ class VerifyCodeViewBody extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      CustomGradientText(text: S.of(context).VerifyCodeTitle),
-                      const SizedBox(height: 12),
                       Text(
-                        S.of(context).EnterVerificationCodeDesc,
-                        textAlign: TextAlign.center,
-                        style: TextStyles.semiBold12.copyWith(
-                          color: AppColors.textSecondaryColor(context),
+                        S.of(context).VerifyCodeTitle,
+                        style: TextStyles.bold30.copyWith(
+                          color: AppColors.primaryColor(),
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 12),
                       Text(
                         S.of(context).EnterVerificationCodeDesc,
                         textAlign: TextAlign.center,

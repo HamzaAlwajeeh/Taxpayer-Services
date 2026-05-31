@@ -12,6 +12,8 @@ import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
 import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_images.dart';
+import 'package:tax_payer/core/widgets/build_svg_icon.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
 import 'package:tax_payer/core/widgets/custom_text_form_feild.dart';
 import 'package:tax_payer/generated/l10n.dart';
@@ -122,11 +124,7 @@ class _LoginFormState extends State<LoginForm> {
                   controller: userNameController,
                   hintText: S.of(context).UserName,
                   keyboardType: TextInputType.text,
-                  suffixIcon: Icon(
-                    Icons.person,
-                    color: AppColors.textPrimaryColor(context),
-                    size: 26,
-                  ),
+                  prefixIcon: buildSvgIcon(context, Assets.assetsIconsUser),
                 ),
 
                 const SizedBox(height: 16),
@@ -136,6 +134,7 @@ class _LoginFormState extends State<LoginForm> {
                   isPassword: true,
                   hintText: S.of(context).Password,
                   keyboardType: TextInputType.visiblePassword,
+                  prefixIcon: buildSvgIcon(context, Assets.assetsIconsLock),
                 ),
 
                 const SizedBox(height: 12),

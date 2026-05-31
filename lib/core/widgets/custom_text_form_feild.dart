@@ -53,7 +53,7 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 12, 4),
+          padding: const EdgeInsetsDirectional.fromSTEB(8, 0, 8, 8),
           child: Text(
             widget.hintText,
             style: TextStyles.semiBold16.copyWith(
@@ -61,143 +61,134 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
             ),
           ),
         ),
-
-        TextFormField(
-          onTap: () {
-            if (widget.isCalender == true) {
-              getDate(context).then((value) {
-                widget.controller?.text = value;
-              });
-              setState(() {});
-            }
-          },
-          cursorColor: AppColors.primaryColor(context),
-          readOnly: widget.readOnly ?? false,
-          controller: widget.controller,
-          initialValue: widget.initialValue,
-          onSaved: widget.onSaved,
-          onChanged: widget.onChanged,
-
-          validator: (value) {
-            final text = value?.trim() ?? '';
-
-            if (widget.type == 'confirm') {
-              final password = widget.passwordController?.text.trim() ?? '';
-
-              if (password.isNotEmpty && text.isEmpty) {
-                return S.of(context).FieldIsRequired;
-              }
-
-              if (password.isNotEmpty && text != password) {
-                return S.of(context).PasswordNotMatch;
-              }
-
-              return null;
-            }
-
-            if (widget.isPassword == true) {
-              if (text.isEmpty) return null;
-              if (text.length < 8) return S.of(context).PasswordMinLength;
-              return null;
-            }
-
-            if (text.isEmpty) {
-              return S.of(context).FieldIsRequired;
-            }
-
-            return null;
-          },
-
-          obscureText: widget.isPassword == true ? !isVisible : false,
-
-          style: TextStyles.bold16.copyWith(
-            color: AppColors.textPrimaryColor(context),
+        Container(
+          decoration: BoxDecoration(
+            color: AppColors.textFeilColor(context),
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: AppColors.borderColor(context), width: 1),
           ),
+          child: Row(
+            children: [
+              if (widget.prefixIcon != null) ...[
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(start: 8, end: 4),
+                  child: widget.prefixIcon,
+                ),
+              ],
+              Expanded(
+                child: TextFormField(
+                  onTap: () {
+                    if (widget.isCalender == true) {
+                      getDate(context).then((value) {
+                        widget.controller?.text = value;
+                      });
+                      setState(() {});
+                    }
+                  },
+                  cursorColor: AppColors.primaryColor(context),
+                  readOnly: widget.readOnly ?? false,
+                  controller: widget.controller,
+                  initialValue: widget.initialValue,
+                  onSaved: widget.onSaved,
+                  onChanged: widget.onChanged,
 
-          textInputAction: TextInputAction.next,
-          keyboardType: widget.keyboardType,
+                  validator: (value) {
+                    final text = value?.trim() ?? '';
 
-          decoration: InputDecoration(
-            isDense: true,
+                    if (widget.type == 'confirm') {
+                      final password =
+                          widget.passwordController?.text.trim() ?? '';
 
-            // ✅ رجعنا الهنت قريب بشكل طبيعي
-            contentPadding: const EdgeInsetsDirectional.fromSTEB(
-              16,
-              16,
-              16,
-              16,
-            ),
+                      if (password.isNotEmpty && text.isEmpty) {
+                        return S.of(context).FieldIsRequired;
+                      }
 
-            prefixIcon:
-                widget.prefixIcon == null
-                    ? null
-                    : Padding(
-                      padding: const EdgeInsetsDirectional.only(end: 8),
-                      child: widget.prefixIcon,
+                      if (password.isNotEmpty && text != password) {
+                        return S.of(context).PasswordNotMatch;
+                      }
+
+                      return null;
+                    }
+
+                    if (widget.isPassword == true) {
+                      if (text.isEmpty) return null;
+                      if (text.length < 8)
+                        return S.of(context).PasswordMinLength;
+                      return null;
+                    }
+
+                    if (text.isEmpty) {
+                      return S.of(context).FieldIsRequired;
+                    }
+
+                    return null;
+                  },
+
+                  obscureText: widget.isPassword == true ? !isVisible : false,
+
+                  style: TextStyles.bold16.copyWith(
+                    color: AppColors.textPrimaryColor(context),
+                  ),
+
+                  textInputAction: TextInputAction.next,
+                  keyboardType: widget.keyboardType,
+
+                  decoration: InputDecoration(
+                    isDense: true,
+                    hintText: widget.hintText,
+                    hintStyle: TextStyles.bold16.copyWith(
+                      color: AppColors.textPrimaryColor(
+                        context,
+                      ).withOpacity(0.6),
                     ),
-
-            prefixIconConstraints: const BoxConstraints(
-              minWidth: 48,
-              minHeight: 48,
-            ),
-
-            suffixIconConstraints: const BoxConstraints(
-              minWidth: 48,
-              minHeight: 48,
-            ),
-
-            suffixIcon:
-                widget.isPassword == true
-                    ? Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 8),
-                      child: IconButton(
-                        padding: EdgeInsets.zero,
-                        splashRadius: 20,
-                        onPressed: () {
-                          setState(() {
-                            isVisible = !isVisible;
-                          });
-                        },
-                        icon: Icon(
-                          isVisible ? Icons.visibility_off : Icons.visibility,
-                          size: 24,
-                          color: AppColors.textPrimaryColor(context),
-                        ),
-                      ),
-                    )
-                    : widget.suffixIcon == null
-                    ? null
-                    : Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 8),
-                      child: GestureDetector(
-                        onTap:
-                            widget.isCalender == true
-                                ? () async {
-                                  await getDate(context).then((value) {
-                                    widget.controller?.text = value;
-                                  });
-                                  setState(() {});
-                                }
-                                : null,
-                        child: widget.suffixIcon,
-                      ),
+                    border: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    errorBorder: InputBorder.none,
+                    disabledBorder: InputBorder.none,
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 16,
+                      horizontal: 0,
                     ),
-
-            hintText: widget.hintText,
-            hintStyle: TextStyles.bold16.copyWith(
-              color: AppColors.textPrimaryColor(context).withOpacity(0.6),
-            ),
-
-            filled: true,
-            fillColor: AppColors.textFeilColor(context),
-
-            border: buildBorder(context),
-            enabledBorder: buildBorder(context),
-            focusedBorder: buildBorder(context),
-
-            errorStyle: TextStyles.semiBold14.copyWith(
-              color: AppColors.red().withOpacity(0.8),
-            ),
+                  ),
+                ),
+              ),
+              if (widget.isPassword == true || widget.suffixIcon != null) ...[
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(start: 5, end: 8),
+                  child:
+                      widget.isPassword == true
+                          ? IconButton(
+                            padding: EdgeInsets.zero,
+                            splashRadius: 20,
+                            onPressed: () {
+                              setState(() {
+                                isVisible = !isVisible;
+                              });
+                            },
+                            icon: Icon(
+                              isVisible
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              size: 24,
+                              color: AppColors.textPrimaryColor(context),
+                            ),
+                          )
+                          : GestureDetector(
+                            onTap:
+                                widget.isCalender == true
+                                    ? () async {
+                                      await getDate(context).then((value) {
+                                        widget.controller?.text = value;
+                                      });
+                                      setState(() {});
+                                    }
+                                    : null,
+                            child: widget.suffixIcon,
+                          ),
+                ),
+              ],
+            ],
           ),
         ),
       ],

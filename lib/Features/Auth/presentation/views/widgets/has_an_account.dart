@@ -35,7 +35,7 @@ class HasAnAccount extends StatelessWidget {
           child: Text(
             secondaryText,
             style: TextStyles.semiBold16.copyWith(
-              color: AppColors.textRedColor(),
+              color: AppColors.primaryColor(),
             ),
           ),
         ),

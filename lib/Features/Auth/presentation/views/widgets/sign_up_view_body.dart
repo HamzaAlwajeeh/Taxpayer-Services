@@ -14,7 +14,7 @@ class SignUpViewBody extends StatelessWidget {
     return Center(
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -54,7 +54,7 @@ class SignUpViewBody extends StatelessWidget {
                       Text(
                         S.of(context).SignUp,
                         style: TextStyles.bold30.copyWith(
-                          color: AppColors.textRedColor(),
+                          color: AppColors.primaryColor(),
                         ),
                       ),
                       const SizedBox(height: 12),

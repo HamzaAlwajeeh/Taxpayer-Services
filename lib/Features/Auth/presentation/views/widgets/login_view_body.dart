@@ -53,7 +53,7 @@ class LoginViewBody extends StatelessWidget {
                       Text(
                         S.of(context).Login,
                         style: TextStyles.bold30.copyWith(
-                          color: AppColors.textRedColor(),
+                          color: AppColors.primaryColor(),
                         ),
                       ),
                       const SizedBox(height: 12),
