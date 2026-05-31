@@ -36,17 +36,6 @@ class CustomButton extends StatelessWidget {
         width: double.infinity,
         height: 56,
         decoration: BoxDecoration(
-          boxShadow:
-              !isOutlinedButton && onPressed != null
-                  ? [
-                    BoxShadow(
-                      color: const Color(0xffD31313).withOpacity(0.40),
-                      blurRadius: AppSpacing.s16,
-                      offset: const Offset(0, 0),
-                    ),
-                  ]
-                  : [],
-
           border: Border.all(
             color:
                 isOutlinedButton
@@ -104,9 +93,6 @@ class CustomButton extends StatelessWidget {
       ),
     );
 
-    return Opacity(
-      opacity: onPressed == null ? 0.5 : 1.0,
-      child: buttonChild,
-    );
+    return Opacity(opacity: onPressed == null ? 0.5 : 1.0, child: buttonChild);
   }
 }

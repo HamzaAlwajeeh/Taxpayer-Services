@@ -23,6 +23,7 @@ class CustomTextFormFeild extends StatefulWidget {
     this.type,
     this.passwordController,
   });
+
   final String hintText;
   final TextInputType keyboardType;
   final bool? isPassword;
@@ -52,7 +53,7 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 12, 4),
           child: Text(
             widget.hintText,
             style: TextStyles.semiBold16.copyWith(
@@ -60,7 +61,7 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
             ),
           ),
         ),
-        const SizedBox(height: 8),
+
         TextFormField(
           onTap: () {
             if (widget.isCalender == true) {
@@ -76,6 +77,7 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
           initialValue: widget.initialValue,
           onSaved: widget.onSaved,
           onChanged: widget.onChanged,
+
           validator: (value) {
             final text = value?.trim() ?? '';
 
@@ -94,14 +96,8 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
             }
 
             if (widget.isPassword == true) {
-              if (text.isEmpty) {
-                return null;
-              }
-
-              if (text.length < 8) {
-                return S.of(context).PasswordMinLength;
-              }
-
+              if (text.isEmpty) return null;
+              if (text.length < 8) return S.of(context).PasswordMinLength;
               return null;
             }
 
@@ -111,66 +107,94 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
 
             return null;
           },
+
           obscureText: widget.isPassword == true ? !isVisible : false,
+
           style: TextStyles.bold16.copyWith(
             color: AppColors.textPrimaryColor(context),
           ),
+
           textInputAction: TextInputAction.next,
           keyboardType: widget.keyboardType,
+
           decoration: InputDecoration(
-            prefixIcon: widget.prefixIcon,
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 20,
-              vertical: 16,
+            isDense: true,
+
+            // ✅ رجعنا الهنت قريب بشكل طبيعي
+            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+              16,
+              16,
+              16,
+              16,
             ),
+
+            prefixIcon:
+                widget.prefixIcon == null
+                    ? null
+                    : Padding(
+                      padding: const EdgeInsetsDirectional.only(end: 8),
+                      child: widget.prefixIcon,
+                    ),
+
+            prefixIconConstraints: const BoxConstraints(
+              minWidth: 48,
+              minHeight: 48,
+            ),
+
+            suffixIconConstraints: const BoxConstraints(
+              minWidth: 48,
+              minHeight: 48,
+            ),
+
             suffixIcon:
-                widget.isPassword ?? false
+                widget.isPassword == true
                     ? Padding(
-                      padding: const EdgeInsets.only(left: 15),
+                      padding: const EdgeInsetsDirectional.only(start: 8),
                       child: IconButton(
                         padding: EdgeInsets.zero,
+                        splashRadius: 20,
                         onPressed: () {
-                          isVisible = !isVisible;
-                          setState(() {});
+                          setState(() {
+                            isVisible = !isVisible;
+                          });
                         },
-                        icon:
-                            !isVisible
-                                ? Icon(
-                                  Icons.visibility,
-                                  color: AppColors.textPrimaryColor(context),
-                                  size: 26,
-                                )
-                                : Icon(
-                                  Icons.visibility_off,
-                                  color: AppColors.textPrimaryColor(context),
-                                  size: 26,
-                                ),
+                        icon: Icon(
+                          isVisible ? Icons.visibility_off : Icons.visibility,
+                          size: 24,
+                          color: AppColors.textPrimaryColor(context),
+                        ),
                       ),
                     )
-                    : GestureDetector(
-                      onTap:
-                          (widget.isCalender == true)
-                              ? () async {
-                                await getDate(context).then((value) {
-                                  widget.controller?.text = value;
-                                });
-                                setState(() {});
-                              }
-                              : null,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20),
+                    : widget.suffixIcon == null
+                    ? null
+                    : Padding(
+                      padding: const EdgeInsetsDirectional.only(start: 8),
+                      child: GestureDetector(
+                        onTap:
+                            widget.isCalender == true
+                                ? () async {
+                                  await getDate(context).then((value) {
+                                    widget.controller?.text = value;
+                                  });
+                                  setState(() {});
+                                }
+                                : null,
                         child: widget.suffixIcon,
                       ),
                     ),
-            filled: true,
+
             hintText: widget.hintText,
             hintStyle: TextStyles.bold16.copyWith(
-              color: AppColors.textPrimaryColor(context),
+              color: AppColors.textPrimaryColor(context).withOpacity(0.6),
             ),
+
+            filled: true,
             fillColor: AppColors.textFeilColor(context),
+
             border: buildBorder(context),
             enabledBorder: buildBorder(context),
             focusedBorder: buildBorder(context),
+
             errorStyle: TextStyles.semiBold14.copyWith(
               color: AppColors.red().withOpacity(0.8),
             ),

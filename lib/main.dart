@@ -36,10 +36,16 @@ class MyApp extends StatelessWidget {
         child: MaterialApp.router(
           locale: AppSettings.localeSignal.value,
           themeMode: AppSettings.themeModeSignal.value,
-          theme: ThemeData.light().copyWith(
+
+          theme: ThemeData(
+            brightness: Brightness.light,
+            fontFamily: 'Almarai',
             scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor(false),
           ),
-          darkTheme: ThemeData.dark().copyWith(
+
+          darkTheme: ThemeData(
+            brightness: Brightness.dark,
+            fontFamily: 'Almarai',
             scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor(true),
           ),
 
@@ -49,6 +55,7 @@ class MyApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
+
           supportedLocales: S.delegate.supportedLocales,
           routerConfig: AppRoutes.router,
           title: AppConstants.kAppName,

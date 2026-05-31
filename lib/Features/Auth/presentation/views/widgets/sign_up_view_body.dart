@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tax_payer/Features/Auth/presentation/views/widgets/custom_gradient_text.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/has_an_account.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/sign_up_form.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
@@ -52,8 +51,13 @@ class SignUpViewBody extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      CustomGradientText(text: S.of(context).SignUp),
-                      const SizedBox(height: 8),
+                      Text(
+                        S.of(context).SignUp,
+                        style: TextStyles.bold30.copyWith(
+                          color: AppColors.textRedColor(),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
                       Text(
                         S.of(context).SignUpToManageProducts,
                         textAlign: TextAlign.center,

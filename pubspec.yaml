@@ -53,15 +53,13 @@ flutter:
     - assets/icons/
 
   fonts:
-    - family: NotoSansArabic
+    - family: Almarai
       fonts:
-        - asset: assets/fonts/NotoSansArabic-Regular.ttf
-        - asset: assets/fonts/NotoSansArabic-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/NotoSansArabic-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/NotoSansArabic-Bold.ttf
+        - asset: assets/fonts/Almarai-Regular.ttf
+        - asset: assets/fonts/Almarai-Bold.ttf
           weight: 700
+        - asset: assets/fonts/Almarai-ExtraBold.ttf
+          weight: 800
 
 flutter_intl:
   enabled: true

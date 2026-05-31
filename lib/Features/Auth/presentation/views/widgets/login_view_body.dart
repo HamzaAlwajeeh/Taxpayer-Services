@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tax_payer/Features/Auth/presentation/views/widgets/custom_gradient_text.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/login_form.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
@@ -51,8 +50,13 @@ class LoginViewBody extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      CustomGradientText(text: S.of(context).Login),
-                      const SizedBox(height: 8),
+                      Text(
+                        S.of(context).Login,
+                        style: TextStyles.bold30.copyWith(
+                          color: AppColors.textRedColor(),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
                       Text(
                         S.of(context).LoginToManageProducts,
                         textAlign: TextAlign.center,

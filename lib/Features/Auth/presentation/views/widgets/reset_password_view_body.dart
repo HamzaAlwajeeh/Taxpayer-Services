@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tax_payer/Features/Auth/presentation/views/widgets/custom_gradient_text.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/reset_password_form.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
@@ -52,8 +51,11 @@ class ResetPasswordViewBody extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      CustomGradientText(
-                        text: S.of(context).ResetPasswordTitle,
+                      Text(
+                        S.of(context).ResetPasswordTitle,
+                        style: TextStyles.bold30.copyWith(
+                          color: AppColors.textRedColor(),
+                        ),
                       ),
                       const SizedBox(height: 12),
                       Text(
