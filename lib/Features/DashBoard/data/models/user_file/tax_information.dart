@@ -2,7 +2,7 @@ class TaxInformation {
   int? id;
   String? taxAmount;
   String? lastPayment;
-  dynamic attachment;
+  String? attachment;
 
   TaxInformation({this.id, this.taxAmount, this.lastPayment, this.attachment});
 
@@ -14,9 +14,9 @@ class TaxInformation {
   factory TaxInformation.fromJson(Map<String, dynamic> json) {
     return TaxInformation(
       id: json['id'] as int?,
-      taxAmount: json['tax_amount'] as String?,
-      lastPayment: json['last_payment'] as String?,
-      attachment: json['attachment'] as dynamic,
+      taxAmount: json['tax_amount']?.toString(),
+      lastPayment: json['last_payment']?.toString(),
+      attachment: json['attachment']?.toString(),
     );
   }
 

@@ -21,13 +21,12 @@ class UserFileRepoImpl implements UserFileRepo {
         token: Prefs.getString(AppConstants.kToken),
       );
 
-      List<File> files = (data['data'] as List<dynamic>)
-          .map((item) {
-            // استخراج بيانات الملف من داخل الكائن المركب
-            Map<String, dynamic> fileItem = item['file'] as Map<String, dynamic>;
+      List<File> files =
+          (data['data'] as List<dynamic>).map((item) {
+            Map<String, dynamic> fileItem =
+                item['file'] as Map<String, dynamic>;
             return File.fromJson(fileItem);
-          })
-          .toList();
+          }).toList();
 
       return Right(files);
     } catch (e) {

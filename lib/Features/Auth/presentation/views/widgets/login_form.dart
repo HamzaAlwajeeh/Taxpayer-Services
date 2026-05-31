@@ -5,8 +5,8 @@ import 'package:tax_payer/Features/Auth/presentation/logic/login_cubit/login_cub
 import 'package:tax_payer/Features/Auth/presentation/logic/login_cubit/login_state.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/has_an_account.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/remember_me_widget.dart';
-import 'package:tax_payer/Features/DashBoard/presentation/logic/user_file_cubit/user_file_cubit.dart';
-import 'package:tax_payer/Features/DashBoard/presentation/logic/user_file_cubit/user_file_state.dart';
+import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
+import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_state.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
@@ -200,8 +200,8 @@ class _LoginFormState extends State<LoginForm> {
                   CustomButton(
                     title: S.of(context).LoginAsGuest,
                     isOutlined: true,
-                    onPressed: () async {
-                      await _startUserFileFlow();
+                    onPressed: () {
+                      context.go(RouteNames.dashboard);
                     },
                   ),
                 ],

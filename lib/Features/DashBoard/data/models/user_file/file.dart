@@ -24,8 +24,8 @@ class File {
 
   factory File.fromJson(Map<String, dynamic> json) => File(
     id: json['id'] as int?,
-    taxNumber: json['tax_number'] as String?,
-    inventoryNumber: json['inventory_number'] as String?,
+    taxNumber: json['tax_number']?.toString(),
+    inventoryNumber: json['inventory_number']?.toString(),
     activityStartDate: json['activity_start_date'] as String?,
     fileStatus: json['file_status'] as String?,
     paymentType: json['payment_type'] as String?,

@@ -3,8 +3,8 @@ class File {
   int? userId;
   String? tradeName;
   String? fileType;
-  int? taxNumber;
-  int? inventoryNumber;
+  String? taxNumber;
+  String? inventoryNumber;
   String? activityStartDate;
   String? fileStatus;
   String? paymentType;
@@ -33,8 +33,8 @@ class File {
     userId: json['user_id'] as int?,
     tradeName: json['trade_name'] as String?,
     fileType: json['file_type'] as String?,
-    taxNumber: json['tax_number'] as int?,
-    inventoryNumber: json['inventory_number'] as int?,
+    taxNumber: json['tax_number']?.toString(),
+    inventoryNumber: json['inventory_number']?.toString(),
     activityStartDate: json['activity_start_date'] as String?,
     fileStatus: json['file_status'] as String?,
     paymentType: json['payment_type'] as String?,
