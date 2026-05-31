@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/widgets/blur_circle.dart';
 
@@ -22,7 +23,7 @@ class GradientBackground extends StatelessWidget {
               top: -44,
               left: -233,
               child: BlurCircle(
-                color: Colors.purpleAccent.withOpacity(0.35),
+                color: AppColors.primaryColor(context).withValues(alpha: 0.15),
                 size: 350,
               ),
             ),

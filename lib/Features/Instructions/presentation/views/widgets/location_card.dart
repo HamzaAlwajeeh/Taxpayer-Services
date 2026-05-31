@@ -133,7 +133,7 @@ class _LocationCardState extends State<LocationCard> {
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(10),
                                       ),
-                                      backgroundColor: Colors.white,
+                                      backgroundColor: AppColors.white(),
                                       foregroundColor: AppColors.textRedColor(
                                         context,
                                         true,
@@ -154,8 +154,8 @@ class _LocationCardState extends State<LocationCard> {
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(10),
                                       ),
-                                      backgroundColor: Colors.green,
-                                      foregroundColor: Colors.white,
+                                      backgroundColor: AppColors.customGreen(),
+                                      foregroundColor: AppColors.white(),
                                     ),
                                   ),
                                 ),

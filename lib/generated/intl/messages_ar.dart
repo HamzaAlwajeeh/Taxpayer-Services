@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ActivityLicenseField": MessageLookupByLibrary.simpleMessage(
       "ترخيص مزاولة النشاط",
     ),
+    "AlreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "لديك حساب بالفعل ؟ ",
+    ),
     "AppVersion": MessageLookupByLibrary.simpleMessage("إصدار التطبيق"),
     "Arabic": MessageLookupByLibrary.simpleMessage("العربيه"),
     "ArticlesOfIncorporationField": MessageLookupByLibrary.simpleMessage(
@@ -95,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "DarkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
     "Disabled": MessageLookupByLibrary.simpleMessage("معطل"),
+    "DontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "EditProfile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "Enabled": MessageLookupByLibrary.simpleMessage("مفعل"),
@@ -180,8 +184,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "LastName": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
     "Loading": MessageLookupByLibrary.simpleMessage("جار التحميل..."),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "LoginAsGuest": MessageLookupByLibrary.simpleMessage("الدخول كضيف"),
     "LoginSuccess": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح",
+    ),
+    "LoginToManageProducts": MessageLookupByLibrary.simpleMessage(
+      "سجّل الدخول لإدارة منتجاتك",
     ),
     "Logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "LogoutSuccess": MessageLookupByLibrary.simpleMessage(
@@ -191,6 +199,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "MethodNotFound": MessageLookupByLibrary.simpleMessage(
       "الطريقة غير موجودة، يرجى المحاولة مرة أخرى",
     ),
+    "New": MessageLookupByLibrary.simpleMessage("جديد"),
     "NewFile": MessageLookupByLibrary.simpleMessage("ملف جديد"),
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(
       "أدخل البيانات وارفق الملفات المطلوبة لتقديم الطلب",
@@ -285,6 +294,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "انتهت مهلة إرسال الطلب إلى الخادم",
     ),
     "SignUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "SignUpToManageProducts": MessageLookupByLibrary.simpleMessage(
+      "قم بإنشاء حساب لإدارة منتجاتك",
+    ),
     "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "StepsToFollow": MessageLookupByLibrary.simpleMessage("الخطوات المطلوبة"),
@@ -368,6 +380,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "VerificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("التحقق من الرمز"),
     "ViewDetails": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
+    "WelcomeBack": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك!"),
     "privacyPolicy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
     "privacyPolicyText": MessageLookupByLibrary.simpleMessage(
       "تعد خصوصيتك مهمة بالنسبة لنا. نقوم بجمع البيانات لتحسين خدماتنا.",

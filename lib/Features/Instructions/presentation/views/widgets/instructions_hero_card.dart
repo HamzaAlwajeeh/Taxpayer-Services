@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
+import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
 
 class InstructionsHeroCard extends StatelessWidget {
@@ -41,22 +42,22 @@ class InstructionsHeroCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(AppSpacing.s16),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
+              color: AppColors.white().withOpacity(0.2),
               borderRadius: BorderRadius.circular(AppSpacing.radius16),
             ),
-            child: Icon(icon, color: Colors.white, size: 40),
+            child: Icon(icon, color: AppColors.white(), size: 40),
           ),
           const SizedBox(height: AppSpacing.s16),
           Text(
             title,
-            style: TextStyles.bold22.copyWith(color: Colors.white),
+            style: TextStyles.bold22.copyWith(color: AppColors.white()),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: AppSpacing.s8),
           Text(
             description,
             style: TextStyles.regular14.copyWith(
-              color: Colors.white.withOpacity(0.9),
+              color: AppColors.white().withOpacity(0.9),
               height: 1.5,
             ),
             textAlign: TextAlign.center,

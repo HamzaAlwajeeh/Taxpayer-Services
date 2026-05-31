@@ -28,10 +28,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -1482,6 +1481,71 @@ class S {
     return Intl.message(
       'Select the file type and enter the required data',
       name: 'NewFileHeroDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome back!`
+  String get WelcomeBack {
+    return Intl.message(
+      'Welcome back!',
+      name: 'WelcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log in to manage your products`
+  String get LoginToManageProducts {
+    return Intl.message(
+      'Log in to manage your products',
+      name: 'LoginToManageProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get DontHaveAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'DontHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login as guest`
+  String get LoginAsGuest {
+    return Intl.message(
+      'Login as guest',
+      name: 'LoginAsGuest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New`
+  String get New {
+    return Intl.message('New', name: 'New', desc: '', args: []);
+  }
+
+  /// `Create an account to manage your products`
+  String get SignUpToManageProducts {
+    return Intl.message(
+      'Create an account to manage your products',
+      name: 'SignUpToManageProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account? `
+  String get AlreadyHaveAccount {
+    return Intl.message(
+      'Already have an account? ',
+      name: 'AlreadyHaveAccount',
       desc: '',
       args: [],
     );

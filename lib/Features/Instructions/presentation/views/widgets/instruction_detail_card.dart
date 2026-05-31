@@ -100,18 +100,24 @@ class InstructionDetailCard extends StatelessWidget {
               ),
               padding: const EdgeInsets.all(AppSpacing.s12),
               decoration: BoxDecoration(
-                color: const Color(0xffFFF8E1),
+                color: AppColors.isDarkMode(context)
+                    ? AppColors.customOrange().withValues(alpha: 0.15)
+                    : const Color(0xffFFF8E1),
                 borderRadius: BorderRadius.circular(AppSpacing.radius12),
                 border: Border.all(
-                  color: const Color(0xffFFD54F).withOpacity(0.5),
+                  color: AppColors.isDarkMode(context)
+                      ? AppColors.customOrange().withValues(alpha: 0.3)
+                      : const Color(0xffFFD54F).withOpacity(0.5),
                 ),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.info_outline_rounded,
-                    color: Color(0xffF57F17),
+                    color: AppColors.isDarkMode(context)
+                        ? AppColors.customOrange()
+                        : const Color(0xffF57F17),
                     size: 20,
                   ),
                   const SizedBox(width: AppSpacing.s8),
@@ -119,7 +125,9 @@ class InstructionDetailCard extends StatelessWidget {
                     child: Text(
                       note!,
                       style: TextStyles.regular14.copyWith(
-                        color: const Color(0xff5D4037),
+                        color: AppColors.isDarkMode(context)
+                            ? AppColors.textPrimaryColor(context)
+                            : const Color(0xff5D4037),
                         height: 1.6,
                       ),
                     ),
@@ -159,7 +167,7 @@ class InstructionDetailCard extends StatelessWidget {
               child: Text(
                 '$number',
                 style: TextStyles.bold14.copyWith(
-                  color: Colors.white,
+                  color: AppColors.white(),
                   fontSize: 12,
                 ),
               ),

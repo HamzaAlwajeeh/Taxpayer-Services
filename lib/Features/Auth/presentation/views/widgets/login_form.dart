@@ -120,7 +120,7 @@ class _LoginFormState extends State<LoginForm> {
               children: [
                 CustomTextFormFeild(
                   controller: userNameController,
-                  hintText: 'اسم المستخدم',
+                  hintText: S.of(context).UserName,
                   keyboardType: TextInputType.text,
                   suffixIcon: Icon(
                     Icons.person,
@@ -134,7 +134,7 @@ class _LoginFormState extends State<LoginForm> {
                 CustomTextFormFeild(
                   controller: passwordController,
                   isPassword: true,
-                  hintText: 'كلمة المرور',
+                  hintText: S.of(context).Password,
                   keyboardType: TextInputType.visiblePassword,
                 ),
 
@@ -153,7 +153,7 @@ class _LoginFormState extends State<LoginForm> {
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                       child: Text(
-                        'نسيت كلمة المرور',
+                        S.of(context).ForgotPassword,
                         style: TextStyle(
                           color: AppColors.primaryColor(context),
                           fontWeight: FontWeight.bold,
@@ -171,16 +171,16 @@ class _LoginFormState extends State<LoginForm> {
                   ],
                 ),
                 const SizedBox(height: 12),
-                const HasAnAccount(
+                HasAnAccount(
                   isLoginView: true,
-                  primaryText: 'ليس لديك حساب؟',
-                  secondaryText: 'إنشاء حساب',
+                  primaryText: S.of(context).DontHaveAccount,
+                  secondaryText: S.of(context).SignUp,
                 ),
                 const SizedBox(height: 17),
                 state is LoginLoading
                     ? const CustomLoadingIndicator()
                     : CustomButton(
-                      title: 'تسجيل الدخول',
+                      title: S.of(context).Login,
                       onPressed: () {
                         loginMethod(
                           userName: userNameController.text,
@@ -190,7 +190,8 @@ class _LoginFormState extends State<LoginForm> {
                     ),
                 const SizedBox(height: 12),
                 CustomButton(
-                  title: 'الدخول كضيف',
+                  title: S.of(context).LoginAsGuest,
+                  isOutlined: true,
                   onPressed: () {
                     context.go(RouteNames.dashboard);
                   },

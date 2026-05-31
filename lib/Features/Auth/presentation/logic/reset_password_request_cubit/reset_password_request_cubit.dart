@@ -1,6 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tax_payer/Features/Auth/data/repos/auth_repo.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_request_cubit/reset_password_request_state.dart';
+import 'package:tax_payer/core/constants/constants.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 
 class ResetPasswordRequestCubit extends Cubit<ResetPasswordRequestState> {
   final AuthRepo authRepo;
@@ -11,6 +13,7 @@ class ResetPasswordRequestCubit extends Cubit<ResetPasswordRequestState> {
 
   Future<void> resetPasswordRequest({required String userName}) async {
     emit(ResetPasswordRequestLoading());
+    Prefs.setString(AppConstants.kResetPasswordUsername, userName);
     var result = await authRepo.resetPasswordRequest(userName: userName);
     result.fold(
       (failure) => emit(

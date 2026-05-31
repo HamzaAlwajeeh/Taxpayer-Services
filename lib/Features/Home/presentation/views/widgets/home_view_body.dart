@@ -32,9 +32,9 @@ class HomeViewBody extends StatelessWidget {
                   customToastBar(
                     context: context,
                     message: 'تم تغيير الثيم',
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColors.customGreen(),
                     icon: Icons.check,
-                    textColor: Colors.green,
+                    textColor: AppColors.white(),
                   );
                 },
               ),
@@ -45,9 +45,9 @@ class HomeViewBody extends StatelessWidget {
                   customToastBar(
                     context: context,
                     message: 'تم تغيير اللغة',
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColors.customGreen(),
                     icon: Icons.check,
-                    textColor: Colors.green,
+                    textColor: AppColors.white(),
                   );
                 },
               ),

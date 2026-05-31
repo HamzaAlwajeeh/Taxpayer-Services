@@ -57,7 +57,7 @@ class InstructionTile extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Icon(icon, color: Colors.white, size: 24),
+              child: Icon(icon, color: AppColors.white(), size: 24),
             ),
             const SizedBox(width: AppSpacing.s12),
             Expanded(

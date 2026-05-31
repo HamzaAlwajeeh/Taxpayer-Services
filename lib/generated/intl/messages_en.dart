@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ActivityLicenseField": MessageLookupByLibrary.simpleMessage(
       "Activity License",
     ),
+    "AlreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account? ",
+    ),
     "AppVersion": MessageLookupByLibrary.simpleMessage("App Version"),
     "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "ArticlesOfIncorporationField": MessageLookupByLibrary.simpleMessage(
@@ -89,6 +92,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "DarkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "Disabled": MessageLookupByLibrary.simpleMessage("Disabled"),
+    "DontHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
+    ),
     "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
     "Enabled": MessageLookupByLibrary.simpleMessage("Enabled"),
@@ -172,7 +178,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "LastName": MessageLookupByLibrary.simpleMessage("Last Name"),
     "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
+    "LoginAsGuest": MessageLookupByLibrary.simpleMessage("Login as guest"),
     "LoginSuccess": MessageLookupByLibrary.simpleMessage("Login Successully"),
+    "LoginToManageProducts": MessageLookupByLibrary.simpleMessage(
+      "Log in to manage your products",
+    ),
     "Logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "LogoutSuccess": MessageLookupByLibrary.simpleMessage(
       "Logout Successfully",
@@ -181,6 +191,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "MethodNotFound": MessageLookupByLibrary.simpleMessage(
       "Method Not Found, please try again",
     ),
+    "New": MessageLookupByLibrary.simpleMessage("New"),
     "NewFile": MessageLookupByLibrary.simpleMessage("NewFile"),
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(
       "Enter details and attach documents to submit request",
@@ -277,6 +288,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Send timeout with ApiServer",
     ),
     "SignUp": MessageLookupByLibrary.simpleMessage("SignUp"),
+    "SignUpToManageProducts": MessageLookupByLibrary.simpleMessage(
+      "Create an account to manage your products",
+    ),
     "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "StartNow": MessageLookupByLibrary.simpleMessage("Start Now"),
     "StepsToFollow": MessageLookupByLibrary.simpleMessage("Steps to Follow"),
@@ -362,6 +376,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("Verify Code"),
     "ViewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
+    "WelcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back!"),
     "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
     "privacyPolicyText": MessageLookupByLibrary.simpleMessage(
       "Your privacy is important to us. We collect data to improve our services.",

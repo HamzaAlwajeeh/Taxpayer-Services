@@ -159,5 +159,12 @@
     "Maps" : "خرائط",
     "Call" : "اتصال",
     "NewFileHeroTitle" : "إنشاء ملف جديد",
-    "NewFileHeroDetails" : "قم بتحديد نوع الملف ثم ادخل البيانات المطلوبه"
+    "NewFileHeroDetails" : "قم بتحديد نوع الملف ثم ادخل البيانات المطلوبه",
+    "WelcomeBack": "مرحباً بعودتك!",
+    "LoginToManageProducts": "سجّل الدخول لإدارة منتجاتك",
+    "DontHaveAccount": "ليس لديك حساب؟",
+    "LoginAsGuest": "الدخول كضيف",
+    "New": "جديد",
+    "SignUpToManageProducts": "قم بإنشاء حساب لإدارة منتجاتك",
+    "AlreadyHaveAccount": "لديك حساب بالفعل ؟ "
 }

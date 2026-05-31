@@ -17,6 +17,7 @@ class AppConstants {
   static const String kLightTheme = 'light';
   static const String kSavedUsername = 'savedUsername';
   static const String kSavedPassword = 'savedPassword';
+  static const String kResetPasswordUsername = 'resetPasswordUsername';
 
   // API Endpoints
   static const String kBaseUrl = 'http://$kIp/api';

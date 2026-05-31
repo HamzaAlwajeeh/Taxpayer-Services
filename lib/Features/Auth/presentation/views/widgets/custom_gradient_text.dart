@@ -21,7 +21,7 @@ class CustomGradientText extends StatelessWidget {
       child: Text(
         text,
         style: TextStyles.bold30.copyWith(
-          color: Colors.white, // اللون الأساسي للنص قبل التدرج
+          color: AppColors.white(), // اللون الأساسي للنص قبل التدرج
         ),
       ),
     );

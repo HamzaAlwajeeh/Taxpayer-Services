@@ -159,5 +159,12 @@
     "Maps" : "Maps",
     "Call" : "Call",
     "NewFileHeroTitle" : "Create New File",
-    "NewFileHeroDetails" : "Select the file type and enter the required data"
+    "NewFileHeroDetails" : "Select the file type and enter the required data",
+    "WelcomeBack": "Welcome back!",
+    "LoginToManageProducts": "Log in to manage your products",
+    "DontHaveAccount": "Don't have an account?",
+    "LoginAsGuest": "Login as guest",
+    "New": "New",
+    "SignUpToManageProducts": "Create an account to manage your products",
+    "AlreadyHaveAccount": "Already have an account? "
 }

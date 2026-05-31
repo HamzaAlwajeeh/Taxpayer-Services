@@ -69,7 +69,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
             message: state.message,
             icon: Icons.check_circle,
             backgroundColor: AppColors.primaryColor(context),
-            textColor: Colors.white,
+            textColor: AppColors.white(),
           );
           context.pop();
         } else if (state is EditProfileFailure) {
@@ -78,7 +78,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
             message: state.message,
             icon: Icons.error,
             backgroundColor: AppColors.red(),
-            textColor: Colors.white,
+            textColor: AppColors.white(),
           );
         }
       },
@@ -86,7 +86,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
         return Stack(
           children: [
             Scaffold(
-              backgroundColor: const Color(0xffF9F9F9),
+              backgroundColor: AppColors.scaffoldBackgroundColor(null, context),
               appBar: CustomAppBar(title: S.of(context).EditProfile),
               body: SafeArea(
                 child: AbsorbPointer(

@@ -14,6 +14,7 @@ class CustomButton extends StatelessWidget {
     this.textColor,
     this.borderColor,
     this.isLogout = false,
+    this.isOutlined = false,
   });
 
   final String title;
@@ -22,12 +23,13 @@ class CustomButton extends StatelessWidget {
   final Color? borderColor;
   final void Function()? onPressed;
   final bool isLogout;
+  final bool isOutlined;
 
   @override
   Widget build(BuildContext context) {
-    final bool isOutlinedLogout = isLogout;
+    final bool isOutlinedButton = isLogout || isOutlined;
 
-    return InkWell(
+    final Widget buttonChild = InkWell(
       borderRadius: BorderRadius.circular(AppSpacing.radius16),
       onTap: onPressed,
       child: Container(
@@ -35,7 +37,7 @@ class CustomButton extends StatelessWidget {
         height: 56,
         decoration: BoxDecoration(
           boxShadow:
-              !isOutlinedLogout
+              !isOutlinedButton && onPressed != null
                   ? [
                     BoxShadow(
                       color: const Color(0xffD31313).withOpacity(0.40),
@@ -47,7 +49,7 @@ class CustomButton extends StatelessWidget {
 
           border: Border.all(
             color:
-                isOutlinedLogout
+                isOutlinedButton
                     ? borderColor ?? AppColors.primaryColor(context)
                     : Colors.transparent,
           ),
@@ -55,10 +57,10 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppSpacing.radius16),
 
           color:
-              isOutlinedLogout ? backgroundColor ?? Colors.transparent : null,
+              isOutlinedButton ? backgroundColor ?? Colors.transparent : null,
 
           gradient:
-              isOutlinedLogout
+              isOutlinedButton
                   ? null
                   : const LinearGradient(
                     begin: Alignment.topLeft,
@@ -72,7 +74,7 @@ class CustomButton extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (isOutlinedLogout) ...[
+              if (isLogout) ...[
                 SvgPicture.asset(
                   Assets.assetsIconsLogout,
                   width: 24,
@@ -91,7 +93,7 @@ class CustomButton extends StatelessWidget {
                 style: TextStyles.bold22.copyWith(
                   color:
                       textColor ??
-                      (isOutlinedLogout
+                      (isOutlinedButton
                           ? AppColors.primaryColor(context)
                           : AppColors.white()),
                 ),
@@ -100,6 +102,11 @@ class CustomButton extends StatelessWidget {
           ),
         ),
       ),
+    );
+
+    return Opacity(
+      opacity: onPressed == null ? 0.5 : 1.0,
+      child: buttonChild,
     );
   }
 }

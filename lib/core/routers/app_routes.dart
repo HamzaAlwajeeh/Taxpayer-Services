@@ -7,7 +7,6 @@ import 'package:tax_payer/Features/Auth/presentation/logic/logout_cubit/logout_c
 import 'package:tax_payer/Features/Auth/presentation/logic/register_cubit/register_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_cubit/reset_password_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/verify_code_cubit/verify_code_cubit.dart';
-import 'package:tax_payer/Features/Auth/presentation/views/create_store_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/forgot_password_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/login_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/reset_password_view.dart';
@@ -72,11 +71,7 @@ class AppRoutes {
         transition: TransitionType.slideFromLeft,
       ),
 
-      _buildRoute(
-        path: CreateStoreView.routeName,
-        builder: (context, state) => const CreateStoreView(),
-        transition: TransitionType.slideFromLeft,
-      ),
+
 
       _buildRoute(
         path: RouteNames.forgotPassword,
