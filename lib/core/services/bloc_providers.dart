@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tax_payer/Features/Auth/data/repos/auth_repo.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_request_cubit/reset_password_request_cubit.dart';
 import 'package:tax_payer/Features/Profile/data/repos/profile.repo.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_cubit.dart';
 import 'package:tax_payer/core/services/service_locator.dart';
@@ -12,6 +14,9 @@ class BlocProviders {
       providers: [
         BlocProvider(
           create: (context) => UserProfileCubit(getIt<ProfileRepo>()),
+        ),
+        BlocProvider(
+          create: (context) => ResetPasswordRequestCubit(getIt<AuthRepo>()),
         ),
       ],
       child: child,

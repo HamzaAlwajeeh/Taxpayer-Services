@@ -103,7 +103,7 @@ class AuthRepoImpl implements AuthRepo {
         body: {'userName': userName},
         token: null,
       );
-      ResetPassword resetPassword = ResetPassword.fromJson(data);
+      ResetPassword resetPassword = ResetPassword.fromJson(data['data']);
       return right(resetPassword);
     } catch (e) {
       if (e is DioException) {
@@ -146,7 +146,7 @@ class AuthRepoImpl implements AuthRepo {
         body: {
           'userId': userId,
           'code': code,
-          'new_password': newPassword,
+          'newPassword': newPassword,
           'newPassword_confirmation': confirmNewPassword,
         },
         token: Prefs.getString(AppConstants.kToken),

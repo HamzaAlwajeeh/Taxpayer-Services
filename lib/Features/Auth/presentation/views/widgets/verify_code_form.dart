@@ -109,8 +109,6 @@ class _VerifyCodeFormState extends State<VerifyCodeForm> {
 
   void verifyCodeMethod({required int code, required int userId}) {
     FocusScope.of(context).unfocus();
-    FocusScope.of(context).unfocus();
-    context.push(RouteNames.resetPassword);
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
       autovalidateMode = AutovalidateMode.disabled;

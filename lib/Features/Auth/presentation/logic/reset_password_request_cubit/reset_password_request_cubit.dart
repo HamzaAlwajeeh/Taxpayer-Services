@@ -5,6 +5,7 @@ import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_reques
 class ResetPasswordRequestCubit extends Cubit<ResetPasswordRequestState> {
   final AuthRepo authRepo;
   int userId = 0;
+  int code = 0;
   ResetPasswordRequestCubit(this.authRepo)
     : super(ResetPasswordRequestInitial());
 
@@ -20,6 +21,7 @@ class ResetPasswordRequestCubit extends Cubit<ResetPasswordRequestState> {
       ),
       (resetPassword) {
         userId = resetPassword.userId;
+        code = resetPassword.code;
         emit(ResetPasswordRequestSuccess(resetPassword: resetPassword));
       },
     );

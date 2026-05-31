@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_cubit/reset_password_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_cubit/reset_password_state.dart';
+import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_request_cubit/reset_password_request_cubit.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
@@ -99,6 +100,12 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                         title: S.of(context).ResetPassword,
                         onPressed: () {
                           resetPasswordMethod(
+                            userId:
+                                context
+                                    .read<ResetPasswordRequestCubit>()
+                                    .userId,
+                            code:
+                                context.read<ResetPasswordRequestCubit>().code,
                             newPassword: newPasswordController.text,
                             confirmNewPassword: confirmPasswordController.text,
                           );
@@ -112,22 +119,26 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
   }
 
   void resetPasswordMethod({
+    required int userId,
+    required int code,
     required String newPassword,
     required String confirmNewPassword,
   }) {
     FocusScope.of(context).unfocus();
-    context.go(RouteNames.login);
-    // if (formKey.currentState!.validate()) {
-    //   formKey.currentState!.save();
-    //   autovalidateMode = AutovalidateMode.disabled;
-    //   BlocProvider.of<ResetPasswordCubit>(context).changePassword(
-    //     newPassword: newPassword,
-    //     confirmNewPassword: confirmNewPassword,
-    //   );
-    // } else {
-    //   setState(() {
-    //     autovalidateMode = AutovalidateMode.always;
-    //   });
-    // }
+
+    if (formKey.currentState!.validate()) {
+      formKey.currentState!.save();
+      autovalidateMode = AutovalidateMode.disabled;
+      BlocProvider.of<ResetPasswordCubit>(context).changePassword(
+        userId: userId,
+        code: code,
+        newPassword: newPassword,
+        confirmNewPassword: confirmNewPassword,
+      );
+    } else {
+      setState(() {
+        autovalidateMode = AutovalidateMode.always;
+      });
+    }
   }
 }

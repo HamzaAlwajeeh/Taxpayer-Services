@@ -96,7 +96,6 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
 
   void resetPasswordRequestMethod({required String userName}) {
     FocusScope.of(context).unfocus();
-    context.push(RouteNames.verifyCode);
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
       autovalidateMode = AutovalidateMode.disabled;

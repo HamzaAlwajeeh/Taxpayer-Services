@@ -5,8 +5,11 @@ import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/logout_cubit/logout_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/logout_cubit/logout_state.dart';
+import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
+import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
 import 'package:tax_payer/core/widgets/sign_out_confirmation_dialog_widget.dart';
@@ -19,7 +22,23 @@ class PofileCustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LogoutCubit, LogoutState>(
+    return BlocConsumer<LogoutCubit, LogoutState>(
+      listener: (context, state) {
+        if (state is LogoutSuccess) {
+          Prefs.removeUser(AppConstants.kCurrentUser);
+          Prefs.removeBool(AppConstants.kIsLogedIn);
+          Prefs.removeString(AppConstants.kToken);
+          context.go(RouteNames.login);
+        } else if (state is LogoutFailure) {
+          customToastBar(
+            context: context,
+            message: state.errorMessage,
+            icon: Icons.error,
+            backgroundColor: AppColors.red(),
+            textColor: AppColors.white(),
+          );
+        }
+      },
       builder: (BuildContext context, state) {
         if (user == null) {
           return CustomButton(

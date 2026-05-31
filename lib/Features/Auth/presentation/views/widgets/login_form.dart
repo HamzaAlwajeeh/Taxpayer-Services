@@ -145,7 +145,7 @@ class _LoginFormState extends State<LoginForm> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        context.go(RouteNames.forgotPassword);
+                        context.push(RouteNames.forgotPassword);
                       },
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,

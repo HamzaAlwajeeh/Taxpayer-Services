@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/generated/l10n.dart';
 
