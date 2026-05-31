@@ -107,7 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "أدخل كلمة المرور الجديدة وقم بتأكيدها",
     ),
     "EnterUsernameAndPhone": MessageLookupByLibrary.simpleMessage(
-      "أدخل اسم المستخدم ورقم الهاتف للتحقق من هويتك",
+      "أدخل اسم المستخدم للتحقق من هويتك",
     ),
     "EnterVerificationCode": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز التحقق",
@@ -124,9 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "FileType": MessageLookupByLibrary.simpleMessage("نوع الملف"),
     "FirstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
-    "ForgotPassword": MessageLookupByLibrary.simpleMessage(
-      "استعادة كلمة المرور",
-    ),
+    "ForgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
     "GeneralInstructions": MessageLookupByLibrary.simpleMessage("تعليمات عامة"),
     "GovernmentLicenseField": MessageLookupByLibrary.simpleMessage(
       "ترخيص الشركة من قبل المحافظ",
@@ -189,7 +187,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تسجيل الدخول بنجاح",
     ),
     "LoginToManageProducts": MessageLookupByLibrary.simpleMessage(
-      "سجّل الدخول لإدارة منتجاتك",
+      "سجّل الدخول للوصول لمعلوماتك",
     ),
     "Logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "LogoutSuccess": MessageLookupByLibrary.simpleMessage(
@@ -217,20 +215,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "لا يوجد اتصال بالإنترنت",
     ),
     "OnBoarding1SubTitle": MessageLookupByLibrary.simpleMessage(
-      "أجرِ مكالماتك بكل سهولة ووضوح، وتابع تفاصيل خطك وتحكم في خدماتك من مكان واحد",
+      "تمكّن من الدخول إلى ملفك الضريبي واستعراض بيانات المكلف ومعلوماته الضريبية بكل سهولة وأمان.",
     ),
     "OnBoarding1Title": MessageLookupByLibrary.simpleMessage(
-      "اتصالك أقرب مما تتخيل",
+      "الوصول إلى ملفك الضريبي",
     ),
     "OnBoarding2SubTitle": MessageLookupByLibrary.simpleMessage(
-      "تحكم في خدماتك وقم بإدارة خطك بسهولة، وتابع تفاصيل خطك وتحكم في خدماتك من مكان واحد",
+      "تابع عمليات السداد السابقة، واطلع على الضرائب المستحقة ومواعيد السداد القادمة في أي وقت.",
     ),
-    "OnBoarding2Title": MessageLookupByLibrary.simpleMessage("تحكم في خدماتك"),
+    "OnBoarding2Title": MessageLookupByLibrary.simpleMessage(
+      "إدارة الالتزامات الضريبية",
+    ),
     "OnBoarding3SubTitle": MessageLookupByLibrary.simpleMessage(
-      "تواصل مع أصدقائك وشاركهم تجاربك، وتابع تفاصيل خطك وتحكم في خدماتك من مكان واحد",
+      "استقبل إشعارات الإقرارات الضريبية والتنبيهات المهمة عبر التطبيق أو الواتساب لضمان متابعة جميع المستجدات.",
     ),
     "OnBoarding3Title": MessageLookupByLibrary.simpleMessage(
-      "تواصل مع أصدقائك",
+      "إشعارات وتنبيهات فورية",
     ),
     "OopsError": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ، يرجى المحاولة لاحقًا",
@@ -295,7 +295,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SignUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "SignUpToManageProducts": MessageLookupByLibrary.simpleMessage(
-      "قم بإنشاء حساب لإدارة منتجاتك",
+      "قم بإنشاء حساب للوصول لكل مميزات التطبيق",
     ),
     "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
@@ -378,7 +378,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "UserName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "VerificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
-    "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("التحقق من الرمز"),
+    "Verify": MessageLookupByLibrary.simpleMessage("التحقق"),
+    "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "ViewDetails": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
     "WelcomeBack": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك!"),
     "privacyPolicy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),

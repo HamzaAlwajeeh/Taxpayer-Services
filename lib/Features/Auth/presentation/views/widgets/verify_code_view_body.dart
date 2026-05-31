@@ -61,6 +61,14 @@ class VerifyCodeViewBody extends StatelessWidget {
                           color: AppColors.textSecondaryColor(context),
                         ),
                       ),
+                      const SizedBox(height: 8),
+                      Text(
+                        S.of(context).EnterVerificationCodeDesc,
+                        textAlign: TextAlign.center,
+                        style: TextStyles.semiBold12.copyWith(
+                          color: AppColors.textSecondaryColor(context),
+                        ),
+                      ),
                       const SizedBox(height: 24),
                       VerifyCodeForm(),
                     ],

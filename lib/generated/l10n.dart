@@ -256,60 +256,60 @@ class S {
     return Intl.message('Cancel', name: 'Cancel', desc: '', args: []);
   }
 
-  /// `Your connection is closer wherever you go`
+  /// `Access Your Tax File`
   String get OnBoarding1Title {
     return Intl.message(
-      'Your connection is closer wherever you go',
+      'Access Your Tax File',
       name: 'OnBoarding1Title',
       desc: '',
       args: [],
     );
   }
 
-  /// `Complete your transactions easily and clearly, track your income details, and manage your services from one place`
-  String get OnBoarding1SubTitle {
-    return Intl.message(
-      'Complete your transactions easily and clearly, track your income details, and manage your services from one place',
-      name: 'OnBoarding1SubTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Manage Your Services`
+  /// `Manage Your Tax Obligations`
   String get OnBoarding2Title {
     return Intl.message(
-      'Manage Your Services',
+      'Manage Your Tax Obligations',
       name: 'OnBoarding2Title',
       desc: '',
       args: [],
     );
   }
 
-  /// `Control your services and manage your line with ease, track your line details and manage your services from one place`
-  String get OnBoarding2SubTitle {
-    return Intl.message(
-      'Control your services and manage your line with ease, track your line details and manage your services from one place',
-      name: 'OnBoarding2SubTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Connect with Your Friends`
+  /// `Instant Notifications & Alerts`
   String get OnBoarding3Title {
     return Intl.message(
-      'Connect with Your Friends',
+      'Instant Notifications & Alerts',
       name: 'OnBoarding3Title',
       desc: '',
       args: [],
     );
   }
 
-  /// `Communicate with your friends and share your experiences, track your line details and manage your services from one place`
+  /// `Access your tax file and view taxpayer information and tax-related details securely and conveniently.`
+  String get OnBoarding1SubTitle {
+    return Intl.message(
+      'Access your tax file and view taxpayer information and tax-related details securely and conveniently.',
+      name: 'OnBoarding1SubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track previous tax payments, review outstanding taxes, and stay informed about upcoming payment due dates at any time.`
+  String get OnBoarding2SubTitle {
+    return Intl.message(
+      'Track previous tax payments, review outstanding taxes, and stay informed about upcoming payment due dates at any time.',
+      name: 'OnBoarding2SubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Receive tax return notifications and important alerts through the application or WhatsApp to stay updated with all the latest developments.`
   String get OnBoarding3SubTitle {
     return Intl.message(
-      'Communicate with your friends and share your experiences, track your line details and manage your services from one place',
+      'Receive tax return notifications and important alerts through the application or WhatsApp to stay updated with all the latest developments.',
       name: 'OnBoarding3SubTitle',
       desc: '',
       args: [],
@@ -326,10 +326,10 @@ class S {
     return Intl.message('Start Now', name: 'StartNow', desc: '', args: []);
   }
 
-  /// `Login Successully`
+  /// `Login Successfully`
   String get LoginSuccess {
     return Intl.message(
-      'Login Successully',
+      'Login Successfully',
       name: 'LoginSuccess',
       desc: '',
       args: [],
@@ -456,10 +456,10 @@ class S {
     );
   }
 
-  /// `Enter username and phone number to verify your identity`
+  /// `Enter your username to verify your identity`
   String get EnterUsernameAndPhone {
     return Intl.message(
-      'Enter username and phone number to verify your identity',
+      'Enter your username to verify your identity',
       name: 'EnterUsernameAndPhone',
       desc: '',
       args: [],
@@ -539,6 +539,11 @@ class S {
   /// `Next`
   String get Next {
     return Intl.message('Next', name: 'Next', desc: '', args: []);
+  }
+
+  /// `Verify`
+  String get Verify {
+    return Intl.message('Verify', name: 'Verify', desc: '', args: []);
   }
 
   /// `Resend Code`
@@ -1496,10 +1501,10 @@ class S {
     );
   }
 
-  /// `Log in to manage your products`
+  /// `Log in to access your information`
   String get LoginToManageProducts {
     return Intl.message(
-      'Log in to manage your products',
+      'Log in to access your information',
       name: 'LoginToManageProducts',
       desc: '',
       args: [],
@@ -1531,10 +1536,10 @@ class S {
     return Intl.message('New', name: 'New', desc: '', args: []);
   }
 
-  /// `Create an account to manage your products`
+  /// `Sign up to access all app features`
   String get SignUpToManageProducts {
     return Intl.message(
-      'Create an account to manage your products',
+      'Sign up to access all app features',
       name: 'SignUpToManageProducts',
       desc: '',
       args: [],

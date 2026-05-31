@@ -20,7 +20,7 @@ void customToastBar({
         padding: const EdgeInsets.all(4),
         decoration: BoxDecoration(
           color: AppColors.itemsColor(context),
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(16),
           border: Border.all(color: AppColors.borderColor(context)),
           boxShadow: [
             BoxShadow(
@@ -32,23 +32,17 @@ void customToastBar({
         ),
         child: Row(
           children: [
-            Container(
-              width: 5,
-              height: 58,
-              decoration: BoxDecoration(
-                color: accentColor,
-                borderRadius: BorderRadius.circular(99),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              child: Container(
+                width: 42,
+                height: 42,
+                decoration: BoxDecoration(
+                  color: accentColor.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Icon(icon, size: 24, color: accentColor),
               ),
-            ),
-            const SizedBox(width: 12),
-            Container(
-              width: 42,
-              height: 42,
-              decoration: BoxDecoration(
-                color: accentColor.withValues(alpha: 0.12),
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: Icon(icon, size: 24, color: accentColor),
             ),
             const SizedBox(width: 12),
             Expanded(

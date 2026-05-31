@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -6,6 +7,7 @@ import 'package:pinput/pinput.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/reset_password_request_cubit/reset_password_request_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/verify_code_cubit/verify_code_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/verify_code_cubit/verify_code_state.dart';
+import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
@@ -73,29 +75,20 @@ class _VerifyCodeFormState extends State<VerifyCodeForm> {
       ),
       decoration: BoxDecoration(
         color: AppColors.textFeilColor(context),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: AppColors.borderColor(context),
-          width: 1,
-        ),
+        borderRadius: BorderRadius.circular(AppSpacing.radius16),
+        border: Border.all(color: AppColors.borderColor(context), width: 1),
       ),
     );
 
     final focusedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration!.copyWith(
-        border: Border.all(
-          color: AppColors.primaryColor(context),
-          width: 2,
-        ),
+        border: Border.all(color: AppColors.primaryColor(context), width: 2),
       ),
     );
 
     final submittedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration!.copyWith(
-        border: Border.all(
-          color: AppColors.primaryColor(context),
-          width: 1,
-        ),
+        border: Border.all(color: AppColors.primaryColor(context), width: 1),
       ),
     );
 
@@ -164,48 +157,54 @@ class _VerifyCodeFormState extends State<VerifyCodeForm> {
                   state is VerifyCodeLoading
                       ? const CustomLoadingIndicator()
                       : CustomButton(
-                        title: S.of(context).Next,
-                        onPressed: _isButtonEnabled
-                            ? () {
-                                verifyCodeMethod(
-                                  code: int.tryParse(_pinController.text) ?? 0,
-                                  userId:
-                                      BlocProvider.of<ResetPasswordRequestCubit>(
-                                        context,
-                                      ).userId,
-                                );
-                              }
-                            : null,
+                        title: S.of(context).Verify,
+                        onPressed:
+                            _isButtonEnabled
+                                ? () {
+                                  verifyCodeMethod(
+                                    code:
+                                        int.tryParse(_pinController.text) ?? 0,
+                                    userId:
+                                        BlocProvider.of<
+                                          ResetPasswordRequestCubit
+                                        >(context).userId,
+                                  );
+                                }
+                                : null,
                       ),
                   const SizedBox(height: 17),
                   _secondsRemaining > 0
                       ? Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
-                            "${S.of(context).ResendCode} (${_secondsRemaining}s)",
-                            style: TextStyle(
-                              color: AppColors.textPrimaryColor(context).withValues(alpha: 0.5),
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        )
-                      : TextButton(
-                          onPressed: () {
-                            final userName = Prefs.getString(
-                              AppConstants.kResetPasswordUsername,
-                            ) ?? '';
-                            if (userName.isNotEmpty) {
-                              BlocProvider.of<ResetPasswordRequestCubit>(
-                                context,
-                              ).resetPasswordRequest(userName: userName);
-                              _startTimer();
-                            }
-                          },
-                          child: Text(
-                            S.of(context).ResendCode,
-                            style: TextStyle(color: AppColors.customBlue()),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Text(
+                          "${S.of(context).ResendCode} (${_secondsRemaining}s)",
+                          style: TextStyle(
+                            color: AppColors.textPrimaryColor(
+                              context,
+                            ).withValues(alpha: 0.5),
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
+                      )
+                      : TextButton(
+                        onPressed: () {
+                          final userName =
+                              Prefs.getString(
+                                AppConstants.kResetPasswordUsername,
+                              ) ??
+                              '';
+                          if (userName.isNotEmpty) {
+                            BlocProvider.of<ResetPasswordRequestCubit>(
+                              context,
+                            ).resetPasswordRequest(userName: userName);
+                            _startTimer();
+                          }
+                        },
+                        child: Text(
+                          S.of(context).ResendCode,
+                          style: TextStyle(color: AppColors.customBlue()),
+                        ),
+                      ),
                 ],
               ),
             ),
@@ -228,4 +227,3 @@ class _VerifyCodeFormState extends State<VerifyCodeForm> {
     }
   }
 }
-

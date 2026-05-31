@@ -103,7 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter your new password and confirm it",
     ),
     "EnterUsernameAndPhone": MessageLookupByLibrary.simpleMessage(
-      "Enter username and phone number to verify your identity",
+      "Enter your username to verify your identity",
     ),
     "EnterVerificationCode": MessageLookupByLibrary.simpleMessage(
       "Enter Verification Code",
@@ -179,9 +179,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
     "LoginAsGuest": MessageLookupByLibrary.simpleMessage("Login as guest"),
-    "LoginSuccess": MessageLookupByLibrary.simpleMessage("Login Successully"),
+    "LoginSuccess": MessageLookupByLibrary.simpleMessage("Login Successfully"),
     "LoginToManageProducts": MessageLookupByLibrary.simpleMessage(
-      "Log in to manage your products",
+      "Log in to access your information",
     ),
     "Logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "LogoutSuccess": MessageLookupByLibrary.simpleMessage(
@@ -209,22 +209,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "No Internet connection",
     ),
     "OnBoarding1SubTitle": MessageLookupByLibrary.simpleMessage(
-      "Complete your transactions easily and clearly, track your income details, and manage your services from one place",
+      "Access your tax file and view taxpayer information and tax-related details securely and conveniently.",
     ),
     "OnBoarding1Title": MessageLookupByLibrary.simpleMessage(
-      "Your connection is closer wherever you go",
+      "Access Your Tax File",
     ),
     "OnBoarding2SubTitle": MessageLookupByLibrary.simpleMessage(
-      "Control your services and manage your line with ease, track your line details and manage your services from one place",
+      "Track previous tax payments, review outstanding taxes, and stay informed about upcoming payment due dates at any time.",
     ),
     "OnBoarding2Title": MessageLookupByLibrary.simpleMessage(
-      "Manage Your Services",
+      "Manage Your Tax Obligations",
     ),
     "OnBoarding3SubTitle": MessageLookupByLibrary.simpleMessage(
-      "Communicate with your friends and share your experiences, track your line details and manage your services from one place",
+      "Receive tax return notifications and important alerts through the application or WhatsApp to stay updated with all the latest developments.",
     ),
     "OnBoarding3Title": MessageLookupByLibrary.simpleMessage(
-      "Connect with Your Friends",
+      "Instant Notifications & Alerts",
     ),
     "OopsError": MessageLookupByLibrary.simpleMessage(
       "Oops, there is an error, please try again later",
@@ -289,7 +289,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SignUp": MessageLookupByLibrary.simpleMessage("SignUp"),
     "SignUpToManageProducts": MessageLookupByLibrary.simpleMessage(
-      "Create an account to manage your products",
+      "Sign up to access all app features",
     ),
     "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "StartNow": MessageLookupByLibrary.simpleMessage("Start Now"),
@@ -374,6 +374,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "VerificationCode": MessageLookupByLibrary.simpleMessage(
       "Verification Code",
     ),
+    "Verify": MessageLookupByLibrary.simpleMessage("Verify"),
     "VerifyCodeTitle": MessageLookupByLibrary.simpleMessage("Verify Code"),
     "ViewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
     "WelcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back!"),
