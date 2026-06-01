@@ -39,7 +39,7 @@ class BusinessInfoTile extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            maxLines: 2,
+            maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyles.bold18.copyWith(
               color: AppColors.textBoldColor(context),

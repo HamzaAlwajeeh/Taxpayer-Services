@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/logout_cubit/logout_cubit.dart';
 import 'package:tax_payer/Features/Auth/presentation/logic/logout_cubit/logout_state.dart';
+import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
@@ -26,9 +27,13 @@ class PofileCustomButton extends StatelessWidget {
     return BlocConsumer<LogoutCubit, LogoutState>(
       listener: (context, state) {
         if (state is LogoutSuccess) {
+          context.read<UserFileCubit>().clearUserFiles();
+
           Prefs.removeUser(AppConstants.kCurrentUser);
           Prefs.removeBool(AppConstants.kIsLogedIn);
           Prefs.removeString(AppConstants.kToken);
+          Prefs.setInt(AppConstants.kCurrentFile, 0);
+
           context.go(RouteNames.login);
         } else if (state is LogoutFailure) {
           customToastBar(

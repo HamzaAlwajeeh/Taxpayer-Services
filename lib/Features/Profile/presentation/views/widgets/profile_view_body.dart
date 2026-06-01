@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
+import 'package:tax_payer/Features/DashBoard/data/models/user_file/user_file.dart';
 import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_state.dart';
@@ -35,10 +36,14 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
     bool isLoggedIn = Prefs.getBool(AppConstants.kIsLogedIn);
     return BlocBuilder<UserProfileCubit, UserProfileState>(
       builder: (context, state) {
-        User? user =
-            context.read<UserProfileCubit>().currentUser ??
-            Prefs.getUser(AppConstants.kCurrentUser);
-        final userFile = context.watch<UserFileCubit>().userFile;
+        User? user;
+        UserFile? userFile;
+        if (isLoggedIn) {
+          user =
+              context.read<UserProfileCubit>().currentUser ??
+              Prefs.getUser(AppConstants.kCurrentUser);
+          userFile = context.watch<UserFileCubit>().userFile;
+        }
         return Stack(
           children: [
             SingleChildScrollView(
@@ -51,12 +56,12 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                   bottom: 20,
                 ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       S.of(context).Profile,
                       style: TextStyles.bold16.copyWith(
-                        color: AppColors.white().withValues(alpha: 0.85),
+                        color: AppColors.textRedColor(context),
                       ),
                     ),
                     const SizedBox(height: AppSpacing.s12),
@@ -68,10 +73,10 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                               : S.of(context).Guest,
                       phone: user?.phone ?? '',
                       tradeName:
-                          userFile.taxPayer?.tradeName ??
+                          userFile?.taxPayer?.tradeName ??
                           S.of(context).NotAvailable,
                       fileStatus:
-                          userFile.file?.fileStatus ??
+                          userFile?.file?.fileStatus ??
                           S.of(context).NotAvailable,
                     ),
                     SizedBox(height: 24),

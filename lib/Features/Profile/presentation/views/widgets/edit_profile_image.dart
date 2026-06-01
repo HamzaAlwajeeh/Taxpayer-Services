@@ -72,9 +72,9 @@ class EditProfileImage extends StatelessWidget {
                   bottom: -5,
                   right: -10,
                   child: Container(
-                    padding: const EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: AppColors.white(),
+                      color: AppColors.itemsColor(context),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
@@ -87,7 +87,7 @@ class EditProfileImage extends StatelessWidget {
                     child: Icon(
                       Icons.camera_alt_outlined,
                       color: AppColors.textRedColor(context),
-                      size: 20,
+                      size: 24,
                     ),
                   ),
                 ),

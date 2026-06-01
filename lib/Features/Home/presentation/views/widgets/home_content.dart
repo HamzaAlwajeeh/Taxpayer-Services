@@ -6,7 +6,6 @@ import 'package:tax_payer/Features/Home/presentation/views/widgets/home_banner.d
 import 'package:tax_payer/Features/Home/presentation/views/widgets/recent_payments_section.dart';
 import 'package:tax_payer/Features/Home/presentation/views/widgets/user_file_header.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
-import 'package:tax_payer/core/utils/app_colors.dart';
 
 class HomeContent extends StatelessWidget {
   const HomeContent({
@@ -39,13 +38,13 @@ class HomeContent extends StatelessWidget {
           const SizedBox(height: AppSpacing.s28),
           const HomeBanner(),
           const SizedBox(height: AppSpacing.s24),
-          _SkeletonizedSection(
-            isLoading: isLoading,
+          Skeletonizer(
+            enabled: isLoading,
             child: BusinessActivitySection(userFile: contentUserFile),
           ),
           const SizedBox(height: AppSpacing.s24),
-          _SkeletonizedSection(
-            isLoading: isLoading,
+          Skeletonizer(
+            enabled: isLoading,
             child: RecentPaymentsSection(userFile: contentUserFile),
           ),
         ],
@@ -67,39 +66,4 @@ class HomeContent extends StatelessWidget {
       {'tax_amount': '64000', 'last_payment': '12000'},
     ],
   });
-}
-
-class _SkeletonizedSection extends StatelessWidget {
-  const _SkeletonizedSection({required this.isLoading, required this.child});
-
-  final bool isLoading;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Skeletonizer(
-      enabled: isLoading,
-      effect: ShimmerEffect(
-        baseColor: _baseColor(context),
-        highlightColor: _highlightColor(context),
-      ),
-      containersColor: _baseColor(context),
-      child: child,
-    );
-  }
-
-  Color _baseColor(BuildContext context) {
-    return AppColors.borderColor(context);
-  }
-
-  Color _highlightColor(BuildContext context) {
-    if (!AppColors.isDarkMode(context)) {
-      return AppColors.scaffoldBackgroundColor(false, context);
-    }
-
-    return Color.alphaBlend(
-      AppColors.white().withValues(alpha: 0.08),
-      AppColors.borderColor(context),
-    );
-  }
 }

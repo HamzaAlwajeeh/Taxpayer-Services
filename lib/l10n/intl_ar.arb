@@ -194,5 +194,7 @@
     "HowAreYouToday": "كيف حالك اليوم؟",
     "NotAvailable": "غير متوفر",
     "MustLoginTitle": "يجب تسجيل الدخول",
-    "MustLoginSubtitle": "للوصول لبيانات ملفك الضريبي"
+    "MustLoginSubtitle": "للوصول لبيانات ملفك الضريبي",
+    "MustMakeRequestTitle" : "لم تقم بفتح ملف بعد",
+    "MustMakeRequestSubtitle" : "قم بتقديم طلب فتح ملف اولا"
 }

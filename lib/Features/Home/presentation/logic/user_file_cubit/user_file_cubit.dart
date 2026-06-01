@@ -59,8 +59,8 @@ class UserFileCubit extends Cubit<UserFileState> {
 
     final filesResult = await userFileRepo.getUserFiles();
 
-    await filesResult.fold(
-      (failure) async {
+    filesResult.fold(
+      (failure) {
         emit(
           UserFileFailure(
             errorMessage: failure.errorMessage,
@@ -72,9 +72,11 @@ class UserFileCubit extends Cubit<UserFileState> {
         filesList = files;
 
         if (files.isEmpty) {
+          clearUserFiles();
           Prefs.setInt(AppConstants.kCurrentFile, 0);
 
-          emit(UserFileSuccess(files: files));
+          emit(UserFileSuccess(files: []));
+
           return;
         }
 
@@ -82,7 +84,12 @@ class UserFileCubit extends Cubit<UserFileState> {
 
         final exists = files.any((file) => file.id == currentFileId);
 
-        final selectedFileId = exists ? currentFileId : files.first.id!;
+        final selectedFileId = exists ? currentFileId : (files.first.id ?? 0);
+
+        if (selectedFileId <= 0) {
+          emit(UserFileSuccess(files: files));
+          return;
+        }
 
         Prefs.setInt(AppConstants.kCurrentFile, selectedFileId);
 
@@ -107,5 +114,11 @@ class UserFileCubit extends Cubit<UserFileState> {
         );
       },
     );
+  }
+
+  void clearUserFiles() {
+    filesList = [];
+    userFile = UserFile();
+    emit(UserFileInitial());
   }
 }

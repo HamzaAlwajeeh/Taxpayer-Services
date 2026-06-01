@@ -12,11 +12,14 @@ import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/services/simple_bloc_obsever.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/generated/l10n.dart';
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   setUpServiceLocator();
+  await initTimeZone();
   await NotificationService.initialize();
   await Prefs.init();
   AppSettings.init();
@@ -64,4 +67,9 @@ class MyApp extends StatelessWidget {
       );
     });
   }
+}
+
+Future<void> initTimeZone() async {
+  tz.initializeTimeZones();
+  tz.setLocalLocation(tz.getLocation('Asia/Aden'));
 }

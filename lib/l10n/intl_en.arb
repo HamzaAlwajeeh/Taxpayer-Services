@@ -194,5 +194,7 @@
     "HowAreYouToday": "How are you today?",
     "NotAvailable": "Not Available",
     "MustLoginTitle": "Please Login",
-    "MustLoginSubtitle": "To access your tax file information"
+    "MustLoginSubtitle": "To access your tax file information",
+    "MustMakeRequestTitle" : "You haven't opened a file yet",
+    "MustMakeRequestSubtitle" : "Please submit a request to open a file first"
 }

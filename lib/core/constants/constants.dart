@@ -13,6 +13,7 @@ class AppConstants {
   static const String kToken = 'token';
   static const String kCurrentFile = 'currentFile';
   static const String kApiBaseUrl = 'apiBaseUrl';
+  static const String kNotificationsScheduled = 'notifications_scheduled';
 
   static const String kCurrentLanguageKey = 'selected_language';
   static const String kArabicLang = 'ar';

@@ -1795,6 +1795,26 @@ class S {
       args: [],
     );
   }
+
+  /// `You haven't opened a file yet`
+  String get MustMakeRequestTitle {
+    return Intl.message(
+      'You haven\'t opened a file yet',
+      name: 'MustMakeRequestTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please submit a request to open a file first`
+  String get MustMakeRequestSubtitle {
+    return Intl.message(
+      'Please submit a request to open a file first',
+      name: 'MustMakeRequestSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

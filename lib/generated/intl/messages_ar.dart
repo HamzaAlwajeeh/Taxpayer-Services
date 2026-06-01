@@ -225,6 +225,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "للوصول لبيانات ملفك الضريبي",
     ),
     "MustLoginTitle": MessageLookupByLibrary.simpleMessage("يجب تسجيل الدخول"),
+    "MustMakeRequestSubtitle": MessageLookupByLibrary.simpleMessage(
+      "قم بتقديم طلب فتح ملف اولا",
+    ),
+    "MustMakeRequestTitle": MessageLookupByLibrary.simpleMessage(
+      "لم تقم بفتح ملف بعد",
+    ),
     "New": MessageLookupByLibrary.simpleMessage("جديد"),
     "NewFile": MessageLookupByLibrary.simpleMessage("ملف جديد"),
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(

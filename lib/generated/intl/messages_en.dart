@@ -219,6 +219,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "To access your tax file information",
     ),
     "MustLoginTitle": MessageLookupByLibrary.simpleMessage("Please Login"),
+    "MustMakeRequestSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Please submit a request to open a file first",
+    ),
+    "MustMakeRequestTitle": MessageLookupByLibrary.simpleMessage(
+      "You haven\'t opened a file yet",
+    ),
     "New": MessageLookupByLibrary.simpleMessage("New"),
     "NewFile": MessageLookupByLibrary.simpleMessage("NewFile"),
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(

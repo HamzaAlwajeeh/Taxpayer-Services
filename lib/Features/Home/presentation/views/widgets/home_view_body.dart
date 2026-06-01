@@ -8,6 +8,7 @@ import 'package:tax_payer/Features/Home/presentation/views/widgets/home_content.
 import 'package:tax_payer/Features/Home/presentation/views/widgets/must_login_card.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
+import 'package:tax_payer/core/services/notification_service.dart';
 import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
@@ -26,14 +27,26 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   void initState() {
     super.initState();
-    if (_isLoggedIn) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        final cubit = context.read<UserFileCubit>();
-        if (cubit.state is UserFileInitial) {
-          cubit.initializeCurrentFile();
-        }
-      });
-    }
+
+    if (!_isLoggedIn) return;
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final cubit = context.read<UserFileCubit>();
+
+      if (cubit.state is UserFileInitial) {
+        cubit.initializeCurrentFile();
+      }
+
+      final alreadyScheduled = Prefs.getBool(
+        AppConstants.kNotificationsScheduled,
+      );
+
+      if (!alreadyScheduled) {
+        await NotificationService.scheduleTaxRemindersJanToApr();
+
+        Prefs.setBool(AppConstants.kNotificationsScheduled, true);
+      }
+    });
   }
 
   @override
@@ -58,12 +71,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             if (state is UserFileFailure) {
               return MustLoginCard(
                 icon: Assets.assetsIconsUser,
-                message: state.errorMessage,
+                message: S.of(context).MustMakeRequestTitle,
+                subTitle: S.of(context).MustMakeRequestSubtitle,
                 actionLabel: S.of(context).LoadUserFiles,
                 onPressed: cubit.initializeCurrentFile,
               );
             }
-
             final userFile = _readUserFile(cubit, state);
             if (userFile == null) {
               return MustLoginCard(
