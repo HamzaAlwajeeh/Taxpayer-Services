@@ -46,16 +46,9 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppSpacing.radius16),
 
           color:
-              isOutlinedButton ? backgroundColor ?? Colors.transparent : null,
-
-          gradient:
               isOutlinedButton
-                  ? null
-                  : const LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomCenter,
-                    colors: [Color(0xff820005), Color(0xffAA1212)],
-                  ),
+                  ? backgroundColor ?? Colors.transparent
+                  : AppColors.primaryColor(context),
         ),
 
         child: Center(

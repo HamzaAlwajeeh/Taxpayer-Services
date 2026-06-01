@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 
 class ApiService {
-  final _baseUrl = AppConstants.kBaseUrl;
+  String get _baseUrl => AppConstants.kBaseUrl;
 
   void requestInfo({
     required String method,

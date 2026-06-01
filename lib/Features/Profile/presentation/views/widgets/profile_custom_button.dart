@@ -22,6 +22,7 @@ class PofileCustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isLoggedIn = Prefs.getBool(AppConstants.kIsLogedIn);
     return BlocConsumer<LogoutCubit, LogoutState>(
       listener: (context, state) {
         if (state is LogoutSuccess) {
@@ -40,12 +41,11 @@ class PofileCustomButton extends StatelessWidget {
         }
       },
       builder: (BuildContext context, state) {
-        if (user == null) {
+        if (!isLoggedIn) {
           return CustomButton(
-            isLogout: true,
-            textColor: AppColors.primaryColor(context),
+            textColor: AppColors.white(),
             borderColor: AppColors.primaryColor(context),
-            backgroundColor: Color(0xffAA1212).withOpacity(0.2),
+            backgroundColor: Color(0xffAA1212).withOpacity(0.8),
             title: S.of(context).Login,
             onPressed: () {
               context.go(RouteNames.login);
@@ -55,6 +55,8 @@ class PofileCustomButton extends StatelessWidget {
         return state is LogoutLoading
             ? CustomLoadingIndicator()
             : CustomButton(
+              backgroundColor: AppColors.borderColor(context),
+              isLogout: true,
               title: S.of(context).Logout,
               onPressed: () {
                 showCupertinoModalPopup(

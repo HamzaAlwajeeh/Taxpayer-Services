@@ -16,17 +16,20 @@ class SectionHeader extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
-        color: AppColors.white(),
+        color: AppColors.itemsColor(context),
         border: Border.all(color: AppColors.borderColor(context)),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppSpacing.radius16),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.all(AppSpacing.s10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.s10,
+              vertical: AppSpacing.s8,
+            ),
             decoration: BoxDecoration(
-              color: AppColors.primaryColor(context).withValues(alpha: 0.2),
+              color: AppColors.textRedColor(context).withOpacity(.08),
               borderRadius: BorderRadius.circular(AppSpacing.radius12),
             ),
             child: SvgPicture.asset(

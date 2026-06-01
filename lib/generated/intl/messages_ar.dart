@@ -221,6 +221,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "MethodNotFound": MessageLookupByLibrary.simpleMessage(
       "الطريقة غير موجودة، يرجى المحاولة مرة أخرى",
     ),
+    "MustLoginSubtitle": MessageLookupByLibrary.simpleMessage(
+      "للوصول لبيانات ملفك الضريبي",
+    ),
+    "MustLoginTitle": MessageLookupByLibrary.simpleMessage("يجب تسجيل الدخول"),
     "New": MessageLookupByLibrary.simpleMessage("جديد"),
     "NewFile": MessageLookupByLibrary.simpleMessage("ملف جديد"),
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(

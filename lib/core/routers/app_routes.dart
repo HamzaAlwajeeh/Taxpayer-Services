@@ -25,6 +25,7 @@ import 'package:tax_payer/Features/Profile/presentation/views/edit_profile_view.
 import 'package:tax_payer/Features/Profile/presentation/views/privacy_and_security_view.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/profile_view.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/splash_view.dart';
+import 'package:tax_payer/Features/init_view.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
 import 'package:tax_payer/core/services/service_locator.dart';
 
@@ -48,6 +49,11 @@ class AppRoutes {
       _buildRoute(
         path: RouteNames.onBoarding1,
         builder: (context, state) => const OnBoardingView(),
+        transition: TransitionType.fade,
+      ),
+      _buildRoute(
+        path: RouteNames.initView,
+        builder: (context, state) => const InitView(),
         transition: TransitionType.fade,
       ),
 

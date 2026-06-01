@@ -5,15 +5,24 @@ import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/widgets/cashed_networ_image.dart';
 
 class UserAvatar extends StatelessWidget {
-  const UserAvatar({super.key, required this.image});
+  const UserAvatar({
+    super.key,
+    required this.image,
+    this.width,
+    this.height,
+    this.iconSize,
+  });
 
   final String? image;
+  final double? width;
+  final double? height;
+  final double? iconSize;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 66,
-      height: 66,
+      width: width ?? 66,
+      height: height ?? 66,
       padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -27,10 +36,10 @@ class UserAvatar extends StatelessWidget {
                   child: Center(
                     child: SvgPicture.asset(
                       Assets.assetsIconsUser,
-                      width: 30,
-                      height: 30,
+                      width: iconSize ?? 30,
+                      height: iconSize ?? 30,
                       colorFilter: ColorFilter.mode(
-                        AppColors.textRedColor(context),
+                        AppColors.textRedColor(context, true),
                         BlendMode.srcIn,
                       ),
                     ),

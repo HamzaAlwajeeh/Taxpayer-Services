@@ -192,5 +192,7 @@
     "NoAttachedFile": "لم يتم إرفاق ملف",
     "RecentPayments": "عمليات السداد الأخيرة",
     "HowAreYouToday": "كيف حالك اليوم؟",
-    "NotAvailable": "غير متوفر"
+    "NotAvailable": "غير متوفر",
+    "MustLoginTitle": "يجب تسجيل الدخول",
+    "MustLoginSubtitle": "للوصول لبيانات ملفك الضريبي"
 }

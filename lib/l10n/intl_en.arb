@@ -192,5 +192,7 @@
     "NoAttachedFile": "No file attached",
     "RecentPayments": "Recent Payments",
     "HowAreYouToday": "How are you today?",
-    "NotAvailable": "Not Available"
+    "NotAvailable": "Not Available",
+    "MustLoginTitle": "Please Login",
+    "MustLoginSubtitle": "To access your tax file information"
 }

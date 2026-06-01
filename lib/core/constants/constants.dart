@@ -1,7 +1,11 @@
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
+
 class AppConstants {
+  static const String kIp = '172.16.1.80';
+  static String get ip => Prefs.getString(kApiBaseUrl) ?? kIp;
+  static String get kBaseUrl => 'http://$ip:8000/api';
   static const String kAppName = 'Tax Payer Services';
   static const String kAppVersion = '1.0.0';
-  static const String kIp = '172.16.1.80:8000';
   static const String kSeenOnBoarding = 'seenOnBoarding';
   static const String kIsLogedIn = 'isLogedIn';
   static const String krememberMe = 'rememberMe';
@@ -22,7 +26,6 @@ class AppConstants {
   static const String kResetPasswordUsername = 'resetPasswordUsername';
 
   // API Endpoints
-  static const String kBaseUrl = 'http://$kIp/api';
   static const String kLogin = 'tax-payer-mobile-login';
   static const String kRegister = 'create-tax-payer-mobile';
   static const String kUpdateProfile = 'update-tax-payer-mobile';

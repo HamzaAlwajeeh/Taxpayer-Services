@@ -39,7 +39,8 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
         if (state is ResetPasswordRequestSuccess) {
           customToastBar(
             context: context,
-            message: S.of(context).CodeSentSuccessfully,
+            message: "${S.of(context).VerifyCodeTitle} : ${state.resetPassword.code}",
+
             backgroundColor: AppColors.customGreen(),
             icon: Icons.check,
             textColor: AppColors.white(),

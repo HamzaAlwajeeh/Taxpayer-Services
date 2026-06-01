@@ -1775,6 +1775,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Please Login`
+  String get MustLoginTitle {
+    return Intl.message(
+      'Please Login',
+      name: 'MustLoginTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To access your tax file information`
+  String get MustLoginSubtitle {
+    return Intl.message(
+      'To access your tax file information',
+      name: 'MustLoginSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -215,6 +215,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "MethodNotFound": MessageLookupByLibrary.simpleMessage(
       "Method Not Found, please try again",
     ),
+    "MustLoginSubtitle": MessageLookupByLibrary.simpleMessage(
+      "To access your tax file information",
+    ),
+    "MustLoginTitle": MessageLookupByLibrary.simpleMessage("Please Login"),
     "New": MessageLookupByLibrary.simpleMessage("New"),
     "NewFile": MessageLookupByLibrary.simpleMessage("NewFile"),
     "NewFileDetailsDesc": MessageLookupByLibrary.simpleMessage(

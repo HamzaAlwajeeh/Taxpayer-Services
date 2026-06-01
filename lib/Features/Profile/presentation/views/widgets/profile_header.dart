@@ -115,13 +115,6 @@ class ProfileHeader extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          S.of(context).Profile,
-                          style: TextStyles.bold16.copyWith(
-                            color: AppColors.white().withValues(alpha: 0.85),
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.s4),
                         Row(
                           children: [
                             Flexible(

@@ -68,7 +68,7 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
             context: context,
             message: state.message,
             icon: Icons.check_circle,
-            backgroundColor: AppColors.primaryColor(context),
+            backgroundColor: AppColors.customGreen(),
             textColor: AppColors.white(),
           );
           context.pop();
@@ -86,7 +86,6 @@ class _EditProfileViewBodyState extends State<EditProfileViewBody> {
         return Stack(
           children: [
             Scaffold(
-              backgroundColor: AppColors.scaffoldBackgroundColor(null, context),
               appBar: CustomAppBar(title: S.of(context).EditProfile),
               body: SafeArea(
                 child: AbsorbPointer(

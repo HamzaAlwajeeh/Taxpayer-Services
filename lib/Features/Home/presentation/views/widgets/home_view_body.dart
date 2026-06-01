@@ -5,26 +5,28 @@ import 'package:tax_payer/Features/DashBoard/data/models/user_file/user_file.dar
 import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_state.dart';
 import 'package:tax_payer/Features/Home/presentation/views/widgets/home_content.dart';
-import 'package:tax_payer/Features/Home/presentation/views/widgets/home_loading_view.dart';
-import 'package:tax_payer/Features/Home/presentation/views/widgets/home_message_view.dart';
+import 'package:tax_payer/Features/Home/presentation/views/widgets/must_login_card.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
 import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/generated/l10n.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
+
   @override
   State<HomeViewBody> createState() => _HomeViewBodyState();
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
-  bool isLogged = Prefs.getBool(AppConstants.kIsLogedIn);
+  final bool _isLoggedIn = Prefs.getBool(AppConstants.kIsLogedIn);
+
   @override
   void initState() {
     super.initState();
-    if (isLogged) {
+    if (_isLoggedIn) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         final cubit = context.read<UserFileCubit>();
         if (cubit.state is UserFileInitial) {
@@ -41,53 +43,48 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         color: AppColors.primaryColor(context),
         backgroundColor: AppColors.itemsColor(context),
         onRefresh: () async {
-          if (isLogged) {
+          if (_isLoggedIn) {
             await context.read<UserFileCubit>().initializeCurrentFile();
           }
         },
         child: BlocBuilder<UserFileCubit, UserFileState>(
           builder: (context, state) {
+            final cubit = context.read<UserFileCubit>();
+
             if (state is UserFileLoading) {
-              return const HomeLoadingView();
+              return HomeContent(userFile: cubit.userFile, isLoading: true);
             }
 
             if (state is UserFileFailure) {
-              return HomeMessageView(
+              return MustLoginCard(
+                icon: Assets.assetsIconsUser,
                 message: state.errorMessage,
                 actionLabel: S.of(context).LoadUserFiles,
-                onPressed:
-                    () => context.read<UserFileCubit>().initializeCurrentFile(),
+                onPressed: cubit.initializeCurrentFile,
               );
             }
 
-            final userFile = _readUserFile(context, state);
+            final userFile = _readUserFile(cubit, state);
             if (userFile == null) {
-              return HomeMessageView(
+              return MustLoginCard(
+                icon: Assets.assetsIconsUser,
                 message: S.of(context).NotAvailable,
                 actionLabel: S.of(context).Login,
                 onPressed: () => context.go(RouteNames.login),
               );
             }
 
-            return isLogged
-                ? HomeContent(userFile: userFile)
-                : HomeMessageView(
-                  message: S.of(context).Login,
-                  actionLabel: S.of(context).Login,
-                  onPressed: () {
-                    context.go(RouteNames.login);
-                  },
-                );
+            return HomeContent(userFile: userFile);
           },
         ),
       ),
     );
   }
 
-  UserFile? _readUserFile(BuildContext context, UserFileState state) {
+  UserFile? _readUserFile(UserFileCubit cubit, UserFileState state) {
     if (state is UserFileSingleSuccess) return state.userFile;
 
-    final cached = context.read<UserFileCubit>().userFile;
+    final cached = cubit.userFile;
     final hasData =
         cached.taxPayer != null ||
         cached.file != null ||

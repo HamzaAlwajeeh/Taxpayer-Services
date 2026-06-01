@@ -4,7 +4,6 @@ import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
 import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_state.dart';
-import 'package:tax_payer/Features/Profile/presentation/views/widgets/profile_background_color.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/widgets/profile_custom_button.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/widgets/profile_header.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/widgets/setting_items.dart';
@@ -12,6 +11,7 @@ import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_text_style.dart';
 import 'package:tax_payer/generated/l10n.dart';
 
 class ProfileViewBody extends StatefulWidget {
@@ -32,7 +32,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    bool isLoggedIn = Prefs.getBool(AppConstants.kIsLogedIn);
     return BlocBuilder<UserProfileCubit, UserProfileState>(
       builder: (context, state) {
         User? user =
@@ -41,7 +41,6 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
         final userFile = context.watch<UserFileCubit>().userFile;
         return Stack(
           children: [
-            ProfileBackgroundColor(isDark: isDark),
             SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               child: Padding(
@@ -54,6 +53,13 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text(
+                      S.of(context).Profile,
+                      style: TextStyles.bold16.copyWith(
+                        color: AppColors.white().withValues(alpha: 0.85),
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.s12),
                     ProfileHeader(
                       image: user?.image,
                       userName:

@@ -5,9 +5,8 @@ import 'package:tax_payer/Features/Auth/presentation/logic/login_cubit/login_cub
 import 'package:tax_payer/Features/Auth/presentation/logic/login_cubit/login_state.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/has_an_account.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/remember_me_widget.dart';
-import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
-import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_state.dart';
 import 'package:tax_payer/core/constants/constants.dart';
+import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
@@ -34,8 +33,6 @@ class _LoginFormState extends State<LoginForm> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   bool isRememberMe = false;
 
-  bool _isInitializingFile = false;
-
   @override
   void initState() {
     super.initState();
@@ -61,14 +58,6 @@ class _LoginFormState extends State<LoginForm> {
     userNameController.dispose();
     passwordController.dispose();
     super.dispose();
-  }
-
-  Future<void> _startUserFileFlow() async {
-    if (_isInitializingFile) return;
-
-    _isInitializingFile = true;
-
-    await context.read<UserFileCubit>().initializeCurrentFile();
   }
 
   @override
@@ -103,18 +92,19 @@ class _LoginFormState extends State<LoginForm> {
 
               Prefs.setBool(AppConstants.kIsLogedIn, true);
               Prefs.setUser(AppConstants.kCurrentUser, state.user);
-
-              await _startUserFileFlow();
-            }
-          },
-        ),
-
-        BlocListener<UserFileCubit, UserFileState>(
-          listener: (context, state) {
-            if (state is UserFileSingleSuccess ||
-                state is UserFileFailure ||
-                state is UserFileSuccess) {
               context.go(RouteNames.dashboard);
+            } else if (state is LoginFailure) {
+              customToastBar(
+                context: context,
+                message: Failure.localizedMessage(
+                  context,
+                  errorMessage: state.errorMessage,
+                  errorKey: state.errorKey,
+                ),
+                backgroundColor: AppColors.red(),
+                icon: Icons.close,
+                textColor: AppColors.white(),
+              );
             }
           },
         ),
