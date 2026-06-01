@@ -1651,6 +1651,121 @@ class S {
     );
   }
 
+  /// `Home Page`
+  String get HomeBannerTitle {
+    return Intl.message(
+      'Home Page',
+      name: 'HomeBannerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to your tax portal. Here you can track your file status and latest payments.`
+  String get HomeBannerSubtitle {
+    return Intl.message(
+      'Welcome to your tax portal. Here you can track your file status and latest payments.',
+      name: 'HomeBannerSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Business Activity Information`
+  String get BusinessActivityInformation {
+    return Intl.message(
+      'Business Activity Information',
+      name: 'BusinessActivityInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Exclusive Number`
+  String get ExclusiveNumber {
+    return Intl.message(
+      'Exclusive Number',
+      name: 'ExclusiveNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current Tax`
+  String get CurrentTax {
+    return Intl.message('Current Tax', name: 'CurrentTax', desc: '', args: []);
+  }
+
+  /// `Payment Type`
+  String get PaymentType {
+    return Intl.message(
+      'Payment Type',
+      name: 'PaymentType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Business Activity Start Date`
+  String get BusinessActivityStartDate {
+    return Intl.message(
+      'Business Activity Start Date',
+      name: 'BusinessActivityStartDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Operation`
+  String get PaymentOperation {
+    return Intl.message(
+      'Payment Operation',
+      name: 'PaymentOperation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download File`
+  String get DownloadFile {
+    return Intl.message(
+      'Download File',
+      name: 'DownloadFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No file attached`
+  String get NoAttachedFile {
+    return Intl.message(
+      'No file attached',
+      name: 'NoAttachedFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recent Payments`
+  String get RecentPayments {
+    return Intl.message(
+      'Recent Payments',
+      name: 'RecentPayments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How are you today?`
+  String get HowAreYouToday {
+    return Intl.message(
+      'How are you today?',
+      name: 'HowAreYouToday',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Not Available`
   String get NotAvailable {
     return Intl.message(

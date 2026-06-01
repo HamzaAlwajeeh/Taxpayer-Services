@@ -25,7 +25,7 @@ class BusinessActivitySection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          'معلومات النشاط التجاري',
+          S.of(context).BusinessActivityInformation,
           textAlign: TextAlign.right,
           style: TextStyles.bold22.copyWith(
             color: AppColors.textRedColor(context),
@@ -36,7 +36,7 @@ class BusinessActivitySection extends StatelessWidget {
           children: [
             Expanded(
               child: BusinessInfoTile(
-                title: 'الرقم الحصري',
+                title: S.of(context).ExclusiveNumber,
                 value: _valueOrFallback(context, file?.inventoryNumber),
                 icon: Assets.assetsIconsCard,
               ),
@@ -44,7 +44,7 @@ class BusinessActivitySection extends StatelessWidget {
             const SizedBox(width: AppSpacing.s12),
             Expanded(
               child: BusinessInfoTile(
-                title: 'الاسم التجاري',
+                title: S.of(context).TradeNameField,
                 value: _valueOrFallback(context, taxPayer?.tradeName),
                 icon: Assets.assetsIconsActivity,
               ),
@@ -53,7 +53,7 @@ class BusinessActivitySection extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.s12),
         BusinessInfoTile(
-          title: 'الضريبة الحالية',
+          title: S.of(context).CurrentTax,
           value: _formatAmount(context, taxAmount),
           icon: Assets.assetsIconsDollarCircle,
           isWide: true,
@@ -63,7 +63,7 @@ class BusinessActivitySection extends StatelessWidget {
           children: [
             Expanded(
               child: BusinessInfoTile(
-                title: 'نوع الدفع',
+                title: S.of(context).PaymentType,
                 value: _valueOrFallback(context, file?.paymentType),
                 icon: Assets.assetsIconsWallet,
               ),
@@ -71,7 +71,7 @@ class BusinessActivitySection extends StatelessWidget {
             const SizedBox(width: AppSpacing.s12),
             Expanded(
               child: BusinessInfoTile(
-                title: 'حالة الملف',
+                title: S.of(context).FileStatus,
                 value: _valueOrFallback(context, file?.fileStatus),
                 icon: Assets.assetsIconsStatusUp,
               ),
@@ -80,7 +80,7 @@ class BusinessActivitySection extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.s12),
         BusinessInfoTile(
-          title: 'تاريخ مزاولة النشاط التجاري',
+          title: S.of(context).BusinessActivityStartDate,
           value: _valueOrFallback(context, file?.activityStartDate),
           icon: Assets.assetsIconsCalendar,
           isWide: true,

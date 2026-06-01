@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
+import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_state.dart';
 import 'package:tax_payer/Features/Profile/presentation/views/widgets/profile_background_color.dart';
@@ -37,6 +38,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
         User? user =
             context.read<UserProfileCubit>().currentUser ??
             Prefs.getUser(AppConstants.kCurrentUser);
+        final userFile = context.watch<UserFileCubit>().userFile;
         return Stack(
           children: [
             ProfileBackgroundColor(isDark: isDark),
@@ -59,6 +61,12 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                               ? "${user.firstName} ${user.lastName}"
                               : S.of(context).Guest,
                       phone: user?.phone ?? '',
+                      tradeName:
+                          userFile.taxPayer?.tradeName ??
+                          S.of(context).NotAvailable,
+                      fileStatus:
+                          userFile.file?.fileStatus ??
+                          S.of(context).NotAvailable,
                     ),
                     SizedBox(height: 24),
                     SettingItems(),

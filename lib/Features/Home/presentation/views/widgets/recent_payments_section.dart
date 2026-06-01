@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:tax_payer/Features/DashBoard/data/models/user_file/user_file.dart';
 import 'package:tax_payer/Features/Home/presentation/views/widgets/payment_operation_card.dart';
+import 'package:tax_payer/Features/Home/presentation/views/widgets/section_icon.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
@@ -30,10 +30,10 @@ class RecentPaymentsSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              _SectionIcon(icon: Assets.assetsIconsCalendar),
+              SectionIcon(icon: Assets.assetsIconsCalendar),
               const SizedBox(width: AppSpacing.s8),
               Text(
-                'عمليات السداد الأخيرة',
+                S.of(context).RecentPayments,
                 style: TextStyles.bold22.copyWith(
                   color: AppColors.textRedColor(context),
                 ),
@@ -65,35 +65,6 @@ class RecentPaymentsSection extends StatelessWidget {
                   ),
             ),
         ],
-      ),
-    );
-  }
-}
-
-class _SectionIcon extends StatelessWidget {
-  const _SectionIcon({required this.icon});
-
-  final String icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 40,
-      height: 40,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: AppColors.customRed(context, true),
-      ),
-      child: Center(
-        child: SvgPicture.asset(
-          icon,
-          width: 22,
-          height: 22,
-          colorFilter: ColorFilter.mode(
-            AppColors.textRedColor(context),
-            BlendMode.srcIn,
-          ),
-        ),
       ),
     );
   }

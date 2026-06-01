@@ -42,6 +42,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "شهادة الاتصال غير صالحة",
     ),
     "BasicInfo": MessageLookupByLibrary.simpleMessage("البيانات الأساسية"),
+    "BusinessActivityInformation": MessageLookupByLibrary.simpleMessage(
+      "معلومات النشاط التجاري",
+    ),
+    "BusinessActivityStartDate": MessageLookupByLibrary.simpleMessage(
+      "تاريخ مزاولة النشاط التجاري",
+    ),
     "BylawsCopyField": MessageLookupByLibrary.simpleMessage(
       "صورة من النظام الأساسي",
     ),
@@ -100,9 +106,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة الاتصال بالخادم",
     ),
+    "CurrentTax": MessageLookupByLibrary.simpleMessage("الضريبة الحالية"),
     "DarkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
     "Disabled": MessageLookupByLibrary.simpleMessage("معطل"),
     "DontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+    "DownloadFile": MessageLookupByLibrary.simpleMessage("تحميل الملف"),
     "EditProfile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "Enabled": MessageLookupByLibrary.simpleMessage("مفعل"),
@@ -119,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "EnterVerificationCodeDesc": MessageLookupByLibrary.simpleMessage(
       "أدخل الرمز المرسل إلى هاتفك للتحقق من هويتك",
     ),
+    "ExclusiveNumber": MessageLookupByLibrary.simpleMessage("الرقم الحصري"),
     "FieldIsRequired": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "FileOpeningRequirements": MessageLookupByLibrary.simpleMessage(
       "متطلبات فتح الملفات",
@@ -140,6 +149,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Hello": MessageLookupByLibrary.simpleMessage("مرحباً"),
     "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "HomeBannerSubtitle": MessageLookupByLibrary.simpleMessage(
+      "مرحباً بك في بوابتك الضريبية. هنا يمكنك متابعة حالة ملفك وآخر عمليات السداد",
+    ),
+    "HomeBannerTitle": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
+    "HowAreYouToday": MessageLookupByLibrary.simpleMessage("كيف حالك اليوم؟"),
     "IdCard": MessageLookupByLibrary.simpleMessage("البطاقة الشخصية"),
     "ImageIsRequired": MessageLookupByLibrary.simpleMessage("الصورة مطلوبة"),
     "ImageSourceSubTitle": MessageLookupByLibrary.simpleMessage(
@@ -221,6 +235,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "NewFileHeroTitle": MessageLookupByLibrary.simpleMessage("إنشاء ملف جديد"),
     "NewPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
     "Next": MessageLookupByLibrary.simpleMessage("التالي"),
+    "NoAttachedFile": MessageLookupByLibrary.simpleMessage("لم يتم إرفاق ملف"),
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
       "لا يوجد اتصال بالإنترنت",
     ),
@@ -259,6 +274,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "PasswordNotMatch": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير مطابقة",
     ),
+    "PaymentOperation": MessageLookupByLibrary.simpleMessage("عملية سداد"),
+    "PaymentType": MessageLookupByLibrary.simpleMessage("نوع الدفع"),
     "Penalties": MessageLookupByLibrary.simpleMessage("الغرامات والجزاءات"),
     "PenaltiesDesc": MessageLookupByLibrary.simpleMessage(
       "المخالفات الضريبية والغرامات المترتبة عليها",
@@ -283,6 +300,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة استقبال الرد من الخادم",
+    ),
+    "RecentPayments": MessageLookupByLibrary.simpleMessage(
+      "عمليات السداد الأخيرة",
     ),
     "RequestCanceled": MessageLookupByLibrary.simpleMessage("تم إلغاء الطلب"),
     "RequiredDocuments": MessageLookupByLibrary.simpleMessage(

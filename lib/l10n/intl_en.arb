@@ -180,5 +180,17 @@
     "ActivityStartDate": "Activity Start Date",
     "FileStatus": "File Status",
     "UnknownFile": "Unknown File",
+    "HomeBannerTitle": "Home Page",
+    "HomeBannerSubtitle": "Welcome to your tax portal. Here you can track your file status and latest payments.",
+    "BusinessActivityInformation": "Business Activity Information",
+    "ExclusiveNumber": "Exclusive Number",
+    "CurrentTax": "Current Tax",
+    "PaymentType": "Payment Type",
+    "BusinessActivityStartDate": "Business Activity Start Date",
+    "PaymentOperation": "Payment Operation",
+    "DownloadFile": "Download File",
+    "NoAttachedFile": "No file attached",
+    "RecentPayments": "Recent Payments",
+    "HowAreYouToday": "How are you today?",
     "NotAvailable": "Not Available"
 }

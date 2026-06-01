@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:tax_payer/Features/DashBoard/data/models/user_file/tax_information.dart';
+import 'package:tax_payer/Features/Home/presentation/views/widgets/icon_label.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/helper/download_files.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
@@ -45,13 +45,13 @@ class PaymentOperationCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _IconLabel(
+                  IconLabel(
                     icon: Assets.assetsIconsCalendar,
-                    label: 'عملية سداد',
+                    label: S.of(context).PaymentOperation,
                     isTitle: true,
                   ),
                   const SizedBox(height: AppSpacing.s8),
-                  _IconLabel(
+                  IconLabel(
                     icon: Assets.assetsIconsDollarCircle,
                     label: _formatAmount(context, taxInformation.lastPayment),
                     isTitle: false,
@@ -60,7 +60,7 @@ class PaymentOperationCard extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                'عملية #${index + 1}',
+                '${S.of(context).PaymentOperation} #${index + 1}',
                 style: TextStyles.regular14.copyWith(
                   color: AppColors.textPrimaryColor(context),
                 ),
@@ -88,7 +88,9 @@ class PaymentOperationCard extends StatelessWidget {
                 ),
               ),
               child: Text(
-                hasAttachment ? 'تحميل الملف' : 'لم يتم إرفاق ملف',
+                hasAttachment
+                    ? S.of(context).DownloadFile
+                    : S.of(context).NoAttachedFile,
                 style: TextStyles.bold20,
               ),
             ),
@@ -106,53 +108,5 @@ class PaymentOperationCard extends StatelessWidget {
     return number
         .toStringAsFixed(number.truncateToDouble() == number ? 0 : 2)
         .replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d))'), (match) => ',');
-  }
-}
-
-class _IconLabel extends StatelessWidget {
-  const _IconLabel({
-    required this.icon,
-    required this.label,
-    required this.isTitle,
-  });
-
-  final String icon;
-  final String label;
-  final bool isTitle;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          width: 38,
-          height: 38,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.customRed(context, true),
-          ),
-          child: Center(
-            child: SvgPicture.asset(
-              icon,
-              width: 20,
-              height: 20,
-              colorFilter: ColorFilter.mode(
-                AppColors.textRedColor(context),
-                BlendMode.srcIn,
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(width: AppSpacing.s8),
-        Text(
-          label,
-          textAlign: TextAlign.right,
-          style: (isTitle ? TextStyles.bold20 : TextStyles.bold18).copyWith(
-            color: AppColors.textRedColor(context),
-          ),
-        ),
-      ],
-    );
   }
 }

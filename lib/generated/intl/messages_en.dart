@@ -40,6 +40,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "BadCertificate": MessageLookupByLibrary.simpleMessage("Bad certificate"),
     "BasicInfo": MessageLookupByLibrary.simpleMessage("Basic Information"),
+    "BusinessActivityInformation": MessageLookupByLibrary.simpleMessage(
+      "Business Activity Information",
+    ),
+    "BusinessActivityStartDate": MessageLookupByLibrary.simpleMessage(
+      "Business Activity Start Date",
+    ),
     "BylawsCopyField": MessageLookupByLibrary.simpleMessage(
       "Bylaws Copy (Optional)",
     ),
@@ -94,11 +100,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "ConnectionTimeout": MessageLookupByLibrary.simpleMessage(
       "Connection timeout with ApiServer",
     ),
+    "CurrentTax": MessageLookupByLibrary.simpleMessage("Current Tax"),
     "DarkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "Disabled": MessageLookupByLibrary.simpleMessage("Disabled"),
     "DontHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
+    "DownloadFile": MessageLookupByLibrary.simpleMessage("Download File"),
     "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
     "Enabled": MessageLookupByLibrary.simpleMessage("Enabled"),
@@ -115,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "EnterVerificationCodeDesc": MessageLookupByLibrary.simpleMessage(
       "Enter the code sent to your phone to verify your identity",
     ),
+    "ExclusiveNumber": MessageLookupByLibrary.simpleMessage("Exclusive Number"),
     "FieldIsRequired": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
@@ -140,6 +149,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Hello": MessageLookupByLibrary.simpleMessage("Hello"),
     "Home": MessageLookupByLibrary.simpleMessage("Home"),
+    "HomeBannerSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Welcome to your tax portal. Here you can track your file status and latest payments.",
+    ),
+    "HomeBannerTitle": MessageLookupByLibrary.simpleMessage("Home Page"),
+    "HowAreYouToday": MessageLookupByLibrary.simpleMessage(
+      "How are you today?",
+    ),
     "IdCard": MessageLookupByLibrary.simpleMessage("IdCard"),
     "ImageIsRequired": MessageLookupByLibrary.simpleMessage(
       "Image is required",
@@ -213,6 +229,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "NewFileHeroTitle": MessageLookupByLibrary.simpleMessage("Create New File"),
     "NewPassword": MessageLookupByLibrary.simpleMessage("New Password"),
     "Next": MessageLookupByLibrary.simpleMessage("Next"),
+    "NoAttachedFile": MessageLookupByLibrary.simpleMessage("No file attached"),
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
       "No Internet connection",
     ),
@@ -251,6 +268,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "PasswordNotMatch": MessageLookupByLibrary.simpleMessage(
       "Password does not match",
     ),
+    "PaymentOperation": MessageLookupByLibrary.simpleMessage(
+      "Payment Operation",
+    ),
+    "PaymentType": MessageLookupByLibrary.simpleMessage("Payment Type"),
     "Penalties": MessageLookupByLibrary.simpleMessage("Penalties & Sanctions"),
     "PenaltiesDesc": MessageLookupByLibrary.simpleMessage(
       "Tax violations and associated penalties",
@@ -276,6 +297,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ReceiveTimeout": MessageLookupByLibrary.simpleMessage(
       "Receive timeout with ApiServer",
     ),
+    "RecentPayments": MessageLookupByLibrary.simpleMessage("Recent Payments"),
     "RequestCanceled": MessageLookupByLibrary.simpleMessage(
       "Request to ApiServer was canceled",
     ),

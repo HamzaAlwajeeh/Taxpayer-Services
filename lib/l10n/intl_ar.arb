@@ -180,5 +180,17 @@
     "ActivityStartDate": "تاريخ بدء النشاط",
     "FileStatus": "حالة الملف",
     "UnknownFile": "ملف غير معروف",
+    "HomeBannerTitle": "الصفحة الرئيسية",
+    "HomeBannerSubtitle": "مرحباً بك في بوابتك الضريبية. هنا يمكنك متابعة حالة ملفك وآخر عمليات السداد",
+    "BusinessActivityInformation": "معلومات النشاط التجاري",
+    "ExclusiveNumber": "الرقم الحصري",
+    "CurrentTax": "الضريبة الحالية",
+    "PaymentType": "نوع الدفع",
+    "BusinessActivityStartDate": "تاريخ مزاولة النشاط التجاري",
+    "PaymentOperation": "عملية سداد",
+    "DownloadFile": "تحميل الملف",
+    "NoAttachedFile": "لم يتم إرفاق ملف",
+    "RecentPayments": "عمليات السداد الأخيرة",
+    "HowAreYouToday": "كيف حالك اليوم؟",
     "NotAvailable": "غير متوفر"
 }
