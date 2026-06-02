@@ -8,7 +8,6 @@ import 'package:tax_payer/Features/Home/presentation/views/widgets/home_content.
 import 'package:tax_payer/Features/Home/presentation/views/widgets/must_login_card.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
-import 'package:tax_payer/core/services/notification_service.dart';
 import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
@@ -24,21 +23,21 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   final bool _isLoggedIn = Prefs.getBool(AppConstants.kIsLogedIn);
 
-  Future<void> _handleNotifications() async {
-    try {
-      final alreadyScheduled = Prefs.getBool(
-        AppConstants.kNotificationsScheduled,
-      );
+  // Future<void> _handleNotifications() async {
+  //   try {
+  //     final alreadyScheduled = Prefs.getBool(
+  //       AppConstants.kNotificationsScheduled,
+  //     );
 
-      if (alreadyScheduled) return;
+  //     if (alreadyScheduled) return;
 
-      await NotificationService.scheduleTaxRemindersJanToApr();
+  //     await NotificationService.scheduleTaxRemindersJanToApr();
 
-      Prefs.setBool(AppConstants.kNotificationsScheduled, true);
-    } catch (e) {
-      debugPrint("Notification scheduling error: $e");
-    }
-  }
+  //     Prefs.setBool(AppConstants.kNotificationsScheduled, true);
+  //   } catch (e) {
+  //     debugPrint("Notification scheduling error: $e");
+  //   }
+  // }
 
   @override
   void initState() {
@@ -53,7 +52,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         cubit.initializeCurrentFile();
       }
 
-      _handleNotifications();
+      // _handleNotifications();
     });
   }
 

@@ -120,11 +120,11 @@ class _InitViewState extends State<InitView> {
                               title: "تجربة الاشعارات",
                               isOutlined: true,
                               onPressed: () {
-                                NotificationService.showBasicNotification(
-                                  id: 1,
-                                  title: 'تجربة إشعار',
-                                  body: 'هذه رسالة اختبار فورية',
-                                );
+                                // NotificationService.showBasicNotification(
+                                //   id: 1,
+                                //   title: 'تجربة إشعار',
+                                //   body: 'هذه رسالة اختبار فورية',
+                                // );
                               },
                             ),
 
