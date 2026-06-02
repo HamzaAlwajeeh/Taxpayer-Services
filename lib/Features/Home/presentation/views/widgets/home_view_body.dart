@@ -24,28 +24,36 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   final bool _isLoggedIn = Prefs.getBool(AppConstants.kIsLogedIn);
 
+  Future<void> _handleNotifications() async {
+    try {
+      final alreadyScheduled = Prefs.getBool(
+        AppConstants.kNotificationsScheduled,
+      );
+
+      if (alreadyScheduled) return;
+
+      await NotificationService.scheduleTaxRemindersJanToApr();
+
+      Prefs.setBool(AppConstants.kNotificationsScheduled, true);
+    } catch (e) {
+      debugPrint("Notification scheduling error: $e");
+    }
+  }
+
   @override
   void initState() {
     super.initState();
 
     if (!_isLoggedIn) return;
 
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       final cubit = context.read<UserFileCubit>();
 
       if (cubit.state is UserFileInitial) {
         cubit.initializeCurrentFile();
       }
 
-      final alreadyScheduled = Prefs.getBool(
-        AppConstants.kNotificationsScheduled,
-      );
-
-      if (!alreadyScheduled) {
-        await NotificationService.scheduleTaxRemindersJanToApr();
-
-        Prefs.setBool(AppConstants.kNotificationsScheduled, true);
-      }
+      _handleNotifications();
     });
   }
 

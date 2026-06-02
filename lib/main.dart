@@ -19,10 +19,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   setUpServiceLocator();
-  await initTimeZone();
-  await NotificationService.initialize();
+
+  tz.initializeTimeZones();
+  final location = tz.getLocation('Asia/Aden');
+  tz.setLocalLocation(location);
+
   await Prefs.init();
   AppSettings.init();
+
+  await NotificationService.initialize();
 
   Bloc.observer = SimpleBlocObserver();
 
@@ -67,9 +72,4 @@ class MyApp extends StatelessWidget {
       );
     });
   }
-}
-
-Future<void> initTimeZone() async {
-  tz.initializeTimeZones();
-  tz.setLocalLocation(tz.getLocation('Asia/Aden'));
 }

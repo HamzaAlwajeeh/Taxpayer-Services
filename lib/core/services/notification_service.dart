@@ -132,40 +132,43 @@ class NotificationService {
 
   // 📅 إشعارات من يناير إلى أبريل (مرة واحدة فقط)
   static Future<void> scheduleTaxRemindersJanToApr() async {
-    final now = tz.TZDateTime.now(tz.local);
-    final year = now.year;
+    try {
+      final now = tz.TZDateTime.now(tz.local);
+      final year = now.year;
 
-    final dates = [
-      tz.TZDateTime(tz.local, year, 1, 1, 9),
-      tz.TZDateTime(tz.local, year, 2, 1, 9),
-      tz.TZDateTime(tz.local, year, 3, 1, 9),
-      tz.TZDateTime(tz.local, year, 4, 1, 9),
-    ];
+      final dates = [
+        tz.TZDateTime(tz.local, year, 1, 1, 9),
+        tz.TZDateTime(tz.local, year, 2, 1, 9),
+        tz.TZDateTime(tz.local, year, 3, 1, 9),
+        tz.TZDateTime(tz.local, year, 4, 1, 9),
+      ];
 
-    for (int i = 0; i < dates.length; i++) {
-      final scheduled = dates[i];
+      for (int i = 0; i < dates.length; i++) {
+        final scheduled = dates[i];
 
-      // ❗ شرط مهم
-      if (scheduled.isBefore(now)) continue;
+        if (scheduled.isBefore(now)) continue;
 
-      await _plugin.zonedSchedule(
-        i + 1,
-        'الإقرار الضريبي',
-        'تذكير بموعد الإقرار الضريبي',
-        scheduled,
-        const NotificationDetails(
-          android: AndroidNotificationDetails(
-            'tax_payer_general_notifications',
-            'General Notifications',
-            importance: Importance.high,
-            priority: Priority.high,
-            icon: '@mipmap/ic_launcher',
+        await _plugin.zonedSchedule(
+          i + 1,
+          'الإقرار الضريبي',
+          'تذكير بموعد الإقرار الضريبي',
+          scheduled,
+          const NotificationDetails(
+            android: AndroidNotificationDetails(
+              'tax_payer_general_notifications',
+              'General Notifications',
+              importance: Importance.high,
+              priority: Priority.high,
+              icon: '@mipmap/ic_launcher',
+            ),
           ),
-        ),
-        androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-        uiLocalNotificationDateInterpretation:
-            UILocalNotificationDateInterpretation.absoluteTime,
-      );
+          androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+          uiLocalNotificationDateInterpretation:
+              UILocalNotificationDateInterpretation.absoluteTime,
+        );
+      }
+    } catch (e) {
+      debugPrint("scheduleTaxRemindersJanToApr error: $e");
     }
   }
 
