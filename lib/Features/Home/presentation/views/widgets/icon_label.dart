@@ -18,6 +18,8 @@ class IconLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final primary = AppColors.textRedColor(context);
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -25,18 +27,15 @@ class IconLabel extends StatelessWidget {
           width: 38,
           height: 38,
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.customRed(context, true),
+            color: primary.withValues(alpha: 0.10),
+            borderRadius: BorderRadius.circular(AppSpacing.radius12),
           ),
           child: Center(
             child: SvgPicture.asset(
               icon,
               width: 20,
               height: 20,
-              colorFilter: ColorFilter.mode(
-                AppColors.textRedColor(context),
-                BlendMode.srcIn,
-              ),
+              colorFilter: ColorFilter.mode(primary, BlendMode.srcIn),
             ),
           ),
         ),

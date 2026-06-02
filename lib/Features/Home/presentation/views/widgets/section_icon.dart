@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 
 class SectionIcon extends StatelessWidget {
@@ -9,22 +10,21 @@ class SectionIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final primary = AppColors.textRedColor(context);
+
     return Container(
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: AppColors.customRed(context, true),
+        color: primary.withValues(alpha: 0.10),
+        borderRadius: BorderRadius.circular(AppSpacing.radius12),
       ),
       child: Center(
         child: SvgPicture.asset(
           icon,
           width: 22,
           height: 22,
-          colorFilter: ColorFilter.mode(
-            AppColors.textRedColor(context),
-            BlendMode.srcIn,
-          ),
+          colorFilter: ColorFilter.mode(primary, BlendMode.srcIn),
         ),
       ),
     );

@@ -105,11 +105,14 @@ class AppRoutes {
 
       _buildRoute(
         path: RouteNames.dashboard,
-        builder:
-            (context, state) => BlocProvider(
-              create: (context) => LogoutCubit(getIt<AuthRepo>()),
-              child: const DashBoard(),
-            ),
+        builder: (context, state) {
+          final initialPage = state.extra is int ? state.extra as int : 0;
+
+          return BlocProvider(
+            create: (context) => LogoutCubit(getIt<AuthRepo>()),
+            child: DashBoard(initialPage: initialPage),
+          );
+        },
         transition: TransitionType.fade,
       ),
 

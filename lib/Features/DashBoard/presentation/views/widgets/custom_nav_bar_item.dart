@@ -74,6 +74,7 @@ class _CustomNavBarItemState extends State<CustomNavBarItem>
 
   @override
   Widget build(BuildContext context) {
+    final primary = AppColors.textRedColor(context);
     final bool isSelected = widget.index == widget.pageIndex;
     return InkWell(
       onTap: widget.onTap,
@@ -90,7 +91,7 @@ class _CustomNavBarItemState extends State<CustomNavBarItem>
             height: 36,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
-              color: isSelected ? AppColors.customRed(context, true) : null,
+              color: isSelected ? primary.withValues(alpha: 0.10) : null,
             ),
             child: AnimatedBuilder(
               animation: _scaleAnim,

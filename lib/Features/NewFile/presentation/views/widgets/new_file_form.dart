@@ -7,10 +7,12 @@ import 'package:tax_payer/Features/Auth/presentation/views/widgets/upload_file.d
 import 'package:tax_payer/Features/NewFile/presentation/logic/new_file_cubit/new_file_cubit.dart';
 import 'package:tax_payer/Features/NewFile/presentation/logic/new_file_cubit/new_file_state.dart';
 import 'package:tax_payer/Features/NewFile/presentation/views/widgets/file_type_selected_card.dart';
+import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
@@ -67,6 +69,8 @@ class _NewFileFormState extends State<NewFileForm> {
             icon: Icons.check,
             textColor: AppColors.white(),
           );
+
+          Prefs.setBool(AppConstants.kHasRequestPending, true);
           clearForm();
           if (context.canPop()) {
             context.pop();

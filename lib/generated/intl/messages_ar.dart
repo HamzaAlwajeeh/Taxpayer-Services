@@ -25,7 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Active": MessageLookupByLibrary.simpleMessage("قيد التفعيل"),
     "ActiveStatus": MessageLookupByLibrary.simpleMessage("شغال"),
     "ActivityLicenseField": MessageLookupByLibrary.simpleMessage(
-      "ترخيص مزاولة النشاط",
+      "ترخيص مزاولة المهنه",
     ),
     "ActivityStartDate": MessageLookupByLibrary.simpleMessage(
       "تاريخ بدء النشاط",
@@ -271,6 +271,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "OopsError": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ، يرجى المحاولة لاحقًا",
     ),
+    "OpenNewFile": MessageLookupByLibrary.simpleMessage("فتح ملف جديد"),
     "PartinersIDCardsField": MessageLookupByLibrary.simpleMessage(
       "البطائق الشخصية للشركاء",
     ),
@@ -303,6 +304,24 @@ class MessageLookup extends MessageLookupByLibrary {
       "غرامة تقديم بيانات غير صحيحة أو مضللة",
     ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "PrivacyAndSecurityCommitmentBody": MessageLookupByLibrary.simpleMessage(
+      "حافظ على سرية بيانات الدخول الخاصة بك وسجل الخروج عند استخدام جهاز مشترك. لا نشارك معلوماتك إلا عند الحاجة لإكمال الإجراءات الضريبية الرسمية.",
+    ),
+    "PrivacyAndSecurityCommitmentTitle": MessageLookupByLibrary.simpleMessage(
+      "التزامنا بالأمان",
+    ),
+    "PrivacyAndSecurityDataBody": MessageLookupByLibrary.simpleMessage(
+      "نستخدم معلوماتك للتحقق من هويتك، وفتح الملفات الضريبية وإدارتها، ومتابعة الطلبات، وتحسين الخدمات المقدمة من مكتب الضرائب.",
+    ),
+    "PrivacyAndSecurityDataTitle": MessageLookupByLibrary.simpleMessage(
+      "كيف نستخدم بياناتك",
+    ),
+    "PrivacyAndSecurityIntroBody": MessageLookupByLibrary.simpleMessage(
+      "يحافظ التطبيق على بيانات ملفك الضريبي ومعلوماتك الشخصية والمستندات المرفوعة ضمن بيئة خدمة محمية تستخدم فقط لتقديم خدمات المكلفين.",
+    ),
+    "PrivacyAndSecurityIntroTitle": MessageLookupByLibrary.simpleMessage(
+      "حماية معلوماتك الضريبية",
+    ),
     "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
     "ProfileImage": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
     "PropertyDocPictureField": MessageLookupByLibrary.simpleMessage(
@@ -315,6 +334,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "عمليات السداد الأخيرة",
     ),
     "RequestCanceled": MessageLookupByLibrary.simpleMessage("تم إلغاء الطلب"),
+    "RequestPendingSubtitle": MessageLookupByLibrary.simpleMessage(
+      "طلبك قيد المراجعة، وسيتم التواصل معك قريباً.",
+    ),
+    "RequestPendingTitle": MessageLookupByLibrary.simpleMessage(
+      "طلبك قيد المراجعة",
+    ),
     "RequiredDocuments": MessageLookupByLibrary.simpleMessage(
       "المستندات المطلوبة",
     ),
@@ -345,43 +370,49 @@ class MessageLookup extends MessageLookupByLibrary {
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "StepsToFollow": MessageLookupByLibrary.simpleMessage("الخطوات المطلوبة"),
     "StoreName": MessageLookupByLibrary.simpleMessage("سوبر ماركت الصفاء"),
+    "SubmitAnotherRequest": MessageLookupByLibrary.simpleMessage(
+      "تقديم طلب آخر",
+    ),
     "SubmitNewFileRequest": MessageLookupByLibrary.simpleMessage("إرسال الطلب"),
     "TaxDeclaration": MessageLookupByLibrary.simpleMessage("الإقرار الضريبي"),
     "TaxDeclarationDesc": MessageLookupByLibrary.simpleMessage(
       "كيفية تقديم الإقرار الضريبي والمواعيد النهائية",
     ),
     "TaxDeclarationStep1": MessageLookupByLibrary.simpleMessage(
-      "الدخول إلى النظام الإلكتروني للإقرارات",
+      "مراجعة مكتب الضرائب المختص من قبل المكلف شخصياً",
     ),
     "TaxDeclarationStep2": MessageLookupByLibrary.simpleMessage(
-      "تعبئة نموذج الإقرار الضريبي بالبيانات المالية",
+      "تقديم البيانات المالية والمستندات المطلوبة للموظف المختص",
     ),
     "TaxDeclarationStep3": MessageLookupByLibrary.simpleMessage(
-      "إرفاق القوائم المالية والمستندات الداعمة",
+      "تعبئة نموذج الإقرار الضريبي في المكتب",
     ),
     "TaxDeclarationStep4": MessageLookupByLibrary.simpleMessage(
-      "مراجعة البيانات والتأكد من صحتها",
+      "مراجعة البيانات والتأكد من صحتها مع الموظف المختص",
     ),
     "TaxDeclarationStep5": MessageLookupByLibrary.simpleMessage(
-      "تقديم الإقرار واستلام رقم المرجع",
+      "تقديم الإقرار واستلام إشعار الاستلام أو رقم المرجع من المكتب",
     ),
     "TaxExemptions": MessageLookupByLibrary.simpleMessage("الإعفاءات الضريبية"),
     "TaxExemptionsDesc": MessageLookupByLibrary.simpleMessage(
       "الحالات المؤهلة للإعفاء الضريبي وشروطها",
     ),
     "TaxExemptionsStep1": MessageLookupByLibrary.simpleMessage(
-      "تقديم طلب الإعفاء عبر النظام الإلكتروني",
+      "مراجعة مكتب الضرائب لتقديم طلب الإعفاء حضورياً",
     ),
     "TaxExemptionsStep2": MessageLookupByLibrary.simpleMessage(
-      "إرفاق المستندات التي تثبت استحقاق الإعفاء",
+      "تسليم المستندات التي تثبت استحقاق الإعفاء",
     ),
     "TaxExemptionsStep3": MessageLookupByLibrary.simpleMessage(
-      "انتظار مراجعة الطلب من الجهة المختصة",
+      "متابعة مراجعة الطلب لدى الجهة المختصة في المكتب",
     ),
     "TaxExemptionsStep4": MessageLookupByLibrary.simpleMessage(
-      "استلام قرار الإعفاء أو الرفض مع الأسباب",
+      "استلام قرار الإعفاء أو الرفض من مكتب الضرائب",
     ),
     "TaxNumber": MessageLookupByLibrary.simpleMessage("الرقم الضريبي"),
+    "TaxOfficeAttendanceNote": MessageLookupByLibrary.simpleMessage(
+      "سيتم توفير هذه الميزة إلكترونياً قريباً لتسهيل إكمال الإجراءات عبر النظام.",
+    ),
     "TaxOfficeLocation": MessageLookupByLibrary.simpleMessage(
       "موقع مكتب الضرائب",
     ),
@@ -393,16 +424,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "طرق وآليات سداد المستحقات الضريبية",
     ),
     "TaxPaymentStep1": MessageLookupByLibrary.simpleMessage(
-      "الحصول على إشعار السداد من النظام",
+      "مراجعة مكتب الضرائب للحصول على إشعار السداد",
     ),
     "TaxPaymentStep2": MessageLookupByLibrary.simpleMessage(
-      "اختيار طريقة الدفع (بنكي / إلكتروني)",
+      "التحقق من المبلغ المستحق لدى الموظف المختص",
     ),
     "TaxPaymentStep3": MessageLookupByLibrary.simpleMessage(
-      "إتمام عملية الدفع وحفظ إيصال السداد",
+      "سداد المستحقات عبر القنوات المعتمدة لدى مكتب الضرائب",
     ),
     "TaxPaymentStep4": MessageLookupByLibrary.simpleMessage(
-      "التحقق من تحديث حالة الملف الضريبي",
+      "تقديم إيصال السداد لتحديث حالة الملف الضريبي",
     ),
     "TradeNameField": MessageLookupByLibrary.simpleMessage("الاسم التجاري"),
     "TradePictureField": MessageLookupByLibrary.simpleMessage(
@@ -420,7 +451,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "UploadFile": MessageLookupByLibrary.simpleMessage("تحميل ملف"),
     "UploadFileSubTitle": MessageLookupByLibrary.simpleMessage(
-      "اختر صورة JPEG أو JPG أو PNG",
+      "اختر صورة JPEG,PNG,PDF",
     ),
     "UserFiles": MessageLookupByLibrary.simpleMessage("ملفات المستخدم"),
     "UserFilesDashboard": MessageLookupByLibrary.simpleMessage(

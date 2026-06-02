@@ -7,6 +7,8 @@ import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_
 import 'package:tax_payer/Features/Home/presentation/views/widgets/home_content.dart';
 import 'package:tax_payer/Features/Home/presentation/views/widgets/must_login_card.dart';
 import 'package:tax_payer/core/constants/constants.dart';
+import 'package:tax_payer/core/errors/failuar.dart';
+import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
 import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
@@ -58,6 +60,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isPending = Prefs.getBool(AppConstants.kHasRequestPending);
     return SafeArea(
       child: RefreshIndicator(
         color: AppColors.primaryColor(context),
@@ -67,7 +70,22 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             await context.read<UserFileCubit>().initializeCurrentFile();
           }
         },
-        child: BlocBuilder<UserFileCubit, UserFileState>(
+        child: BlocConsumer<UserFileCubit, UserFileState>(
+          listener: (context, state) {
+            if (state is UserFileFailure) {
+              customToastBar(
+                context: context,
+                message: Failure.localizedMessage(
+                  context,
+                  errorMessage: state.errorMessage,
+                  errorKey: state.errorKey,
+                ),
+                backgroundColor: AppColors.red(),
+                icon: Icons.close,
+                textColor: AppColors.white(),
+              );
+            }
+          },
           builder: (context, state) {
             final cubit = context.read<UserFileCubit>();
 
@@ -75,23 +93,25 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               return HomeContent(userFile: cubit.userFile, isLoading: true);
             }
 
-            if (state is UserFileFailure) {
-              return MustLoginCard(
-                icon: Assets.assetsIconsUser,
-                message: S.of(context).MustMakeRequestTitle,
-                subTitle: S.of(context).MustMakeRequestSubtitle,
-                actionLabel: S.of(context).LoadUserFiles,
-                onPressed: cubit.initializeCurrentFile,
-              );
-            }
             final userFile = _readUserFile(cubit, state);
             if (userFile == null) {
-              return MustLoginCard(
-                icon: Assets.assetsIconsUser,
-                message: S.of(context).NotAvailable,
-                actionLabel: S.of(context).Login,
-                onPressed: () => context.go(RouteNames.login),
-              );
+              if (isPending) {
+                return MustLoginCard(
+                  icon: Assets.assetsIconsUser,
+                  message: S.of(context).RequestPendingTitle,
+                  subTitle: S.of(context).RequestPendingSubtitle,
+                  actionLabel: S.of(context).SubmitAnotherRequest,
+                  onPressed: () => context.go(RouteNames.dashboard, extra: 2),
+                );
+              } else {
+                return MustLoginCard(
+                  icon: Assets.assetsIconsUser,
+                  message: S.of(context).MustMakeRequestTitle,
+                  subTitle: S.of(context).MustMakeRequestSubtitle,
+                  actionLabel: S.of(context).OpenNewFile,
+                  onPressed: () => context.go(RouteNames.dashboard, extra: 2),
+                );
+              }
             }
 
             return HomeContent(userFile: userFile);

@@ -30,7 +30,9 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isDark = AppSettings.themeModeSignal.value == ThemeMode.dark;
+    final isDark = AppSettings.themeModeSignal.value == ThemeMode.dark;
+    final primary = AppColors.textRedColor(context);
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -53,18 +55,17 @@ class ItemCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              padding: EdgeInsets.all(AppSpacing.s8),
               width: 50,
               height: 50,
               decoration: BoxDecoration(
-                color: AppColors.customRed(),
-                borderRadius: BorderRadius.circular(16),
+                color: primary.withValues(alpha: 0.10),
+                borderRadius: BorderRadius.circular(AppSpacing.radius12),
               ),
-              child: SvgPicture.asset(
-                icon,
-                colorFilter: ColorFilter.mode(
-                  AppColors.textRedColor(context),
-                  BlendMode.srcIn,
+              child: Center(
+                child: SvgPicture.asset(
+                  icon,
+
+                  colorFilter: ColorFilter.mode(primary, BlendMode.srcIn),
                 ),
               ),
             ),

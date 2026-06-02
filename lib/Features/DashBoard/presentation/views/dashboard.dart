@@ -18,22 +18,45 @@ import 'package:tax_payer/core/widgets/sign_out_confirmation_dialog_widget.dart'
 import 'package:tax_payer/generated/l10n.dart';
 
 class DashBoard extends StatefulWidget {
-  const DashBoard({super.key});
+  const DashBoard({super.key, this.initialPage = 0});
+
+  final int initialPage;
 
   @override
   State<DashBoard> createState() => _HomeBaseState();
 }
 
 class _HomeBaseState extends State<DashBoard> {
-  final PageController _pageController = PageController();
+  late final PageController _pageController;
+  late final List<Widget> _screens;
   int _pageIndex = 0;
-  late List<Widget> _screens;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
   @override
   void initState() {
     super.initState();
+    _pageIndex = widget.initialPage.clamp(0, 3).toInt();
+    _pageController = PageController(initialPage: _pageIndex);
     _screens = [HomeView(), InstructionsView(), NewFileView(), ProfileView()];
+  }
+
+  @override
+  void didUpdateWidget(covariant DashBoard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    final nextPage = widget.initialPage.clamp(0, 3).toInt();
+
+    if (nextPage != _pageIndex) {
+      _pageIndex = nextPage;
+      if (_pageController.hasClients) {
+        _pageController.jumpToPage(nextPage);
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
   @override

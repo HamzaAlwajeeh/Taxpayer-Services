@@ -28,9 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -246,10 +247,10 @@ class S {
     return Intl.message('Upload file', name: 'UploadFile', desc: '', args: []);
   }
 
-  /// `Select JPEG, JPG, or PNG`
+  /// `Select JPEG, PNG, or PDF`
   String get UploadFileSubTitle {
     return Intl.message(
-      'Select JPEG, JPG, or PNG',
+      'Select JPEG, PNG, or PDF',
       name: 'UploadFileSubTitle',
       desc: '',
       args: [],
@@ -1031,130 +1032,130 @@ class S {
     );
   }
 
-  /// `Access the electronic declaration system`
+  /// `Visit the relevant tax office in person`
   String get TaxDeclarationStep1 {
     return Intl.message(
-      'Access the electronic declaration system',
+      'Visit the relevant tax office in person',
       name: 'TaxDeclarationStep1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Fill in the tax declaration form with financial data`
+  /// `Submit financial data and required documents to the responsible employee`
   String get TaxDeclarationStep2 {
     return Intl.message(
-      'Fill in the tax declaration form with financial data',
+      'Submit financial data and required documents to the responsible employee',
       name: 'TaxDeclarationStep2',
       desc: '',
       args: [],
     );
   }
 
-  /// `Attach financial statements and supporting documents`
+  /// `Fill in the tax declaration form at the office`
   String get TaxDeclarationStep3 {
     return Intl.message(
-      'Attach financial statements and supporting documents',
+      'Fill in the tax declaration form at the office',
       name: 'TaxDeclarationStep3',
       desc: '',
       args: [],
     );
   }
 
-  /// `Review data and verify accuracy`
+  /// `Review the data and verify its accuracy with the responsible employee`
   String get TaxDeclarationStep4 {
     return Intl.message(
-      'Review data and verify accuracy',
+      'Review the data and verify its accuracy with the responsible employee',
       name: 'TaxDeclarationStep4',
       desc: '',
       args: [],
     );
   }
 
-  /// `Submit declaration and receive reference number`
+  /// `Submit the declaration and receive the receipt notice or reference number from the office`
   String get TaxDeclarationStep5 {
     return Intl.message(
-      'Submit declaration and receive reference number',
+      'Submit the declaration and receive the receipt notice or reference number from the office',
       name: 'TaxDeclarationStep5',
       desc: '',
       args: [],
     );
   }
 
-  /// `Obtain payment notification from the system`
+  /// `Visit the tax office to obtain the payment notice`
   String get TaxPaymentStep1 {
     return Intl.message(
-      'Obtain payment notification from the system',
+      'Visit the tax office to obtain the payment notice',
       name: 'TaxPaymentStep1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Choose payment method (bank / electronic)`
+  /// `Verify the due amount with the responsible employee`
   String get TaxPaymentStep2 {
     return Intl.message(
-      'Choose payment method (bank / electronic)',
+      'Verify the due amount with the responsible employee',
       name: 'TaxPaymentStep2',
       desc: '',
       args: [],
     );
   }
 
-  /// `Complete payment and save receipt`
+  /// `Pay the dues through the channels approved by the tax office`
   String get TaxPaymentStep3 {
     return Intl.message(
-      'Complete payment and save receipt',
+      'Pay the dues through the channels approved by the tax office',
       name: 'TaxPaymentStep3',
       desc: '',
       args: [],
     );
   }
 
-  /// `Verify tax file status update`
+  /// `Submit the payment receipt to update the tax file status`
   String get TaxPaymentStep4 {
     return Intl.message(
-      'Verify tax file status update',
+      'Submit the payment receipt to update the tax file status',
       name: 'TaxPaymentStep4',
       desc: '',
       args: [],
     );
   }
 
-  /// `Submit exemption request via electronic system`
+  /// `Visit the tax office to submit the exemption request in person`
   String get TaxExemptionsStep1 {
     return Intl.message(
-      'Submit exemption request via electronic system',
+      'Visit the tax office to submit the exemption request in person',
       name: 'TaxExemptionsStep1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Attach documents proving exemption eligibility`
+  /// `Submit the documents proving exemption eligibility`
   String get TaxExemptionsStep2 {
     return Intl.message(
-      'Attach documents proving exemption eligibility',
+      'Submit the documents proving exemption eligibility',
       name: 'TaxExemptionsStep2',
       desc: '',
       args: [],
     );
   }
 
-  /// `Wait for review by competent authority`
+  /// `Follow up on the request review with the competent office department`
   String get TaxExemptionsStep3 {
     return Intl.message(
-      'Wait for review by competent authority',
+      'Follow up on the request review with the competent office department',
       name: 'TaxExemptionsStep3',
       desc: '',
       args: [],
     );
   }
 
-  /// `Receive approval or rejection with reasons`
+  /// `Receive the exemption approval or rejection from the tax office`
   String get TaxExemptionsStep4 {
     return Intl.message(
-      'Receive approval or rejection with reasons',
+      'Receive the exemption approval or rejection from the tax office',
       name: 'TaxExemptionsStep4',
       desc: '',
       args: [],
@@ -1206,6 +1207,16 @@ class S {
     return Intl.message(
       'Important Note',
       name: 'ImportantNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This feature will be available electronically soon to make it easier to complete the procedures through the system.`
+  String get TaxOfficeAttendanceNote {
+    return Intl.message(
+      'This feature will be available electronically soon to make it easier to complete the procedures through the system.',
+      name: 'TaxOfficeAttendanceNote',
       desc: '',
       args: [],
     );
@@ -1811,6 +1822,106 @@ class S {
     return Intl.message(
       'Please submit a request to open a file first',
       name: 'MustMakeRequestSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your request is under review`
+  String get RequestPendingTitle {
+    return Intl.message(
+      'Your request is under review',
+      name: 'RequestPendingTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your request is under review. We will contact you soon.`
+  String get RequestPendingSubtitle {
+    return Intl.message(
+      'Your request is under review. We will contact you soon.',
+      name: 'RequestPendingSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit another request`
+  String get SubmitAnotherRequest {
+    return Intl.message(
+      'Submit another request',
+      name: 'SubmitAnotherRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open new file`
+  String get OpenNewFile {
+    return Intl.message(
+      'Open new file',
+      name: 'OpenNewFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Protecting your tax information`
+  String get PrivacyAndSecurityIntroTitle {
+    return Intl.message(
+      'Protecting your tax information',
+      name: 'PrivacyAndSecurityIntroTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The application keeps your tax file information, personal data, and uploaded documents within a protected service environment used only to provide taxpayer services.`
+  String get PrivacyAndSecurityIntroBody {
+    return Intl.message(
+      'The application keeps your tax file information, personal data, and uploaded documents within a protected service environment used only to provide taxpayer services.',
+      name: 'PrivacyAndSecurityIntroBody',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How your data is used`
+  String get PrivacyAndSecurityDataTitle {
+    return Intl.message(
+      'How your data is used',
+      name: 'PrivacyAndSecurityDataTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We use your information to verify your identity, open and manage tax files, follow up on requests, and improve the services provided by the tax office.`
+  String get PrivacyAndSecurityDataBody {
+    return Intl.message(
+      'We use your information to verify your identity, open and manage tax files, follow up on requests, and improve the services provided by the tax office.',
+      name: 'PrivacyAndSecurityDataBody',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our security commitment`
+  String get PrivacyAndSecurityCommitmentTitle {
+    return Intl.message(
+      'Our security commitment',
+      name: 'PrivacyAndSecurityCommitmentTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Keep your login details private and sign out when using a shared device. We do not share your information except when required to complete official tax procedures.`
+  String get PrivacyAndSecurityCommitmentBody {
+    return Intl.message(
+      'Keep your login details private and sign out when using a shared device. We do not share your information except when required to complete official tax procedures.',
+      name: 'PrivacyAndSecurityCommitmentBody',
       desc: '',
       args: [],
     );

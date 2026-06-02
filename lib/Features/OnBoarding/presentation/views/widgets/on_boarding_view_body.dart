@@ -94,6 +94,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   @override
   Widget build(BuildContext context) {
     return GradientBackground(
+      hasCircleColors: false,
       hasImage: true,
       backgroundColors: const OnBoarrdingBackgroundColors(),
       child: SafeArea(

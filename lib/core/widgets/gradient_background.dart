@@ -7,11 +7,13 @@ class GradientBackground extends StatelessWidget {
     required this.child,
     this.hasImage,
     this.backgroundColors,
+    this.hasCircleColors,
   });
 
   final Widget child;
   final bool? hasImage;
   final Widget? backgroundColors;
+  final bool? hasCircleColors;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +27,13 @@ class GradientBackground extends StatelessWidget {
           ),
         ),
 
-        Positioned(
-          top: -120,
-          right: -100,
-          child: _glassCircle(280, primary.withOpacity(0.20)),
+        Visibility(
+          visible: hasCircleColors ?? true,
+          child: Positioned(
+            top: -120,
+            right: -100,
+            child: _glassCircle(280, primary.withOpacity(0.20)),
+          ),
         ),
 
         Positioned(
@@ -37,10 +42,13 @@ class GradientBackground extends StatelessWidget {
           child: _glassCircle(220, primary.withOpacity(0.20)),
         ),
 
-        Positioned(
-          top: 220,
-          left: -40,
-          child: _glassCircle(140, primary.withOpacity(0.14)),
+        Visibility(
+          visible: hasCircleColors ?? true,
+          child: Positioned(
+            top: 220,
+            left: -40,
+            child: _glassCircle(140, primary.withOpacity(0.14)),
+          ),
         ),
 
         Positioned(

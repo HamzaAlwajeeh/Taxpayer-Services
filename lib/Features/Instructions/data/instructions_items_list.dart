@@ -68,6 +68,7 @@ List<InstructionDetailModel> instuctionsItemsList(
         l10n.TaxDeclarationStep4,
         l10n.TaxDeclarationStep5,
       ],
+      note: l10n.TaxOfficeAttendanceNote,
     ),
     InstructionDetailModel(
       title: l10n.TaxPayment,
@@ -80,6 +81,7 @@ List<InstructionDetailModel> instuctionsItemsList(
         l10n.TaxPaymentStep3,
         l10n.TaxPaymentStep4,
       ],
+      note: l10n.TaxOfficeAttendanceNote,
     ),
     InstructionDetailModel(
       title: l10n.TaxExemptions,
@@ -92,6 +94,7 @@ List<InstructionDetailModel> instuctionsItemsList(
         l10n.TaxExemptionsStep3,
         l10n.TaxExemptionsStep4,
       ],
+      note: l10n.TaxOfficeAttendanceNote,
     ),
     InstructionDetailModel(
       title: l10n.Penalties,

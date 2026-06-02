@@ -13,9 +13,7 @@ class HomeView extends StatelessWidget {
   const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
-    final isLoggedIn = Prefs.getBool(
-      AppConstants.kIsLogedIn,
-    ); // This should be replaced with actual authentication logic
+    final isLoggedIn = Prefs.getBool(AppConstants.kIsLogedIn);
     return Scaffold(
       body:
           isLoggedIn

@@ -265,6 +265,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "OopsError": MessageLookupByLibrary.simpleMessage(
       "Oops, there is an error, please try again later",
     ),
+    "OpenNewFile": MessageLookupByLibrary.simpleMessage("Open new file"),
     "PartinersIDCardsField": MessageLookupByLibrary.simpleMessage(
       "Partners ID Cards (Optional)",
     ),
@@ -299,6 +300,24 @@ class MessageLookup extends MessageLookupByLibrary {
       "Submitting incorrect or misleading data penalty",
     ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "PrivacyAndSecurityCommitmentBody": MessageLookupByLibrary.simpleMessage(
+      "Keep your login details private and sign out when using a shared device. We do not share your information except when required to complete official tax procedures.",
+    ),
+    "PrivacyAndSecurityCommitmentTitle": MessageLookupByLibrary.simpleMessage(
+      "Our security commitment",
+    ),
+    "PrivacyAndSecurityDataBody": MessageLookupByLibrary.simpleMessage(
+      "We use your information to verify your identity, open and manage tax files, follow up on requests, and improve the services provided by the tax office.",
+    ),
+    "PrivacyAndSecurityDataTitle": MessageLookupByLibrary.simpleMessage(
+      "How your data is used",
+    ),
+    "PrivacyAndSecurityIntroBody": MessageLookupByLibrary.simpleMessage(
+      "The application keeps your tax file information, personal data, and uploaded documents within a protected service environment used only to provide taxpayer services.",
+    ),
+    "PrivacyAndSecurityIntroTitle": MessageLookupByLibrary.simpleMessage(
+      "Protecting your tax information",
+    ),
     "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "ProfileImage": MessageLookupByLibrary.simpleMessage("Profile image"),
     "PropertyDocPictureField": MessageLookupByLibrary.simpleMessage(
@@ -310,6 +329,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "RecentPayments": MessageLookupByLibrary.simpleMessage("Recent Payments"),
     "RequestCanceled": MessageLookupByLibrary.simpleMessage(
       "Request to ApiServer was canceled",
+    ),
+    "RequestPendingSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Your request is under review. We will contact you soon.",
+    ),
+    "RequestPendingTitle": MessageLookupByLibrary.simpleMessage(
+      "Your request is under review",
     ),
     "RequiredDocuments": MessageLookupByLibrary.simpleMessage(
       "Required Documents",
@@ -339,6 +364,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "StartNow": MessageLookupByLibrary.simpleMessage("Start Now"),
     "StepsToFollow": MessageLookupByLibrary.simpleMessage("Steps to Follow"),
     "StoreName": MessageLookupByLibrary.simpleMessage("Al-Safaa Supermarket"),
+    "SubmitAnotherRequest": MessageLookupByLibrary.simpleMessage(
+      "Submit another request",
+    ),
     "SubmitNewFileRequest": MessageLookupByLibrary.simpleMessage(
       "Submit Request",
     ),
@@ -347,37 +375,40 @@ class MessageLookup extends MessageLookupByLibrary {
       "How to submit your tax declaration and deadlines",
     ),
     "TaxDeclarationStep1": MessageLookupByLibrary.simpleMessage(
-      "Access the electronic declaration system",
+      "Visit the relevant tax office in person",
     ),
     "TaxDeclarationStep2": MessageLookupByLibrary.simpleMessage(
-      "Fill in the tax declaration form with financial data",
+      "Submit financial data and required documents to the responsible employee",
     ),
     "TaxDeclarationStep3": MessageLookupByLibrary.simpleMessage(
-      "Attach financial statements and supporting documents",
+      "Fill in the tax declaration form at the office",
     ),
     "TaxDeclarationStep4": MessageLookupByLibrary.simpleMessage(
-      "Review data and verify accuracy",
+      "Review the data and verify its accuracy with the responsible employee",
     ),
     "TaxDeclarationStep5": MessageLookupByLibrary.simpleMessage(
-      "Submit declaration and receive reference number",
+      "Submit the declaration and receive the receipt notice or reference number from the office",
     ),
     "TaxExemptions": MessageLookupByLibrary.simpleMessage("Tax Exemptions"),
     "TaxExemptionsDesc": MessageLookupByLibrary.simpleMessage(
       "Cases eligible for tax exemption and conditions",
     ),
     "TaxExemptionsStep1": MessageLookupByLibrary.simpleMessage(
-      "Submit exemption request via electronic system",
+      "Visit the tax office to submit the exemption request in person",
     ),
     "TaxExemptionsStep2": MessageLookupByLibrary.simpleMessage(
-      "Attach documents proving exemption eligibility",
+      "Submit the documents proving exemption eligibility",
     ),
     "TaxExemptionsStep3": MessageLookupByLibrary.simpleMessage(
-      "Wait for review by competent authority",
+      "Follow up on the request review with the competent office department",
     ),
     "TaxExemptionsStep4": MessageLookupByLibrary.simpleMessage(
-      "Receive approval or rejection with reasons",
+      "Receive the exemption approval or rejection from the tax office",
     ),
     "TaxNumber": MessageLookupByLibrary.simpleMessage("Tax Number"),
+    "TaxOfficeAttendanceNote": MessageLookupByLibrary.simpleMessage(
+      "This feature will be available electronically soon to make it easier to complete the procedures through the system.",
+    ),
     "TaxOfficeLocation": MessageLookupByLibrary.simpleMessage(
       "Tax Office Location",
     ),
@@ -389,16 +420,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "Methods and procedures for paying tax dues",
     ),
     "TaxPaymentStep1": MessageLookupByLibrary.simpleMessage(
-      "Obtain payment notification from the system",
+      "Visit the tax office to obtain the payment notice",
     ),
     "TaxPaymentStep2": MessageLookupByLibrary.simpleMessage(
-      "Choose payment method (bank / electronic)",
+      "Verify the due amount with the responsible employee",
     ),
     "TaxPaymentStep3": MessageLookupByLibrary.simpleMessage(
-      "Complete payment and save receipt",
+      "Pay the dues through the channels approved by the tax office",
     ),
     "TaxPaymentStep4": MessageLookupByLibrary.simpleMessage(
-      "Verify tax file status update",
+      "Submit the payment receipt to update the tax file status",
     ),
     "TradeNameField": MessageLookupByLibrary.simpleMessage("Trade Name"),
     "TradePictureField": MessageLookupByLibrary.simpleMessage("Trade Picture"),
@@ -414,7 +445,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "UploadFile": MessageLookupByLibrary.simpleMessage("Upload file"),
     "UploadFileSubTitle": MessageLookupByLibrary.simpleMessage(
-      "Select JPEG, JPG, or PNG",
+      "Select JPEG, PNG, or PDF",
     ),
     "UserFiles": MessageLookupByLibrary.simpleMessage("User Files"),
     "UserFilesDashboard": MessageLookupByLibrary.simpleMessage(
