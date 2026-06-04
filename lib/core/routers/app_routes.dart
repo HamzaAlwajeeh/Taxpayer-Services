@@ -13,6 +13,8 @@ import 'package:tax_payer/Features/Auth/presentation/views/reset_password_view.d
 import 'package:tax_payer/Features/Auth/presentation/views/sign_up_view.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/verify_code_view.dart';
 import 'package:tax_payer/Features/DashBoard/presentation/views/dashboard.dart';
+import 'package:tax_payer/Features/Home/presentation/logic/chat_cubit/chat_cubit.dart';
+import 'package:tax_payer/Features/Home/presentation/views/chat_view.dart';
 import 'package:tax_payer/Features/Home/presentation/views/home_view.dart';
 import 'package:tax_payer/Features/Instructions/data/models/instruction_detail_model.dart';
 import 'package:tax_payer/Features/Instructions/presentation/views/instruction_detail_view.dart';
@@ -120,6 +122,16 @@ class AppRoutes {
         path: RouteNames.home,
         builder: (context, state) => const HomeView(),
         transition: TransitionType.fade,
+      ),
+
+      _buildRoute(
+        path: RouteNames.customerSupportChat,
+        builder:
+            (context, state) => BlocProvider<ChatCubit>(
+              create: (context) => ChatCubit(),
+              child: ChatView(),
+            ),
+        transition: TransitionType.slideFromRight,
       ),
 
       _buildRoute(

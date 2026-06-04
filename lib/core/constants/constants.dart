@@ -20,6 +20,11 @@ class AppConstants {
   static const String kArabicLang = 'ar';
   static const String kEnglishLang = 'en';
 
+  static const String kMessage = 'message';
+  static const String kUserName = 'userName';
+  static const String kCreatedAt = 'cratedAt';
+  static const String kMessagesCollection = 'messages';
+
   static const String kCurrentThemeKey = 'selected_theme';
   static const String kDarkTheme = 'dark';
   static const String kLightTheme = 'light';

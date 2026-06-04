@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tax_payer/Features/Auth/data/models/user/user.dart';
-import 'package:tax_payer/Features/DashBoard/data/models/user_file/user_file.dart';
+import 'package:tax_payer/Features/Home/data/models/user_file/user_file.dart';
 import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_cubit.dart';
 import 'package:tax_payer/Features/Profile/presentation/logic/user_profile_cubit/user_profile_state.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import 'package:tax_payer/Features/DashBoard/data/models/user_file/user_file.dart';
+import 'package:tax_payer/Features/Home/data/models/user_file/user_file.dart';
 import 'package:tax_payer/Features/Home/presentation/views/widgets/business_activity_section.dart';
 import 'package:tax_payer/Features/Home/presentation/views/widgets/home_banner.dart';
 import 'package:tax_payer/Features/Home/presentation/views/widgets/recent_payments_section.dart';

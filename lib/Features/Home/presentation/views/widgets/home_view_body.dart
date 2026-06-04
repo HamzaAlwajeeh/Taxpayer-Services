@@ -24,6 +24,7 @@ class HomeViewBody extends StatefulWidget {
 
 class _HomeViewBodyState extends State<HomeViewBody> {
   final bool _isLoggedIn = Prefs.getBool(AppConstants.kIsLogedIn);
+  late bool isPending;
 
   // Future<void> _handleNotifications() async {
   //   try {
@@ -61,6 +62,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isPending = Prefs.getBool(AppConstants.kHasRequestPending);
     return SafeArea(
       child: RefreshIndicator(
         color: AppColors.primaryColor(context),
@@ -84,34 +86,19 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 icon: Icons.close,
                 textColor: AppColors.white(),
               );
-            } else if (state is HasRequestPendingFailure) {
-              customToastBar(
-                context: context,
-                message: Failure.localizedMessage(
-                  context,
-                  errorMessage: state.errorMessage,
-                  errorKey: state.errorKey,
-                ),
-                backgroundColor: AppColors.red(),
-                icon: Icons.close,
-                textColor: AppColors.white(),
-              );
             }
           },
           builder: (context, state) {
             final cubit = context.read<UserFileCubit>();
 
-            if (state is UserFileLoading || state is HasRequestPendingLoading) {
+            if (state is UserFileLoading) {
               return HomeContent(userFile: cubit.userFile, isLoading: true);
             }
-
-            final bool isPendingState = state is HasRequestPendingSuccess
-                ? state.hasRequestPending
-                : Prefs.getBool(AppConstants.kHasRequestPending);
+            if (state is HasRequestPendingSuccess) {}
 
             final userFile = _readUserFile(cubit, state);
             if (userFile == null) {
-              if (isPendingState) {
+              if (isPending) {
                 return MustLoginCard(
                   icon: Assets.assetsIconsUser,
                   message: S.of(context).RequestPendingTitle,
