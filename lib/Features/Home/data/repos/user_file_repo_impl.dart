@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:tax_payer/Features/DashBoard/data/models/files/file.dart';
-import 'package:tax_payer/Features/DashBoard/data/models/user_file/user_file.dart';
-import 'package:tax_payer/Features/DashBoard/data/repos/user_file_repo.dart';
+import 'package:tax_payer/Features/Home/data/models/files/file.dart';
+import 'package:tax_payer/Features/Home/data/models/user_file/user_file.dart';
+import 'package:tax_payer/Features/Home/data/repos/user_file_repo.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/services/api_service.dart';
@@ -55,6 +55,25 @@ class UserFileRepoImpl implements UserFileRepo {
       } else {
         throw Exception('No data found');
       }
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioException(e));
+      }
+      return Left(ServerFailure(errorMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> hasRequestPending() async {
+    try {
+      var data = await apiService.get(
+        body: null,
+        endPoint: AppConstants.kHasRequest,
+        token: Prefs.getString(AppConstants.kToken),
+      );
+
+      bool hasRequest = data['data']['exists'] as bool;
+      return Right(hasRequest);
     } catch (e) {
       if (e is DioException) {
         return Left(ServerFailure.fromDioException(e));

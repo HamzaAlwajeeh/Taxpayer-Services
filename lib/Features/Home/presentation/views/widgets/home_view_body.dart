@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:tax_payer/Features/DashBoard/data/models/user_file/user_file.dart';
+import 'package:tax_payer/Features/Home/data/models/user_file/user_file.dart';
 import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_state.dart';
 import 'package:tax_payer/Features/Home/presentation/views/widgets/home_content.dart';
@@ -52,6 +52,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
       if (cubit.state is UserFileInitial) {
         cubit.initializeCurrentFile();
+        cubit.hasRequestPending();
       }
 
       // _handleNotifications();
@@ -60,7 +61,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isPending = Prefs.getBool(AppConstants.kHasRequestPending);
     return SafeArea(
       child: RefreshIndicator(
         color: AppColors.primaryColor(context),
@@ -84,18 +84,34 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 icon: Icons.close,
                 textColor: AppColors.white(),
               );
+            } else if (state is HasRequestPendingFailure) {
+              customToastBar(
+                context: context,
+                message: Failure.localizedMessage(
+                  context,
+                  errorMessage: state.errorMessage,
+                  errorKey: state.errorKey,
+                ),
+                backgroundColor: AppColors.red(),
+                icon: Icons.close,
+                textColor: AppColors.white(),
+              );
             }
           },
           builder: (context, state) {
             final cubit = context.read<UserFileCubit>();
 
-            if (state is UserFileLoading) {
+            if (state is UserFileLoading || state is HasRequestPendingLoading) {
               return HomeContent(userFile: cubit.userFile, isLoading: true);
             }
 
+            final bool isPendingState = state is HasRequestPendingSuccess
+                ? state.hasRequestPending
+                : Prefs.getBool(AppConstants.kHasRequestPending);
+
             final userFile = _readUserFile(cubit, state);
             if (userFile == null) {
-              if (isPending) {
+              if (isPendingState) {
                 return MustLoginCard(
                   icon: Assets.assetsIconsUser,
                   message: S.of(context).RequestPendingTitle,

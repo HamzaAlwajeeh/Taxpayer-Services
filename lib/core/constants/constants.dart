@@ -39,4 +39,5 @@ class AppConstants {
   static const String kResetPassword = 'reset';
   static const String kGetUserFiles = 'get-tax-payer-mobile-files';
   static const String kGetUserFileById = 'get-tax-payer-mobile-file_By_Id';
+  static const String kHasRequest = 'exists-request';
 }

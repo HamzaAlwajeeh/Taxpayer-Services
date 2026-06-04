@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tax_payer/Features/DashBoard/data/models/files/file.dart';
-import 'package:tax_payer/Features/DashBoard/data/models/user_file/user_file.dart';
-import 'package:tax_payer/Features/DashBoard/data/repos/user_file_repo.dart';
+import 'package:tax_payer/Features/Home/data/models/files/file.dart';
+import 'package:tax_payer/Features/Home/data/models/user_file/user_file.dart';
+import 'package:tax_payer/Features/Home/data/repos/user_file_repo.dart';
 import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_state.dart';
 import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/services/shared_pref_singleton.dart';
@@ -120,5 +120,24 @@ class UserFileCubit extends Cubit<UserFileState> {
     filesList = [];
     userFile = UserFile();
     emit(UserFileInitial());
+  }
+
+  Future<void> hasRequestPending() async {
+    emit(HasRequestPendingLoading());
+
+    final result = await userFileRepo.hasRequestPending();
+
+    result.fold(
+      (failure) => emit(
+        HasRequestPendingFailure(
+          errorMessage: failure.errorMessage,
+          errorKey: failure.errorKey,
+        ),
+      ),
+      (hasRequestPending) {
+        Prefs.setBool(AppConstants.kHasRequestPending, hasRequestPending);
+        emit(HasRequestPendingSuccess(hasRequestPending: hasRequestPending));
+      },
+    );
   }
 }

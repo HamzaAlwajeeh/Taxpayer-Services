@@ -33,7 +33,6 @@ class PofileCustomButton extends StatelessWidget {
           Prefs.removeBool(AppConstants.kIsLogedIn);
           Prefs.removeString(AppConstants.kToken);
           Prefs.setInt(AppConstants.kCurrentFile, 0);
-
           context.go(RouteNames.login);
         } else if (state is LogoutFailure) {
           customToastBar(
