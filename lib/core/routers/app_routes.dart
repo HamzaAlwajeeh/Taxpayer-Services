@@ -128,7 +128,7 @@ class AppRoutes {
         path: RouteNames.customerSupportChat,
         builder:
             (context, state) => BlocProvider<ChatCubit>(
-              create: (context) => ChatCubit(),
+              create: (context) => ChatCubit()..getMessages(),
               child: ChatView(),
             ),
         transition: TransitionType.slideFromRight,

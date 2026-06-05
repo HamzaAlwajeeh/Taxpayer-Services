@@ -22,7 +22,14 @@ class AppConstants {
 
   static const String kMessage = 'message';
   static const String kUserName = 'userName';
-  static const String kCreatedAt = 'cratedAt';
+  static const String kCreatedAt = 'createdAt';
+  static const String kUpdatedAt = 'updatedAt';
+  static const String kLastMessage = 'lastMessage';
+  static const String kUserId = 'userId';
+  static const String kSenderType = 'senderType';
+  static const String kSenderTypeUser = 'user';
+  static const String kSenderTypeAdmin = 'admin';
+  static const String kChatsCollection = 'chats';
   static const String kMessagesCollection = 'messages';
 
   static const String kCurrentThemeKey = 'selected_theme';

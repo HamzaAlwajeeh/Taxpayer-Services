@@ -29,7 +29,11 @@ class HomeView extends StatelessWidget {
               ),
       floatingActionButton: Visibility(
         visible: isLoggedIn,
-        child: CustomFloatingActionButton(onPressed: () {}),
+        child: CustomFloatingActionButton(
+          onPressed: () {
+            context.push(RouteNames.customerSupportChat);
+          },
+        ),
       ),
     );
   }

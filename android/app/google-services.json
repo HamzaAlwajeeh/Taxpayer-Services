@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "24137969618",
+    "project_id": "tax-payer-services-baf97",
+    "storage_bucket": "tax-payer-services-baf97.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24137969618:android:422c0d0ceece7de7a6620b",
+        "android_client_info": {
+          "package_name": "com.example.tax_payer_id"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCenexFvGhu65RVe6b7VtVPyn9Ya-CsWOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

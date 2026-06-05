@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
+import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.title, this.color});
+  const CustomAppBar({super.key, required this.title, this.color, this.isChat});
 
   final String title;
   final Color? color;
+  final bool? isChat;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: color ?? AppColors.primaryColor(context),
       elevation: 0,
-      centerTitle: true,
+      centerTitle: isChat != true,
+      titleSpacing: isChat == true ? 0 : NavigationToolbar.kMiddleSpacing,
+
       flexibleSpace: ClipRRect(
         child: Stack(
           children: [
@@ -45,10 +49,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-      title: Text(
-        title,
-        style: TextStyles.bold18.copyWith(color: AppColors.white()),
-      ),
+
+      title:
+          isChat == true
+              ? Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundImage: AssetImage(Assets.assetsIconsAppIcon),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    title,
+                    style: TextStyles.bold18.copyWith(color: AppColors.white()),
+                  ),
+                ],
+              )
+              : Text(
+                title,
+                style: TextStyles.bold18.copyWith(color: AppColors.white()),
+              ),
+
       leading: IconButton(
         icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
         onPressed: () => context.pop(),

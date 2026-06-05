@@ -8,12 +8,14 @@ class GradientBackground extends StatelessWidget {
     this.hasImage,
     this.backgroundColors,
     this.hasCircleColors,
+    this.isNotChat,
   });
 
   final Widget child;
   final bool? hasImage;
   final Widget? backgroundColors;
   final bool? hasCircleColors;
+  final bool? isNotChat;
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +38,13 @@ class GradientBackground extends StatelessWidget {
           ),
         ),
 
-        Positioned(
-          bottom: -80,
-          left: -70,
-          child: _glassCircle(220, primary.withOpacity(0.20)),
+        Visibility(
+          visible: isNotChat ?? true,
+          child: Positioned(
+            bottom: -80,
+            left: -70,
+            child: _glassCircle(220, primary.withOpacity(0.20)),
+          ),
         ),
 
         Visibility(
