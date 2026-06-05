@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tax_payer/core/services/notification_service.dart';
 import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/core/constants/app_spacing.dart';
 import 'package:tax_payer/core/constants/constants.dart';
@@ -118,12 +119,19 @@ class _InitViewState extends State<InitView> {
                             CustomButton(
                               title: "تجربة الاشعارات",
                               isOutlined: true,
-                              onPressed: () {
-                                // NotificationService.showBasicNotification(
-                                //   id: 1,
-                                //   title: 'تجربة إشعار',
-                                //   body: 'هذه رسالة اختبار فورية',
-                                // );
+                              onPressed: () async {
+                                await NotificationService.showBasicNotification(
+                                  id: 1,
+                                  title: NotificationService.taxDeclarationTitle,
+                                  body: NotificationService.taxDeclarationBody,
+                                );
+                                Future.delayed(const Duration(seconds: 5), () async {
+                                  await NotificationService.showBasicNotification(
+                                    id: 2,
+                                    title: NotificationService.taxDeclarationTitle,
+                                    body: NotificationService.taxDeclarationBody,
+                                  );
+                                });
                               },
                             ),
 

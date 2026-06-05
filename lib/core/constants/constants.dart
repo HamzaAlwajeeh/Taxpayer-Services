@@ -4,7 +4,7 @@ class AppConstants {
   static const String kIp = '172.16.1.80';
   static String get ip => Prefs.getString(kApiBaseUrl) ?? kIp;
   static String get kBaseUrl => 'http://$ip:8000/api';
-  static const String kAppName = 'Tax Payer Services';
+  static const String kAppName = 'مصلحة الضرائب';
   static const String kAppVersion = '1.0.0';
   static const String kSeenOnBoarding = 'seenOnBoarding';
   static const String kIsLogedIn = 'isLogedIn';

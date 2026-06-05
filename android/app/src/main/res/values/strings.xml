@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TaxPayer</string>
+    <string name="app_name">مصلحة الضرائب</string>
     <string name="default_notification_channel_id">tax_payer_general_notifications</string>
-    <string name="default_notification_channel_name">General Notifications</string>
+    <string name="default_notification_channel_name">إشعارات عامة</string>
 </resources>
