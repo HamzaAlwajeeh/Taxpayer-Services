@@ -7,7 +7,7 @@ class NotificationService {
 
   static const String taxDeclarationTitle = 'الإقرار الضريبي';
   static const String taxDeclarationBody =
-      'عزيزي العميل، يرجى مراجعة مكتب الضرائب من أجل عمل الإقرار الضريبي. علماً بأنه في حال التأخر عن الموعد المحدد، سيتم فرض غرامات ورسوم إضافية فوق الضريبة المستحقة.';
+      'عزيزي العميل، يرجى مراجعة مكتب الضرائب من أجل عمل الإقرار الضريبي في أقرب وقت ممكن ';
 
   static final FlutterLocalNotificationsPlugin _plugin =
       FlutterLocalNotificationsPlugin();
