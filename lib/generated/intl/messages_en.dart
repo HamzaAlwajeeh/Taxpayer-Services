@@ -299,7 +299,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "PenaltiesStep4": MessageLookupByLibrary.simpleMessage(
       "Submitting incorrect or misleading data penalty",
     ),
+    "PhoneLength9": MessageLookupByLibrary.simpleMessage(
+      "Phone number must be exactly 9 digits",
+    ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "PhoneStartWith7": MessageLookupByLibrary.simpleMessage(
+      "Phone number must start with 7",
+    ),
     "PrivacyAndSecurityCommitmentBody": MessageLookupByLibrary.simpleMessage(
       "Keep your login details private and sign out when using a shared device. We do not share your information except when required to complete official tax procedures.",
     ),

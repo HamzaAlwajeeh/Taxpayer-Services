@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tax_payer/Features/Auth/presentation/views/widgets/upload_file.dart';
+import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/Features/NewFile/presentation/logic/new_file_cubit/new_file_cubit.dart';
 import 'package:tax_payer/Features/NewFile/presentation/logic/new_file_cubit/new_file_state.dart';
 import 'package:tax_payer/Features/NewFile/presentation/views/widgets/file_type_selected_card.dart';
+import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_text_style.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
@@ -68,6 +71,12 @@ class _NewFileFormState extends State<NewFileForm> {
             textColor: AppColors.white(),
           );
           clearForm();
+          
+          Prefs.setBool(AppConstants.kHasRequestPending, true);
+          final userFileCubit = context.read<UserFileCubit>();
+          userFileCubit.hasRequestPending();
+          userFileCubit.initializeCurrentFile();
+
           if (context.canPop()) {
             context.pop();
           } else {

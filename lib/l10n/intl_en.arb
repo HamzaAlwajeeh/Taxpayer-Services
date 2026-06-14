@@ -207,5 +207,7 @@
     "PrivacyAndSecurityDataTitle": "How your data is used",
     "PrivacyAndSecurityDataBody": "We use your information to verify your identity, open and manage tax files, follow up on requests, and improve the services provided by the tax office.",
     "PrivacyAndSecurityCommitmentTitle": "Our security commitment",
-    "PrivacyAndSecurityCommitmentBody": "Keep your login details private and sign out when using a shared device. We do not share your information except when required to complete official tax procedures."
+    "PrivacyAndSecurityCommitmentBody": "Keep your login details private and sign out when using a shared device. We do not share your information except when required to complete official tax procedures.",
+    "PhoneStartWith7": "Phone number must start with 7",
+    "PhoneLength9": "Phone number must be exactly 9 digits"
 }

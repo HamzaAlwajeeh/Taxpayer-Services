@@ -26,53 +26,65 @@ class MustLoginCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GradientBackground(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(AppSpacing.s16),
-            child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.s16,
-                vertical: AppSpacing.s24,
-              ),
-              decoration: BoxDecoration(
-                color: AppColors.itemsColor(context),
-                borderRadius: BorderRadius.circular(AppSpacing.radius20),
-                border: Border.all(color: AppColors.borderColor(context)),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.shadowColor(context),
-                    blurRadius: AppSpacing.s12,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  UserAvatar(image: null, width: 80, height: 80, iconSize: 40),
-                  const SizedBox(height: AppSpacing.s10),
-                  Text(
-                    message,
-                    textAlign: TextAlign.center,
-                    style: TextStyles.bold24.copyWith(
-                      color: AppColors.textRedColor(context),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: constraints.maxHeight,
+                ),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(AppSpacing.s16),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.s16,
+                        vertical: AppSpacing.s24,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.itemsColor(context),
+                        borderRadius: BorderRadius.circular(AppSpacing.radius20),
+                        border: Border.all(color: AppColors.borderColor(context)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.shadowColor(context),
+                            blurRadius: AppSpacing.s12,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          UserAvatar(image: null, width: 80, height: 80, iconSize: 40),
+                          const SizedBox(height: AppSpacing.s10),
+                          Text(
+                            message,
+                            textAlign: TextAlign.center,
+                            style: TextStyles.bold24.copyWith(
+                              color: AppColors.textRedColor(context),
+                            ),
+                          ),
+                          const SizedBox(height: AppSpacing.s8),
+                          Text(
+                            subTitle ?? '',
+                            textAlign: TextAlign.center,
+                            style: TextStyles.semiBold14.copyWith(
+                              color: AppColors.textPrimaryColor(context),
+                            ),
+                          ),
+                          const SizedBox(height: AppSpacing.s16),
+                          CustomButton(title: actionLabel, onPressed: onPressed),
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(height: AppSpacing.s8),
-                  Text(
-                    subTitle ?? '',
-                    textAlign: TextAlign.center,
-                    style: TextStyles.semiBold14.copyWith(
-                      color: AppColors.textPrimaryColor(context),
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.s16),
-                  CustomButton(title: actionLabel, onPressed: onPressed),
-                ],
+                ),
               ),
-            ),
-          ),
+            );
+          },
         ),
       ),
     );

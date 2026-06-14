@@ -24,7 +24,6 @@ class ResetPasswordRequestCubit extends Cubit<ResetPasswordRequestState> {
       ),
       (resetPassword) {
         userId = resetPassword.userId;
-        code = resetPassword.code;
         emit(ResetPasswordRequestSuccess(resetPassword: resetPassword));
       },
     );

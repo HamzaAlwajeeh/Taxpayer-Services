@@ -1925,6 +1925,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Phone number must start with 7`
+  String get PhoneStartWith7 {
+    return Intl.message(
+      'Phone number must start with 7',
+      name: 'PhoneStartWith7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number must be exactly 9 digits`
+  String get PhoneLength9 {
+    return Intl.message(
+      'Phone number must be exactly 9 digits',
+      name: 'PhoneLength9',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

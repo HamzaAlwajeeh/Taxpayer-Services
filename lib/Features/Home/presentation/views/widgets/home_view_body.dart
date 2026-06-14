@@ -70,7 +70,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         backgroundColor: AppColors.itemsColor(context),
         onRefresh: () async {
           if (_isLoggedIn) {
-            await context.read<UserFileCubit>().initializeCurrentFile();
+            await Future.wait([
+              context.read<UserFileCubit>().initializeCurrentFile(),
+              context.read<UserFileCubit>().hasRequestPending(),
+            ]);
           }
         },
         child: BlocConsumer<UserFileCubit, UserFileState>(

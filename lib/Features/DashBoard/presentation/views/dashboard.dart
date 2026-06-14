@@ -82,18 +82,23 @@ class _HomeBaseState extends State<DashBoard> {
           if (didPop) {
             return;
           }
-          if (_pageIndex != 0) {
-            setPage(0);
+          final NavigatorState navigator = Navigator.of(context);
+          if (navigator.canPop()) {
+            navigator.pop(result);
           } else {
-            showCupertinoModalPopup(
-              context: context,
-              builder:
-                  (_) => SignOutConfirmationDialogWidget(
-                    onConfirm: () {
-                      context.read<LogoutCubit>().logout();
-                    },
-                  ),
-            );
+            if (_pageIndex != 0) {
+              setPage(0);
+            } else {
+              showCupertinoModalPopup(
+                context: context,
+                builder:
+                    (_) => SignOutConfirmationDialogWidget(
+                      onConfirm: () {
+                        context.read<LogoutCubit>().logout();
+                      },
+                    ),
+              );
+            }
           }
         },
         child: Scaffold(

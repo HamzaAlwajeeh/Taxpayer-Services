@@ -231,6 +231,19 @@ class _CustomTextFormFeildState extends State<CustomTextFormFeild> {
       return null;
     }
 
+    if (widget.keyboardType == TextInputType.phone) {
+      if (text.isEmpty) {
+        return S.of(context).FieldIsRequired;
+      }
+      if (!text.startsWith('7')) {
+        return S.of(context).PhoneStartWith7;
+      }
+      if (text.length != 9 || RegExp(r'^\d+$').hasMatch(text) == false) {
+        return S.of(context).PhoneLength9;
+      }
+      return null;
+    }
+
     if (text.isEmpty) {
       return S.of(context).FieldIsRequired;
     }

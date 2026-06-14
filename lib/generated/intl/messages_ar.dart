@@ -303,7 +303,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "PenaltiesStep4": MessageLookupByLibrary.simpleMessage(
       "غرامة تقديم بيانات غير صحيحة أو مضللة",
     ),
+    "PhoneLength9": MessageLookupByLibrary.simpleMessage(
+      "يجب أن يتكون رقم الهاتف من 9 أرقام فقط",
+    ),
     "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "PhoneStartWith7": MessageLookupByLibrary.simpleMessage(
+      "يجب أن يبدأ رقم الهاتف بـ 7",
+    ),
     "PrivacyAndSecurityCommitmentBody": MessageLookupByLibrary.simpleMessage(
       "حافظ على سرية بيانات الدخول الخاصة بك وسجل الخروج عند استخدام جهاز مشترك. لا نشارك معلوماتك إلا عند الحاجة لإكمال الإجراءات الضريبية الرسمية.",
     ),

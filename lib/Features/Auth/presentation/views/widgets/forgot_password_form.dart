@@ -39,8 +39,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
         if (state is ResetPasswordRequestSuccess) {
           customToastBar(
             context: context,
-            message: "${S.of(context).VerifyCodeTitle} : ${state.resetPassword.code}",
-
+            message: "تم ارسال كود واتساب الى رقم هاتفك المربوط بهذا الحساب",
             backgroundColor: AppColors.customGreen(),
             icon: Icons.check,
             textColor: AppColors.white(),
