@@ -3,7 +3,7 @@ import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 class AppConstants {
   static const String kIp = '172.16.1.80';
   static String get ip => Prefs.getString(kApiBaseUrl) ?? kIp;
-  static String get kBaseUrl => 'http://$ip:8000/api';
+  static String get kBaseUrl => 'https://tax-backend.novelsoft.com.co/api';
   static const String kAppName = 'مصلحة الضرائب';
   static const String kAppVersion = '1.0.0';
   static const String kSeenOnBoarding = 'seenOnBoarding';

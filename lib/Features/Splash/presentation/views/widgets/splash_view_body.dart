@@ -1,11 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tax_payer/Features/Home/presentation/logic/user_file_cubit/user_file_cubit.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_background_colors.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_loading_indicator.dart';
 import 'package:tax_payer/Features/Splash/presentation/views/widgets/splash_logo.dart';
+import 'package:tax_payer/core/constants/constants.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/widgets/gradient_background.dart';
 
@@ -33,9 +37,20 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void _navigateToOnBoarding() async {
-    //
-    context.go(RouteNames.initView);
-  }
+      if (!mounted) {
+        return;
+      }
+      if (Prefs.getBool(AppConstants.kSeenOnBoarding) == true) {
+        if (Prefs.getBool(AppConstants.kIsLogedIn) == true) {
+          await context.read<UserFileCubit>().initializeCurrentFile();
+          context.go(RouteNames.dashboard);
+        } else {
+          context.go(RouteNames.login);
+        }
+      } else {
+        context.go(RouteNames.onBoarding1);
+      }
+    }
 
   @override
   Widget build(BuildContext context) {
