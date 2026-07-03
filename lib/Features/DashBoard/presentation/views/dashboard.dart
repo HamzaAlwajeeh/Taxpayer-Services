@@ -43,12 +43,14 @@ class _HomeBaseState extends State<DashBoard> {
   @override
   void didUpdateWidget(covariant DashBoard oldWidget) {
     super.didUpdateWidget(oldWidget);
-    final nextPage = widget.initialPage.clamp(0, 3).toInt();
+    if (oldWidget.initialPage != widget.initialPage) {
+      final nextPage = widget.initialPage.clamp(0, 3).toInt();
 
-    if (nextPage != _pageIndex) {
-      _pageIndex = nextPage;
-      if (_pageController.hasClients) {
-        _pageController.jumpToPage(nextPage);
+      if (nextPage != _pageIndex) {
+        _pageIndex = nextPage;
+        if (_pageController.hasClients) {
+          _pageController.jumpToPage(nextPage);
+        }
       }
     }
   }

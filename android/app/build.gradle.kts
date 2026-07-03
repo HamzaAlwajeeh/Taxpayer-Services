@@ -11,7 +11,7 @@ plugins {
 android {
     namespace = "com.example.tax_payer_id"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "27.2.12479018"
+    ndkVersion = "27.3.13750724"
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
