@@ -8,12 +8,14 @@ import 'package:tax_payer/core/errors/failuar.dart';
 import 'package:tax_payer/core/helper/custom_loading_indicator.dart';
 import 'package:tax_payer/core/helper/custom_toast_bar.dart';
 import 'package:tax_payer/core/routers/route_names.dart';
+import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 import 'package:tax_payer/core/utils/app_colors.dart';
 import 'package:tax_payer/core/utils/app_images.dart';
 import 'package:tax_payer/core/widgets/build_svg_icon.dart';
 import 'package:tax_payer/core/widgets/custom_button.dart';
 import 'package:tax_payer/core/widgets/custom_text_form_feild.dart';
 import 'package:tax_payer/generated/l10n.dart';
+import 'package:tax_payer/core/constants/constants.dart';
 
 class ResetPasswordForm extends StatefulWidget {
   const ResetPasswordForm({super.key});
@@ -98,7 +100,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                                 context
                                     .read<ResetPasswordRequestCubit>()
                                     .userId,
-                            code:Prefs.getInt(AppConstants.kResetPasswordCode,
+                            code: Prefs.getInt(AppConstants.kResetPasswordCode) ?? 0,
                             newPassword: newPasswordController.text,
                             confirmNewPassword: confirmPasswordController.text,
                           );
