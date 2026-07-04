@@ -34,6 +34,7 @@ class ProfileRepoImpl implements ProfileRepo {
         'image': image,
         'password': password,
         'password_confirmation': confirmPassword,
+        "_method" : "PUT",
       };
 
       body.removeWhere((key, value) => value == null || value == '');
