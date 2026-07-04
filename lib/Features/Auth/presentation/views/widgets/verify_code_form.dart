@@ -96,7 +96,8 @@ class _VerifyCodeFormState extends State<VerifyCodeForm> {
       listener: (context, state) {
         if (state is VerifyCodeSuccess) {
           Prefs.removeString(AppConstants.kResetPasswordUsername);
-          customToastBar(
+          Prefs.setInt(AppConstants.kResetPasswordCode, int.tryParse(_pinController.text) ?? 0);
+            customToastBar(
             context: context,
             message: S.of(context).CodeVerifiedSuccessfully,
             backgroundColor: AppColors.customGreen(),
