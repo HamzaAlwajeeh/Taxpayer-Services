@@ -39,7 +39,7 @@ class ProfileRepoImpl implements ProfileRepo {
 
       body.removeWhere((key, value) => value == null || value == '');
 
-      await apiService.put(
+      await apiService.post(
         endPoint: AppConstants.kUpdateProfile,
         body: body,
         token: Prefs.getString(AppConstants.kToken),
