@@ -7,7 +7,6 @@ import 'package:tax_payer/core/services/shared_pref_singleton.dart';
 class ResetPasswordRequestCubit extends Cubit<ResetPasswordRequestState> {
   final AuthRepo authRepo;
   int userId = 0;
-  int code = 0;
   ResetPasswordRequestCubit(this.authRepo)
     : super(ResetPasswordRequestInitial());
 
