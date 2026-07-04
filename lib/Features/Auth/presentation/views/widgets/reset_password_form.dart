@@ -98,8 +98,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                                 context
                                     .read<ResetPasswordRequestCubit>()
                                     .userId,
-                            code:
-                                context.read<ResetPasswordRequestCubit>().code,
+                            code:Prefs.getInt(AppConstants.kResetPasswordCode,
                             newPassword: newPasswordController.text,
                             confirmNewPassword: confirmPasswordController.text,
                           );
